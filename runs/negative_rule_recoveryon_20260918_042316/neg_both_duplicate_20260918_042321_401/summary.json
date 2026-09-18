@@ -1,0 +1,46 @@
+{
+  "episode_id": "neg_both_duplicate_20260918_042321_401",
+  "task_id": "neg_both_duplicate",
+  "set": "negative",
+  "planner": "rule",
+  "recovery": true,
+  "terminal_status": "failed",
+  "agent_complete_success": false,
+  "independent_complete_success": true,
+  "objects_total": 1,
+  "objects_completed": 1,
+  "expected": "success",
+  "expected_met": false,
+  "failure_type": "IK_OR_PATH_UNREACHABLE",
+  "recovery_events": 0,
+  "retry_events": 0,
+  "replan_events": 3,
+  "model_requests": 0,
+  "sim_time_s": 245.67,
+  "wall_time_s": 5.38,
+  "score": {
+    "eval_id": "neg_7701",
+    "objects_total": 1,
+    "objects_completed": 1,
+    "complete_success": true,
+    "details": {
+      "obj_red_1": {
+        "target": "tray_left",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.0037766927490302526,
+          "xy_err_y": 0.016425679708318486,
+          "height_err_m": 1.2741599248800028e-05,
+          "speed_mps": 3.852301053290252e-06,
+          "ang_speed_rps": 0.00017973975882026476,
+          "in_gripper_contact": 0.0
+        }
+      }
+    }
+  },
+  "artifact_error": null
+}

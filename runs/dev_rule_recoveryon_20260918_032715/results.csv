@@ -1,0 +1,11 @@
+episode_id,task_id,set,planner,recovery,terminal_status,independent_complete_success,objects_completed,objects_total,expected_met,failure_type,recovery_events,replan_events,model_requests,sim_time_s,wall_time_s
+dev_3obj_s100_20260918_032715_944,dev_3obj_s100,dev,rule,True,success,True,3,3,True,,0,1,0,194.34,3.81
+dev_4obj_s101_20260918_032720_451,dev_4obj_s101,dev,rule,True,success,True,4,4,True,,0,1,0,259.15,5.83
+dev_5obj_s102_20260918_032726_856,dev_5obj_s102,dev,rule,True,failed,False,2,5,False,IK_OR_PATH_UNREACHABLE,0,3,0,312.8,7.01
+dev_3obj_s103_20260918_032734_415,dev_3obj_s103,dev,rule,True,success,True,3,3,True,,0,1,0,192.85,3.66
+dev_4obj_s104_20260918_032738_642,dev_4obj_s104,dev,rule,True,failed,False,3,4,False,IK_OR_PATH_UNREACHABLE,1,1,0,254.89,5.55
+dev_5obj_s105_20260918_032744_746,dev_5obj_s105,dev,rule,True,success,True,5,5,True,,0,1,0,320.62,7.46
+dev_3obj_s106_20260918_032752_763,dev_3obj_s106,dev,rule,True,success,True,3,3,True,,0,1,0,193.99,3.82
+dev_4obj_s107_20260918_032757_144,dev_4obj_s107,dev,rule,True,success,True,4,4,True,,0,1,0,257.26,5.71
+dev_5obj_s108_20260918_032803_407,dev_5obj_s108,dev,rule,True,success,True,5,5,True,,0,1,0,321.34,7.4
+dev_3obj_s109_20260918_032811_355,dev_3obj_s109,dev,rule,True,success,True,3,3,True,,0,1,0,192.74,3.8

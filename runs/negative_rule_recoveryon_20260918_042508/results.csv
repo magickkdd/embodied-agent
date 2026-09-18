@@ -1,0 +1,13 @@
+episode_id,task_id,set,planner,recovery,terminal_status,independent_complete_success,objects_completed,objects_total,expected_met,failure_type,recovery_events,replan_events,model_requests,sim_time_s,wall_time_s
+neg_ambiguous_demo_20260918_042508_910,neg_ambiguous_demo,negative,rule,True,needs_clarification,False,0,0,True,AMBIGUOUS_TASK,0,0,0,0.5,0.18
+neg_unknown_color_20260918_042509_910,neg_unknown_color,negative,rule,True,needs_clarification,False,0,0,True,AMBIGUOUS_TASK,0,0,0,0.5,0.16
+neg_unknown_target_20260918_042510_640,neg_unknown_target,negative,rule,True,needs_clarification,False,0,0,True,AMBIGUOUS_TASK,0,0,0,0.5,0.14
+neg_empty_goal_20260918_042511_360,neg_empty_goal,negative,rule,True,needs_clarification,False,0,0,True,AMBIGUOUS_TASK,0,0,0,0.5,0.14
+neg_conflicting_attr_20260918_042512_058,neg_conflicting_attr,negative,rule,True,needs_clarification,False,0,0,True,AMBIGUOUS_TASK,0,0,0,0.5,0.15
+neg_unknown_id_20260918_042512_760,neg_unknown_id,negative,rule,True,needs_clarification,False,0,0,True,AMBIGUOUS_TASK,0,0,0,0.5,0.15
+neg_both_duplicate_20260918_042513_494,neg_both_duplicate,negative,rule,True,success,True,1,1,True,,0,1,0,65.2,1.8
+neg_overspecified_20260918_042515_879,neg_overspecified,negative,rule,True,success,True,3,3,True,,0,1,0,192.83,4.63
+neg_wrong_attr_shape_20260918_042521_133,neg_wrong_attr_shape,negative,rule,True,needs_clarification,False,0,0,True,AMBIGUOUS_TASK,0,0,0,0.5,0.14
+neg_restack_demand_20260918_042521_878,neg_restack_demand,negative,rule,True,needs_clarification,False,0,0,True,AMBIGUOUS_TASK,0,0,0,0.5,0.14
+neg_target_no_space_20260918_042522_624,neg_target_no_space,negative,rule,True,failed,False,3,5,True,TARGET_NO_FREE_SLOT,0,3,0,255.63,8.09
+neg_budget_exhausted_20260918_042531_274,neg_budget_exhausted,negative,rule,True,failed,False,2,3,True,BUDGET_EXHAUSTED,0,1,0,128.48,3.19

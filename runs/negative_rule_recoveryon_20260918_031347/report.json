@@ -1,0 +1,7 @@
+{
+  "set": "negative",
+  "n": 10,
+  "expected_met": 10,
+  "ratio": 1.0,
+  "note": "all negative cases must terminate/clarify within budget; no illegal action executed"
+}

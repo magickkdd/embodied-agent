@@ -1,0 +1,78 @@
+{
+  "episode": "w1_baseline",
+  "seed": 7,
+  "steps": [
+    {
+      "action": "pick",
+      "object": "obj_cube",
+      "ok": true,
+      "stage": "grasp_verify",
+      "lift_gain_m": 0.0845,
+      "follow_err_m": 0.0145,
+      "in_contact": true
+    },
+    {
+      "action": "place",
+      "object": "obj_cube",
+      "target": "tray_left",
+      "ok": true,
+      "stage": "place_verify",
+      "pos": [
+        0.607,
+        -0.3,
+        0.653
+      ],
+      "speed": 0.0
+    },
+    {
+      "action": "pick",
+      "object": "obj_cylinder",
+      "ok": true,
+      "stage": "grasp_verify",
+      "lift_gain_m": 0.0829,
+      "follow_err_m": 0.0094,
+      "in_contact": true
+    },
+    {
+      "action": "place",
+      "object": "obj_cylinder",
+      "target": "tray_right",
+      "ok": true,
+      "stage": "place_verify",
+      "pos": [
+        0.608,
+        0.294,
+        0.673
+      ],
+      "speed": 0.0
+    },
+    {
+      "action": "pick",
+      "object": "obj_cuboid",
+      "ok": true,
+      "stage": "grasp_verify",
+      "lift_gain_m": 0.0847,
+      "follow_err_m": 0.0048,
+      "in_contact": true
+    },
+    {
+      "action": "place",
+      "object": "obj_cuboid",
+      "target": "tray_middle",
+      "ok": true,
+      "stage": "place_verify",
+      "pos": [
+        0.619,
+        -0.014,
+        0.668
+      ],
+      "speed": 0.0
+    }
+  ],
+  "final_objects_in_tray": {
+    "obj_cube": true,
+    "obj_cylinder": true,
+    "obj_cuboid": true
+  },
+  "success": true
+}

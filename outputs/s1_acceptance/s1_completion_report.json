@@ -1,0 +1,145 @@
+{
+  "1_2_3_pybullet_real_contact_3to5_objects": "met (PhysicsScene; fault injector touches only descent target; no teleport/fixed constraint)",
+  "4_same_runtime_rule_and_deepseek": "met (Runtime.run_episode(planner=...) switch; no skill/sim code change)",
+  "5_deepseek_structured_output_validated": "met (JSON mode + Pydantic + PlanValidator; 401 immediate, 1 repair, 2 backoff)",
+  "6_forced_observe_verify_after_pick_place": "met (Runtime._execute_plan forced verification)",
+  "7_grasp_miss_recovery_bounded": "met (RecoveryPolicy + safe_retreat + candidate retry within per-object budget)",
+  "8_independent_evaluator": "met (IndependentEvaluator reads physics truth + EvalSpec only; reverse tests in tests/unit/test_information_isolation.py)",
+  "9_artifacts": {
+    "task_sets": "smoke/dev/s1-clean(90)/s1-fault(30x3)/negative(12)",
+    "events": "events.jsonl (schema v1 envelope)",
+    "model_calls": "model_calls.jsonl",
+    "video": "video.mp4 per episode (frames at each skill boundary)",
+    "repro": "README.md + requirements.txt + config.json snapshots"
+  },
+  "10a_rule_baseline_s1_clean": {
+    "set": "s1_clean",
+    "n": 90,
+    "successes": 81,
+    "success_rate": 0.9,
+    "wilson95": [
+      0.821,
+      0.946
+    ],
+    "by_object_count": {
+      "3": {
+        "n": 30,
+        "k": 30,
+        "rate": 1.0
+      },
+      "4": {
+        "n": 30,
+        "k": 27,
+        "rate": 0.9
+      },
+      "5": {
+        "n": 30,
+        "k": 24,
+        "rate": 0.8
+      }
+    }
+  },
+  "10b_deepseek_e2e_s1_clean": {
+    "set": "s1_clean",
+    "n": 90,
+    "successes": 80,
+    "success_rate": 0.889,
+    "wilson95": [
+      0.807,
+      0.939
+    ],
+    "by_object_count": {
+      "3": {
+        "n": 30,
+        "k": 29,
+        "rate": 0.967
+      },
+      "4": {
+        "n": 30,
+        "k": 27,
+        "rate": 0.9
+      },
+      "5": {
+        "n": 30,
+        "k": 24,
+        "rate": 0.8
+      }
+    }
+  },
+  "10c_deepseek_no_recovery_s1_clean": {
+    "set": "s1_clean",
+    "n": 90,
+    "successes": 80,
+    "success_rate": 0.889,
+    "wilson95": [
+      0.807,
+      0.939
+    ],
+    "by_object_count": {
+      "3": {
+        "n": 30,
+        "k": 29,
+        "rate": 0.967
+      },
+      "4": {
+        "n": 30,
+        "k": 27,
+        "rate": 0.9
+      },
+      "5": {
+        "n": 30,
+        "k": 24,
+        "rate": 0.8
+      }
+    }
+  },
+  "10d_fault_paired_gain": {
+    "n_configs": 30,
+    "recovery_on_rate": 0.633,
+    "recovery_off_rate": 0.0,
+    "mean_gain": 0.633,
+    "gain_bootstrap95": [
+      0.467,
+      0.8
+    ],
+    "config_wins": 19,
+    "config_losses": 0,
+    "config_ties": 11,
+    "note": "exact paired sign test: P(wins>=observed | tie-free) = 2^-wins when losses=0"
+  },
+  "a4_negative": {
+    "set": "negative",
+    "n": 12,
+    "expected_met": 12,
+    "ratio": 1.0,
+    "note": "all negative cases must terminate/clarify within budget; no illegal action executed"
+  },
+  "a4_smoke": {
+    "set": "smoke",
+    "n": 5,
+    "successes": 4,
+    "success_rate": 0.8,
+    "wilson95": [
+      0.376,
+      0.964
+    ],
+    "by_object_count": {
+      "3": {
+        "n": 3,
+        "k": 3,
+        "rate": 1.0
+      },
+      "5": {
+        "n": 1,
+        "k": 1,
+        "rate": 1.0
+      },
+      "0": {
+        "n": 1,
+        "k": 0,
+        "rate": 0.0
+      }
+    }
+  },
+  "a5_demo_dir": "runs/demo_20260918_040722"
+}

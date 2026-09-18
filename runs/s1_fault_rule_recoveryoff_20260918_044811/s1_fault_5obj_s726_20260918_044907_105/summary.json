@@ -1,0 +1,110 @@
+{
+  "episode_id": "s1_fault_5obj_s726_20260918_044907_105",
+  "task_id": "s1_fault_5obj_s726",
+  "set": "s1_fault",
+  "planner": "rule",
+  "recovery": false,
+  "terminal_status": "failed",
+  "agent_complete_success": false,
+  "independent_complete_success": false,
+  "objects_total": 5,
+  "objects_completed": 0,
+  "expected": "success",
+  "expected_met": false,
+  "failure_type": "GRASP_MISS",
+  "recovery_events": 0,
+  "retry_events": 0,
+  "replan_events": 1,
+  "model_requests": 0,
+  "sim_time_s": 62.08,
+  "wall_time_s": 1.56,
+  "score": {
+    "eval_id": "eval_726",
+    "objects_total": 5,
+    "objects_completed": 0,
+    "complete_success": false,
+    "details": {
+      "obj_green_1": {
+        "target": "tray_left",
+        "satisfied": false,
+        "inside": false,
+        "supported": true,
+        "at_rest": false,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.27422476240375493,
+          "xy_err_y": 0.19834844375910488,
+          "height_err_m": 0.008015894942794644,
+          "speed_mps": 0.024703705187118064,
+          "ang_speed_rps": 1.1763605806493627,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_blue_2": {
+        "target": "tray_middle",
+        "satisfied": false,
+        "inside": false,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.27513151197227304,
+          "xy_err_y": 0.00647078716523584,
+          "height_err_m": 0.00801146010540088,
+          "speed_mps": 9.258741453231266e-06,
+          "ang_speed_rps": 0.00016377913557143447,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_yellow_3": {
+        "target": "tray_middle",
+        "satisfied": false,
+        "inside": false,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.2792969233161995,
+          "xy_err_y": 0.15293679252982129,
+          "height_err_m": 0.008009802117123321,
+          "speed_mps": 5.466928884658387e-06,
+          "ang_speed_rps": 0.0002701661147199499,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_purple_4": {
+        "target": "tray_left",
+        "satisfied": false,
+        "inside": false,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.21239813066164653,
+          "xy_err_y": 0.16501966142652547,
+          "height_err_m": 0.00801104869386271,
+          "speed_mps": 6.249507696472309e-06,
+          "ang_speed_rps": 0.0001622038865355422,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_red_5": {
+        "target": "tray_right",
+        "satisfied": false,
+        "inside": false,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.21448616565152923,
+          "xy_err_y": 0.3145137959769855,
+          "height_err_m": 0.008011459232799334,
+          "speed_mps": 8.979767671656274e-06,
+          "ang_speed_rps": 0.00012378239929159533,
+          "in_gripper_contact": 0.0
+        }
+      }
+    }
+  },
+  "artifact_error": null
+}

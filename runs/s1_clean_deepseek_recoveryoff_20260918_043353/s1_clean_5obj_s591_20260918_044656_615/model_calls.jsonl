@@ -1,0 +1,1 @@
+{"provider": "deepseek", "model": "deepseek-chat", "prompt_version": "s1-plan-v1", "usage": {"prompt_tokens": 534, "completion_tokens": 511, "total_tokens": 1045, "prompt_tokens_details": {"cached_tokens": 128}, "prompt_cache_hit_tokens": 128, "prompt_cache_miss_tokens": 406}, "latency_s": 1.686, "replan": false}

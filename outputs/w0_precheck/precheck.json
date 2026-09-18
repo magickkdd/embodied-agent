@@ -1,0 +1,42 @@
+{
+  "python": "3.11.16",
+  "checks": {
+    "sim_connect_headless": {
+      "ok": true,
+      "detail": "client=0, timeStep=1/240"
+    },
+    "panda_load": {
+      "ok": true,
+      "detail": "/home/czx/miniforge3/envs/embodied/lib/python3.11/site-packages/pybullet_data/franka_panda/panda.urdf",
+      "num_joints": 12,
+      "source": "pybullet_data (bundled with pybullet 3.2.7, BSD/zlib-style license)"
+    },
+    "dynamics_1000_steps": {
+      "ok": true,
+      "detail": "0.03s wall for 1000 steps (~31296 steps/s)"
+    },
+    "ik_solve": {
+      "ok": true,
+      "detail": "target=[0.4, 0.0, 0.55], first7=[-0.562, 0.603, 0.724, -1.177, 0.527, 0.124, -1.447]"
+    },
+    "ik_residual": {
+      "ok": true,
+      "detail": "ee_pos=[0.4017, 0.0003, 0.5511], err=2.0mm"
+    },
+    "collision_query": {
+      "ok": true,
+      "detail": "arm-vs-box contact points=0, contact=False"
+    },
+    "camera_rgb_depth_headless": {
+      "ok": true,
+      "detail": "640x480 tiny-renderer, depth finite ratio=1.000",
+      "rgb_saved": "/home/czx/embodied-agent-robot-agent-embodied-agent-4/embodied_agent/../work/../outputs/w0_precheck/rgb_headless.png"
+    },
+    "gui_once": {
+      "ok": true,
+      "detail": "rc=0, pybullet build time: Jan 29 2025 23:17:20"
+    }
+  },
+  "total_wall_s": 1.62,
+  "all_ok": true
+}

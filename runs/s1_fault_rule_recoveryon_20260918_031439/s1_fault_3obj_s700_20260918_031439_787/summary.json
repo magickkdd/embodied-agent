@@ -1,0 +1,77 @@
+{
+  "episode_id": "s1_fault_3obj_s700_20260918_031439_787",
+  "task_id": "s1_fault_3obj_s700",
+  "set": "s1_fault",
+  "planner": "rule",
+  "recovery": true,
+  "terminal_status": "success",
+  "agent_complete_success": true,
+  "independent_complete_success": true,
+  "objects_total": 3,
+  "objects_completed": 3,
+  "expected": "success",
+  "expected_met": true,
+  "failure_type": null,
+  "recovery_events": 1,
+  "retry_events": 1,
+  "replan_events": 1,
+  "model_requests": 0,
+  "sim_time_s": 255.22,
+  "wall_time_s": 5.0,
+  "score": {
+    "eval_id": "eval_700",
+    "objects_total": 3,
+    "objects_completed": 3,
+    "complete_success": true,
+    "details": {
+      "obj_red_1": {
+        "target": "tray_left",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.010595884890974627,
+          "xy_err_y": 0.015847191442403707,
+          "height_err_m": 1.0082364544472533e-05,
+          "speed_mps": 5.612075623183231e-07,
+          "ang_speed_rps": 5.7638117659048395e-06,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_green_2": {
+        "target": "tray_left",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.0014273094919130536,
+          "xy_err_y": 0.06786639569263819,
+          "height_err_m": 9.93264632898061e-06,
+          "speed_mps": 8.459740506141511e-06,
+          "ang_speed_rps": 0.0002409554243270193,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_blue_3": {
+        "target": "tray_right",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.01077926699542231,
+          "xy_err_y": 0.017219485256335487,
+          "height_err_m": 1.0562463742869177e-05,
+          "speed_mps": 1.768217518731349e-05,
+          "ang_speed_rps": 0.0007135485716583098,
+          "in_gripper_contact": 0.0
+        }
+      }
+    }
+  }
+}

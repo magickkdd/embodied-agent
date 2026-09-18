@@ -1,0 +1,75 @@
+{
+  "a1_rule_baseline": {
+    "n": 90,
+    "k": 81,
+    "rate": 0.9,
+    "wilson95": [
+      0.821,
+      0.946
+    ],
+    "passed": true,
+    "evidence": "runs/s1_clean_rule_recoveryon_20260918_034252/report.json"
+  },
+  "a2_online_deepseek": {
+    "passed": true,
+    "n": 90,
+    "k": 80,
+    "rate": 0.889,
+    "wilson95": [
+      0.807,
+      0.939
+    ],
+    "m4_dev_gate": "goal-parse 20/20, plan-valid 20/20",
+    "model_calls": "105 requests, 98206 tokens, avg latency 1.54s, 15 replans",
+    "evidence": "runs/s1_clean_deepseek_recoveryon_20260918_051112/report.json"
+  },
+  "a3_recovery_gain": {
+    "n_configs": 30,
+    "on": "19/30",
+    "off": "0/30",
+    "mean_gain": 0.633,
+    "gain_bootstrap95": [
+      0.467,
+      0.8
+    ],
+    "wins": 19,
+    "losses": 0,
+    "ties": 11,
+    "passed": true,
+    "evidence": [
+      "runs/s1_fault_rule_recoveryon_20260918_035234/report.json",
+      "runs/s1_fault_rule_recoveryoff_20260918_035602/report.json"
+    ]
+  },
+  "a4_negative": {
+    "n": 10,
+    "expected_met": 10,
+    "passed": true,
+    "evidence": "runs/negative_rule_recoveryon_20260918_034237/report.json"
+  },
+  "a5_demo": {
+    "passed": true,
+    "evidence": "runs/demo_20260918_040722/demo.json"
+  },
+  "a6_reproducibility": {
+    "passed": true,
+    "evidence": [
+      "README.md",
+      "requirements.txt",
+      "outputs/w0_precheck/precheck.json",
+      "config.json per episode"
+    ]
+  },
+  "run_matrix": {
+    "B1_clean": "81/90 (90.0%)",
+    "E1_clean": "80/90 (88.9%)",
+    "E0_clean": "80/90 (88.9%)",
+    "B1_fault": "57/90 (19/30 configs)",
+    "B0_fault": "0/90",
+    "EF1_fault": "19/30",
+    "EF0_fault": "0/30",
+    "note": "s1-fault rule arms run 3x per config (deterministic seeds); deepseek arms 1x per config (online cost)"
+  },
+  "cli_contract": "cli.py: doctor/sim-smoke/run/evaluate/report/replay/model-replay/demo/a3 + exit codes 0/1/2/3/4",
+  "event_envelope": "schema v1 envelope + model_calls.jsonl + frames/ + video.mp4 per episode"
+}

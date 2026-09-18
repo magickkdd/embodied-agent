@@ -1,0 +1,6 @@
+episode_id,task_id,set,planner,recovery,terminal_status,independent_complete_success,objects_completed,objects_total,expected_met,failure_type,recovery_events,replan_events,model_requests,sim_time_s,wall_time_s
+smoke_3obj_s7_20260918_031133_123,smoke_3obj_s7,smoke,rule,True,success,True,3,3,True,,0,1,0,193.56,3.74
+smoke_3obj_s11_20260918_031137_549,smoke_3obj_s11,smoke,rule,True,failed,False,2,3,False,IK_OR_PATH_UNREACHABLE,0,3,0,314.12,6.16
+smoke_5obj_s13_20260918_031144_269,smoke_5obj_s13,smoke,rule,True,success,True,5,5,True,,0,1,0,320.75,7.58
+smoke_3obj_s17_20260918_031152_437,smoke_3obj_s17,smoke,rule,True,success,True,3,3,True,,1,1,0,254.63,4.84
+smoke_illegal_target_20260918_031157_828,smoke_illegal_target,smoke,rule,True,needs_clarification,False,0,0,True,AMBIGUOUS_TASK,0,0,0,0.5,0.13

@@ -1,0 +1,109 @@
+{
+  "episode_id": "s1_clean_5obj_s561_20260918_032300_611",
+  "task_id": "s1_clean_5obj_s561",
+  "set": "s1_clean",
+  "planner": "rule",
+  "recovery": true,
+  "terminal_status": "failed",
+  "agent_complete_success": false,
+  "independent_complete_success": false,
+  "objects_total": 5,
+  "objects_completed": 4,
+  "expected": "success",
+  "expected_met": false,
+  "failure_type": "TARGET_NO_FREE_SLOT",
+  "recovery_events": 0,
+  "retry_events": 0,
+  "replan_events": 3,
+  "model_requests": 0,
+  "sim_time_s": 319.28,
+  "wall_time_s": 7.49,
+  "score": {
+    "eval_id": "eval_561",
+    "objects_total": 5,
+    "objects_completed": 4,
+    "complete_success": false,
+    "details": {
+      "obj_green_1": {
+        "target": "tray_left",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.01645154919922398,
+          "xy_err_y": 0.0019186155642734737,
+          "height_err_m": 1.0007448575155564e-05,
+          "speed_mps": 1.9106604659838818e-08,
+          "ang_speed_rps": 1.5321519838778075e-06,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_blue_2": {
+        "target": "tray_middle",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.0005907562599785088,
+          "xy_err_y": 0.016291138043505633,
+          "height_err_m": 1.0495455246672947e-05,
+          "speed_mps": 7.995092644576781e-06,
+          "ang_speed_rps": 0.00018596739120985302,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_yellow_3": {
+        "target": "tray_right",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.0003539467786828343,
+          "xy_err_y": 0.01647392279235782,
+          "height_err_m": 1.070501901745402e-05,
+          "speed_mps": 1.0017695322861472e-05,
+          "ang_speed_rps": 0.00022221730719813624,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_purple_4": {
+        "target": "tray_left",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.07008370943623354,
+          "xy_err_y": 0.056328655528583405,
+          "height_err_m": 1.0752927599000373e-05,
+          "speed_mps": 3.164304502354248e-06,
+          "ang_speed_rps": 0.00014575356064436642,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_red_5": {
+        "target": "tray_middle",
+        "satisfied": false,
+        "inside": false,
+        "supported": false,
+        "at_rest": true,
+        "not_held": false,
+        "evidence": {
+          "xy_err_x": 0.09992782526111987,
+          "xy_err_y": 0.11837042416315634,
+          "height_err_m": 0.2589621681455423,
+          "speed_mps": 0.001758802384349263,
+          "ang_speed_rps": 0.0015960663051401472,
+          "in_gripper_contact": 1.0
+        }
+      }
+    }
+  }
+}

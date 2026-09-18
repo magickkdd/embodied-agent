@@ -1,0 +1,6 @@
+episode_id,task_id,set,planner,recovery,terminal_status,independent_complete_success,objects_completed,objects_total,expected_met,failure_type,recovery_events,replan_events,model_requests,sim_time_s,wall_time_s
+smoke_3obj_s7_20260918_043108_387,smoke_3obj_s7,smoke,rule,True,success,True,3,3,True,,0,1,0,193.19,4.67
+smoke_3obj_s11_20260918_043113_760,smoke_3obj_s11,smoke,rule,True,success,True,3,3,True,,0,1,0,192.82,4.54
+smoke_5obj_s13_20260918_043118_874,smoke_5obj_s13,smoke,rule,True,success,True,5,5,True,,0,1,0,320.6,8.83
+smoke_3obj_s17_20260918_043128_280,smoke_3obj_s17,smoke,rule,True,success,True,3,3,True,,1,1,0,255.1,5.81
+smoke_illegal_target_20260918_043134_662,smoke_illegal_target,smoke,rule,True,needs_clarification,False,0,0,True,AMBIGUOUS_TASK,0,0,0,0.5,0.14

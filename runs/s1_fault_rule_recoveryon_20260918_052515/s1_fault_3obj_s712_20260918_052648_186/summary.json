@@ -1,0 +1,78 @@
+{
+  "episode_id": "s1_fault_3obj_s712_20260918_052648_186",
+  "task_id": "s1_fault_3obj_s712",
+  "set": "s1_fault",
+  "planner": "rule",
+  "recovery": true,
+  "terminal_status": "success",
+  "agent_complete_success": true,
+  "independent_complete_success": true,
+  "objects_total": 3,
+  "objects_completed": 3,
+  "expected": "success",
+  "expected_met": true,
+  "failure_type": null,
+  "recovery_events": 1,
+  "retry_events": 1,
+  "replan_events": 1,
+  "model_requests": 0,
+  "sim_time_s": 254.2,
+  "wall_time_s": 5.94,
+  "score": {
+    "eval_id": "eval_712",
+    "objects_total": 3,
+    "objects_completed": 3,
+    "complete_success": true,
+    "details": {
+      "obj_blue_1": {
+        "target": "tray_middle",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.006685922037225955,
+          "xy_err_y": 0.027125240268670036,
+          "height_err_m": 1.0026875146063041e-05,
+          "speed_mps": 1.8569391388380026e-07,
+          "ang_speed_rps": 1.7828407440881142e-06,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_yellow_2": {
+        "target": "tray_middle",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.09330837485296883,
+          "xy_err_y": 0.014002871829309456,
+          "height_err_m": 1.0013367700234532e-05,
+          "speed_mps": 7.58869623795082e-06,
+          "ang_speed_rps": 0.00023465520686428163,
+          "in_gripper_contact": 0.0
+        }
+      },
+      "obj_purple_3": {
+        "target": "tray_middle",
+        "satisfied": true,
+        "inside": true,
+        "supported": true,
+        "at_rest": true,
+        "not_held": true,
+        "evidence": {
+          "xy_err_x": 0.00016691101797594587,
+          "xy_err_y": 0.07307538682700988,
+          "height_err_m": 1.060453214718482e-05,
+          "speed_mps": 7.347262153426538e-06,
+          "ang_speed_rps": 0.00016894262195195827,
+          "in_gripper_contact": 0.0
+        }
+      }
+    }
+  },
+  "artifact_error": null
+}

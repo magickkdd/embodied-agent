@@ -1,0 +1,127 @@
+{
+  "episode_id": "s1_clean_3obj_s500_20260918_045942_011",
+  "task_id": "s1_clean_3obj_s500",
+  "set": "s1_clean",
+  "utterance": "把红色的圆柱放到左边托盘，把绿色的方块放到左边托盘，把蓝色的长方体放到右边托盘。",
+  "seed": 500,
+  "planner": "deepseek",
+  "recovery": true,
+  "fault": null,
+  "objects": [
+    {
+      "entity_id": "obj_red_1",
+      "shape": "cylinder",
+      "dims": [
+        0.023,
+        0.042
+      ],
+      "xy": [
+        0.38,
+        0.16
+      ],
+      "attributes": {
+        "color": "red",
+        "shape": "cylinder"
+      },
+      "color": [
+        0.85,
+        0.1,
+        0.1,
+        1
+      ]
+    },
+    {
+      "entity_id": "obj_green_2",
+      "shape": "cube",
+      "dims": [
+        0.021,
+        0.021,
+        0.021
+      ],
+      "xy": [
+        0.445,
+        -0.16
+      ],
+      "attributes": {
+        "color": "green",
+        "shape": "cube"
+      },
+      "color": [
+        0.1,
+        0.7,
+        0.2,
+        1
+      ]
+    },
+    {
+      "entity_id": "obj_blue_3",
+      "shape": "cuboid",
+      "dims": [
+        0.027,
+        0.019,
+        0.035
+      ],
+      "xy": [
+        0.445,
+        0.0
+      ],
+      "attributes": {
+        "color": "blue",
+        "shape": "cuboid"
+      },
+      "color": [
+        0.1,
+        0.2,
+        0.85,
+        1
+      ]
+    }
+  ],
+  "eval_spec": {
+    "eval_id": "eval_500",
+    "assignments": [
+      {
+        "entity_id": "obj_red_1",
+        "target_id": "tray_left"
+      },
+      {
+        "entity_id": "obj_green_2",
+        "target_id": "tray_left"
+      },
+      {
+        "entity_id": "obj_blue_3",
+        "target_id": "tray_right"
+      }
+    ],
+    "tolerance_version": "v1",
+    "settle_time_s": 0.5,
+    "speed_tol_mps": 0.02,
+    "ang_speed_tol_rps": 0.2,
+    "support_height_tol_m": 0.01,
+    "footprint_margin_m": 0.005,
+    "lift_gain_min_m": 0.03,
+    "budgets": {
+      "per_object_extra_attempts": 2,
+      "max_global_replans": 3,
+      "max_skill_calls": 30,
+      "max_model_requests": 10,
+      "wall_clock_s": 900.0,
+      "per_skill_sim_timeout_s": 30.0,
+      "max_consecutive_no_progress": 3
+    }
+  },
+  "budgets": {
+    "per_object_extra_attempts": 2,
+    "max_global_replans": 3,
+    "max_skill_calls": 30,
+    "max_model_requests": 10,
+    "wall_clock_s": 900.0,
+    "per_skill_sim_timeout_s": 30.0,
+    "max_consecutive_no_progress": 3
+  },
+  "framework": {
+    "sim": "PyBullet 3.2.7",
+    "robot": "franka_panda/panda.urdf (pybullet_data)",
+    "time_step": "1/240"
+  }
+}

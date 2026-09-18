@@ -1,0 +1,188 @@
+{
+  "episode_id": "s1_fault_5obj_s729_20260918_031929_182",
+  "task_id": "s1_fault_5obj_s729",
+  "set": "s1_fault",
+  "utterance": "把紫色的方块放到右边托盘，把红色的长方体放到左边托盘，把绿色的圆柱放到中间托盘，把蓝色的方块放到左边托盘，把黄色的长方体放到右边托盘。",
+  "seed": 729,
+  "planner": "rule",
+  "recovery": false,
+  "fault": {
+    "type": "grasp_offset",
+    "offset": [
+      -0.05619656773779851,
+      -0.05619656773779851,
+      0.0
+    ]
+  },
+  "objects": [
+    {
+      "entity_id": "obj_purple_1",
+      "shape": "cube",
+      "dims": [
+        0.021,
+        0.021,
+        0.021
+      ],
+      "xy": [
+        0.44,
+        -0.16
+      ],
+      "attributes": {
+        "color": "purple",
+        "shape": "cube"
+      },
+      "color": [
+        0.5,
+        0.2,
+        0.7,
+        1
+      ]
+    },
+    {
+      "entity_id": "obj_red_2",
+      "shape": "cuboid",
+      "dims": [
+        0.027,
+        0.019,
+        0.035
+      ],
+      "xy": [
+        0.44,
+        0.0
+      ],
+      "attributes": {
+        "color": "red",
+        "shape": "cuboid"
+      },
+      "color": [
+        0.85,
+        0.1,
+        0.1,
+        1
+      ]
+    },
+    {
+      "entity_id": "obj_green_3",
+      "shape": "cylinder",
+      "dims": [
+        0.023,
+        0.042
+      ],
+      "xy": [
+        0.44,
+        0.16
+      ],
+      "attributes": {
+        "color": "green",
+        "shape": "cylinder"
+      },
+      "color": [
+        0.1,
+        0.7,
+        0.2,
+        1
+      ]
+    },
+    {
+      "entity_id": "obj_blue_4",
+      "shape": "cube",
+      "dims": [
+        0.021,
+        0.021,
+        0.021
+      ],
+      "xy": [
+        0.38,
+        -0.16
+      ],
+      "attributes": {
+        "color": "blue",
+        "shape": "cube"
+      },
+      "color": [
+        0.1,
+        0.2,
+        0.85,
+        1
+      ]
+    },
+    {
+      "entity_id": "obj_yellow_5",
+      "shape": "cuboid",
+      "dims": [
+        0.027,
+        0.019,
+        0.035
+      ],
+      "xy": [
+        0.38,
+        0.0
+      ],
+      "attributes": {
+        "color": "yellow",
+        "shape": "cuboid"
+      },
+      "color": [
+        0.9,
+        0.8,
+        0.1,
+        1
+      ]
+    }
+  ],
+  "eval_spec": {
+    "eval_id": "eval_729",
+    "assignments": [
+      {
+        "entity_id": "obj_purple_1",
+        "target_id": "tray_right"
+      },
+      {
+        "entity_id": "obj_red_2",
+        "target_id": "tray_left"
+      },
+      {
+        "entity_id": "obj_green_3",
+        "target_id": "tray_middle"
+      },
+      {
+        "entity_id": "obj_blue_4",
+        "target_id": "tray_left"
+      },
+      {
+        "entity_id": "obj_yellow_5",
+        "target_id": "tray_right"
+      }
+    ],
+    "tolerance_version": "v1",
+    "settle_time_s": 0.5,
+    "speed_tol_mps": 0.02,
+    "ang_speed_tol_rps": 0.2,
+    "support_height_tol_m": 0.01,
+    "footprint_margin_m": 0.005,
+    "lift_gain_min_m": 0.03,
+    "budgets": {
+      "per_object_extra_attempts": 2,
+      "max_global_replans": 3,
+      "max_skill_calls": 30,
+      "max_model_requests": 10,
+      "wall_clock_s": 900.0,
+      "per_skill_sim_timeout_s": 30.0,
+      "max_consecutive_no_progress": 3
+    }
+  },
+  "budgets": {
+    "per_object_extra_attempts": 2,
+    "max_global_replans": 3,
+    "max_skill_calls": 30,
+    "max_model_requests": 10,
+    "wall_clock_s": 900.0,
+    "per_skill_sim_timeout_s": 30.0,
+    "max_consecutive_no_progress": 3
+  },
+  "framework": {
+    "sim": "PyBullet 3.2.7",
+    "robot": "franka_panda/panda.urdf (pybullet_data)",
+    "time_step": "1/240"
+  }
+}

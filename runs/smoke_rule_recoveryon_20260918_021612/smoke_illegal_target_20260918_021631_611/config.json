@@ -1,0 +1,69 @@
+{
+  "episode_id": "smoke_illegal_target_20260918_021631_611",
+  "task_id": "smoke_illegal_target",
+  "set": "smoke",
+  "utterance": "把红色的方块放到抽屉里。",
+  "seed": 21,
+  "planner": "rule",
+  "recovery": true,
+  "fault": null,
+  "objects": [
+    {
+      "entity_id": "obj_green_1",
+      "shape": "cube",
+      "dims": [
+        0.025,
+        0.025,
+        0.025
+      ],
+      "xy": [
+        0.7,
+        -0.15
+      ],
+      "attributes": {
+        "color": "green",
+        "shape": "cube"
+      },
+      "color": [
+        0.1,
+        0.7,
+        0.2,
+        1
+      ]
+    }
+  ],
+  "eval_spec": {
+    "eval_id": "eval_negative_smoke",
+    "assignments": [],
+    "tolerance_version": "v1",
+    "settle_time_s": 0.5,
+    "speed_tol_mps": 0.02,
+    "ang_speed_tol_rps": 0.2,
+    "support_height_tol_m": 0.01,
+    "footprint_margin_m": 0.005,
+    "lift_gain_min_m": 0.03,
+    "budgets": {
+      "per_object_extra_attempts": 2,
+      "max_global_replans": 3,
+      "max_skill_calls": 30,
+      "max_model_requests": 10,
+      "wall_clock_s": 900.0,
+      "per_skill_sim_timeout_s": 30.0,
+      "max_consecutive_no_progress": 3
+    }
+  },
+  "budgets": {
+    "per_object_extra_attempts": 2,
+    "max_global_replans": 3,
+    "max_skill_calls": 30,
+    "max_model_requests": 10,
+    "wall_clock_s": 900.0,
+    "per_skill_sim_timeout_s": 30.0,
+    "max_consecutive_no_progress": 3
+  },
+  "framework": {
+    "sim": "PyBullet 3.2.7",
+    "robot": "franka_panda/panda.urdf (pybullet_data)",
+    "time_step": "1/240"
+  }
+}
