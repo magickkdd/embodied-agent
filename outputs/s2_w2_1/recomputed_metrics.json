@@ -1,0 +1,30 @@
+{
+  "B1_clean_rule": {
+    "k": 81,
+    "n": 90
+  },
+  "E1_clean_deepseek": {
+    "k": 80,
+    "n": 90
+  },
+  "E0_clean_deepseek_norecov": {
+    "k": 80,
+    "n": 90
+  },
+  "B1_fault_rule": {
+    "k": 57,
+    "n": 90
+  },
+  "B0_fault_rule_norecov": {
+    "k": 0,
+    "n": 90
+  },
+  "EF1_fault_deepseek": {
+    "k": 19,
+    "n": 30
+  },
+  "EF0_fault_deepseek_norecov": {
+    "k": 0,
+    "n": 30
+  }
+}
