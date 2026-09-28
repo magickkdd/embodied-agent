@@ -1,0 +1,174 @@
+{
+  "episode_id": "smoke_clean.B.r0",
+  "case_id": "smoke_clean",
+  "set": "smoke",
+  "subset": "smoke",
+  "mode": "B",
+  "repeat": 0,
+  "expected": "success",
+  "probe": {
+    "probe": "none",
+    "met": true,
+    "detail": "no probe: generic expectation check"
+  },
+  "score": {
+    "eval_id": "eval-smoke_clean",
+    "scored_observation_ref": "obs_0029",
+    "scored_state_version": 29,
+    "scored_sim_time": 17.925,
+    "settle_seconds": 0.5,
+    "objects_total": 3,
+    "objects_completed": 3,
+    "goals_complete_success": true,
+    "protocol_ok": true,
+    "protocol_notes": [],
+    "complete_success": true,
+    "details": {
+      "obj_green_1": {
+        "target": "tray_left",
+        "satisfied": true,
+        "evidence": {
+          "xy_err_x": 0.00015807583854077212,
+          "xy_err_y": 0.006760478027714234,
+          "footprint_half_x": 0.02309282294411464,
+          "footprint_half_y": 0.02309279037557168,
+          "allow_x": 0.126,
+          "allow_y": 0.126,
+          "rest_extent_z": 0.021,
+          "height_err_m": 0.0,
+          "tray_contacts": 1.0,
+          "lin_speed": 0.0,
+          "ang_speed": 0.0,
+          "in_gripper": 0.0
+        }
+      },
+      "obj_blue_2": {
+        "target": "tray_right",
+        "satisfied": true,
+        "evidence": {
+          "xy_err_x": 0.00030664209117936547,
+          "xy_err_y": 0.01613273912998664,
+          "footprint_half_x": 0.02912851809778835,
+          "footprint_half_y": 0.022171196486335733,
+          "allow_x": 0.126,
+          "allow_y": 0.126,
+          "rest_extent_z": 0.035,
+          "height_err_m": 0.0,
+          "tray_contacts": 1.0,
+          "lin_speed": 0.0,
+          "ang_speed": 0.0001,
+          "in_gripper": 0.0
+        }
+      },
+      "obj_yellow_3": {
+        "target": "tray_left",
+        "satisfied": true,
+        "evidence": {
+          "xy_err_x": 0.08015567486879993,
+          "xy_err_y": 0.0022635138596712734,
+          "footprint_half_x": 0.023001129294932515,
+          "footprint_half_y": 0.02300139393442708,
+          "allow_x": 0.126,
+          "allow_y": 0.126,
+          "rest_extent_z": 0.042,
+          "height_err_m": 0.0,
+          "tray_contacts": 1.0,
+          "lin_speed": 0.0,
+          "ang_speed": 0.0003,
+          "in_gripper": 0.0
+        }
+      }
+    }
+  },
+  "result": {
+    "episode_id": "smoke_clean.B.r0",
+    "task_id": "smoke_clean",
+    "terminal_status": "success",
+    "mode": "B",
+    "decision_rounds": 7,
+    "skill_calls": 6,
+    "http_requests": 0,
+    "score_complete_success": true,
+    "objects_total": 3,
+    "objects_completed": 3,
+    "failure_type": null,
+    "recovery_events": 0,
+    "retry_events": 0,
+    "replan_events": 0,
+    "rejected_decisions": 0,
+    "false_finish_attempts": 0,
+    "identical_invalid_attempts": 1,
+    "identical_repeats_total": 0,
+    "model_errors": 0,
+    "semantic_repairs": 0,
+    "provider_counters": {
+      "api_errors": 0,
+      "transport_retries": 0,
+      "format_repairs": 0
+    },
+    "api_cost_estimate": null,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "sim_time_s": 17.92,
+    "wall_time_s": 4.33,
+    "slot_resolution_fallbacks": 3,
+    "human_intervention": false,
+    "config_ref": null,
+    "termination_reason": null,
+    "artifacts": {
+      "terminal_state_version": "29",
+      "terminal_observation_ref": "obs_0029",
+      "unknown_goals": "0",
+      "note": ""
+    }
+  },
+  "goal_resolution": {
+    "planner": "rule",
+    "artifact": "runs/gui/goal_resolutions/smoke_clean__r0.json",
+    "shared": true,
+    "counters": {
+      "http_requests": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "api_errors": 0,
+      "transport_retries": 0,
+      "format_repairs": 0
+    },
+    "wall_s": 0.258,
+    "assignments": [
+      [
+        {
+          "shape": "cube",
+          "color": "green"
+        },
+        "tray_left"
+      ],
+      [
+        {
+          "shape": "cuboid",
+          "color": "blue"
+        },
+        "tray_right"
+      ],
+      [
+        {
+          "shape": "cylinder",
+          "color": "yellow"
+        },
+        "tray_left"
+      ]
+    ]
+  },
+  "environment_events": {
+    "declared": [],
+    "unfired": [],
+    "fired": []
+  },
+  "artifacts": {
+    "episode_dir": "runs/gui/episodes/smoke_clean.B.r0",
+    "events": "runs/gui/episodes/smoke_clean.B.r0/events.jsonl",
+    "terminal_snapshot": "obs_0029",
+    "frames": 6
+  },
+  "wall_time_s": 6.08
+}
