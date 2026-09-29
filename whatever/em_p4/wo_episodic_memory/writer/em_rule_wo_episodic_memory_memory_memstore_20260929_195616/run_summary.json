@@ -1,0 +1,12 @@
+{
+  "run_id": "em_rule_wo_episodic_memory_memory_memstore_20260929_195616",
+  "root": "whatever/em_p4/wo_episodic_memory/writer/em_rule_wo_episodic_memory_memory_memstore_20260929_195616",
+  "planned": 1,
+  "rows": 1,
+  "planner": "rule",
+  "offline": true,
+  "cost_estimate_usd": null,
+  "outcomes": {
+    "success": 1
+  }
+}

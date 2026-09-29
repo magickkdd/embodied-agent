@@ -1,0 +1,113 @@
+{
+  "task_id": "em_p4_write_three",
+  "repeat": 0,
+  "seed": 408,
+  "utterance": "把黄色的方块放到左边托盘，把紫色的长方体放到中间托盘，把红色的圆柱放到左边托盘。",
+  "shared_by_modes": [
+    "A",
+    "B",
+    "C"
+  ],
+  "case_id": "em_p4_write_three",
+  "planner": "rule",
+  "well_formed": true,
+  "error": null,
+  "counters": {
+    "http_requests": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "api_errors": 0,
+    "transport_retries": 0,
+    "format_repairs": 0
+  },
+  "wall_s": 0.151,
+  "model": "rule-interpreter",
+  "prompt_version": "no-prompt",
+  "artifact": "",
+  "assignments": [
+    [
+      {
+        "shape": "cube",
+        "color": "yellow"
+      },
+      "tray_left"
+    ],
+    [
+      {
+        "shape": "cuboid",
+        "color": "purple"
+      },
+      "tray_middle"
+    ],
+    [
+      {
+        "shape": "cylinder",
+        "color": "red"
+      },
+      "tray_left"
+    ]
+  ],
+  "provider_meta": {
+    "kind": "goal_parse",
+    "prompt_version": "no-prompt",
+    "provider": "rule",
+    "raw_response": "{\"utterance\": \"把黄色的方块放到左边托盘，把紫色的长方体放到中间托盘，把红色的圆柱放到左边托盘。\"}"
+  },
+  "goal": {
+    "goal_id": "g_b6c149fb",
+    "assignments": [
+      {
+        "entity": {
+          "entity_id": null,
+          "attributes": {
+            "shape": "cube",
+            "color": "yellow"
+          },
+          "selector": null
+        },
+        "target_id": "tray_left"
+      },
+      {
+        "entity": {
+          "entity_id": null,
+          "attributes": {
+            "shape": "cuboid",
+            "color": "purple"
+          },
+          "selector": null
+        },
+        "target_id": "tray_middle"
+      },
+      {
+        "entity": {
+          "entity_id": null,
+          "attributes": {
+            "shape": "cylinder",
+            "color": "red"
+          },
+          "selector": null
+        },
+        "target_id": "tray_left"
+      }
+    ],
+    "ambiguous": false,
+    "clarification_request": null,
+    "prohibitions": [
+      "no stacking",
+      "no throwing"
+    ],
+    "schema_version": "3",
+    "based_on_state_version": null
+  },
+  "prologue": {
+    "http_requests": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "api_errors": 0,
+    "transport_retries": 0,
+    "format_repairs": 0,
+    "wall_start": 1790682970.2562125,
+    "shared_goal": "em_p4_write_three__r0",
+    "shared_goal_artifact": ""
+  }
+}

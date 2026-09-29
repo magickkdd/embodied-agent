@@ -1,0 +1,1196 @@
+{
+ "absent": [],
+ "frozen_manifest": "/home/czx/embodied-agent-robot-agent-embodied-agent-4/configs/experiment/frozen_episodic_v1.json",
+ "kind": "episodic_pairs_measured",
+ "model_config": null,
+ "pairs": [
+  {
+   "checks": {
+    "both_arms_complete_the_reader": {
+     "expected": true,
+     "measured": true
+    },
+    "control_first_pick": {
+     "expected": "obj_blue_3",
+     "measured": "obj_blue_3"
+    },
+    "control_follows_the_plan_order": {
+     "expected": true,
+     "measured": true
+    },
+    "declined_when_measured": {
+     "expected": [],
+     "measured": []
+    },
+    "guard_blind_at_round1": {
+     "expected": true,
+     "measured": true
+    },
+    "memory_followed_is_the_ranking": {
+     "expected": true,
+     "measured": true
+    },
+    "rows_per_round": {
+     "expected": 1,
+     "measured": 1
+    },
+    "stale_memory_governs": {
+     "expected": true,
+     "measured": true
+    },
+    "store_held_only_the_writer": {
+     "expected": 1,
+     "measured": 1
+    },
+    "trajectory_changes": {
+     "expected": true,
+     "measured": true
+    },
+    "treatment_first_pick_after_guard": {
+     "expected": "obj_green_2",
+     "measured": "obj_green_2"
+    },
+    "treatment_first_pick_round1": {
+     "expected": "obj_green_2",
+     "measured": "obj_green_2"
+    }
+   },
+   "condition": "promotion",
+   "control_rounds": 7,
+   "control_trajectory": [
+    "pick>obj_blue_3",
+    "place>obj_blue_3>tray_middle",
+    "pick>obj_green_2",
+    "place>obj_green_2>tray_middle",
+    "pick>obj_red_1",
+    "place>obj_red_1>tray_left",
+    "finish"
+   ],
+   "declines": [],
+   "divergence_first_index": 0,
+   "ok": true,
+   "pair_id": "em_p1",
+   "reported": {
+    "control_rounds": 7,
+    "followed_rounds": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "followed_while_control_chose_the_same": [],
+    "refuted_rounds": [
+     2,
+     3,
+     4
+    ],
+    "stale_governing_rounds": [
+     2,
+     3,
+     4
+    ],
+    "treatment_rounds": 7
+   },
+   "treatment_recall": {
+    "first_round_refuted": false,
+    "first_round_rows": 1,
+    "rounds": [
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p1_write_two.B.r0_c2b29135"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:red",
+        "kind:cuboid:green",
+        "predicate:placed:obj_green_2:tray_middle",
+        "predicate:placed:obj_red_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       13.0
+      ],
+      "round_index": 1,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       2
+      ],
+      "contradicted": [
+       true
+      ],
+      "experience_ids": [
+       "exp_em_p1_write_two.B.r0_c2b29135"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:red",
+        "kind:cuboid:green",
+        "predicate:placed:obj_green_2:tray_middle",
+        "predicate:placed:obj_red_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       13.0
+      ],
+      "round_index": 2,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       1
+      ],
+      "contradicted": [
+       true
+      ],
+      "experience_ids": [
+       "exp_em_p1_write_two.B.r0_c2b29135"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:red",
+        "kind:cuboid:green",
+        "predicate:placed:obj_green_2:tray_middle",
+        "predicate:placed:obj_red_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       13.0
+      ],
+      "round_index": 3,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       1
+      ],
+      "contradicted": [
+       true
+      ],
+      "experience_ids": [
+       "exp_em_p1_write_two.B.r0_c2b29135"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:red",
+        "kind:cuboid:green",
+        "predicate:placed:obj_green_2:tray_middle",
+        "predicate:placed:obj_red_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       13.0
+      ],
+      "round_index": 4,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p1_write_two.B.r0_c2b29135"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:red",
+        "kind:cuboid:green",
+        "predicate:placed:obj_green_2:tray_middle",
+        "predicate:placed:obj_red_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       13.0
+      ],
+      "round_index": 5,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p1_write_two.B.r0_c2b29135"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:red",
+        "kind:cuboid:green",
+        "predicate:placed:obj_green_2:tray_middle",
+        "predicate:placed:obj_red_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       13.0
+      ],
+      "round_index": 6,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p1_write_two.B.r0_c2b29135"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:red",
+        "kind:cuboid:green",
+        "predicate:placed:obj_green_2:tray_middle",
+        "predicate:placed:obj_red_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       13.0
+      ],
+      "round_index": 7,
+      "rows": 1,
+      "store_size": 1
+     }
+    ],
+    "rounds_with_a_row": 7,
+    "rows_offered": 7,
+    "rows_refuted": 3
+   },
+   "treatment_rounds": 7,
+   "treatment_trajectory": [
+    "pick>obj_green_2",
+    "place>obj_green_2>tray_middle",
+    "pick>obj_red_1",
+    "place>obj_red_1>tray_left",
+    "pick>obj_blue_3",
+    "place>obj_blue_3>tray_middle",
+    "finish"
+   ]
+  },
+  {
+   "checks": {
+    "both_arms_complete_the_reader": {
+     "expected": true,
+     "measured": true
+    },
+    "control_first_pick": {
+     "expected": "obj_blue_3",
+     "measured": "obj_blue_3"
+    },
+    "control_follows_the_plan_order": {
+     "expected": true,
+     "measured": true
+    },
+    "declined_when_measured": {
+     "expected": [],
+     "measured": []
+    },
+    "guard_blind_at_round1": {
+     "expected": true,
+     "measured": true
+    },
+    "memory_followed_is_the_ranking": {
+     "expected": true,
+     "measured": true
+    },
+    "rows_per_round": {
+     "expected": 1,
+     "measured": 1
+    },
+    "stale_memory_governs": {
+     "expected": false,
+     "measured": false
+    },
+    "store_held_only_the_writer": {
+     "expected": 1,
+     "measured": 1
+    },
+    "trajectory_changes": {
+     "expected": true,
+     "measured": true
+    },
+    "treatment_first_pick_after_guard": {
+     "expected": "obj_green_2",
+     "measured": "obj_green_2"
+    },
+    "treatment_first_pick_round1": {
+     "expected": "obj_green_2",
+     "measured": "obj_green_2"
+    }
+   },
+   "condition": "uncheckable_claims_govern",
+   "control_rounds": 7,
+   "control_trajectory": [
+    "pick>obj_blue_3",
+    "place>obj_blue_3>tray_left",
+    "pick>obj_green_2",
+    "place>obj_green_2>tray_right",
+    "pick>obj_red_1",
+    "place>obj_red_1>tray_right",
+    "finish"
+   ],
+   "declines": [],
+   "divergence_first_index": 0,
+   "ok": true,
+   "pair_id": "em_p2",
+   "reported": {
+    "control_rounds": 7,
+    "followed_rounds": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "followed_while_control_chose_the_same": [],
+    "refuted_rounds": [],
+    "stale_governing_rounds": [],
+    "treatment_rounds": 7
+   },
+   "treatment_recall": {
+    "first_round_refuted": false,
+    "first_round_rows": 1,
+    "rounds": [
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p2_write_two.B.r0_dffee2c5"
+      ],
+      "match_terms": [
+       [
+        "kind:cuboid:red",
+        "kind:cylinder:green",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       11.0
+      ],
+      "round_index": 1,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p2_write_two.B.r0_dffee2c5"
+      ],
+      "match_terms": [
+       [
+        "kind:cuboid:red",
+        "kind:cylinder:green",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       11.0
+      ],
+      "round_index": 2,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p2_write_two.B.r0_dffee2c5"
+      ],
+      "match_terms": [
+       [
+        "kind:cuboid:red",
+        "kind:cylinder:green",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       11.0
+      ],
+      "round_index": 3,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p2_write_two.B.r0_dffee2c5"
+      ],
+      "match_terms": [
+       [
+        "kind:cuboid:red",
+        "kind:cylinder:green",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       11.0
+      ],
+      "round_index": 4,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p2_write_two.B.r0_dffee2c5"
+      ],
+      "match_terms": [
+       [
+        "kind:cuboid:red",
+        "kind:cylinder:green",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       11.0
+      ],
+      "round_index": 5,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p2_write_two.B.r0_dffee2c5"
+      ],
+      "match_terms": [
+       [
+        "kind:cuboid:red",
+        "kind:cylinder:green",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       11.0
+      ],
+      "round_index": 6,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p2_write_two.B.r0_dffee2c5"
+      ],
+      "match_terms": [
+       [
+        "kind:cuboid:red",
+        "kind:cylinder:green",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       11.0
+      ],
+      "round_index": 7,
+      "rows": 1,
+      "store_size": 1
+     }
+    ],
+    "rounds_with_a_row": 7,
+    "rows_offered": 7,
+    "rows_refuted": 0
+   },
+   "treatment_rounds": 7,
+   "treatment_trajectory": [
+    "pick>obj_green_2",
+    "place>obj_green_2>tray_right",
+    "pick>obj_red_1",
+    "place>obj_red_1>tray_right",
+    "pick>obj_blue_3",
+    "place>obj_blue_3>tray_left",
+    "finish"
+   ]
+  },
+  {
+   "checks": {
+    "both_arms_complete_the_reader": {
+     "expected": true,
+     "measured": true
+    },
+    "control_first_pick": {
+     "expected": "obj_blue_1",
+     "measured": "obj_blue_1"
+    },
+    "control_follows_the_plan_order": {
+     "expected": true,
+     "measured": true
+    },
+    "declined_when_measured": {
+     "expected": [],
+     "measured": []
+    },
+    "guard_blind_at_round1": {
+     "expected": true,
+     "measured": true
+    },
+    "memory_followed_is_the_ranking": {
+     "expected": true,
+     "measured": true
+    },
+    "rows_per_round": {
+     "expected": 1,
+     "measured": 1
+    },
+    "stale_memory_governs": {
+     "expected": false,
+     "measured": false
+    },
+    "store_held_only_the_writer": {
+     "expected": 1,
+     "measured": 1
+    },
+    "trajectory_changes": {
+     "expected": false,
+     "measured": false
+    },
+    "treatment_first_pick_after_guard": {
+     "expected": "obj_blue_1",
+     "measured": "obj_blue_1"
+    },
+    "treatment_first_pick_round1": {
+     "expected": "obj_blue_1",
+     "measured": "obj_blue_1"
+    }
+   },
+   "condition": "retrieved_not_attributable",
+   "control_rounds": 7,
+   "control_trajectory": [
+    "pick>obj_blue_1",
+    "place>obj_blue_1>tray_middle",
+    "pick>obj_purple_3",
+    "place>obj_purple_3>tray_right",
+    "pick>obj_yellow_2",
+    "place>obj_yellow_2>tray_middle",
+    "finish"
+   ],
+   "declines": [],
+   "divergence_first_index": null,
+   "ok": true,
+   "pair_id": "em_p3",
+   "reported": {
+    "control_rounds": 7,
+    "followed_rounds": [],
+    "followed_while_control_chose_the_same": [],
+    "refuted_rounds": [],
+    "stale_governing_rounds": [],
+    "treatment_rounds": 7
+   },
+   "treatment_recall": {
+    "first_round_refuted": false,
+    "first_round_rows": 1,
+    "rounds": [
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p3_write_two.B.r0_91b59be4"
+      ],
+      "match_terms": [
+       [
+        "kind:cylinder:blue",
+        "region:tray_left",
+        "region:tray_right",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       9.0
+      ],
+      "round_index": 1,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p3_write_two.B.r0_91b59be4"
+      ],
+      "match_terms": [
+       [
+        "kind:cylinder:blue",
+        "region:tray_left",
+        "region:tray_right",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       9.0
+      ],
+      "round_index": 2,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p3_write_two.B.r0_91b59be4"
+      ],
+      "match_terms": [
+       [
+        "kind:cylinder:blue",
+        "region:tray_left",
+        "region:tray_right",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       9.0
+      ],
+      "round_index": 3,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p3_write_two.B.r0_91b59be4"
+      ],
+      "match_terms": [
+       [
+        "kind:cylinder:blue",
+        "region:tray_left",
+        "region:tray_right",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       9.0
+      ],
+      "round_index": 4,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p3_write_two.B.r0_91b59be4"
+      ],
+      "match_terms": [
+       [
+        "kind:cylinder:blue",
+        "region:tray_left",
+        "region:tray_right",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       9.0
+      ],
+      "round_index": 5,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p3_write_two.B.r0_91b59be4"
+      ],
+      "match_terms": [
+       [
+        "kind:cylinder:blue",
+        "region:tray_left",
+        "region:tray_right",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       9.0
+      ],
+      "round_index": 6,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p3_write_two.B.r0_91b59be4"
+      ],
+      "match_terms": [
+       [
+        "kind:cylinder:blue",
+        "region:tray_left",
+        "region:tray_right",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       9.0
+      ],
+      "round_index": 7,
+      "rows": 1,
+      "store_size": 1
+     }
+    ],
+    "rounds_with_a_row": 7,
+    "rows_offered": 7,
+    "rows_refuted": 0
+   },
+   "treatment_rounds": 7,
+   "treatment_trajectory": [
+    "pick>obj_blue_1",
+    "place>obj_blue_1>tray_middle",
+    "pick>obj_purple_3",
+    "place>obj_purple_3>tray_right",
+    "pick>obj_yellow_2",
+    "place>obj_yellow_2>tray_middle",
+    "finish"
+   ]
+  },
+  {
+   "checks": {
+    "both_arms_complete_the_reader": {
+     "expected": true,
+     "measured": true
+    },
+    "control_first_pick": {
+     "expected": "obj_purple_2",
+     "measured": "obj_purple_2"
+    },
+    "control_follows_the_plan_order": {
+     "expected": true,
+     "measured": true
+    },
+    "declined_when_measured": {
+     "expected": [],
+     "measured": []
+    },
+    "guard_blind_at_round1": {
+     "expected": true,
+     "measured": true
+    },
+    "memory_followed_is_the_ranking": {
+     "expected": true,
+     "measured": true
+    },
+    "rows_per_round": {
+     "expected": 1,
+     "measured": 1
+    },
+    "stale_memory_governs": {
+     "expected": true,
+     "measured": true
+    },
+    "store_held_only_the_writer": {
+     "expected": 1,
+     "measured": 1
+    },
+    "trajectory_changes": {
+     "expected": false,
+     "measured": false
+    },
+    "treatment_first_pick_after_guard": {
+     "expected": "obj_purple_2",
+     "measured": "obj_purple_2"
+    },
+    "treatment_first_pick_round1": {
+     "expected": "obj_purple_2",
+     "measured": "obj_purple_2"
+    }
+   },
+   "condition": "duplicate_agrees",
+   "control_rounds": 7,
+   "control_trajectory": [
+    "pick>obj_purple_2",
+    "place>obj_purple_2>tray_middle",
+    "pick>obj_red_3",
+    "place>obj_red_3>tray_left",
+    "pick>obj_yellow_1",
+    "place>obj_yellow_1>tray_left",
+    "finish"
+   ],
+   "declines": [],
+   "divergence_first_index": null,
+   "ok": true,
+   "pair_id": "em_p4",
+   "reported": {
+    "control_rounds": 7,
+    "followed_rounds": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "followed_while_control_chose_the_same": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "refuted_rounds": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "stale_governing_rounds": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "treatment_rounds": 7
+   },
+   "treatment_recall": {
+    "first_round_refuted": false,
+    "first_round_rows": 1,
+    "rounds": [
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p4_write_three.B.r0_6c9709d9"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:yellow",
+        "kind:cuboid:purple",
+        "kind:cylinder:red",
+        "predicate:placed:obj_purple_2:tray_middle",
+        "predicate:placed:obj_red_3:tray_left",
+        "predicate:placed:obj_yellow_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       16.0
+      ],
+      "round_index": 1,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       3
+      ],
+      "contradicted": [
+       true
+      ],
+      "experience_ids": [
+       "exp_em_p4_write_three.B.r0_6c9709d9"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:yellow",
+        "kind:cuboid:purple",
+        "kind:cylinder:red",
+        "predicate:placed:obj_purple_2:tray_middle",
+        "predicate:placed:obj_red_3:tray_left",
+        "predicate:placed:obj_yellow_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       16.0
+      ],
+      "round_index": 2,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       2
+      ],
+      "contradicted": [
+       true
+      ],
+      "experience_ids": [
+       "exp_em_p4_write_three.B.r0_6c9709d9"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:yellow",
+        "kind:cuboid:purple",
+        "kind:cylinder:red",
+        "predicate:placed:obj_purple_2:tray_middle",
+        "predicate:placed:obj_red_3:tray_left",
+        "predicate:placed:obj_yellow_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       16.0
+      ],
+      "round_index": 3,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       2
+      ],
+      "contradicted": [
+       true
+      ],
+      "experience_ids": [
+       "exp_em_p4_write_three.B.r0_6c9709d9"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:yellow",
+        "kind:cuboid:purple",
+        "kind:cylinder:red",
+        "predicate:placed:obj_purple_2:tray_middle",
+        "predicate:placed:obj_red_3:tray_left",
+        "predicate:placed:obj_yellow_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       16.0
+      ],
+      "round_index": 4,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       1
+      ],
+      "contradicted": [
+       true
+      ],
+      "experience_ids": [
+       "exp_em_p4_write_three.B.r0_6c9709d9"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:yellow",
+        "kind:cuboid:purple",
+        "kind:cylinder:red",
+        "predicate:placed:obj_purple_2:tray_middle",
+        "predicate:placed:obj_red_3:tray_left",
+        "predicate:placed:obj_yellow_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       16.0
+      ],
+      "round_index": 5,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       1
+      ],
+      "contradicted": [
+       true
+      ],
+      "experience_ids": [
+       "exp_em_p4_write_three.B.r0_6c9709d9"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:yellow",
+        "kind:cuboid:purple",
+        "kind:cylinder:red",
+        "predicate:placed:obj_purple_2:tray_middle",
+        "predicate:placed:obj_red_3:tray_left",
+        "predicate:placed:obj_yellow_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       16.0
+      ],
+      "round_index": 6,
+      "rows": 1,
+      "store_size": 1
+     },
+     {
+      "clash_counts": [
+       0
+      ],
+      "contradicted": [
+       false
+      ],
+      "experience_ids": [
+       "exp_em_p4_write_three.B.r0_6c9709d9"
+      ],
+      "match_terms": [
+       [
+        "kind:cube:yellow",
+        "kind:cuboid:purple",
+        "kind:cylinder:red",
+        "predicate:placed:obj_purple_2:tray_middle",
+        "predicate:placed:obj_red_3:tray_left",
+        "predicate:placed:obj_yellow_1:tray_left",
+        "region:tray_left",
+        "region:tray_middle",
+        "task_kind:em"
+       ]
+      ],
+      "relevance": [
+       16.0
+      ],
+      "round_index": 7,
+      "rows": 1,
+      "store_size": 1
+     }
+    ],
+    "rounds_with_a_row": 7,
+    "rows_offered": 7,
+    "rows_refuted": 5
+   },
+   "treatment_rounds": 7,
+   "treatment_trajectory": [
+    "pick>obj_purple_2",
+    "place>obj_purple_2>tray_middle",
+    "pick>obj_red_3",
+    "place>obj_red_3>tray_left",
+    "pick>obj_yellow_1",
+    "place>obj_yellow_1>tray_left",
+    "finish"
+   ]
+  }
+ ],
+ "planner": "rule",
+ "policy": "memory",
+ "root": "whatever",
+ "seat_note": "rule seat: the reader is MemoryPolicy, so the two arms differ only in memory",
+ "set": "em"
+}

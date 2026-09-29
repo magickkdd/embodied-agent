@@ -1,0 +1,12 @@
+{
+  "run_id": "em_rule_full_memory_memstore_20260929_195603",
+  "root": "whatever/em_p3/full/reader/em_rule_full_memory_memstore_20260929_195603",
+  "planned": 1,
+  "rows": 1,
+  "planner": "rule",
+  "offline": true,
+  "cost_estimate_usd": null,
+  "outcomes": {
+    "success": 1
+  }
+}

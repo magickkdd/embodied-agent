@@ -1,0 +1,95 @@
+{
+  "task_id": "em_p2_write_two",
+  "repeat": 0,
+  "seed": 415,
+  "utterance": "把红色的长方体放到中间托盘，把绿色的圆柱放到左边托盘。",
+  "shared_by_modes": [
+    "A",
+    "B",
+    "C"
+  ],
+  "case_id": "em_p2_write_two",
+  "planner": "rule",
+  "well_formed": true,
+  "error": null,
+  "counters": {
+    "http_requests": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "api_errors": 0,
+    "transport_retries": 0,
+    "format_repairs": 0
+  },
+  "wall_s": 0.086,
+  "model": "rule-interpreter",
+  "prompt_version": "no-prompt",
+  "artifact": "",
+  "assignments": [
+    [
+      {
+        "shape": "cuboid",
+        "color": "red"
+      },
+      "tray_middle"
+    ],
+    [
+      {
+        "shape": "cylinder",
+        "color": "green"
+      },
+      "tray_left"
+    ]
+  ],
+  "provider_meta": {
+    "kind": "goal_parse",
+    "prompt_version": "no-prompt",
+    "provider": "rule",
+    "raw_response": "{\"utterance\": \"把红色的长方体放到中间托盘，把绿色的圆柱放到左边托盘。\"}"
+  },
+  "goal": {
+    "goal_id": "g_add10f5e",
+    "assignments": [
+      {
+        "entity": {
+          "entity_id": null,
+          "attributes": {
+            "shape": "cuboid",
+            "color": "red"
+          },
+          "selector": null
+        },
+        "target_id": "tray_middle"
+      },
+      {
+        "entity": {
+          "entity_id": null,
+          "attributes": {
+            "shape": "cylinder",
+            "color": "green"
+          },
+          "selector": null
+        },
+        "target_id": "tray_left"
+      }
+    ],
+    "ambiguous": false,
+    "clarification_request": null,
+    "prohibitions": [
+      "no stacking",
+      "no throwing"
+    ],
+    "schema_version": "3",
+    "based_on_state_version": null
+  },
+  "prologue": {
+    "http_requests": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "api_errors": 0,
+    "transport_retries": 0,
+    "format_repairs": 0,
+    "wall_start": 1790682956.3215811,
+    "shared_goal": "em_p2_write_two__r0",
+    "shared_goal_artifact": ""
+  }
+}

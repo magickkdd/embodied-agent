@@ -1,0 +1,2 @@
+episode_id,case_id,set,subset,mode,repeat,expected,outcome,failure_type,independent_complete_success,objects_completed,objects_total,agent_claims_success,decision_rounds,skill_calls,http_requests,prompt_tokens,completion_tokens,sim_time_s,wall_time_s,rejected_decisions,false_finish_attempts,identical_invalid_attempts,identical_repeats_total,model_errors,semantic_repairs,slot_resolution_fallbacks,probe,probe_met,events_unfired,protocol_notes
+em_p4_read_three.B.r0,em_p4_read_three,em,episodic,B,0,success,success,,True,3,3,True,7,6,0,0,0,17.75,3.07,0,0,1,0,0,0,3,none,True,0,

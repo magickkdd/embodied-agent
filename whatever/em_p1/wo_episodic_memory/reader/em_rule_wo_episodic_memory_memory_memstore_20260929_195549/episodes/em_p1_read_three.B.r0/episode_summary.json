@@ -1,0 +1,359 @@
+{
+  "episode_id": "em_p1_read_three.B.r0",
+  "case_id": "em_p1_read_three",
+  "set": "em",
+  "subset": "episodic",
+  "mode": "B",
+  "repeat": 0,
+  "expected": "success",
+  "probe": {
+    "probe": "none",
+    "met": true,
+    "detail": "no probe: generic expectation check"
+  },
+  "score": {
+    "eval_id": "eval-em_p1_read_three",
+    "scored_observation_ref": "obs_0029",
+    "scored_state_version": 29,
+    "scored_entities_from": "simulator (TerminalSnapshot.capture)",
+    "scored_sim_time": 16.679,
+    "settle_seconds": 0.5,
+    "objects_total": 3,
+    "objects_completed": 3,
+    "goals_complete_success": true,
+    "protocol_ok": true,
+    "protocol_notes": [],
+    "complete_success": true,
+    "details": {
+      "obj_red_1": {
+        "target": "tray_left",
+        "satisfied": true,
+        "evidence": {
+          "xy_err_x": 0.00024508591068017616,
+          "xy_err_y": 0.009201513416638385,
+          "footprint_half_x": 0.022541493551611877,
+          "footprint_half_y": 0.022540105803961756,
+          "allow_x": 0.126,
+          "allow_y": 0.126,
+          "rest_extent_z": 0.021,
+          "height_err_m": 0.0,
+          "tray_contacts": 1.0,
+          "lin_speed": 0.0,
+          "ang_speed": 0.0001,
+          "in_gripper": 0.0
+        }
+      },
+      "obj_green_2": {
+        "target": "tray_middle",
+        "satisfied": true,
+        "evidence": {
+          "xy_err_x": 0.019860207033418176,
+          "xy_err_y": 0.053705322087202606,
+          "footprint_half_x": 0.027041109340220963,
+          "footprint_half_y": 0.019058385117083593,
+          "allow_x": 0.126,
+          "allow_y": 0.126,
+          "rest_extent_z": 0.035,
+          "height_err_m": 0.0,
+          "tray_contacts": 1.0,
+          "lin_speed": 0.0,
+          "ang_speed": 0.0001,
+          "in_gripper": 0.0
+        }
+      },
+      "obj_blue_3": {
+        "target": "tray_middle",
+        "satisfied": true,
+        "evidence": {
+          "xy_err_x": 0.0027139019216710913,
+          "xy_err_y": 0.01870461564388265,
+          "footprint_half_x": 0.023003276112357866,
+          "footprint_half_y": 0.023001729666287284,
+          "allow_x": 0.126,
+          "allow_y": 0.126,
+          "rest_extent_z": 0.042,
+          "height_err_m": 0.0,
+          "tray_contacts": 1.0,
+          "lin_speed": 0.0,
+          "ang_speed": 0.0005,
+          "in_gripper": 0.0
+        }
+      }
+    }
+  },
+  "perception": {
+    "channel": "privileged",
+    "arm": "wo_episodic_memory",
+    "views": null,
+    "default_view": null,
+    "looks": 0,
+    "look_tokens": {},
+    "look_http_requests": 0,
+    "grounding_map_sha256": null,
+    "perception_events": 0,
+    "ablation_events": 1
+  },
+  "decision_source": {
+    "mode": "B",
+    "policy": "memory",
+    "provider": "rule_memory"
+  },
+  "result": {
+    "episode_id": "em_p1_read_three.B.r0",
+    "task_id": "em_p1_read_three",
+    "terminal_status": "success",
+    "mode": "B",
+    "decision_rounds": 7,
+    "skill_calls": 6,
+    "http_requests": 0,
+    "score_complete_success": true,
+    "objects_total": 3,
+    "objects_completed": 3,
+    "failure_type": null,
+    "recovery_events": 0,
+    "retry_events": 0,
+    "replan_events": 0,
+    "rejected_decisions": 0,
+    "false_finish_attempts": 0,
+    "identical_invalid_attempts": 1,
+    "identical_repeats_total": 0,
+    "model_errors": 0,
+    "semantic_repairs": 0,
+    "provider_counters": {
+      "api_errors": 0,
+      "transport_retries": 0,
+      "format_repairs": 0
+    },
+    "api_cost_estimate": null,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "sim_time_s": 16.68,
+    "wall_time_s": 1.82,
+    "slot_resolution_fallbacks": 3,
+    "human_intervention": false,
+    "config_ref": null,
+    "termination_reason": null,
+    "artifacts": {
+      "terminal_state_version": "29",
+      "terminal_observation_ref": "obs_0029",
+      "unknown_goals": "0",
+      "note": ""
+    }
+  },
+  "goal_resolution": {
+    "planner": "rule",
+    "artifact": "whatever/em_p1/wo_episodic_memory/reader/em_rule_wo_episodic_memory_memory_memstore_20260929_195549/goal_resolutions/em_p1_read_three__r0.json",
+    "shared": true,
+    "counters": {
+      "http_requests": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "api_errors": 0,
+      "transport_retries": 0,
+      "format_repairs": 0
+    },
+    "wall_s": 0.097,
+    "assignments": [
+      [
+        {
+          "shape": "cube",
+          "color": "red"
+        },
+        "tray_left"
+      ],
+      [
+        {
+          "shape": "cuboid",
+          "color": "green"
+        },
+        "tray_middle"
+      ],
+      [
+        {
+          "shape": "cylinder",
+          "color": "blue"
+        },
+        "tray_middle"
+      ]
+    ]
+  },
+  "environment_events": {
+    "declared": [],
+    "unfired": [],
+    "fired": []
+  },
+  "artifacts": {
+    "episode_dir": "whatever/em_p1/wo_episodic_memory/reader/em_rule_wo_episodic_memory_memory_memstore_20260929_195549/episodes/em_p1_read_three.B.r0",
+    "events": "whatever/em_p1/wo_episodic_memory/reader/em_rule_wo_episodic_memory_memory_memstore_20260929_195549/episodes/em_p1_read_three.B.r0/events.jsonl",
+    "terminal_snapshot": "obs_0029",
+    "frames": 0
+  },
+  "wall_time_s": 1.82,
+  "episodic": {
+    "arm": "wo_episodic_memory",
+    "store_path": "whatever/em_p1/wo_episodic_memory/store.jsonl",
+    "store_size_before": 0,
+    "experiences_before": [],
+    "retrievals": 0,
+    "rows_retrieved": 0,
+    "rows_used": 0,
+    "written_experience_id": null,
+    "store_size_after": 0,
+    "store_fingerprint": null,
+    "memory_events": {
+      "memory_retrieval": 0,
+      "memory_use": 0,
+      "memory_write": 0
+    }
+  },
+  "policy": {
+    "provider": "rule_memory",
+    "rounds": 7,
+    "recalled_ids": [],
+    "declines": [],
+    "followed_rounds": [],
+    "trace": [
+      {
+        "round_index": 1,
+        "state_version": 1,
+        "views": [
+          "plan",
+          "working_memory"
+        ],
+        "action": "execute",
+        "skill": "pick",
+        "args": {
+          "object_id": "obj_blue_3"
+        },
+        "subgoal": "sub_5214fc00",
+        "unactuated": [],
+        "rationale": "placed:obj_blue_3:tray_middle is ready and needs obj_blue_3 carried into tray_middle; the hand is empty, so obj_blue_3 is taken up first",
+        "recalled": [],
+        "memory_order": [],
+        "memory_declined": {},
+        "memory_followed": false
+      },
+      {
+        "round_index": 2,
+        "state_version": 5,
+        "views": [
+          "plan",
+          "working_memory"
+        ],
+        "action": "execute",
+        "skill": "place",
+        "args": {
+          "object_id": "obj_blue_3",
+          "target_id": "tray_middle"
+        },
+        "subgoal": "sub_5214fc00",
+        "unactuated": [],
+        "rationale": "placed:obj_blue_3:tray_middle is ready, obj_blue_3 is in hand, so it is seated in tray_middle",
+        "recalled": [],
+        "memory_order": [],
+        "memory_declined": {},
+        "memory_followed": false
+      },
+      {
+        "round_index": 3,
+        "state_version": 10,
+        "views": [
+          "plan",
+          "working_memory"
+        ],
+        "action": "execute",
+        "skill": "pick",
+        "args": {
+          "object_id": "obj_green_2"
+        },
+        "subgoal": "sub_b2164af6",
+        "unactuated": [],
+        "rationale": "placed:obj_green_2:tray_middle is ready and needs obj_green_2 carried into tray_middle; the hand is empty, so obj_green_2 is taken up first",
+        "recalled": [],
+        "memory_order": [],
+        "memory_declined": {},
+        "memory_followed": false
+      },
+      {
+        "round_index": 4,
+        "state_version": 14,
+        "views": [
+          "plan",
+          "working_memory"
+        ],
+        "action": "execute",
+        "skill": "place",
+        "args": {
+          "object_id": "obj_green_2",
+          "target_id": "tray_middle"
+        },
+        "subgoal": "sub_b2164af6",
+        "unactuated": [],
+        "rationale": "placed:obj_green_2:tray_middle is ready, obj_green_2 is in hand, so it is seated in tray_middle",
+        "recalled": [],
+        "memory_order": [],
+        "memory_declined": {},
+        "memory_followed": false
+      },
+      {
+        "round_index": 5,
+        "state_version": 19,
+        "views": [
+          "plan",
+          "working_memory"
+        ],
+        "action": "execute",
+        "skill": "pick",
+        "args": {
+          "object_id": "obj_red_1"
+        },
+        "subgoal": "sub_68a1aca6",
+        "unactuated": [],
+        "rationale": "placed:obj_red_1:tray_left is ready and needs obj_red_1 carried into tray_left; the hand is empty, so obj_red_1 is taken up first",
+        "recalled": [],
+        "memory_order": [],
+        "memory_declined": {},
+        "memory_followed": false
+      },
+      {
+        "round_index": 6,
+        "state_version": 23,
+        "views": [
+          "plan",
+          "working_memory"
+        ],
+        "action": "execute",
+        "skill": "place",
+        "args": {
+          "object_id": "obj_red_1",
+          "target_id": "tray_left"
+        },
+        "subgoal": "sub_68a1aca6",
+        "unactuated": [],
+        "rationale": "placed:obj_red_1:tray_left is ready, obj_red_1 is in hand, so it is seated in tray_left",
+        "recalled": [],
+        "memory_order": [],
+        "memory_declined": {},
+        "memory_followed": false
+      },
+      {
+        "round_index": 7,
+        "state_version": 28,
+        "views": [
+          "plan",
+          "working_memory"
+        ],
+        "action": "finish",
+        "skill": null,
+        "args": null,
+        "subgoal": null,
+        "unactuated": [],
+        "rationale": "every goal in this payload measures satisfied",
+        "recalled": [],
+        "memory_order": [],
+        "memory_declined": {},
+        "memory_followed": false
+      }
+    ]
+  }
+}
