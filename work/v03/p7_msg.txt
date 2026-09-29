@@ -1,0 +1,51 @@
+chore(P7): 发布到 magickkdd/robo-agent（只推源码，27 条历史全保留）
+
+**已推送**：`refs/heads/main` = e20e234，两个 tag（`v0.2`、`continuous-decision-v0.2`）都指到
+重写后的 ca83c42。GitHub 侧确认：公开、default branch main、根目录 15 项、最新提交作者
+`czx <1276618006@qq.com>`。仓库地址 https://github.com/magickkdd/robo-agent
+
+## 三件让"上传"不止一条 push 的事
+
+**一、产物已经在历史里，加 .gitignore 不够。**`runs/` 127.6 MB / 8,461 个文件、`whatever/`
+4.4 MB、`outputs/` 1.4 MB 一直被误跟踪。`git rm --cached` 停止它们继续跟踪，但**不会**让克隆
+变小——那些 blob 在早先的 25 条提交里。公开那份因此是**另建一份重写过的克隆**：
+`git filter-branch` 把三条路径从每条提交里剔掉，再**删掉 `refs/original/`**、清 reflog、
+`gc --prune=now`。删那一步是关键：不删的话 `.git` 仍是 43 MB，**文件数说 403 而体积说 43 MB**
+——重写看起来成功了而实际上没有，那正是第一次 push 打出 `HTTP 408` 的原因（对端在收一个本该
+几 MB 的包时超时）。现在 **403 文件 / 7.9 MB / .git 3.1 MB / 历史里 0 条产物路径**。
+**27 条提交的信息、作者、日期全部保留，只有 SHA 变。**本地这份历史与它自己的 `origin` 不动。
+
+**二、`/home/czx/.gitconfig` 把每个 `https://github.com/` 改写到 `ghfast.top` 第三方镜像。**
+直接 push 会把 `Authorization` 头连同 token 一起交给那个镜像。所以每条 push 都带
+`GIT_CONFIG_GLOBAL=/dev/null`（绕过改写、身份用 `-c` 传）**直连 github.com**。
+
+**三、HTTPS 直连的 git 端点在这条网络上 408，与大小无关。**2.83 MiB 的包，配上
+`http.postBuffer=524288000`、`http.version=HTTP/1.1`、`lowSpeedLimit=0`，**全部无效**；
+而 `api.github.com` 的 200 KB POST 正常、SSH 22 与 443 都通。所以最后走 **SSH**：
+用 token 的一次 `admin:public_key` API 调用把本机 `id_ed25519` 注册到账号上（title
+`wsl-DESKTOP-E93227A`），**push 本身不带任何凭据，只有那把钥匙**。
+这样那份带 `admin:org`、`delete_repo`、`workflow`、`packages` 的 token 就没有被交给任何第三方。
+**token 文件已删除。**
+
+## 我自己犯的两个错
+
+**一、把 token 明文写进了 `work/v03/p7_write_token.py`，而那个文件是被 git 跟踪的。**
+`git add -A` 把它提交了。push 之前发现并清除：`reset --soft` 撤掉那条提交、文件移出索引、
+`git rm --cached`，再用**完整 token** 扫工作树与全部 26 条提交的每一棵树，确认 0 命中。
+（`git grep` 只查工作树，`git log -S` 只查 diff 触及处，两者都不够。）
+**二、清理脚本自己搜的是 token 前缀，于是匹配到了自己**——报了一个只存在于它自己搜索模式里的
+"泄漏"，**一个会匹配自己的检查器比没有检查器更坏**，因为它在没有泄漏的地方报警，从而盖掉下一个。
+已改成拼接构造。
+
+**安全提醒**：token 明文出现在对话里，**请去 GitHub 撤销并重发**（Settings → Developer settings
+→ Personal access tokens）。这份 token 的权限极大（`admin:org`、`delete_repo`、`workflow`、
+`packages`），下一枚建议只给 `repo` + `admin:public_key`，或改用 fine-grained。
+另外 `wsl-DESKTOP-E93227A` 这把 SSH 公钥现在注册在账号上，不需要的话删掉。
+
+## 刻意没有忽略的
+
+`docs/`（全部报告与阶段日志）、`tests/`（契约）、`configs/`（含每份预登记）、`work/v03/`
+（产出那些数字的测量脚本）——本项目的纪律把这些当**记录**而不是输出。批次产物按 SPEC §4.12
+放在仓库外的 `/home/czx/embodied-agent-batches/`，本来就不在仓库里。
+
+脚本：`work/v03/p7_*.sh` / `p7_*.py`（预检、凭据扫描、历史重写、诊断、SSH 推送、核验）。
