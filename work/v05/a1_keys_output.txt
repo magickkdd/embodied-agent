@@ -1,0 +1,137 @@
+
+===== privileged :: long_horizon_rule_full_memstore_skillmem_20260930_130138
+  manifest.perception: {"channel": "privileged", "arm": "full", "modules_off": [], "views": [], "default_view": "main", "note": "9's planning arm on a privileged world: the loop reads the simulator's own inventory and consults no vision model, so this arm's `full` means planning-full and not the whole system (the claim is in every episode's `ablation` record too)"}
+
+  -- lh_c1_shared_pair_restore.B.r0  events=124
+     outcome=None failure_type=None termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'observation': 47, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 11, 'working_memory': 11, 'decision_context': 11, 'decision': 11, 'skill_call': 10, 'execution_feedback': 11, 'environment_event': 1, 'plan_revision': 1, 'recovery_action': 2, 'finish_check': 1, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1}
+     observation          keys=['observation']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     finish_check         keys=['accepted', 'decision_id', 'reports']
+     episode_end          keys=['note', 'result']
+
+  -- lh_c1_shared_pair_restore.B.r1  events=135
+     outcome=None failure_type=None termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'observation': 47, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 11, 'working_memory': 11, 'decision_context': 11, 'decision': 11, 'skill_call': 10, 'execution_feedback': 11, 'memory_use': 11, 'environment_event': 1, 'plan_revision': 1, 'recovery_action': 2, 'finish_check': 1, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1}
+     observation          keys=['observation']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     finish_check         keys=['accepted', 'decision_id', 'reports']
+     episode_end          keys=['note', 'result']
+
+  -- lh_c3_capacity_and_shift.B.r0  events=155
+     outcome=None failure_type=None termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'observation': 56, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 13, 'working_memory': 13, 'decision_context': 13, 'decision': 13, 'skill_call': 12, 'execution_feedback': 13, 'memory_use': 13, 'environment_event': 1, 'finish_check': 1, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1}
+     observation          keys=['observation']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     finish_check         keys=['accepted', 'decision_id', 'reports']
+     episode_end          keys=['note', 'result']
+
+  -- lh_c3_capacity_and_shift.B.r1  events=155
+     outcome=None failure_type=None termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'observation': 56, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 13, 'working_memory': 13, 'decision_context': 13, 'decision': 13, 'skill_call': 12, 'execution_feedback': 13, 'memory_use': 13, 'environment_event': 1, 'finish_check': 1, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1}
+     observation          keys=['observation']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     finish_check         keys=['accepted', 'decision_id', 'reports']
+     episode_end          keys=['note', 'result']
+
+===== stub :: long_horizon_rule_stub_memstore_skillmem_20260930_130206
+  manifest.perception: {"channel": "stub", "arm": "wo_vlm", "modules_off": ["vlm"], "views": [], "default_view": "main", "note": "the loop's world comes from a rendered frame"}
+
+  -- lh_c1_shared_pair_restore.B.r0  events=77
+     outcome=None failure_type=REPEATED_INVALID termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'observation': 26, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 6, 'working_memory': 6, 'decision_context': 6, 'decision': 6, 'skill_call': 6, 'execution_feedback': 6, 'recovery_action': 4, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1, 'skill_gap': 1, 'skill_candidate': 1, 'skill_validation': 1, 'skill_library': 1}
+     observation          keys=['observation']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     episode_end          keys=['note', 'result']
+     perception/ files=52 first=['look_0001_main.depth.npy', 'look_0001_main.png']
+
+  -- lh_c1_shared_pair_restore.B.r1  events=83
+     outcome=None failure_type=REPEATED_INVALID termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'observation': 26, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 6, 'working_memory': 6, 'decision_context': 6, 'decision': 6, 'skill_call': 6, 'execution_feedback': 6, 'memory_use': 6, 'recovery_action': 4, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1, 'skill_gap': 1, 'skill_candidate': 1, 'skill_validation': 1, 'skill_library': 1}
+     observation          keys=['observation']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     episode_end          keys=['note', 'result']
+     perception/ files=52 first=['look_0001_main.depth.npy', 'look_0001_main.png']
+
+  -- lh_c3_capacity_and_shift.B.r0  events=50
+     outcome=None failure_type=None termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'observation': 15, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 4, 'working_memory': 4, 'decision_context': 4, 'decision': 4, 'skill_call': 3, 'execution_feedback': 3, 'memory_use': 3, 'plan_revision': 2, 'terminated_blocked': 1, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1}
+     observation          keys=['observation']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     terminated_blocked   keys=['decision_id', 'note']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     episode_end          keys=['note', 'result']
+     perception/ files=30 first=['look_0001_main.depth.npy', 'look_0001_main.png']
+
+  -- lh_c3_capacity_and_shift.B.r1  events=50
+     outcome=None failure_type=None termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'observation': 15, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 4, 'working_memory': 4, 'decision_context': 4, 'decision': 4, 'skill_call': 3, 'execution_feedback': 3, 'memory_use': 3, 'plan_revision': 2, 'terminated_blocked': 1, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1}
+     observation          keys=['observation']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     terminated_blocked   keys=['decision_id', 'note']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     episode_end          keys=['note', 'result']
+     perception/ files=30 first=['look_0001_main.depth.npy', 'look_0001_main.png']
+
+===== vlm :: long_horizon_rule_vlm_memstore_skillmem_20260930_130350
+  manifest.perception: {"channel": "vlm", "arm": "full", "modules_off": [], "views": [], "default_view": "main", "note": "the loop's world comes from a rendered frame"}
+
+  -- lh_c1_shared_pair_restore.B.r0  events=102
+     outcome=None failure_type=BUDGET_EXHAUSTED termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'perception': 27, 'observation': 27, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 6, 'working_memory': 6, 'decision_context': 6, 'decision': 6, 'skill_call': 6, 'execution_feedback': 6, 'recovery_action': 2, 'plan_revision': 2, 'environment_event': 1, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1}
+     observation          keys=['observation']
+     perception           keys=['_clobbered_reserved_keys', 'based_on_observation_ref', 'based_on_state_version', 'camera_id', 'changes', 'created_at', 'depth_ref', 'detections', 'frame_index', 'image_ref', 'latency_s', 'modality', 'model', 'model_return_id', 'observation_id', 'prompt_sha256', 'provenance', 'raw_text', 'regions', 'relations', 'source', 'state_version', 'timestamp_sim', 'timestamp_wall', 'tokens', 'uncertainties', 'updated_at', 'view', 'visibility']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     episode_end          keys=['note', 'result']
+     perception/ files=54 first=['look_0001_main.depth.npy', 'look_0001_main.png']
+
+  -- lh_c1_shared_pair_restore.B.r1  events=89
+     outcome=None failure_type=BUDGET_EXHAUSTED termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'perception': 22, 'observation': 22, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 5, 'working_memory': 5, 'decision_context': 5, 'decision': 5, 'skill_call': 5, 'execution_feedback': 5, 'memory_use': 5, 'recovery_action': 2, 'plan_revision': 1, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1}
+     observation          keys=['observation']
+     perception           keys=['_clobbered_reserved_keys', 'based_on_observation_ref', 'based_on_state_version', 'camera_id', 'changes', 'created_at', 'depth_ref', 'detections', 'frame_index', 'image_ref', 'latency_s', 'modality', 'model', 'model_return_id', 'observation_id', 'prompt_sha256', 'provenance', 'raw_text', 'regions', 'relations', 'source', 'state_version', 'timestamp_sim', 'timestamp_wall', 'tokens', 'uncertainties', 'updated_at', 'view', 'visibility']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     episode_end          keys=['note', 'result']
+     perception/ files=44 first=['look_0001_main.depth.npy', 'look_0001_main.png']
+
+  -- lh_c3_capacity_and_shift.B.r0  events=116
+     outcome=None failure_type=None termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'perception': 28, 'observation': 28, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 7, 'working_memory': 7, 'decision_context': 7, 'decision': 7, 'skill_call': 6, 'execution_feedback': 6, 'memory_use': 6, 'plan_revision': 2, 'recovery_action': 4, 'terminated_blocked': 1, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1}
+     observation          keys=['observation']
+     perception           keys=['_clobbered_reserved_keys', 'based_on_observation_ref', 'based_on_state_version', 'camera_id', 'changes', 'created_at', 'depth_ref', 'detections', 'frame_index', 'image_ref', 'latency_s', 'modality', 'model', 'model_return_id', 'observation_id', 'prompt_sha256', 'provenance', 'raw_text', 'regions', 'relations', 'source', 'state_version', 'timestamp_sim', 'timestamp_wall', 'tokens', 'uncertainties', 'updated_at', 'view', 'visibility']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     terminated_blocked   keys=['decision_id', 'note']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     episode_end          keys=['note', 'result']
+     perception/ files=56 first=['look_0001_main.depth.npy', 'look_0001_main.png']
+
+  -- lh_c3_capacity_and_shift.B.r1  events=65
+     outcome=None failure_type=None termination_reason=None
+     types: {'episode_start': 1, 'ablation': 1, 'perception': 15, 'observation': 15, 'task_understanding': 1, 'plan': 1, 'memory_retrieval': 4, 'working_memory': 4, 'decision_context': 4, 'decision': 4, 'skill_call': 3, 'execution_feedback': 3, 'memory_use': 3, 'recovery_action': 1, 'plan_revision': 1, 'terminated_blocked': 1, 'obligation_check': 1, 'episode_end': 1, 'memory_write': 1}
+     observation          keys=['observation']
+     perception           keys=['_clobbered_reserved_keys', 'based_on_observation_ref', 'based_on_state_version', 'camera_id', 'changes', 'created_at', 'depth_ref', 'detections', 'frame_index', 'image_ref', 'latency_s', 'modality', 'model', 'model_return_id', 'observation_id', 'prompt_sha256', 'provenance', 'raw_text', 'regions', 'relations', 'source', 'state_version', 'timestamp_sim', 'timestamp_wall', 'tokens', 'uncertainties', 'updated_at', 'view', 'visibility']
+     decision             keys=['_clobbered_reserved_keys', 'action', 'based_on_state_version', 'context_id', 'decision_id', 'evidence_refs', 'execute', 'expected_effect', 'goal_ref', 'missing_information', 'rationale']
+     execution_feedback   keys=['feedback']
+     terminated_blocked   keys=['decision_id', 'note']
+     skill_call           keys=['call', 'context_id', 'decision_id']
+     episode_end          keys=['note', 'result']
+     perception/ files=30 first=['look_0001_main.depth.npy', 'look_0001_main.png']

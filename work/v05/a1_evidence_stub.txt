@@ -1,0 +1,66 @@
+
+stub / lh_c1_shared_pair_restore.B.r0 / item3 {'shape': 'cylinder', 'color': 'purple'} -> tray_right
+   r1  v1   bound=False value=unknown actionable=False frame detections of that colour=[['purple', 'cuboid']] mode=shape_mismatch
+   r2  v5   bound=False value=unknown actionable=False frame detections of that colour=[['purple', 'cuboid']] mode=shape_mismatch
+   r3  v10  bound=False value=unknown actionable=False frame detections of that colour=[['purple', 'cuboid']] mode=shape_mismatch
+   r4  v14  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r5  v18  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r6  v22  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+
+stub / lh_c1_shared_pair_restore.B.r1 / item3 {'shape': 'cylinder', 'color': 'purple'} -> tray_right
+   r1  v1   bound=False value=unknown actionable=False frame detections of that colour=[['purple', 'cuboid']] mode=shape_mismatch
+   r2  v5   bound=False value=unknown actionable=False frame detections of that colour=[['purple', 'cuboid']] mode=shape_mismatch
+   r3  v10  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r4  v14  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r5  v18  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r6  v22  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+
+stub / lh_c3_capacity_and_shift.B.r0 / item0 {'shape': 'cube', 'color': 'yellow'} -> tray_middle
+   r1  v1   bound=False value=unknown actionable=False frame detections of that colour=[['yellow', 'cylinder']] mode=shape_mismatch
+   r2  v5   bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r3  v10  bound=True  value=false   actionable=True  frame detections of that colour=[] mode=bound
+   r4  v14  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+
+stub / lh_c3_capacity_and_shift.B.r0 / item2 {'shape': 'cuboid', 'color': 'red'} -> tray_right
+   r1  v1   bound=True  value=false   actionable=True  frame detections of that colour=[['red', 'cuboid']] mode=bound
+   r2  v5   bound=True  value=false   actionable=True  frame detections of that colour=[] mode=bound
+   r3  v10  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r4  v14  bound=True  value=false   actionable=True  frame detections of that colour=[] mode=bound
+
+stub / lh_c3_capacity_and_shift.B.r0 / item3 {'shape': 'cylinder', 'color': 'green'} -> tray_left
+   r1  v1   bound=False value=unknown actionable=False frame detections of that colour=[['green', 'cuboid']] mode=shape_mismatch
+   r2  v5   bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r3  v10  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r4  v14  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+
+stub / lh_c3_capacity_and_shift.B.r0 / item5 {'shape': 'cuboid', 'color': 'yellow'} -> tray_left
+   r1  v1   bound=False value=unknown actionable=False frame detections of that colour=[['yellow', 'cylinder']] mode=shape_mismatch
+   r2  v5   bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r3  v10  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r4  v14  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+
+stub / lh_c3_capacity_and_shift.B.r1 / item0 {'shape': 'cube', 'color': 'yellow'} -> tray_middle
+   r1  v1   bound=False value=unknown actionable=False frame detections of that colour=[['yellow', 'cylinder']] mode=shape_mismatch
+   r2  v5   bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r3  v10  bound=True  value=false   actionable=True  frame detections of that colour=[] mode=bound
+   r4  v14  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+
+stub / lh_c3_capacity_and_shift.B.r1 / item2 {'shape': 'cuboid', 'color': 'red'} -> tray_right
+   r1  v1   bound=True  value=false   actionable=True  frame detections of that colour=[['red', 'cuboid']] mode=bound
+   r2  v5   bound=True  value=false   actionable=True  frame detections of that colour=[] mode=bound
+   r3  v10  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r4  v14  bound=True  value=false   actionable=True  frame detections of that colour=[] mode=bound
+
+stub / lh_c3_capacity_and_shift.B.r1 / item3 {'shape': 'cylinder', 'color': 'green'} -> tray_left
+   r1  v1   bound=False value=unknown actionable=False frame detections of that colour=[['green', 'cuboid']] mode=shape_mismatch
+   r2  v5   bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r3  v10  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r4  v14  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+
+stub / lh_c3_capacity_and_shift.B.r1 / item5 {'shape': 'cuboid', 'color': 'yellow'} -> tray_left
+   r1  v1   bound=False value=unknown actionable=False frame detections of that colour=[['yellow', 'cylinder']] mode=shape_mismatch
+   r2  v5   bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r3  v10  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+   r4  v14  bound=False value=unknown actionable=False frame detections of that colour=[] mode=frame_did_not_see_the_colour
+
+== per-round modes over every item with an unbound round [stub]: {'shape_mismatch': 11, 'frame_did_not_see_the_colour': 25, 'bound': 8}

@@ -1,0 +1,3040 @@
+{
+ "channel": "stub",
+ "reader": "StubReader (deterministic, offline replay)",
+ "episodes": [
+  {
+   "case_id": "lh_c1_shared_pair_restore",
+   "episode_id": "lh_c1_shared_pair_restore.B.r0",
+   "looks": [
+    {
+     "observation_index": 0,
+     "frame_id": "look_0001_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.898,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.692,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 1,
+     "frame_id": "look_0002_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.898,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.692,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 2,
+     "frame_id": "look_0003_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.898,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.692,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 3,
+     "frame_id": "look_0004_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.94,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.876,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 4,
+     "frame_id": "look_0005_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.94,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.876,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 5,
+     "frame_id": "look_0006_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.94,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.876,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 6,
+     "frame_id": "look_0007_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.94,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.876,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 7,
+     "frame_id": "look_0008_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 8,
+     "frame_id": "look_0009_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 9,
+     "frame_id": "look_0010_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 10,
+     "frame_id": "look_0011_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 11,
+     "frame_id": "look_0012_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 12,
+     "frame_id": "look_0013_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 13,
+     "frame_id": "look_0014_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 14,
+     "frame_id": "look_0015_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 15,
+     "frame_id": "look_0016_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 16,
+     "frame_id": "look_0017_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 17,
+     "frame_id": "look_0018_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 18,
+     "frame_id": "look_0019_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 19,
+     "frame_id": "look_0020_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 20,
+     "frame_id": "look_0021_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 21,
+     "frame_id": "look_0022_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 22,
+     "frame_id": "look_0023_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 23,
+     "frame_id": "look_0024_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 24,
+     "frame_id": "look_0025_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 25,
+     "frame_id": "look_0026_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "case_id": "lh_c1_shared_pair_restore",
+   "episode_id": "lh_c1_shared_pair_restore.B.r1",
+   "looks": [
+    {
+     "observation_index": 0,
+     "frame_id": "look_0001_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.898,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.692,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 1,
+     "frame_id": "look_0002_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.898,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.692,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 2,
+     "frame_id": "look_0003_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.898,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.692,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 3,
+     "frame_id": "look_0004_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.94,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.876,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 4,
+     "frame_id": "look_0005_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.94,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.876,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 5,
+     "frame_id": "look_0006_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.94,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.876,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 6,
+     "frame_id": "look_0007_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.94,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.876,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 7,
+     "frame_id": "look_0008_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 8,
+     "frame_id": "look_0009_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 9,
+     "frame_id": "look_0010_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 10,
+     "frame_id": "look_0011_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 11,
+     "frame_id": "look_0012_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 12,
+     "frame_id": "look_0013_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 13,
+     "frame_id": "look_0014_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 14,
+     "frame_id": "look_0015_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 15,
+     "frame_id": "look_0016_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 16,
+     "frame_id": "look_0017_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 17,
+     "frame_id": "look_0018_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 18,
+     "frame_id": "look_0019_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 19,
+     "frame_id": "look_0020_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 20,
+     "frame_id": "look_0021_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 21,
+     "frame_id": "look_0022_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 22,
+     "frame_id": "look_0023_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 23,
+     "frame_id": "look_0024_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 24,
+     "frame_id": "look_0025_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 25,
+     "frame_id": "look_0026_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "purple",
+       "shape": "cuboid",
+       "confidence": 0.905,
+       "ref": "紫色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cuboid",
+       "confidence": 0.951,
+       "ref": "蓝色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cube",
+       "confidence": 0.951,
+       "ref": "绿色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.847,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "case_id": "lh_c3_capacity_and_shift",
+   "episode_id": "lh_c3_capacity_and_shift.B.r0",
+   "looks": [
+    {
+     "observation_index": 0,
+     "frame_id": "look_0001_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.855,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 1,
+     "frame_id": "look_0002_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.855,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 2,
+     "frame_id": "look_0003_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.855,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 3,
+     "frame_id": "look_0004_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.893,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 4,
+     "frame_id": "look_0005_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.893,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 5,
+     "frame_id": "look_0006_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.893,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 6,
+     "frame_id": "look_0007_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.893,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 7,
+     "frame_id": "look_0008_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.392,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.726,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 8,
+     "frame_id": "look_0009_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.392,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.726,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 9,
+     "frame_id": "look_0010_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.392,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.726,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 10,
+     "frame_id": "look_0011_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.392,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.726,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 11,
+     "frame_id": "look_0012_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.392,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.726,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 12,
+     "frame_id": "look_0013_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.133,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.91,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 13,
+     "frame_id": "look_0014_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.133,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.91,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 14,
+     "frame_id": "look_0015_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.133,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.858,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "case_id": "lh_c3_capacity_and_shift",
+   "episode_id": "lh_c3_capacity_and_shift.B.r1",
+   "looks": [
+    {
+     "observation_index": 0,
+     "frame_id": "look_0001_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.855,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 1,
+     "frame_id": "look_0002_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.855,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 2,
+     "frame_id": "look_0003_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.855,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 3,
+     "frame_id": "look_0004_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.893,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 4,
+     "frame_id": "look_0005_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.893,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 5,
+     "frame_id": "look_0006_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.893,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 6,
+     "frame_id": "look_0007_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.126,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.893,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 7,
+     "frame_id": "look_0008_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.392,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.726,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 8,
+     "frame_id": "look_0009_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.392,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.726,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 9,
+     "frame_id": "look_0010_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.392,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.726,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 10,
+     "frame_id": "look_0011_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.392,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.726,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 11,
+     "frame_id": "look_0012_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.896,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.392,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "yellow",
+       "shape": "cube",
+       "confidence": 0.726,
+       "ref": "黄色方块",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 12,
+     "frame_id": "look_0013_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.133,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.91,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 13,
+     "frame_id": "look_0014_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.133,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.91,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    },
+    {
+     "observation_index": 14,
+     "frame_id": "look_0015_main",
+     "view": "main",
+     "objects": [
+      {
+       "color": "yellow",
+       "shape": "cylinder",
+       "confidence": 0.133,
+       "ref": "黄色圆柱",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "green",
+       "shape": "cuboid",
+       "confidence": 0.858,
+       "ref": "绿色长方体",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "purple",
+       "shape": "cube",
+       "confidence": 0.874,
+       "ref": "紫色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "blue",
+       "shape": "cube",
+       "confidence": 0.983,
+       "ref": "蓝色方块",
+       "how_identified": "segmented"
+      },
+      {
+       "color": "red",
+       "shape": "cuboid",
+       "confidence": 0.92,
+       "ref": "红色长方体",
+       "how_identified": "segmented"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

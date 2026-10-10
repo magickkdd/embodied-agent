@@ -1,0 +1,4 @@
+scorer file: /home/czx/embodied-agent-batches/v04/e1/lh_score/long_horizon_v0.json  runs=3 episodes=34
+compared 34 episodes; mismatches: 0
+instrument trigger count (v04 model seat): 1
+OK

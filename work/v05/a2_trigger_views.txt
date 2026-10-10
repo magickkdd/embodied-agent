@@ -1,0 +1,99 @@
+
+===== v04 / long_horizon_full / lh_c2_displaced_completion.B.r0  (seat agnes/agnes-2.5-flash, outcome failed/REPEATED_INVALID)
+{
+ "event_index": 75,
+ "type": "plan_revision",
+ "trigger": "new_observation",
+ "version": 2,
+ "changed": {
+  "added": [
+   "placed:obj_green_5:tray_middle"
+  ],
+  "dropped": [],
+  "reopened": [],
+  "relabelled": [
+   "placed:obj_green_5:tray_left"
+  ],
+  "rewired": [
+   "placed:obj_blue_1:tray_left"
+  ]
+ },
+ "dependencies": [
+  {
+   "dep_id": "dep_1bd9de7d",
+   "from": "sub_8e976f40",
+   "on": "sub_af4df491",
+   "kind": "recovery",
+   "satisfied": "True",
+   "violated": "False",
+   "note": "obj_green_5 was displaced out of tray_left to let obj_blue_1 in and must be restored before the task ends"
+  }
+ ],
+ "violated": []
+}
+
+===== v03 / long_horizon_full / lh_c1_shared_pair_restore.B.r0  (seat agnes/agnes-2.5-flash, outcome success/None)
+{
+ "event_index": 70,
+ "type": "plan_revision",
+ "trigger": "new_observation",
+ "version": 3,
+ "changed": {
+  "added": [
+   "placed:obj_blue_2:tray_middle"
+  ],
+  "dropped": [],
+  "reopened": [],
+  "relabelled": [
+   "placed:obj_blue_2:tray_right"
+  ],
+  "rewired": [
+   "placed:obj_green_1:tray_right"
+  ]
+ },
+ "dependencies": [
+  {
+   "dep_id": "dep_0238e913",
+   "from": "sub_59c45d4b",
+   "on": "sub_6ec534a8",
+   "kind": "recovery",
+   "satisfied": "True",
+   "violated": "False",
+   "note": "obj_blue_2 was displaced out of tray_right to let obj_green_1 in and must be restored before the task ends"
+  }
+ ],
+ "violated": []
+}
+
+===== v03 / long_horizon_full / lh_c2_displaced_completion.B.r1  (seat agnes/agnes-2.5-flash, outcome failed/MODEL_ERROR)
+{
+ "event_index": 87,
+ "type": "plan_revision",
+ "trigger": "new_observation",
+ "version": 2,
+ "changed": {
+  "added": [
+   "placed:obj_green_5:tray_middle"
+  ],
+  "dropped": [],
+  "reopened": [],
+  "relabelled": [
+   "placed:obj_green_5:tray_left"
+  ],
+  "rewired": [
+   "placed:obj_blue_1:tray_left"
+  ]
+ },
+ "dependencies": [
+  {
+   "dep_id": "dep_42fe1ddb",
+   "from": "sub_41f2b395",
+   "on": "sub_fb4777eb",
+   "kind": "recovery",
+   "satisfied": "True",
+   "violated": "False",
+   "note": "obj_green_5 was displaced out of tray_left to let obj_blue_1 in and must be restored before the task ends"
+  }
+ ],
+ "violated": []
+}

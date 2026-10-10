@@ -1,0 +1,5569 @@
+
+
+########## stub manifest keys: ['budget_profile', 'cases', 'code', 'decision_source', 'dependencies', 'environment_variables', 'episodic', 'frozen', 'goal_resolution', 'model', 'modes', 'offline', 'perception', 'planner', 'platform', 'pre_registration', 'python', 'recorded_at', 'repeats', 'run_id', 'scene', 'schema_version', 'scoring_version', 'set', 'skill_acquisition']
+
+--- stub.manifest.planner
+"rule"
+
+--- stub.manifest.model
+{
+ "provider": "rule",
+ "model": "rule-interpreter",
+ "prompt_version": "no-prompt",
+ "sampling": null,
+ "pricing_configured": false
+}
+
+--- stub.manifest.decision_source
+{
+ "policy": "rule",
+ "note": "the v0.1 control, unchanged"
+}
+
+--- stub.manifest.offline
+true
+
+--- stub.manifest.modes
+[
+ "B"
+]
+
+
+===== stub / lh_c1_shared_pair_restore.B.r0 summary keys: ['artifacts', 'case_id', 'decision_source', 'environment_events', 'episode_id', 'episodic', 'expected', 'goal_resolution', 'mode', 'perception', 'probe', 'repeat', 'result', 'score', 'set', 'skill_acquisition', 'subset', 'wall_time_s']
+
+--- lh_c1_shared_pair_restore.B.r0.summary.top
+{
+ "episode_id": "lh_c1_shared_pair_restore.B.r0",
+ "case_id": "lh_c1_shared_pair_restore",
+ "set": "long_horizon",
+ "subset": "long_horizon",
+ "mode": "B",
+ "repeat": 0,
+ "expected": "success",
+ "probe": {
+  "probe": "none",
+  "met": false,
+  "detail": "no probe: generic expectation check"
+ },
+ "score": {
+  "eval_id": "eval-lh_c1_shared_pair_restore",
+  "scored_observation_ref": "per_de66abb8",
+  "scored_state_version": 26,
+  "scored_entities_from": "simulator (TerminalSnapshot.capture)",
+  "scored_sim_time": 7.946,
+  "settle_seconds": 0.5,
+  "objects_total": 4,
+  "objects_completed": 1,
+  "goals_complete_success": false,
+  "protocol_ok": false,
+  "protocol_notes": [
+   "terminal_status=failed",
+   "failure_type=REPEATED_INVALID"
+  ],
+  "complete_success": false,
+  "details": {
+   "obj_green_1": {
+    "target": "tray_right",
+    "satisfied": true,
+    "evidence": {
+     "xy_err_x": 0.000128448822409033,
+     "xy_err_y": 0.01689038050491698,
+     "footprint_half_x": 0.022284600769568532,
+     "footprint_half_y": 0.022282923222963723,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.0,
+     "tray_contacts": 1.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0002,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_blue_2": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.27147700776566785,
+     "xy_err_y": 0.31228210943529305,
+     "footprint_half_x": 0.02866349717249862,
+     "footprint_half_y": 0.02144934877330595,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.035,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_yellow_3": {
+    "target": "tray_left",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.28802090044046974,
+     "xy_err_y": 0.4708614045373062,
+     "footprint_half_x": 0.024677612282108685,
+     "footprint_half_y": 0.02467761228064447,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_purple_4": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.21274226851665834,
+     "xy_err_y": 0.4785085651089458,
+     "footprint_half_x": 0.023005422963559067,
+     "footprint_half_y": 0.023002417947865103,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.042,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_s
+
+--- lh_c1_shared_pair_restore.B.r0.summary.result
+{
+ "episode_id": "lh_c1_shared_pair_restore.B.r0",
+ "task_id": "lh_c1_shared_pair_restore",
+ "terminal_status": "failed",
+ "mode": "B",
+ "decision_rounds": 6,
+ "skill_calls": 6,
+ "http_requests": 0,
+ "score_complete_success": false,
+ "objects_total": 4,
+ "objects_completed": 1,
+ "failure_type": "REPEATED_INVALID",
+ "recovery_events": 4,
+ "retry_events": 0,
+ "replan_events": 0,
+ "rejected_decisions": 0,
+ "false_finish_attempts": 0,
+ "identical_invalid_attempts": 4,
+ "identical_repeats_total": 3,
+ "model_errors": 0,
+ "semantic_repairs": 0,
+ "provider_counters": {
+  "api_errors": 0,
+  "transport_retries": 0,
+  "format_repairs": 0
+ },
+ "api_cost_estimate": null,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "sim_time_s": 7.95,
+ "wall_time_s": 31.89,
+ "slot_resolution_fallbacks": 1,
+ "human_intervention": false,
+ "config_ref": null,
+ "termination_reason": null,
+ "artifacts": {
+  "terminal_state_version": "26",
+  "terminal_observation_ref": "per_de66abb8",
+  "unknown_goals": "1",
+  "note": "identical action with no new evidence"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.observation
+{
+ "observation": {
+  "observation_ref": "per_c45d8371",
+  "state_version": 1,
+  "sim_time": 0.49999999999999944,
+  "wall_time": 1790744527.8033118,
+  "source": "sensor",
+  "held_object": null,
+  "n_entities": 4
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.decision_context
+{
+ "context_id": "ctx_19e10072",
+ "round_index": 1,
+ "state_version": 1,
+ "observation_ref": "per_c45d8371",
+ "goal_version": 1,
+ "progress": [
+  {
+   "entity_id": "obj_green_1",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.692,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.28590000000000004,
+    "xy_err_y": 0.49219999999999997,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.4026,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_c45d8371"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_green_1:tray_right"
+  },
+  {
+   "entity_id": "obj_blue_2",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.951,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.27180000000000004,
+    "xy_err_y": 0.3126,
+    "footprint_half_x": 0.048114446894877635,
+    "footprint_half_y": 0.048114446894877635,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.2347,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_c45d8371"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_blue_2:tray_right"
+  },
+  {
+   "entity_id": "obj_yellow_3",
+   "target_id": "tray_left",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.847,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.28830000000000006,
+    "xy_err_y": 0.4718,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.3822,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_c45d8371"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_yellow_3:tray_left"
+  },
+  {
+   "entity_id": "{'shape': 'cylinder', 'color': 'purple'}",
+   "target_id": "tray_right",
+   "value": "unknown",
+   "evidence": {
+    "entity_bound": 0.0
+   },
+   "evidence_refs": [
+    "per_c45d8371"
+   ],
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "predicate_id": "placed:?{'shape': 'cylinder', 'color': 'purple'}:tray_right"
+  }
+ ],
+ "candidates": [
+  {
+   "candidate_id": "cand-tray_right-obj_green_1
+
+--- lh_c1_shared_pair_restore.B.r0.decision
+{
+ "decision_id": "d_cf78e798",
+ "context_id": "ctx_19e10072",
+ "based_on_state_version": 1,
+ "goal_ref": "g_efa1f7f2",
+ "action": "execute",
+ "execute": {
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_green_1"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_c45d8371"
+ ],
+ "rationale": "pick obj_green_1",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.decision
+{
+ "decision_id": "d_74fc7725",
+ "context_id": "ctx_0698a2ea",
+ "based_on_state_version": 5,
+ "goal_ref": "g_efa1f7f2",
+ "action": "execute",
+ "execute": {
+  "skill": "place",
+  "args": {
+   "object_id": "obj_green_1",
+   "target_id": "tray_right"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_267f3a87"
+ ],
+ "rationale": "place obj_green_1 into tray_right",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_103a5a7d",
+  "decision_id": "d_cf78e798",
+  "call_id": "c_043b297b",
+  "context_id": "ctx_19e10072",
+  "skill": "pick",
+  "entity_id": "obj_green_1",
+  "target_id": null,
+  "candidate_id": null,
+  "candidate_resolution": null,
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "approach",
+   "open_gripper",
+   "descend",
+   "close_gripper",
+   "lift",
+   "grasp_check"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_c45d8371",
+  "post_observation_ref": "per_d45e8eeb",
+  "new_measurement": true,
+  "pre_state_version": 1,
+  "post_state_version": 4,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "grasp:obj_green_1",
+     "description": "the gripper reports holding this entity; the lift itself is not a quantity a frame of the table can measure",
+     "value": "true",
+     "evidence": {
+      "gripper_named_the_entity": 1.0,
+      "gripper_reports_empty": 0.0,
+      "gripper_report_is_ambiguous": 0.0,
+      "reported_by_this_view": 1.0,
+      "held_flag_is_true": 1.0
+     },
+     "evidence_refs": [
+      "per_d45e8eeb"
+     ],
+     "unmeasured": [
+      "lift_gain_m",
+      "hold_state"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_d45e8eeb",
+   "state_version": 4
+  },
+  "held_object_after": "obj_green_1",
+  "progress_changes": [],
+  "affected_entities": [],
+  "measurements": {
+   "lift_gain_m": 0.0833,
+   "follow_err_m": 0.0051,
+   "in_contact": 1.0,
+   "support_z_m": 0.641
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_green_1",
+     "dxy": [
+      -0.047,
+      -0.0228
+     ],
+     "dz": 0.0001,
+     "dist_m": 0.0522
+    }
+   ],
+   "state_changed": [
+    {
+     "entity_id": "obj_green_1",
+     "dxy": [
+      -0.047,
+      -0.0228
+     ],
+     "dz": 0.0001,
+     "dist_m": 0.0522,
+     "hold_before_after": [
+      "unknown",
+      "True"
+     ],
+     "support_before_after": [
+      "table",
+      "table"
+     ]
+    }
+   ],
+   "position_unmeasured": [],
+   "held_before": "None",
+   "held_after": "obj_green_1"
+  },
+  "rejection_reasons": [],
+  "environment_text": null,
+  "cause_confirmed": false,
+  "sim_seconds_used": 1.654,
+  "schema_version": "3"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_f5b9debd",
+  "decision_id": "d_74fc7725",
+  "call_id": "c_8abd3f3b",
+  "context_id": "ctx_0698a2ea",
+  "skill": "place",
+  "entity_id": "obj_green_1",
+  "target_id": "tray_right",
+  "candidate_id": null,
+  "candidate_resolution": "runtime_fallback_rule",
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "transfer",
+   "descend",
+   "release",
+   "retreat",
+   "settle"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_267f3a87",
+  "post_observation_ref": "per_76cd1318",
+  "new_measurement": true,
+  "pre_state_version": 5,
+  "post_state_version": 9,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "placed:obj_green_1:tray_right",
+     "description": "resting on the target surface and its orientation-invariant footprint clears the wall by the declared margin; hold, rest and seating height unmeasured",
+     "value": "true",
+     "evidence": {
+      "claim_confidence": 0.951,
+      "located": 1.0,
+      "relation_matches_target": 1.0,
+      "xy_err_x": 9.999999999998899e-05,
+      "xy_err_y": 0.017600000000000005,
+      "footprint_half_x": 0.036373066958946425,
+      "footprint_half_y": 0.036373066958946425,
+      "allow_x": 0.126,
+      "allow_y": 0.126,
+      "wall_margin_m": 0.072,
+      "occupies_target": 1.0
+     },
+     "evidence_refs": [
+      "per_76cd1318"
+     ],
+     "unmeasured": [
+      "rest_z_vs_assumed_orientation",
+      "hold_state",
+      "at_rest"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_76cd1318",
+   "state_version": 9
+  },
+  "held_object_after": null,
+  "progress_changes": [
+   {
+    "assignment": "obj_green_1->tray_right",
+    "from": "false",
+    "to": "true"
+   }
+  ],
+  "affected_entities": [
+   "obj_purple_4"
+  ],
+  "measurements": {
+   "candidate_x": 0.66,
+   "candidate_y": 0.32,
+   "candidate_rest_z": 0.649,
+   "carry_offset_x_m": -0.0017,
+   "carry_offset_y_m": 0.0149,
+   "descent_touchdown": 1.0,
+   "release_height_m": 0.0238,
+   "release_gap_above_seat_m": 0.0028,
+   "fingers_clear_after_open": 0.0,
+   "final_x": 0.6601,
+   "final_y": 0.3369,
+   "final_z": 0.649,
+   "lin_speed": 0.0,
+   "ang_speed": 0.0002,
+   "inside_target": 1.0,
+   "gripper_free": 1.0,
+   "at_rest": 1.0,
+   "footprint_half_x": 0.0223,
+   "footprint_half_y": 0.0223,
+   "displacement_from_candidate_m": 0.0169
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_purple_4",
+     "dxy": [
+      0.0006,
+      0.01
+     ],
+     "dz": 0.0,
+     "dist_m": 0.01
+    },
+ 
+
+--- lh_c1_shared_pair_restore.B.r0.skill_call
+{
+ "decision_id": "d_cf78e798",
+ "context_id": "ctx_19e10072",
+ "call": {
+  "call_id": "c_043b297b",
+  "plan_id": "modeB_d_cf78e798",
+  "step_id": "r1",
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_green_1"
+  },
+  "timeout_s": 30.0,
+  "expected_state_version": 1,
+  "decision_id": "d_cf78e798",
+  "based_on_state_version": 1,
+  "candidate_id": null
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.skill_gap
+{
+ "arm": "wo_vlm",
+ "detector": "gap_detect_v1",
+ "library_at_start": [],
+ "run_ref": "/home/czx/embodied-agent-batches/v04/e2/long_horizon_stub/long_horizon_rule_stub_memstore_skillmem_20260930_130206/episodes/lh_c1_shared_pair_restore.B.r0",
+ "created_at": 1790744558.6236103,
+ "updated_at": 1790744558.6236115,
+ "source": "sensor",
+ "provenance": {
+  "detector": "gap_detect_v1",
+  "rule": "repeat_after_remeasurement",
+  "cell": "pick|obj_green_1|None|IK_OR_PATH_UNREACHABLE",
+  "attempt_count": 4,
+  "measured_any": true,
+  "statuses": [
+   "failed"
+  ],
+  "rejection_reasons": [],
+  "goal_assignment": null,
+  "effect_source": "verifier_predicate_id",
+  "covered": [],
+  "subgoal_id_source": "target_entity_id",
+  "round_index_source": "decision_context",
+  "condition": "wo_vlm",
+  "task_id": "lh_c1_shared_pair_restore",
+  "terminal_status": "failed",
+  "derived_from": "events.jsonl (no simulator question asked, no expected block read)"
+ },
+ "based_on_state_version": 25,
+ "based_on_observation_ref": "per_4967d8e7",
+ "gap_id": "gap_636c8e3c",
+ "round_index": 6,
+ "subgoal_id": "sub_9fe4d56a",
+ "desired_effect": "grasp:obj_green_1",
+ "missing_because": "repeated_failure",
+ "evidence_refs": [
+  "evt_lh_c1_shared_pair_restore.B.r0_36",
+  "evt_lh_c1_shared_pair_restore.B.r0_47",
+  "evt_lh_c1_shared_pair_restore.B.r0_58",
+  "evt_lh_c1_shared_pair_restore.B.r0_69"
+ ],
+ "existing_candidates_considered": [
+  "pick"
+ ],
+ "_clobbered_reserved_keys": {
+  "episode_id": "lh_c1_shared_pair_restore.B.r0",
+  "schema_version": "4"
+ }
+}
+
+
+===== stub / lh_c1_shared_pair_restore.B.r1 summary keys: ['artifacts', 'case_id', 'decision_source', 'environment_events', 'episode_id', 'episodic', 'expected', 'goal_resolution', 'mode', 'perception', 'probe', 'repeat', 'result', 'score', 'set', 'skill_acquisition', 'subset', 'wall_time_s']
+
+--- lh_c1_shared_pair_restore.B.r1.summary.top
+{
+ "episode_id": "lh_c1_shared_pair_restore.B.r1",
+ "case_id": "lh_c1_shared_pair_restore",
+ "set": "long_horizon",
+ "subset": "long_horizon",
+ "mode": "B",
+ "repeat": 1,
+ "expected": "success",
+ "probe": {
+  "probe": "none",
+  "met": false,
+  "detail": "no probe: generic expectation check"
+ },
+ "score": {
+  "eval_id": "eval-lh_c1_shared_pair_restore",
+  "scored_observation_ref": "per_acabd1b5",
+  "scored_state_version": 26,
+  "scored_entities_from": "simulator (TerminalSnapshot.capture)",
+  "scored_sim_time": 7.946,
+  "settle_seconds": 0.5,
+  "objects_total": 4,
+  "objects_completed": 1,
+  "goals_complete_success": false,
+  "protocol_ok": false,
+  "protocol_notes": [
+   "terminal_status=failed",
+   "failure_type=REPEATED_INVALID"
+  ],
+  "complete_success": false,
+  "details": {
+   "obj_green_1": {
+    "target": "tray_right",
+    "satisfied": true,
+    "evidence": {
+     "xy_err_x": 0.000128448822409033,
+     "xy_err_y": 0.01689038050491698,
+     "footprint_half_x": 0.022284600769568532,
+     "footprint_half_y": 0.022282923222963723,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.0,
+     "tray_contacts": 1.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0002,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_blue_2": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.27147700776566785,
+     "xy_err_y": 0.31228210943529305,
+     "footprint_half_x": 0.02866349717249862,
+     "footprint_half_y": 0.02144934877330595,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.035,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_yellow_3": {
+    "target": "tray_left",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.28802090044046974,
+     "xy_err_y": 0.4708614045373062,
+     "footprint_half_x": 0.024677612282108685,
+     "footprint_half_y": 0.02467761228064447,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_purple_4": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.21274226851665834,
+     "xy_err_y": 0.4785085651089458,
+     "footprint_half_x": 0.023005422963559067,
+     "footprint_half_y": 0.023002417947865103,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.042,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_s
+
+--- lh_c1_shared_pair_restore.B.r1.summary.result
+{
+ "episode_id": "lh_c1_shared_pair_restore.B.r1",
+ "task_id": "lh_c1_shared_pair_restore",
+ "terminal_status": "failed",
+ "mode": "B",
+ "decision_rounds": 6,
+ "skill_calls": 6,
+ "http_requests": 0,
+ "score_complete_success": false,
+ "objects_total": 4,
+ "objects_completed": 1,
+ "failure_type": "REPEATED_INVALID",
+ "recovery_events": 4,
+ "retry_events": 0,
+ "replan_events": 0,
+ "rejected_decisions": 0,
+ "false_finish_attempts": 0,
+ "identical_invalid_attempts": 4,
+ "identical_repeats_total": 3,
+ "model_errors": 0,
+ "semantic_repairs": 0,
+ "provider_counters": {
+  "api_errors": 0,
+  "transport_retries": 0,
+  "format_repairs": 0
+ },
+ "api_cost_estimate": null,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "sim_time_s": 7.95,
+ "wall_time_s": 31.63,
+ "slot_resolution_fallbacks": 1,
+ "human_intervention": false,
+ "config_ref": null,
+ "termination_reason": null,
+ "artifacts": {
+  "terminal_state_version": "26",
+  "terminal_observation_ref": "per_acabd1b5",
+  "unknown_goals": "1",
+  "note": "identical action with no new evidence"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.observation
+{
+ "observation": {
+  "observation_ref": "per_79c2adf5",
+  "state_version": 1,
+  "sim_time": 0.49999999999999944,
+  "wall_time": 1790744579.8845403,
+  "source": "sensor",
+  "held_object": null,
+  "n_entities": 4
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.decision_context
+{
+ "context_id": "ctx_cd018a74",
+ "round_index": 1,
+ "state_version": 1,
+ "observation_ref": "per_79c2adf5",
+ "goal_version": 1,
+ "progress": [
+  {
+   "entity_id": "obj_green_1",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.692,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.28590000000000004,
+    "xy_err_y": 0.49219999999999997,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.4026,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_79c2adf5"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_green_1:tray_right"
+  },
+  {
+   "entity_id": "obj_blue_2",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.951,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.27180000000000004,
+    "xy_err_y": 0.3126,
+    "footprint_half_x": 0.048114446894877635,
+    "footprint_half_y": 0.048114446894877635,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.2347,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_79c2adf5"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_blue_2:tray_right"
+  },
+  {
+   "entity_id": "obj_yellow_3",
+   "target_id": "tray_left",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.847,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.28830000000000006,
+    "xy_err_y": 0.4718,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.3822,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_79c2adf5"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_yellow_3:tray_left"
+  },
+  {
+   "entity_id": "{'shape': 'cylinder', 'color': 'purple'}",
+   "target_id": "tray_right",
+   "value": "unknown",
+   "evidence": {
+    "entity_bound": 0.0
+   },
+   "evidence_refs": [
+    "per_79c2adf5"
+   ],
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "predicate_id": "placed:?{'shape': 'cylinder', 'color': 'purple'}:tray_right"
+  }
+ ],
+ "candidates": [
+  {
+   "candidate_id": "cand-tray_right-obj_green_1
+
+--- lh_c1_shared_pair_restore.B.r1.decision
+{
+ "decision_id": "d_0084d36e",
+ "context_id": "ctx_cd018a74",
+ "based_on_state_version": 1,
+ "goal_ref": "g_1c2115ae",
+ "action": "execute",
+ "execute": {
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_green_1"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_79c2adf5"
+ ],
+ "rationale": "pick obj_green_1",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.decision
+{
+ "decision_id": "d_07cb9874",
+ "context_id": "ctx_a10ae782",
+ "based_on_state_version": 5,
+ "goal_ref": "g_1c2115ae",
+ "action": "execute",
+ "execute": {
+  "skill": "place",
+  "args": {
+   "object_id": "obj_green_1",
+   "target_id": "tray_right"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_d5becd83"
+ ],
+ "rationale": "place obj_green_1 into tray_right",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_3991e09a",
+  "decision_id": "d_0084d36e",
+  "call_id": "c_890af3b5",
+  "context_id": "ctx_cd018a74",
+  "skill": "pick",
+  "entity_id": "obj_green_1",
+  "target_id": null,
+  "candidate_id": null,
+  "candidate_resolution": null,
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "approach",
+   "open_gripper",
+   "descend",
+   "close_gripper",
+   "lift",
+   "grasp_check"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_79c2adf5",
+  "post_observation_ref": "per_eea1518d",
+  "new_measurement": true,
+  "pre_state_version": 1,
+  "post_state_version": 4,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "grasp:obj_green_1",
+     "description": "the gripper reports holding this entity; the lift itself is not a quantity a frame of the table can measure",
+     "value": "true",
+     "evidence": {
+      "gripper_named_the_entity": 1.0,
+      "gripper_reports_empty": 0.0,
+      "gripper_report_is_ambiguous": 0.0,
+      "reported_by_this_view": 1.0,
+      "held_flag_is_true": 1.0
+     },
+     "evidence_refs": [
+      "per_eea1518d"
+     ],
+     "unmeasured": [
+      "lift_gain_m",
+      "hold_state"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_eea1518d",
+   "state_version": 4
+  },
+  "held_object_after": "obj_green_1",
+  "progress_changes": [],
+  "affected_entities": [],
+  "measurements": {
+   "lift_gain_m": 0.0833,
+   "follow_err_m": 0.0051,
+   "in_contact": 1.0,
+   "support_z_m": 0.641
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_green_1",
+     "dxy": [
+      -0.047,
+      -0.0228
+     ],
+     "dz": 0.0001,
+     "dist_m": 0.0522
+    }
+   ],
+   "state_changed": [
+    {
+     "entity_id": "obj_green_1",
+     "dxy": [
+      -0.047,
+      -0.0228
+     ],
+     "dz": 0.0001,
+     "dist_m": 0.0522,
+     "hold_before_after": [
+      "unknown",
+      "True"
+     ],
+     "support_before_after": [
+      "table",
+      "table"
+     ]
+    }
+   ],
+   "position_unmeasured": [],
+   "held_before": "None",
+   "held_after": "obj_green_1"
+  },
+  "rejection_reasons": [],
+  "environment_text": null,
+  "cause_confirmed": false,
+  "sim_seconds_used": 1.654,
+  "schema_version": "3"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_677af988",
+  "decision_id": "d_07cb9874",
+  "call_id": "c_78b438f3",
+  "context_id": "ctx_a10ae782",
+  "skill": "place",
+  "entity_id": "obj_green_1",
+  "target_id": "tray_right",
+  "candidate_id": null,
+  "candidate_resolution": "runtime_fallback_rule",
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "transfer",
+   "descend",
+   "release",
+   "retreat",
+   "settle"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_d5becd83",
+  "post_observation_ref": "per_33b69918",
+  "new_measurement": true,
+  "pre_state_version": 5,
+  "post_state_version": 9,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "placed:obj_green_1:tray_right",
+     "description": "resting on the target surface and its orientation-invariant footprint clears the wall by the declared margin; hold, rest and seating height unmeasured",
+     "value": "true",
+     "evidence": {
+      "claim_confidence": 0.951,
+      "located": 1.0,
+      "relation_matches_target": 1.0,
+      "xy_err_x": 9.999999999998899e-05,
+      "xy_err_y": 0.017600000000000005,
+      "footprint_half_x": 0.036373066958946425,
+      "footprint_half_y": 0.036373066958946425,
+      "allow_x": 0.126,
+      "allow_y": 0.126,
+      "wall_margin_m": 0.072,
+      "occupies_target": 1.0
+     },
+     "evidence_refs": [
+      "per_33b69918"
+     ],
+     "unmeasured": [
+      "rest_z_vs_assumed_orientation",
+      "hold_state",
+      "at_rest"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_33b69918",
+   "state_version": 9
+  },
+  "held_object_after": null,
+  "progress_changes": [
+   {
+    "assignment": "obj_green_1->tray_right",
+    "from": "false",
+    "to": "true"
+   }
+  ],
+  "affected_entities": [
+   "obj_purple_4"
+  ],
+  "measurements": {
+   "candidate_x": 0.66,
+   "candidate_y": 0.32,
+   "candidate_rest_z": 0.649,
+   "carry_offset_x_m": -0.0017,
+   "carry_offset_y_m": 0.0149,
+   "descent_touchdown": 1.0,
+   "release_height_m": 0.0238,
+   "release_gap_above_seat_m": 0.0028,
+   "fingers_clear_after_open": 0.0,
+   "final_x": 0.6601,
+   "final_y": 0.3369,
+   "final_z": 0.649,
+   "lin_speed": 0.0,
+   "ang_speed": 0.0002,
+   "inside_target": 1.0,
+   "gripper_free": 1.0,
+   "at_rest": 1.0,
+   "footprint_half_x": 0.0223,
+   "footprint_half_y": 0.0223,
+   "displacement_from_candidate_m": 0.0169
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_purple_4",
+     "dxy": [
+      0.0006,
+      0.01
+     ],
+     "dz": 0.0,
+     "dist_m": 0.01
+    },
+ 
+
+--- lh_c1_shared_pair_restore.B.r1.skill_call
+{
+ "decision_id": "d_0084d36e",
+ "context_id": "ctx_cd018a74",
+ "call": {
+  "call_id": "c_890af3b5",
+  "plan_id": "modeB_d_0084d36e",
+  "step_id": "r1",
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_green_1"
+  },
+  "timeout_s": 30.0,
+  "expected_state_version": 1,
+  "decision_id": "d_0084d36e",
+  "based_on_state_version": 1,
+  "candidate_id": null
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.skill_gap
+{
+ "arm": "wo_vlm",
+ "detector": "gap_detect_v1",
+ "library_at_start": [],
+ "run_ref": "/home/czx/embodied-agent-batches/v04/e2/long_horizon_stub/long_horizon_rule_stub_memstore_skillmem_20260930_130206/episodes/lh_c1_shared_pair_restore.B.r1",
+ "created_at": 1790744610.827719,
+ "updated_at": 1790744610.8277202,
+ "source": "sensor",
+ "provenance": {
+  "detector": "gap_detect_v1",
+  "rule": "repeat_after_remeasurement",
+  "cell": "pick|obj_green_1|None|IK_OR_PATH_UNREACHABLE",
+  "attempt_count": 4,
+  "measured_any": true,
+  "statuses": [
+   "failed"
+  ],
+  "rejection_reasons": [],
+  "goal_assignment": null,
+  "effect_source": "verifier_predicate_id",
+  "covered": [],
+  "subgoal_id_source": "target_entity_id",
+  "round_index_source": "decision_context",
+  "condition": "wo_vlm",
+  "task_id": "lh_c1_shared_pair_restore",
+  "terminal_status": "failed",
+  "derived_from": "events.jsonl (no simulator question asked, no expected block read)"
+ },
+ "based_on_state_version": 25,
+ "based_on_observation_ref": "per_d8f76bc1",
+ "gap_id": "gap_e5c8d07c",
+ "round_index": 6,
+ "subgoal_id": "sub_36d5da0b",
+ "desired_effect": "grasp:obj_green_1",
+ "missing_because": "repeated_failure",
+ "evidence_refs": [
+  "evt_lh_c1_shared_pair_restore.B.r1_38",
+  "evt_lh_c1_shared_pair_restore.B.r1_50",
+  "evt_lh_c1_shared_pair_restore.B.r1_62",
+  "evt_lh_c1_shared_pair_restore.B.r1_74"
+ ],
+ "existing_candidates_considered": [
+  "pick"
+ ],
+ "_clobbered_reserved_keys": {
+  "episode_id": "lh_c1_shared_pair_restore.B.r1",
+  "schema_version": "4"
+ }
+}
+
+
+===== stub / lh_c3_capacity_and_shift.B.r0 summary keys: ['artifacts', 'case_id', 'decision_source', 'environment_events', 'episode_id', 'episodic', 'expected', 'goal_resolution', 'mode', 'perception', 'probe', 'repeat', 'result', 'score', 'set', 'skill_acquisition', 'subset', 'wall_time_s']
+
+--- lh_c3_capacity_and_shift.B.r0.summary.top
+{
+ "episode_id": "lh_c3_capacity_and_shift.B.r0",
+ "case_id": "lh_c3_capacity_and_shift",
+ "set": "long_horizon",
+ "subset": "long_horizon",
+ "mode": "B",
+ "repeat": 0,
+ "expected": "success",
+ "probe": {
+  "probe": "none",
+  "met": false,
+  "detail": "no probe: generic expectation check"
+ },
+ "score": {
+  "eval_id": "eval-lh_c3_capacity_and_shift",
+  "scored_observation_ref": "per_7603c046",
+  "scored_state_version": 15,
+  "scored_entities_from": "simulator (TerminalSnapshot.capture)",
+  "scored_sim_time": 7.825,
+  "settle_seconds": 0.5,
+  "objects_total": 6,
+  "objects_completed": 1,
+  "goals_complete_success": false,
+  "protocol_ok": false,
+  "protocol_notes": [
+   "terminal_status=failed"
+  ],
+  "complete_success": false,
+  "details": {
+   "obj_yellow_1": {
+    "target": "tray_middle",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.2357585217159418,
+     "xy_err_y": 0.19189566162103977,
+     "footprint_half_x": 0.0242443101104602,
+     "footprint_half_y": 0.02370396032768024,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.022,
+     "height_err_m": 0.0741,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0009,
+     "ang_speed": 0.0034,
+     "in_gripper": 1.0
+    }
+   },
+   "obj_purple_2": {
+    "target": "tray_middle",
+    "satisfied": true,
+    "evidence": {
+     "xy_err_x": 1.2692710420036946e-05,
+     "xy_err_y": 0.008067997797564178,
+     "footprint_half_x": 0.02424105584585812,
+     "footprint_half_y": 0.024241186445287704,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.0,
+     "tray_contacts": 1.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0002,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_red_3": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.2812943341984627,
+     "xy_err_y": 0.15316561645792254,
+     "footprint_half_x": 0.029078064088530708,
+     "footprint_half_y": 0.022091922948288236,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.035,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0001,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_green_4": {
+    "target": "tray_left",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.2193585265319441,
+     "xy_err_y": 0.156480399822626,
+     "footprint_half_x": 0.023504438352904625,
+     "footprint_half_y": 0.023391860327496614,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.0423,
+     "height_err_m": 0.0086,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0026,
+     "ang_sp
+
+--- lh_c3_capacity_and_shift.B.r0.summary.result
+{
+ "episode_id": "lh_c3_capacity_and_shift.B.r0",
+ "task_id": "lh_c3_capacity_and_shift",
+ "terminal_status": "failed",
+ "mode": "B",
+ "decision_rounds": 4,
+ "skill_calls": 3,
+ "http_requests": 0,
+ "score_complete_success": false,
+ "objects_total": 6,
+ "objects_completed": 1,
+ "failure_type": null,
+ "recovery_events": 0,
+ "retry_events": 0,
+ "replan_events": 2,
+ "rejected_decisions": 0,
+ "false_finish_attempts": 0,
+ "identical_invalid_attempts": 1,
+ "identical_repeats_total": 0,
+ "model_errors": 0,
+ "semantic_repairs": 0,
+ "provider_counters": {
+  "api_errors": 0,
+  "transport_retries": 0,
+  "format_repairs": 0
+ },
+ "api_cost_estimate": null,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "sim_time_s": 7.82,
+ "wall_time_s": 19.02,
+ "slot_resolution_fallbacks": 1,
+ "human_intervention": false,
+ "config_ref": null,
+ "termination_reason": null,
+ "artifacts": {
+  "terminal_state_version": "15",
+  "terminal_observation_ref": "per_7603c046",
+  "unknown_goals": "3",
+  "note": "blocked by model"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.observation
+{
+ "observation": {
+  "observation_ref": "per_400c7085",
+  "state_version": 1,
+  "sim_time": 0.49999999999999944,
+  "wall_time": 1790744560.492302,
+  "source": "sensor",
+  "held_object": null,
+  "n_entities": 5
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.decision_context
+{
+ "context_id": "ctx_cf353ad0",
+ "round_index": 1,
+ "state_version": 1,
+ "observation_ref": "per_400c7085",
+ "goal_version": 1,
+ "progress": [
+  {
+   "entity_id": "{'shape': 'cube', 'color': 'yellow'}",
+   "target_id": "tray_middle",
+   "value": "unknown",
+   "evidence": {
+    "entity_bound": 0.0
+   },
+   "evidence_refs": [
+    "per_400c7085"
+   ],
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "predicate_id": "placed:?{'shape': 'cube', 'color': 'yellow'}:tray_middle"
+  },
+  {
+   "entity_id": "obj_purple_2",
+   "target_id": "tray_middle",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.855,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.28540000000000004,
+    "xy_err_y": 0.0063,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.1958,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_400c7085"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_purple_2:tray_middle"
+  },
+  {
+   "entity_id": "obj_red_3",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.92,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.28200000000000003,
+    "xy_err_y": 0.1514,
+    "footprint_half_x": 0.048114446894877635,
+    "footprint_half_y": 0.048114446894877635,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.2041,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_400c7085"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_red_3:tray_right"
+  },
+  {
+   "entity_id": "{'shape': 'cylinder', 'color': 'green'}",
+   "target_id": "tray_left",
+   "value": "unknown",
+   "evidence": {
+    "entity_bound": 0.0
+   },
+   "evidence_refs": [
+    "per_400c7085"
+   ],
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "predicate_id": "placed:?{'shape': 'cylinder', 'color': 'green'}:tray_left"
+  },
+  {
+   "entity_id": "obj_blue_5",
+   "target_id": "tray_middle",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.983,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.20730000000000004,
+    "xy_err_y": 0.0012,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.1177,
+    "occup
+
+--- lh_c3_capacity_and_shift.B.r0.decision
+{
+ "decision_id": "d_6bd36adf",
+ "context_id": "ctx_cf353ad0",
+ "based_on_state_version": 1,
+ "goal_ref": "g_718b8537",
+ "action": "execute",
+ "execute": {
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_purple_2"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_400c7085"
+ ],
+ "rationale": "pick obj_purple_2",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.decision
+{
+ "decision_id": "d_a595bfa9",
+ "context_id": "ctx_3740017d",
+ "based_on_state_version": 5,
+ "goal_ref": "g_718b8537",
+ "action": "execute",
+ "execute": {
+  "skill": "place",
+  "args": {
+   "object_id": "obj_purple_2",
+   "target_id": "tray_middle"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_ce9631f1"
+ ],
+ "rationale": "place obj_purple_2 into tray_middle",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_c8603d91",
+  "decision_id": "d_6bd36adf",
+  "call_id": "c_0a9b0cf9",
+  "context_id": "ctx_cf353ad0",
+  "skill": "pick",
+  "entity_id": "obj_purple_2",
+  "target_id": null,
+  "candidate_id": null,
+  "candidate_resolution": null,
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "approach",
+   "open_gripper",
+   "descend",
+   "close_gripper",
+   "lift",
+   "grasp_check"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_400c7085",
+  "post_observation_ref": "per_08c4bdc7",
+  "new_measurement": true,
+  "pre_state_version": 1,
+  "post_state_version": 4,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "grasp:obj_purple_2",
+     "description": "the gripper reports holding this entity; the lift itself is not a quantity a frame of the table can measure",
+     "value": "true",
+     "evidence": {
+      "gripper_named_the_entity": 1.0,
+      "gripper_reports_empty": 0.0,
+      "gripper_report_is_ambiguous": 0.0,
+      "reported_by_this_view": 1.0,
+      "held_flag_is_true": 1.0
+     },
+     "evidence_refs": [
+      "per_08c4bdc7"
+     ],
+     "unmeasured": [
+      "lift_gain_m",
+      "hold_state"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_08c4bdc7",
+   "state_version": 4
+  },
+  "held_object_after": "obj_purple_2",
+  "progress_changes": [],
+  "affected_entities": [],
+  "measurements": {
+   "lift_gain_m": 0.0832,
+   "follow_err_m": 0.0008,
+   "in_contact": 1.0,
+   "support_z_m": 0.641
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_purple_2",
+     "dxy": [
+      -0.0521,
+      0.0063
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0525
+    }
+   ],
+   "state_changed": [
+    {
+     "entity_id": "obj_purple_2",
+     "dxy": [
+      -0.0521,
+      0.0063
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0525,
+     "hold_before_after": [
+      "unknown",
+      "True"
+     ],
+     "support_before_after": [
+      "table",
+      "table"
+     ]
+    }
+   ],
+   "position_unmeasured": [],
+   "held_before": "None",
+   "held_after": "obj_purple_2"
+  },
+  "rejection_reasons": [],
+  "environment_text": null,
+  "cause_confirmed": false,
+  "sim_seconds_used": 1.629,
+  "schema_version": "3"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_c1b64d38",
+  "decision_id": "d_a595bfa9",
+  "call_id": "c_d9cfb26a",
+  "context_id": "ctx_3740017d",
+  "skill": "place",
+  "entity_id": "obj_purple_2",
+  "target_id": "tray_middle",
+  "candidate_id": null,
+  "candidate_resolution": "runtime_fallback_rule",
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "transfer",
+   "descend",
+   "release",
+   "retreat",
+   "settle"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_ce9631f1",
+  "post_observation_ref": "per_88c15573",
+  "new_measurement": true,
+  "pre_state_version": 5,
+  "post_state_version": 9,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "placed:obj_purple_2:tray_middle",
+     "description": "resting on the target surface and its orientation-invariant footprint clears the wall by the declared margin; hold, rest and seating height unmeasured",
+     "value": "true",
+     "evidence": {
+      "claim_confidence": 0.874,
+      "located": 1.0,
+      "relation_matches_target": 1.0,
+      "xy_err_x": 0.00019999999999997797,
+      "xy_err_y": 0.0071,
+      "footprint_half_x": 0.036373066958946425,
+      "footprint_half_y": 0.036373066958946425,
+      "allow_x": 0.126,
+      "allow_y": 0.126,
+      "wall_margin_m": 0.0825,
+      "occupies_target": 1.0
+     },
+     "evidence_refs": [
+      "per_88c15573"
+     ],
+     "unmeasured": [
+      "rest_z_vs_assumed_orientation",
+      "hold_state",
+      "at_rest"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_88c15573",
+   "state_version": 9
+  },
+  "held_object_after": null,
+  "progress_changes": [
+   {
+    "assignment": "obj_yellow_1->tray_middle",
+    "from": "absent",
+    "to": "false"
+   },
+   {
+    "assignment": "obj_purple_2->tray_middle",
+    "from": "false",
+    "to": "true"
+   },
+   {
+    "assignment": "{'shape': 'cuboid', 'color': 'red'}->tray_right",
+    "from": "absent",
+    "to": "unknown"
+   }
+  ],
+  "affected_entities": [
+   "obj_blue_5",
+   "obj_yellow_1"
+  ],
+  "measurements": {
+   "candidate_x": 0.66,
+   "candidate_y": 0.0,
+   "candidate_rest_z": 0.649,
+   "carry_offset_x_m": -0.0016,
+   "carry_offset_y_m": -0.0084,
+   "descent_touchdown": 1.0,
+   "release_height_m": 0.0236,
+   "release_gap_above_seat_m": 0.0026,
+   "fingers_clear_after_open": 1.0,
+   "final_x": 0.66,
+   "final_y": -0.0081,
+   "final_z": 0.649,
+   "lin_speed": 0.0,
+   "ang_speed": 0.0002,
+   "inside_target": 1.0,
+   "gripper_free": 1.0,
+   "at_rest": 1.0,
+   "footprint_half_x": 0.0242,
+   "footprin
+
+--- lh_c3_capacity_and_shift.B.r0.skill_call
+{
+ "decision_id": "d_6bd36adf",
+ "context_id": "ctx_cf353ad0",
+ "call": {
+  "call_id": "c_0a9b0cf9",
+  "plan_id": "modeB_d_6bd36adf",
+  "step_id": "r1",
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_purple_2"
+  },
+  "timeout_s": 30.0,
+  "expected_state_version": 1,
+  "decision_id": "d_6bd36adf",
+  "based_on_state_version": 1,
+  "candidate_id": null
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.terminated_blocked
+{
+ "decision_id": "d_ffbd5822",
+ "note": "the model found no feasible next action; that is not a proof that the task is unsolvable"
+}
+
+
+===== stub / lh_c3_capacity_and_shift.B.r1 summary keys: ['artifacts', 'case_id', 'decision_source', 'environment_events', 'episode_id', 'episodic', 'expected', 'goal_resolution', 'mode', 'perception', 'probe', 'repeat', 'result', 'score', 'set', 'skill_acquisition', 'subset', 'wall_time_s']
+
+--- lh_c3_capacity_and_shift.B.r1.summary.top
+{
+ "episode_id": "lh_c3_capacity_and_shift.B.r1",
+ "case_id": "lh_c3_capacity_and_shift",
+ "set": "long_horizon",
+ "subset": "long_horizon",
+ "mode": "B",
+ "repeat": 1,
+ "expected": "success",
+ "probe": {
+  "probe": "none",
+  "met": false,
+  "detail": "no probe: generic expectation check"
+ },
+ "score": {
+  "eval_id": "eval-lh_c3_capacity_and_shift",
+  "scored_observation_ref": "per_0b3ca79a",
+  "scored_state_version": 15,
+  "scored_entities_from": "simulator (TerminalSnapshot.capture)",
+  "scored_sim_time": 7.825,
+  "settle_seconds": 0.5,
+  "objects_total": 6,
+  "objects_completed": 1,
+  "goals_complete_success": false,
+  "protocol_ok": false,
+  "protocol_notes": [
+   "terminal_status=failed"
+  ],
+  "complete_success": false,
+  "details": {
+   "obj_yellow_1": {
+    "target": "tray_middle",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.2357585217159418,
+     "xy_err_y": 0.19189566162103977,
+     "footprint_half_x": 0.0242443101104602,
+     "footprint_half_y": 0.02370396032768024,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.022,
+     "height_err_m": 0.0741,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0009,
+     "ang_speed": 0.0034,
+     "in_gripper": 1.0
+    }
+   },
+   "obj_purple_2": {
+    "target": "tray_middle",
+    "satisfied": true,
+    "evidence": {
+     "xy_err_x": 1.2692710420036946e-05,
+     "xy_err_y": 0.008067997797564178,
+     "footprint_half_x": 0.02424105584585812,
+     "footprint_half_y": 0.024241186445287704,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.0,
+     "tray_contacts": 1.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0002,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_red_3": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.2812943341984627,
+     "xy_err_y": 0.15316561645792254,
+     "footprint_half_x": 0.029078064088530708,
+     "footprint_half_y": 0.022091922948288236,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.035,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0001,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_green_4": {
+    "target": "tray_left",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.2193585265319441,
+     "xy_err_y": 0.156480399822626,
+     "footprint_half_x": 0.023504438352904625,
+     "footprint_half_y": 0.023391860327496614,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.0423,
+     "height_err_m": 0.0086,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0026,
+     "ang_sp
+
+--- lh_c3_capacity_and_shift.B.r1.summary.result
+{
+ "episode_id": "lh_c3_capacity_and_shift.B.r1",
+ "task_id": "lh_c3_capacity_and_shift",
+ "terminal_status": "failed",
+ "mode": "B",
+ "decision_rounds": 4,
+ "skill_calls": 3,
+ "http_requests": 0,
+ "score_complete_success": false,
+ "objects_total": 6,
+ "objects_completed": 1,
+ "failure_type": null,
+ "recovery_events": 0,
+ "retry_events": 0,
+ "replan_events": 2,
+ "rejected_decisions": 0,
+ "false_finish_attempts": 0,
+ "identical_invalid_attempts": 1,
+ "identical_repeats_total": 0,
+ "model_errors": 0,
+ "semantic_repairs": 0,
+ "provider_counters": {
+  "api_errors": 0,
+  "transport_retries": 0,
+  "format_repairs": 0
+ },
+ "api_cost_estimate": null,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "sim_time_s": 7.82,
+ "wall_time_s": 16.76,
+ "slot_resolution_fallbacks": 1,
+ "human_intervention": false,
+ "config_ref": null,
+ "termination_reason": null,
+ "artifacts": {
+  "terminal_state_version": "15",
+  "terminal_observation_ref": "per_0b3ca79a",
+  "unknown_goals": "3",
+  "note": "blocked by model"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.observation
+{
+ "observation": {
+  "observation_ref": "per_64f583bb",
+  "state_version": 1,
+  "sim_time": 0.49999999999999944,
+  "wall_time": 1790744612.733368,
+  "source": "sensor",
+  "held_object": null,
+  "n_entities": 5
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.decision_context
+{
+ "context_id": "ctx_a77c60be",
+ "round_index": 1,
+ "state_version": 1,
+ "observation_ref": "per_64f583bb",
+ "goal_version": 1,
+ "progress": [
+  {
+   "entity_id": "{'shape': 'cube', 'color': 'yellow'}",
+   "target_id": "tray_middle",
+   "value": "unknown",
+   "evidence": {
+    "entity_bound": 0.0
+   },
+   "evidence_refs": [
+    "per_64f583bb"
+   ],
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "predicate_id": "placed:?{'shape': 'cube', 'color': 'yellow'}:tray_middle"
+  },
+  {
+   "entity_id": "obj_purple_2",
+   "target_id": "tray_middle",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.855,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.28540000000000004,
+    "xy_err_y": 0.0063,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.1958,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_64f583bb"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_purple_2:tray_middle"
+  },
+  {
+   "entity_id": "obj_red_3",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.92,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.28200000000000003,
+    "xy_err_y": 0.1514,
+    "footprint_half_x": 0.048114446894877635,
+    "footprint_half_y": 0.048114446894877635,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.2041,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_64f583bb"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_red_3:tray_right"
+  },
+  {
+   "entity_id": "{'shape': 'cylinder', 'color': 'green'}",
+   "target_id": "tray_left",
+   "value": "unknown",
+   "evidence": {
+    "entity_bound": 0.0
+   },
+   "evidence_refs": [
+    "per_64f583bb"
+   ],
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "predicate_id": "placed:?{'shape': 'cylinder', 'color': 'green'}:tray_left"
+  },
+  {
+   "entity_id": "obj_blue_5",
+   "target_id": "tray_middle",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.983,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.20730000000000004,
+    "xy_err_y": 0.0012,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.1177,
+    "occup
+
+--- lh_c3_capacity_and_shift.B.r1.decision
+{
+ "decision_id": "d_3de891fd",
+ "context_id": "ctx_a77c60be",
+ "based_on_state_version": 1,
+ "goal_ref": "g_8a3cc49e",
+ "action": "execute",
+ "execute": {
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_purple_2"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_64f583bb"
+ ],
+ "rationale": "pick obj_purple_2",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.decision
+{
+ "decision_id": "d_80221bf3",
+ "context_id": "ctx_af509e8c",
+ "based_on_state_version": 5,
+ "goal_ref": "g_8a3cc49e",
+ "action": "execute",
+ "execute": {
+  "skill": "place",
+  "args": {
+   "object_id": "obj_purple_2",
+   "target_id": "tray_middle"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_52a44e34"
+ ],
+ "rationale": "place obj_purple_2 into tray_middle",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_b92b19ad",
+  "decision_id": "d_3de891fd",
+  "call_id": "c_ccd2e624",
+  "context_id": "ctx_a77c60be",
+  "skill": "pick",
+  "entity_id": "obj_purple_2",
+  "target_id": null,
+  "candidate_id": null,
+  "candidate_resolution": null,
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "approach",
+   "open_gripper",
+   "descend",
+   "close_gripper",
+   "lift",
+   "grasp_check"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_64f583bb",
+  "post_observation_ref": "per_33fda45b",
+  "new_measurement": true,
+  "pre_state_version": 1,
+  "post_state_version": 4,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "grasp:obj_purple_2",
+     "description": "the gripper reports holding this entity; the lift itself is not a quantity a frame of the table can measure",
+     "value": "true",
+     "evidence": {
+      "gripper_named_the_entity": 1.0,
+      "gripper_reports_empty": 0.0,
+      "gripper_report_is_ambiguous": 0.0,
+      "reported_by_this_view": 1.0,
+      "held_flag_is_true": 1.0
+     },
+     "evidence_refs": [
+      "per_33fda45b"
+     ],
+     "unmeasured": [
+      "lift_gain_m",
+      "hold_state"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_33fda45b",
+   "state_version": 4
+  },
+  "held_object_after": "obj_purple_2",
+  "progress_changes": [],
+  "affected_entities": [],
+  "measurements": {
+   "lift_gain_m": 0.0832,
+   "follow_err_m": 0.0008,
+   "in_contact": 1.0,
+   "support_z_m": 0.641
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_purple_2",
+     "dxy": [
+      -0.0521,
+      0.0063
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0525
+    }
+   ],
+   "state_changed": [
+    {
+     "entity_id": "obj_purple_2",
+     "dxy": [
+      -0.0521,
+      0.0063
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0525,
+     "hold_before_after": [
+      "unknown",
+      "True"
+     ],
+     "support_before_after": [
+      "table",
+      "table"
+     ]
+    }
+   ],
+   "position_unmeasured": [],
+   "held_before": "None",
+   "held_after": "obj_purple_2"
+  },
+  "rejection_reasons": [],
+  "environment_text": null,
+  "cause_confirmed": false,
+  "sim_seconds_used": 1.629,
+  "schema_version": "3"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_e5ea42d8",
+  "decision_id": "d_80221bf3",
+  "call_id": "c_db6d7436",
+  "context_id": "ctx_af509e8c",
+  "skill": "place",
+  "entity_id": "obj_purple_2",
+  "target_id": "tray_middle",
+  "candidate_id": null,
+  "candidate_resolution": "runtime_fallback_rule",
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "transfer",
+   "descend",
+   "release",
+   "retreat",
+   "settle"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_52a44e34",
+  "post_observation_ref": "per_6fc3c955",
+  "new_measurement": true,
+  "pre_state_version": 5,
+  "post_state_version": 9,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "placed:obj_purple_2:tray_middle",
+     "description": "resting on the target surface and its orientation-invariant footprint clears the wall by the declared margin; hold, rest and seating height unmeasured",
+     "value": "true",
+     "evidence": {
+      "claim_confidence": 0.874,
+      "located": 1.0,
+      "relation_matches_target": 1.0,
+      "xy_err_x": 0.00019999999999997797,
+      "xy_err_y": 0.0071,
+      "footprint_half_x": 0.036373066958946425,
+      "footprint_half_y": 0.036373066958946425,
+      "allow_x": 0.126,
+      "allow_y": 0.126,
+      "wall_margin_m": 0.0825,
+      "occupies_target": 1.0
+     },
+     "evidence_refs": [
+      "per_6fc3c955"
+     ],
+     "unmeasured": [
+      "rest_z_vs_assumed_orientation",
+      "hold_state",
+      "at_rest"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_6fc3c955",
+   "state_version": 9
+  },
+  "held_object_after": null,
+  "progress_changes": [
+   {
+    "assignment": "obj_yellow_1->tray_middle",
+    "from": "absent",
+    "to": "false"
+   },
+   {
+    "assignment": "obj_purple_2->tray_middle",
+    "from": "false",
+    "to": "true"
+   },
+   {
+    "assignment": "{'shape': 'cuboid', 'color': 'red'}->tray_right",
+    "from": "absent",
+    "to": "unknown"
+   }
+  ],
+  "affected_entities": [
+   "obj_blue_5",
+   "obj_yellow_1"
+  ],
+  "measurements": {
+   "candidate_x": 0.66,
+   "candidate_y": 0.0,
+   "candidate_rest_z": 0.649,
+   "carry_offset_x_m": -0.0016,
+   "carry_offset_y_m": -0.0084,
+   "descent_touchdown": 1.0,
+   "release_height_m": 0.0236,
+   "release_gap_above_seat_m": 0.0026,
+   "fingers_clear_after_open": 1.0,
+   "final_x": 0.66,
+   "final_y": -0.0081,
+   "final_z": 0.649,
+   "lin_speed": 0.0,
+   "ang_speed": 0.0002,
+   "inside_target": 1.0,
+   "gripper_free": 1.0,
+   "at_rest": 1.0,
+   "footprint_half_x": 0.0242,
+   "footprin
+
+--- lh_c3_capacity_and_shift.B.r1.skill_call
+{
+ "decision_id": "d_3de891fd",
+ "context_id": "ctx_a77c60be",
+ "call": {
+  "call_id": "c_ccd2e624",
+  "plan_id": "modeB_d_3de891fd",
+  "step_id": "r1",
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_purple_2"
+  },
+  "timeout_s": 30.0,
+  "expected_state_version": 1,
+  "decision_id": "d_3de891fd",
+  "based_on_state_version": 1,
+  "candidate_id": null
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.terminated_blocked
+{
+ "decision_id": "d_09fd3a7f",
+ "note": "the model found no feasible next action; that is not a proof that the task is unsolvable"
+}
+
+
+########## vlm manifest keys: ['budget_profile', 'cases', 'code', 'decision_source', 'dependencies', 'environment_variables', 'episodic', 'frozen', 'goal_resolution', 'model', 'modes', 'offline', 'perception', 'planner', 'platform', 'pre_registration', 'python', 'recorded_at', 'repeats', 'run_id', 'scene', 'schema_version', 'scoring_version', 'set', 'skill_acquisition']
+
+--- vlm.manifest.planner
+"rule"
+
+--- vlm.manifest.model
+{
+ "provider": "rule",
+ "model": "rule-interpreter",
+ "prompt_version": "no-prompt",
+ "sampling": null,
+ "pricing_configured": false
+}
+
+--- vlm.manifest.decision_source
+{
+ "policy": "rule",
+ "note": "the v0.1 control, unchanged"
+}
+
+--- vlm.manifest.offline
+false
+
+--- vlm.manifest.modes
+[
+ "B"
+]
+
+
+===== vlm / lh_c1_shared_pair_restore.B.r0 summary keys: ['artifacts', 'case_id', 'decision_source', 'environment_events', 'episode_id', 'episodic', 'expected', 'goal_resolution', 'mode', 'perception', 'probe', 'repeat', 'result', 'score', 'set', 'skill_acquisition', 'subset', 'wall_time_s']
+
+--- lh_c1_shared_pair_restore.B.r0.summary.top
+{
+ "episode_id": "lh_c1_shared_pair_restore.B.r0",
+ "case_id": "lh_c1_shared_pair_restore",
+ "set": "long_horizon",
+ "subset": "long_horizon",
+ "mode": "B",
+ "repeat": 0,
+ "expected": "success",
+ "probe": {
+  "probe": "none",
+  "met": false,
+  "detail": "no probe: generic expectation check"
+ },
+ "score": {
+  "eval_id": "eval-lh_c1_shared_pair_restore",
+  "scored_observation_ref": "per_eaa4c7b1",
+  "scored_state_version": 27,
+  "scored_entities_from": "simulator (TerminalSnapshot.capture)",
+  "scored_sim_time": 15.708,
+  "settle_seconds": 0.5,
+  "objects_total": 4,
+  "objects_completed": 1,
+  "goals_complete_success": false,
+  "protocol_ok": false,
+  "protocol_notes": [
+   "terminal_status=failed",
+   "failure_type=BUDGET_EXHAUSTED"
+  ],
+  "complete_success": false,
+  "details": {
+   "obj_green_1": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.05849366618954377,
+     "xy_err_y": 0.039134859644441855,
+     "footprint_half_x": 0.022053757415652558,
+     "footprint_half_y": 0.02212807520226145,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.0213,
+     "height_err_m": 0.082,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0044,
+     "ang_speed": 0.0001,
+     "in_gripper": 1.0
+    }
+   },
+   "obj_blue_2": {
+    "target": "tray_right",
+    "satisfied": true,
+    "evidence": {
+     "xy_err_x": 0.041559823044213684,
+     "xy_err_y": 0.01781182914649676,
+     "footprint_half_x": 0.02863728266307632,
+     "footprint_half_y": 0.021409217617781872,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.035,
+     "height_err_m": 0.0,
+     "tray_contacts": 1.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_yellow_3": {
+    "target": "tray_left",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.2880130911975427,
+     "xy_err_y": 0.4708923510594625,
+     "footprint_half_x": 0.024693030319620064,
+     "footprint_half_y": 0.024692183590845,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0001,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_purple_4": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.21275283829425795,
+     "xy_err_y": 0.4784778129842616,
+     "footprint_half_x": 0.02300471881289204,
+     "footprint_half_y": 0.023004454189583492,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.042,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "
+
+--- lh_c1_shared_pair_restore.B.r0.summary.result
+{
+ "episode_id": "lh_c1_shared_pair_restore.B.r0",
+ "task_id": "lh_c1_shared_pair_restore",
+ "terminal_status": "failed",
+ "mode": "B",
+ "decision_rounds": 6,
+ "skill_calls": 6,
+ "http_requests": 39,
+ "score_complete_success": false,
+ "objects_total": 4,
+ "objects_completed": 0,
+ "failure_type": "BUDGET_EXHAUSTED",
+ "recovery_events": 2,
+ "retry_events": 0,
+ "replan_events": 2,
+ "rejected_decisions": 0,
+ "false_finish_attempts": 0,
+ "identical_invalid_attempts": 1,
+ "identical_repeats_total": 0,
+ "model_errors": 0,
+ "semantic_repairs": 0,
+ "provider_counters": {
+  "api_errors": 0,
+  "transport_retries": 0,
+  "format_repairs": 0
+ },
+ "api_cost_estimate": null,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "sim_time_s": 15.71,
+ "wall_time_s": 202.58,
+ "slot_resolution_fallbacks": 2,
+ "human_intervention": false,
+ "config_ref": null,
+ "termination_reason": null,
+ "artifacts": {
+  "terminal_state_version": "27",
+  "terminal_observation_ref": "per_eaa4c7b1",
+  "unknown_goals": "2",
+  "note": "http request budget 32 spent before the next round (26 looks billed to 35 requests)"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.observation
+{
+ "observation": {
+  "observation_ref": "per_787b7ec3",
+  "state_version": 1,
+  "sim_time": 0.49999999999999944,
+  "wall_time": 1790744631.6016095,
+  "source": "sensor",
+  "held_object": null,
+  "n_entities": 4
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.decision_context
+{
+ "context_id": "ctx_99d87522",
+ "round_index": 1,
+ "state_version": 1,
+ "observation_ref": "per_787b7ec3",
+ "goal_version": 1,
+ "progress": [
+  {
+   "entity_id": "obj_green_1",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.72,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.06480000000000008,
+    "xy_err_y": 0.5577,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.4681,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_787b7ec3"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_green_1:tray_right"
+  },
+  {
+   "entity_id": "obj_blue_2",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.85,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.03170000000000006,
+    "xy_err_y": 0.2851,
+    "footprint_half_x": 0.048114446894877635,
+    "footprint_half_y": 0.048114446894877635,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.2072,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_787b7ec3"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_blue_2:tray_right"
+  },
+  {
+   "entity_id": "obj_yellow_3",
+   "target_id": "tray_left",
+   "value": "unknown",
+   "evidence": {
+    "claim_confidence": 0.91,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.02090000000000003,
+    "xy_err_y": 0.5078,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.4182,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_787b7ec3"
+   ],
+   "unmeasured": [
+    "relation_unmeasured",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_yellow_3:tray_left"
+  },
+  {
+   "entity_id": "obj_purple_4",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.88,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.0006000000000000449,
+    "xy_err_y": 0.543,
+    "footprint_half_x": 0.047885279575251516,
+    "footprint_half_y": 0.047885279575251516,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.4649,
+    "occupies
+
+--- lh_c1_shared_pair_restore.B.r0.decision
+{
+ "decision_id": "d_94f27e44",
+ "context_id": "ctx_99d87522",
+ "based_on_state_version": 1,
+ "goal_ref": "g_4b9a4c29",
+ "action": "execute",
+ "execute": {
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_green_1"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_787b7ec3"
+ ],
+ "rationale": "pick obj_green_1",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.decision
+{
+ "decision_id": "d_3264cf7c",
+ "context_id": "ctx_7ef2404c",
+ "based_on_state_version": 5,
+ "goal_ref": "g_4b9a4c29",
+ "action": "execute",
+ "execute": {
+  "skill": "place",
+  "args": {
+   "object_id": "obj_green_1",
+   "target_id": "tray_right"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_0831316f"
+ ],
+ "rationale": "place obj_green_1 into tray_right",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_2e7bc9c3",
+  "decision_id": "d_94f27e44",
+  "call_id": "c_7241a6f8",
+  "context_id": "ctx_99d87522",
+  "skill": "pick",
+  "entity_id": "obj_green_1",
+  "target_id": null,
+  "candidate_id": null,
+  "candidate_resolution": null,
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "approach",
+   "open_gripper",
+   "descend",
+   "close_gripper",
+   "lift",
+   "grasp_check"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_787b7ec3",
+  "post_observation_ref": "per_7dcd2f86",
+  "new_measurement": true,
+  "pre_state_version": 1,
+  "post_state_version": 4,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "grasp:obj_green_1",
+     "description": "the gripper reports holding this entity; the lift itself is not a quantity a frame of the table can measure",
+     "value": "true",
+     "evidence": {
+      "gripper_named_the_entity": 1.0,
+      "gripper_reports_empty": 0.0,
+      "gripper_report_is_ambiguous": 0.0,
+      "reported_by_this_view": 1.0,
+      "held_flag_is_true": 1.0
+     },
+     "evidence_refs": [
+      "per_7dcd2f86"
+     ],
+     "unmeasured": [
+      "lift_gain_m",
+      "hold_state"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_7dcd2f86",
+   "state_version": 4
+  },
+  "held_object_after": "obj_green_1",
+  "progress_changes": [],
+  "affected_entities": [
+   "obj_blue_2",
+   "obj_purple_4",
+   "obj_yellow_3"
+  ],
+  "measurements": {
+   "lift_gain_m": 0.0833,
+   "follow_err_m": 0.0051,
+   "in_contact": 1.0,
+   "support_z_m": 0.641
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_green_1",
+     "dxy": [
+      -0.0941,
+      0.1058
+     ],
+     "dz": 0.0001,
+     "dist_m": 0.1416
+    },
+    {
+     "entity_id": "obj_blue_2",
+     "dxy": [
+      -0.0755,
+      0.0119
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0764
+    },
+    {
+     "entity_id": "obj_yellow_3",
+     "dxy": [
+      -0.0583,
+      -0.0027
+     ],
+     "dz": 0.0049,
+     "dist_m": 0.0586
+    },
+    {
+     "entity_id": "obj_purple_4",
+     "dxy": [
+      -0.0177,
+      0.118
+     ],
+     "dz": -0.008,
+     "dist_m": 0.1196
+    }
+   ],
+   "state_changed": [
+    {
+     "entity_id": "obj_green_1",
+     "dxy": [
+      -0.0941,
+      0.1058
+     ],
+     "dz": 0.0001,
+     "dist_m": 0.1416,
+     "hold_before_after": [
+      "unknown",
+      "True"
+     ],
+     "support_before_after": [
+      "tray_left",
+      "table"
+     ]
+    },
+    {
+     "entity_id": "obj_purple_4",
+     "dxy": [
+      -0.0177,
+      0.1
+
+--- lh_c1_shared_pair_restore.B.r0.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_60d2e905",
+  "decision_id": "d_3264cf7c",
+  "call_id": "c_65315b21",
+  "context_id": "ctx_7ef2404c",
+  "skill": "place",
+  "entity_id": "obj_green_1",
+  "target_id": "tray_right",
+  "candidate_id": null,
+  "candidate_resolution": "runtime_fallback_rule",
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "transfer",
+   "descend",
+   "release",
+   "retreat",
+   "settle"
+  ],
+  "status": "uncertain",
+  "failure_code": "STATE_UNCERTAIN",
+  "pre_observation_ref": "per_0831316f",
+  "post_observation_ref": "per_be434824",
+  "new_measurement": true,
+  "pre_state_version": 5,
+  "post_state_version": 9,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "placed:obj_green_1:tray_right",
+     "description": "not reported by this view",
+     "value": "unknown",
+     "evidence": {
+      "measurable": 0.0
+     },
+     "evidence_refs": [
+      "per_be434824"
+     ],
+     "unmeasured": [
+      "not_in_this_frame",
+      "rest_z_vs_assumed_orientation",
+      "hold_state",
+      "at_rest"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_be434824",
+   "state_version": 9
+  },
+  "held_object_after": null,
+  "progress_changes": [
+   {
+    "assignment": "{'shape': 'cube', 'color': 'green'}->tray_right",
+    "from": "absent",
+    "to": "unknown"
+   }
+  ],
+  "affected_entities": [
+   "obj_blue_2",
+   "obj_purple_4",
+   "obj_yellow_3"
+  ],
+  "measurements": {
+   "candidate_x": 0.66,
+   "candidate_y": 0.32,
+   "candidate_rest_z": 0.649,
+   "carry_offset_x_m": -0.0017,
+   "carry_offset_y_m": 0.0149,
+   "descent_touchdown": 1.0,
+   "release_height_m": 0.0238,
+   "release_gap_above_seat_m": 0.0028,
+   "fingers_clear_after_open": 0.0,
+   "final_x": 0.6601,
+   "final_y": 0.3369,
+   "final_z": 0.649,
+   "lin_speed": 0.0,
+   "ang_speed": 0.0002,
+   "inside_target": 1.0,
+   "gripper_free": 1.0,
+   "at_rest": 1.0,
+   "footprint_half_x": 0.0223,
+   "footprint_half_y": 0.0223,
+   "displacement_from_candidate_m": 0.0169
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_purple_4",
+     "dxy": [
+      -0.0062,
+      -0.1013
+     ],
+     "dz": 0.008,
+     "dist_m": 0.1018
+    },
+    {
+     "entity_id": "obj_blue_2",
+     "dxy": [
+      0.0471,
+      -0.0617
+     ],
+     "dz": -0.0001,
+     "dist_m": 0.0776
+    },
+    {
+     "entity_id": "obj_yellow_3",
+     "dxy": [
+      0.0479,
+      -0.1152
+     ],
+     "dz": 0.0,
+     "dist_m": 0.1248
+    }
+   ],
+   "state_changed": [
+    {
+     "entity_id": "obj_purple_4",
+     "dxy": [
+      -0.00
+
+--- lh_c1_shared_pair_restore.B.r0.skill_call
+{
+ "decision_id": "d_94f27e44",
+ "context_id": "ctx_99d87522",
+ "call": {
+  "call_id": "c_7241a6f8",
+  "plan_id": "modeB_d_94f27e44",
+  "step_id": "r1",
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_green_1"
+  },
+  "timeout_s": 30.0,
+  "expected_state_version": 1,
+  "decision_id": "d_94f27e44",
+  "based_on_state_version": 1,
+  "candidate_id": null
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r0.perception
+{
+ "state_version": 1,
+ "view": "main",
+ "created_at": 1790744637.6901946,
+ "updated_at": 1790744637.6901956,
+ "source": "sensor",
+ "provenance": {
+  "reader": {
+   "model": "agnes-2.5-flash",
+   "channel": "vlm",
+   "prompt_version": "s2-perceive-v1",
+   "model_return_id": "e5f82fd3cf15449ab8d43e808b139e31",
+   "absent": []
+  },
+  "geometry": {
+   "seen:green": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     197.5,
+     412.5
+    ],
+    "bbox": [
+     170,
+     360,
+     225,
+     465
+    ],
+    "half_height_m": 0.021,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 167,
+       "z_m": 0.6286,
+       "range_m": 0.7136
+      },
+      {
+       "side": "right",
+       "col": 228,
+       "z_m": 0.6286,
+       "range_m": 0.7136
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6286,
+     "chosen": "lowest",
+     "sample_spread_m": 0.0,
+     "ambiguous": false
+    },
+    "ambiguous_support": false,
+    "support_sample_spread_m": 0.0,
+    "support_z_m": 0.6286,
+    "centre_z_m": 0.6496,
+    "range_m": 0.754,
+    "centre_view_range_m": 0.7259,
+    "box_near_m": 0.7129,
+    "box_far_m": 0.7949
+   },
+   "seen:purple": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     237.5,
+     445.0
+    ],
+    "bbox": [
+     205,
+     380,
+     270,
+     510
+    ],
+    "half_height_m": 0.042,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 202,
+       "z_m": 0.6286,
+       "range_m": 0.6833
+      },
+      {
+       "side": "right",
+       "col": 273,
+       "z_m": 0.6286,
+       "range_m": 0.6833
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6286,
+     "chosen": "lowest",
+     "sample_spread_m": 0.0,
+     "ambiguous": false
+    },
+    "ambiguous_support": false,
+    "support_sample_spread_m": 0.0,
+    "support_z_m": 0.6286,
+    "centre_z_m": 0.6706,
+    "range_m": 0.7005,
+    "centre_view_range_m": 0.6772,
+    "box_near_m": 0.6827,
+    "box_far_m": 0.788
+   },
+   "seen:blue": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     477.5,
+     312.5
+    ],
+    "bbox": [
+     435,
+     240,
+     520,
+     385
+    ],
+    "half_height_m": 0.035,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 432,
+       "z_m": 0.6287,
+       "range_m": 0.7745
+      },
+      {
+       "side": "right",
+       "col": 523,
+       "z_m": 0.6287,
+       "range_m": 0.7745
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6287,
+     "chosen": "lowest",
+     "sample_spread_m": 0.0,
+     "ambiguous": false
+    },
+
+--- lh_c1_shared_pair_restore.B.r0.model_call.first
+{
+ "ok": true,
+ "kind": "perceive",
+ "prompt_version": "s2-perceive-v1",
+ "provider": "agnes",
+ "model": "agnes-2.5-flash",
+ "frame_ref": "look_0001_main",
+ "image_sha256": "db92d4853f110683ac1c003e6b8f5ddc3ebd3d3dd198e7c0583596800558d523",
+ "modality": "rgbd",
+ "images": [
+  {
+   "index": 0,
+   "ref": "/home/czx/embodied-agent-batches/v04/e2/long_horizon_vlm/long_horizon_rule_vlm_memstore_skillmem_20260930_130350/episodes/lh_c1_shared_pair_restore.B.r0/perception/look_0001_main.png",
+   "bytes": 22761,
+   "sha256": "db92d4853f110683ac1c003e6b8f5ddc3ebd3d3dd198e7c0583596800558d523"
+  }
+ ],
+ "requested_model": "agnes-2.5-flash",
+ "returned_model": "agnes-2.5-flash",
+ "completion_id": "e5f82fd3cf15449ab8d43e808b139e31",
+ "created": 1790744636,
+ "finish_reason": "stop",
+ "usage": {
+  "completion_tokens": 455,
+  "prompt_tokens": 1408,
+  "total_tokens": 1863,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "image_tokens": 475
+  }
+ },
+ "temperature": 0.2,
+ "max_tokens": 1200,
+ "prompt_chars": 1710,
+ "raw_chars": 1059,
+ "latency_s": 6.062,
+ "http_requests_total": 1,
+ "transport_attempts": 1,
+ "transport_retries": 0,
+ "http_requests_this_call": 1,
+ "api_errors_this_call": 0,
+ "transport_retries_this_call": 0,
+ "prompt_tokens_this_call": 1408,
+ "completion_tokens_this_call": 455,
+ "format_repairs_this_call": 0,
+ "schema_repairs": 0,
+ "schema_errors": null,
+ "error": null,
+ "requests_made": null,
+ "content_field_present": true,
+ "reasoning_field_present": false,
+ "reasoning_chars": 0,
+ "raw_response": "{\n  \"objects\": [\n    {\n      \"ref\": \"绿色方块\",\n      \"color\": \"green\",\n      \"shape\": \"cube\",\n      \"bbox\": [170, 360, 225, 465],\n      \"confidence\": 0.72,\n      \"occluded\": false,\n      \"on_or_in\": \"table\"\n    },\n    {\n      \"ref\": \"紫色圆柱\",\n      \"color\": \"purple\",\n      \"shape\": \"cylinder\",\n      \"bbox\": [205, 380, 270, 510],\n      \"confidence\": 0.88,\n      \"occluded\": false,\n      \"on_or_in\": \"table\"\n    },\n    {\n      \"ref\": \"蓝色长方体\",\n      \"color\": \"blue\",\n      \"shape\": \"cuboid\",\n      \"bbox\": [435, 240, 520, 385],\n      \"confidence\": 0.85,\n      \"occluded\": false,\n      \"on_or_in\": \"table\"\n    },\n    {\n      \"ref\": \"黄色方块\",\n      \"color\": \"yellow\",\n      \"shape\": \"cube\",\n      \"bbox\": [580, 210, 640, 310],\n      \"confidence\": 0.91,\n      \"occluded\": false,\n      \"on_or_in\": \"table\"\n    }\n  ],\n  \"absent\": [],\n  \"regions\": [\n    {\n      \"target_id\": \"tray_left\",\n      \"occupied\": false,\n      \"confidence\": 0.82\n    
+
+
+===== vlm / lh_c1_shared_pair_restore.B.r1 summary keys: ['artifacts', 'case_id', 'decision_source', 'environment_events', 'episode_id', 'episodic', 'expected', 'goal_resolution', 'mode', 'perception', 'probe', 'repeat', 'result', 'score', 'set', 'skill_acquisition', 'subset', 'wall_time_s']
+
+--- lh_c1_shared_pair_restore.B.r1.summary.top
+{
+ "episode_id": "lh_c1_shared_pair_restore.B.r1",
+ "case_id": "lh_c1_shared_pair_restore",
+ "set": "long_horizon",
+ "subset": "long_horizon",
+ "mode": "B",
+ "repeat": 1,
+ "expected": "success",
+ "probe": {
+  "probe": "none",
+  "met": false,
+  "detail": "no probe: generic expectation check"
+ },
+ "score": {
+  "eval_id": "eval-lh_c1_shared_pair_restore",
+  "scored_observation_ref": "per_9ab0e5ad",
+  "scored_state_version": 22,
+  "scored_entities_from": "simulator (TerminalSnapshot.capture)",
+  "scored_sim_time": 9.612,
+  "settle_seconds": 0.5,
+  "objects_total": 4,
+  "objects_completed": 1,
+  "goals_complete_success": false,
+  "protocol_ok": false,
+  "protocol_notes": [
+   "terminal_status=failed",
+   "failure_type=BUDGET_EXHAUSTED"
+  ],
+  "complete_success": false,
+  "details": {
+   "obj_green_1": {
+    "target": "tray_right",
+    "satisfied": true,
+    "evidence": {
+     "xy_err_x": 0.0001299446745106625,
+     "xy_err_y": 0.016910669156530944,
+     "footprint_half_x": 0.022290893634951472,
+     "footprint_half_y": 0.022289215551258266,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.0,
+     "tray_contacts": 1.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0002,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_blue_2": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.22137142613286148,
+     "xy_err_y": 0.37143021234598633,
+     "footprint_half_x": 0.02885046706311918,
+     "footprint_half_y": 0.02172022662917907,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.035,
+     "height_err_m": 0.075,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0,
+     "in_gripper": 1.0
+    }
+   },
+   "obj_yellow_3": {
+    "target": "tray_left",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.28801929049057595,
+     "xy_err_y": 0.47087047440257196,
+     "footprint_half_x": 0.024682759961484994,
+     "footprint_half_y": 0.024681912554248394,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0001,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_purple_4": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.21272959220652,
+     "xy_err_y": 0.47850808995042676,
+     "footprint_half_x": 0.023021051719079307,
+     "footprint_half_y": 0.023002537368998075,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.042,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "
+
+--- lh_c1_shared_pair_restore.B.r1.summary.result
+{
+ "episode_id": "lh_c1_shared_pair_restore.B.r1",
+ "task_id": "lh_c1_shared_pair_restore",
+ "terminal_status": "failed",
+ "mode": "B",
+ "decision_rounds": 5,
+ "skill_calls": 5,
+ "http_requests": 36,
+ "score_complete_success": false,
+ "objects_total": 4,
+ "objects_completed": 0,
+ "failure_type": "BUDGET_EXHAUSTED",
+ "recovery_events": 2,
+ "retry_events": 0,
+ "replan_events": 1,
+ "rejected_decisions": 0,
+ "false_finish_attempts": 0,
+ "identical_invalid_attempts": 1,
+ "identical_repeats_total": 0,
+ "model_errors": 0,
+ "semantic_repairs": 0,
+ "provider_counters": {
+  "api_errors": 0,
+  "transport_retries": 0,
+  "format_repairs": 0
+ },
+ "api_cost_estimate": null,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "sim_time_s": 9.61,
+ "wall_time_s": 159.18,
+ "slot_resolution_fallbacks": 1,
+ "human_intervention": false,
+ "config_ref": null,
+ "termination_reason": null,
+ "artifacts": {
+  "terminal_state_version": "22",
+  "terminal_observation_ref": "per_9ab0e5ad",
+  "unknown_goals": "2",
+  "note": "http request budget 32 spent before the next round (21 looks billed to 32 requests)"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.observation
+{
+ "observation": {
+  "observation_ref": "per_b50f94cd",
+  "state_version": 1,
+  "sim_time": 0.49999999999999944,
+  "wall_time": 1790745029.9737623,
+  "source": "sensor",
+  "held_object": null,
+  "n_entities": 4
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.decision_context
+{
+ "context_id": "ctx_ba910f87",
+ "round_index": 1,
+ "state_version": 1,
+ "observation_ref": "per_b50f94cd",
+ "goal_version": 1,
+ "progress": [
+  {
+   "entity_id": "obj_green_1",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.92,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.049800000000000066,
+    "xy_err_y": 0.537,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.4474,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_b50f94cd"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_green_1:tray_right"
+  },
+  {
+   "entity_id": "obj_blue_2",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.92,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.041100000000000025,
+    "xy_err_y": 0.3563,
+    "footprint_half_x": 0.048114446894877635,
+    "footprint_half_y": 0.048114446894877635,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.2784,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_b50f94cd"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_blue_2:tray_right"
+  },
+  {
+   "entity_id": "obj_yellow_3",
+   "target_id": "tray_left",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.92,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.09220000000000006,
+    "xy_err_y": 0.438,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.3484,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_b50f94cd"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_yellow_3:tray_left"
+  },
+  {
+   "entity_id": "obj_purple_4",
+   "target_id": "tray_right",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.92,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.010599999999999943,
+    "xy_err_y": 0.538,
+    "footprint_half_x": 0.047885279575251516,
+    "footprint_half_y": 0.047885279575251516,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.4599,
+    "occupies
+
+--- lh_c1_shared_pair_restore.B.r1.decision
+{
+ "decision_id": "d_110fb272",
+ "context_id": "ctx_ba910f87",
+ "based_on_state_version": 1,
+ "goal_ref": "g_c770223f",
+ "action": "execute",
+ "execute": {
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_green_1"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_b50f94cd"
+ ],
+ "rationale": "pick obj_green_1",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.decision
+{
+ "decision_id": "d_3014ffbf",
+ "context_id": "ctx_4193bdea",
+ "based_on_state_version": 5,
+ "goal_ref": "g_c770223f",
+ "action": "execute",
+ "execute": {
+  "skill": "place",
+  "args": {
+   "object_id": "obj_green_1",
+   "target_id": "tray_right"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_78d99501"
+ ],
+ "rationale": "place obj_green_1 into tray_right",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_b9aeb499",
+  "decision_id": "d_110fb272",
+  "call_id": "c_c02fb744",
+  "context_id": "ctx_ba910f87",
+  "skill": "pick",
+  "entity_id": "obj_green_1",
+  "target_id": null,
+  "candidate_id": null,
+  "candidate_resolution": null,
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "approach",
+   "open_gripper",
+   "descend",
+   "close_gripper",
+   "lift",
+   "grasp_check"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_b50f94cd",
+  "post_observation_ref": "per_60a60041",
+  "new_measurement": true,
+  "pre_state_version": 1,
+  "post_state_version": 4,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "grasp:obj_green_1",
+     "description": "the gripper reports holding this entity; the lift itself is not a quantity a frame of the table can measure",
+     "value": "true",
+     "evidence": {
+      "gripper_named_the_entity": 1.0,
+      "gripper_reports_empty": 0.0,
+      "gripper_report_is_ambiguous": 0.0,
+      "reported_by_this_view": 1.0,
+      "held_flag_is_true": 1.0
+     },
+     "evidence_refs": [
+      "per_60a60041"
+     ],
+     "unmeasured": [
+      "lift_gain_m",
+      "hold_state"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_60a60041",
+   "state_version": 4
+  },
+  "held_object_after": "obj_green_1",
+  "progress_changes": [],
+  "affected_entities": [
+   "obj_blue_2",
+   "obj_purple_4",
+   "obj_yellow_3"
+  ],
+  "measurements": {
+   "lift_gain_m": 0.0833,
+   "follow_err_m": 0.0051,
+   "in_contact": 1.0,
+   "support_z_m": 0.641
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_green_1",
+     "dxy": [
+      -0.1259,
+      0.0126
+     ],
+     "dz": 0.0001,
+     "dist_m": 0.1265
+    },
+    {
+     "entity_id": "obj_blue_2",
+     "dxy": [
+      -0.0271,
+      0.0333
+     ],
+     "dz": 0.0001,
+     "dist_m": 0.0429
+    },
+    {
+     "entity_id": "obj_yellow_3",
+     "dxy": [
+      -0.0051,
+      0.0192
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0199
+    },
+    {
+     "entity_id": "obj_purple_4",
+     "dxy": [
+      -0.0277,
+      0.0321
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0424
+    }
+   ],
+   "state_changed": [
+    {
+     "entity_id": "obj_green_1",
+     "dxy": [
+      -0.1259,
+      0.0126
+     ],
+     "dz": 0.0001,
+     "dist_m": 0.1265,
+     "hold_before_after": [
+      "unknown",
+      "True"
+     ],
+     "support_before_after": [
+      "tray_left",
+      "table"
+     ]
+    },
+    {
+     "entity_id": "obj_yellow_3",
+     "dxy": [
+      -0.0051,
+      0.0192
+
+--- lh_c1_shared_pair_restore.B.r1.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_f4d9f7f1",
+  "decision_id": "d_3014ffbf",
+  "call_id": "c_813174a0",
+  "context_id": "ctx_4193bdea",
+  "skill": "place",
+  "entity_id": "obj_green_1",
+  "target_id": "tray_right",
+  "candidate_id": null,
+  "candidate_resolution": "runtime_fallback_rule",
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "transfer",
+   "descend",
+   "release",
+   "retreat",
+   "settle"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_78d99501",
+  "post_observation_ref": "per_7b7c3cfb",
+  "new_measurement": true,
+  "pre_state_version": 5,
+  "post_state_version": 9,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "placed:obj_green_1:tray_right",
+     "description": "measured support is table, not tray_right",
+     "value": "false",
+     "evidence": {
+      "claim_confidence": 0.94,
+      "located": 1.0,
+      "relation_matches_target": 0.0,
+      "xy_err_x": 0.12249999999999994,
+      "xy_err_y": 0.1368,
+      "footprint_half_x": 0.036373066958946425,
+      "footprint_half_y": 0.036373066958946425,
+      "allow_x": 0.126,
+      "allow_y": 0.126,
+      "wall_margin_m": -0.0472,
+      "occupies_target": 0.0
+     },
+     "evidence_refs": [
+      "per_7b7c3cfb"
+     ],
+     "unmeasured": [
+      "relation_other_surface",
+      "rest_z_vs_assumed_orientation",
+      "hold_state",
+      "at_rest"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_7b7c3cfb",
+   "state_version": 9
+  },
+  "held_object_after": null,
+  "progress_changes": [],
+  "affected_entities": [
+   "obj_blue_2",
+   "obj_purple_4",
+   "obj_yellow_3"
+  ],
+  "measurements": {
+   "candidate_x": 0.66,
+   "candidate_y": 0.32,
+   "candidate_rest_z": 0.649,
+   "carry_offset_x_m": -0.0017,
+   "carry_offset_y_m": 0.0149,
+   "descent_touchdown": 1.0,
+   "release_height_m": 0.0238,
+   "release_gap_above_seat_m": 0.0028,
+   "fingers_clear_after_open": 0.0,
+   "final_x": 0.6601,
+   "final_y": 0.3369,
+   "final_z": 0.649,
+   "lin_speed": 0.0,
+   "ang_speed": 0.0002,
+   "inside_target": 1.0,
+   "gripper_free": 1.0,
+   "at_rest": 1.0,
+   "footprint_half_x": 0.0223,
+   "footprint_half_y": 0.0223,
+   "displacement_from_candidate_m": 0.0169
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_purple_4",
+     "dxy": [
+      -0.0823,
+      -0.1508
+     ],
+     "dz": 0.0,
+     "dist_m": 0.1718
+    },
+    {
+     "entity_id": "obj_blue_2",
+     "dxy": [
+      -0.0353,
+      -0.1008
+     ],
+     "dz": 0.0,
+     "dist_m": 0.1068
+    },
+    {
+     "
+
+--- lh_c1_shared_pair_restore.B.r1.skill_call
+{
+ "decision_id": "d_110fb272",
+ "context_id": "ctx_ba910f87",
+ "call": {
+  "call_id": "c_c02fb744",
+  "plan_id": "modeB_d_110fb272",
+  "step_id": "r1",
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_green_1"
+  },
+  "timeout_s": 30.0,
+  "expected_state_version": 1,
+  "decision_id": "d_110fb272",
+  "based_on_state_version": 1,
+  "candidate_id": null
+ }
+}
+
+--- lh_c1_shared_pair_restore.B.r1.perception
+{
+ "state_version": 1,
+ "view": "main",
+ "created_at": 1790745033.4286804,
+ "updated_at": 1790745033.4286814,
+ "source": "sensor",
+ "provenance": {
+  "reader": {
+   "model": "agnes-2.5-flash",
+   "channel": "vlm",
+   "prompt_version": "s2-perceive-v1",
+   "model_return_id": "c15545f2f03441c582d527dd47ff4e63",
+   "absent": []
+  },
+  "geometry": {
+   "seen:green": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     226.0,
+     415.0
+    ],
+    "bbox": [
+     192,
+     362,
+     260,
+     468
+    ],
+    "half_height_m": 0.021,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 189,
+       "z_m": 0.6286,
+       "range_m": 0.7115
+      },
+      {
+       "side": "right",
+       "col": 263,
+       "z_m": 0.6286,
+       "range_m": 0.7115
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6286,
+     "chosen": "lowest",
+     "sample_spread_m": 0.0,
+     "ambiguous": false
+    },
+    "ambiguous_support": false,
+    "support_sample_spread_m": 0.0,
+    "support_z_m": 0.6286,
+    "centre_z_m": 0.6496,
+    "range_m": 0.7468,
+    "centre_view_range_m": 0.724,
+    "box_near_m": 0.7108,
+    "box_far_m": 0.8035
+   },
+   "seen:blue": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     408.5,
+     334.0
+    ],
+    "bbox": [
+     363,
+     257,
+     454,
+     411
+    ],
+    "half_height_m": 0.035,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 360,
+       "z_m": 0.6286,
+       "range_m": 0.7536
+      },
+      {
+       "side": "right",
+       "col": 457,
+       "z_m": 0.6286,
+       "range_m": 0.7536
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6286,
+     "chosen": "lowest",
+     "sample_spread_m": 0.0,
+     "ambiguous": false
+    },
+    "ambiguous_support": false,
+    "support_sample_spread_m": 0.0,
+    "support_z_m": 0.6286,
+    "centre_z_m": 0.6636,
+    "range_m": 0.7722,
+    "centre_view_range_m": 0.7715,
+    "box_near_m": 0.7528,
+    "box_far_m": 0.9078
+   },
+   "seen:yellow": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     510.5,
+     256.5
+    ],
+    "bbox": [
+     479,
+     205,
+     542,
+     308
+    ],
+    "half_height_m": 0.021,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 476,
+       "z_m": 0.6287,
+       "range_m": 0.844
+      },
+      {
+       "side": "right",
+       "col": 545,
+       "z_m": 0.6287,
+       "range_m": 0.844
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6287,
+     "chosen": "lowest",
+     "sample_spread_m": 0.0,
+     "ambiguous": false
+    },
+
+
+--- lh_c1_shared_pair_restore.B.r1.model_call.first
+{
+ "ok": true,
+ "kind": "perceive",
+ "prompt_version": "s2-perceive-v1",
+ "provider": "agnes",
+ "model": "agnes-2.5-flash",
+ "frame_ref": "look_0001_main",
+ "image_sha256": "db92d4853f110683ac1c003e6b8f5ddc3ebd3d3dd198e7c0583596800558d523",
+ "modality": "rgbd",
+ "images": [
+  {
+   "index": 0,
+   "ref": "/home/czx/embodied-agent-batches/v04/e2/long_horizon_vlm/long_horizon_rule_vlm_memstore_skillmem_20260930_130350/episodes/lh_c1_shared_pair_restore.B.r1/perception/look_0001_main.png",
+   "bytes": 22761,
+   "sha256": "db92d4853f110683ac1c003e6b8f5ddc3ebd3d3dd198e7c0583596800558d523"
+  }
+ ],
+ "requested_model": "agnes-2.5-flash",
+ "returned_model": "agnes-2.5-flash",
+ "completion_id": "c15545f2f03441c582d527dd47ff4e63",
+ "created": 1790745032,
+ "finish_reason": "stop",
+ "usage": {
+  "completion_tokens": 338,
+  "prompt_tokens": 1408,
+  "total_tokens": 1746,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "image_tokens": 475
+  }
+ },
+ "temperature": 0.2,
+ "max_tokens": 1200,
+ "prompt_chars": 1710,
+ "raw_chars": 781,
+ "latency_s": 3.449,
+ "http_requests_total": 79,
+ "transport_attempts": 1,
+ "transport_retries": 0,
+ "http_requests_this_call": 1,
+ "api_errors_this_call": 0,
+ "transport_retries_this_call": 0,
+ "prompt_tokens_this_call": 1408,
+ "completion_tokens_this_call": 338,
+ "format_repairs_this_call": 0,
+ "schema_repairs": 0,
+ "schema_errors": null,
+ "error": null,
+ "requests_made": null,
+ "content_field_present": true,
+ "reasoning_field_present": false,
+ "reasoning_chars": 0,
+ "raw_response": "{\"objects\": [{\"ref\": \"绿色方块\", \"color\": \"green\", \"shape\": \"cube\", \"bbox\": [192, 362, 260, 468], \"confidence\": 0.92, \"occluded\": false, \"on_or_in\": \"table\"}, {\"ref\": \"蓝色长方体\", \"color\": \"blue\", \"shape\": \"cuboid\", \"bbox\": [363, 257, 454, 411], \"confidence\": 0.92, \"occluded\": false, \"on_or_in\": \"table\"}, {\"ref\": \"黄色方块\", \"color\": \"yellow\", \"shape\": \"cube\", \"bbox\": [479, 205, 542, 308], \"confidence\": 0.92, \"occluded\": false, \"on_or_in\": \"table\"}, {\"ref\": \"紫色圆柱\", \"color\": \"purple\", \"shape\": \"cylinder\", \"bbox\": [207, 365, 290, 540], \"confidence\": 0.92, \"occluded\": false, \"on_or_in\": \"table\"}], \"absent\": [], \"regions\": [{\"target_id\": \"tray_left\", \"occupied\": false, \"confidence\": 0.92}, {\"target_id\": \"tray_right\", \"occupied\": false, \"confidence\": 0.95}], \"notes\": \"物体均位于桌面上，托盘内未见物体。\"}",
+ "episode_id": "lh_c1_shared_pair_restore.B.r1",
+ "mode": "B",
+ "case_id": "lh_c1_shared_pair_restore",
+ "repeat": 1,
+ "recorded_at": 1790745033.4229727
+}
+
+
+===== vlm / lh_c3_capacity_and_shift.B.r0 summary keys: ['artifacts', 'case_id', 'decision_source', 'environment_events', 'episode_id', 'episodic', 'expected', 'goal_resolution', 'mode', 'perception', 'probe', 'repeat', 'result', 'score', 'set', 'skill_acquisition', 'subset', 'wall_time_s']
+
+--- lh_c3_capacity_and_shift.B.r0.summary.top
+{
+ "episode_id": "lh_c3_capacity_and_shift.B.r0",
+ "case_id": "lh_c3_capacity_and_shift",
+ "set": "long_horizon",
+ "subset": "long_horizon",
+ "mode": "B",
+ "repeat": 0,
+ "expected": "success",
+ "probe": {
+  "probe": "none",
+  "met": false,
+  "detail": "no probe: generic expectation check"
+ },
+ "score": {
+  "eval_id": "eval-lh_c3_capacity_and_shift",
+  "scored_observation_ref": "per_752c5a9c",
+  "scored_state_version": 28,
+  "scored_entities_from": "simulator (TerminalSnapshot.capture)",
+  "scored_sim_time": 12.446,
+  "settle_seconds": 0.5,
+  "objects_total": 6,
+  "objects_completed": 0,
+  "goals_complete_success": false,
+  "protocol_ok": false,
+  "protocol_notes": [
+   "terminal_status=failed"
+  ],
+  "complete_success": false,
+  "details": {
+   "obj_yellow_1": {
+    "target": "tray_middle",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.28570839714781143,
+     "xy_err_y": 0.16165112574507012,
+     "footprint_half_x": 0.023414597934125585,
+     "footprint_half_y": 0.023414484650177446,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_purple_2": {
+    "target": "tray_middle",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.050312019700449406,
+     "xy_err_y": 0.06320436822455386,
+     "footprint_half_x": 0.025761906443988715,
+     "footprint_half_y": 0.0250601839111295,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.0227,
+     "height_err_m": 0.0802,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0043,
+     "ang_speed": 0.0001,
+     "in_gripper": 1.0
+    }
+   },
+   "obj_red_3": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.281307800647023,
+     "xy_err_y": 0.1531273535453012,
+     "footprint_half_x": 0.029070336295291634,
+     "footprint_half_y": 0.022079802745186304,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.035,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0001,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_green_4": {
+    "target": "tray_left",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.2189868519486411,
+     "xy_err_y": 0.15686267707992937,
+     "footprint_half_x": 0.023000269297994997,
+     "footprint_half_y": 0.023004592568720825,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.042,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed
+
+--- lh_c3_capacity_and_shift.B.r0.summary.result
+{
+ "episode_id": "lh_c3_capacity_and_shift.B.r0",
+ "task_id": "lh_c3_capacity_and_shift",
+ "terminal_status": "failed",
+ "mode": "B",
+ "decision_rounds": 7,
+ "skill_calls": 6,
+ "http_requests": 39,
+ "score_complete_success": false,
+ "objects_total": 6,
+ "objects_completed": 1,
+ "failure_type": null,
+ "recovery_events": 4,
+ "retry_events": 0,
+ "replan_events": 2,
+ "rejected_decisions": 0,
+ "false_finish_attempts": 0,
+ "identical_invalid_attempts": 1,
+ "identical_repeats_total": 0,
+ "model_errors": 0,
+ "semantic_repairs": 0,
+ "provider_counters": {
+  "api_errors": 0,
+  "transport_retries": 0,
+  "format_repairs": 0
+ },
+ "api_cost_estimate": null,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "sim_time_s": 12.45,
+ "wall_time_s": 195.44,
+ "slot_resolution_fallbacks": 2,
+ "human_intervention": false,
+ "config_ref": null,
+ "termination_reason": null,
+ "artifacts": {
+  "terminal_state_version": "28",
+  "terminal_observation_ref": "per_752c5a9c",
+  "unknown_goals": "4",
+  "note": "blocked by model"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.observation
+{
+ "observation": {
+  "observation_ref": "per_ed040895",
+  "state_version": 1,
+  "sim_time": 0.49999999999999944,
+  "wall_time": 1790744834.4458272,
+  "source": "sensor",
+  "held_object": null,
+  "n_entities": 5
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.decision_context
+{
+ "context_id": "ctx_9ad685d9",
+ "round_index": 1,
+ "state_version": 1,
+ "observation_ref": "per_ed040895",
+ "goal_version": 1,
+ "progress": [
+  {
+   "entity_id": "{'shape': 'cube', 'color': 'yellow'}",
+   "target_id": "tray_middle",
+   "value": "unknown",
+   "evidence": {
+    "entity_bound": 0.0
+   },
+   "evidence_refs": [
+    "per_ed040895"
+   ],
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "predicate_id": "placed:?{'shape': 'cube', 'color': 'yellow'}:tray_middle"
+  },
+  {
+   "entity_id": "obj_purple_2",
+   "target_id": "tray_middle",
+   "value": "unknown",
+   "evidence": {
+    "claim_confidence": 0.95,
+    "located": 1.0,
+    "relation_matches_target": 1.0,
+    "xy_err_x": 0.007299999999999973,
+    "xy_err_y": 0.093,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.0034,
+    "occupies_target": 1.0
+   },
+   "evidence_refs": [
+    "per_ed040895"
+   ],
+   "unmeasured": [
+    "inside_unproven_at_invariant_bound",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_purple_2:tray_middle"
+  },
+  {
+   "entity_id": "obj_red_3",
+   "target_id": "tray_right",
+   "value": "true",
+   "evidence": {
+    "claim_confidence": 0.95,
+    "located": 1.0,
+    "relation_matches_target": 1.0,
+    "xy_err_x": 0.03090000000000004,
+    "xy_err_y": 0.069,
+    "footprint_half_x": 0.048114446894877635,
+    "footprint_half_y": 0.048114446894877635,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": 0.0089,
+    "occupies_target": 1.0
+   },
+   "evidence_refs": [
+    "per_ed040895"
+   ],
+   "unmeasured": [
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_red_3:tray_right"
+  },
+  {
+   "entity_id": "obj_green_4",
+   "target_id": "tray_left",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.95,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.02300000000000002,
+    "xy_err_y": 0.21000000000000002,
+    "footprint_half_x": 0.047885279575251516,
+    "footprint_half_y": 0.047885279575251516,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.1319,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_ed040895"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_green_4:tray_left"
+  },
+  {
+   "entity_id": "obj_blue_5",
+   "target_id": "tray_middle",
+   "value": "unknown",
+   "evidenc
+
+--- lh_c3_capacity_and_shift.B.r0.decision
+{
+ "decision_id": "d_38b4dac3",
+ "context_id": "ctx_9ad685d9",
+ "based_on_state_version": 1,
+ "goal_ref": "g_7ab57bad",
+ "action": "execute",
+ "execute": {
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_purple_2"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_ed040895"
+ ],
+ "rationale": "pick obj_purple_2",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.decision
+{
+ "decision_id": "d_ceafc80f",
+ "context_id": "ctx_e7d8178c",
+ "based_on_state_version": 5,
+ "goal_ref": "g_7ab57bad",
+ "action": "execute",
+ "execute": {
+  "skill": "place",
+  "args": {
+   "object_id": "obj_purple_2",
+   "target_id": "tray_middle"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_9fed071f"
+ ],
+ "rationale": "place obj_purple_2 into tray_middle",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_dfa0917b",
+  "decision_id": "d_38b4dac3",
+  "call_id": "c_5b5c2ef9",
+  "context_id": "ctx_9ad685d9",
+  "skill": "pick",
+  "entity_id": "obj_purple_2",
+  "target_id": null,
+  "candidate_id": null,
+  "candidate_resolution": null,
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "approach",
+   "open_gripper",
+   "descend",
+   "close_gripper",
+   "lift",
+   "grasp_check"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_ed040895",
+  "post_observation_ref": "per_f70168d7",
+  "new_measurement": true,
+  "pre_state_version": 1,
+  "post_state_version": 4,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "grasp:obj_purple_2",
+     "description": "the gripper reports holding this entity; the lift itself is not a quantity a frame of the table can measure",
+     "value": "true",
+     "evidence": {
+      "gripper_named_the_entity": 1.0,
+      "gripper_reports_empty": 0.0,
+      "gripper_report_is_ambiguous": 0.0,
+      "reported_by_this_view": 1.0,
+      "held_flag_is_true": 1.0
+     },
+     "evidence_refs": [
+      "per_f70168d7"
+     ],
+     "unmeasured": [
+      "lift_gain_m",
+      "hold_state"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_f70168d7",
+   "state_version": 4
+  },
+  "held_object_after": "obj_purple_2",
+  "progress_changes": [
+   {
+    "assignment": "obj_purple_2->tray_middle",
+    "from": "unknown",
+    "to": "false"
+   },
+   {
+    "assignment": "obj_red_3->tray_right",
+    "from": "true",
+    "to": "unknown"
+   },
+   {
+    "assignment": "obj_blue_5->tray_middle",
+    "from": "unknown",
+    "to": "true"
+   },
+   {
+    "assignment": "obj_yellow_6->tray_left",
+    "from": "unknown",
+    "to": "false"
+   }
+  ],
+  "affected_entities": [
+   "obj_blue_5",
+   "obj_green_4",
+   "obj_red_3",
+   "obj_yellow_6"
+  ],
+  "measurements": {
+   "lift_gain_m": 0.0832,
+   "follow_err_m": 0.0008,
+   "in_contact": 1.0,
+   "support_z_m": 0.641
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_red_3",
+     "dxy": [
+      -0.0319,
+      -0.0184
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0368
+    },
+    {
+     "entity_id": "obj_yellow_6",
+     "dxy": [
+      -0.0331,
+      0.0125
+     ],
+     "dz": -0.0179,
+     "dist_m": 0.0397
+    },
+    {
+     "entity_id": "obj_purple_2",
+     "dxy": [
+      -0.0895,
+      0.05
+     ],
+     "dz": 0.0,
+     "dist_m": 0.1025
+    },
+    {
+     "entity_id": "obj_blue_5",
+     "dxy": [
+      -0.0514,
+      0.0198
+     ],
+     "dz": 0.008,
+     "dis
+
+--- lh_c3_capacity_and_shift.B.r0.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_106f3b75",
+  "decision_id": "d_ceafc80f",
+  "call_id": "c_7c923390",
+  "context_id": "ctx_e7d8178c",
+  "skill": "place",
+  "entity_id": "obj_purple_2",
+  "target_id": "tray_middle",
+  "candidate_id": null,
+  "candidate_resolution": "runtime_fallback_rule",
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "transfer",
+   "descend",
+   "release",
+   "retreat",
+   "settle"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_9fed071f",
+  "post_observation_ref": "per_6203f7f7",
+  "new_measurement": true,
+  "pre_state_version": 5,
+  "post_state_version": 9,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "placed:obj_purple_2:tray_middle",
+     "description": "measured support is table, not tray_middle",
+     "value": "false",
+     "evidence": {
+      "claim_confidence": 0.95,
+      "located": 1.0,
+      "relation_matches_target": 0.0,
+      "xy_err_x": 0.23359999999999992,
+      "xy_err_y": 0.0615,
+      "footprint_half_x": 0.036373066958946425,
+      "footprint_half_y": 0.036373066958946425,
+      "allow_x": 0.126,
+      "allow_y": 0.126,
+      "wall_margin_m": -0.144,
+      "occupies_target": 0.0
+     },
+     "evidence_refs": [
+      "per_6203f7f7"
+     ],
+     "unmeasured": [
+      "relation_other_surface",
+      "rest_z_vs_assumed_orientation",
+      "hold_state",
+      "at_rest"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_6203f7f7",
+   "state_version": 9
+  },
+  "held_object_after": null,
+  "progress_changes": [
+   {
+    "assignment": "obj_purple_2->tray_middle",
+    "from": "true",
+    "to": "false"
+   },
+   {
+    "assignment": "{'shape': 'cuboid', 'color': 'red'}->tray_right",
+    "from": "absent",
+    "to": "unknown"
+   }
+  ],
+  "affected_entities": [
+   "obj_blue_5",
+   "obj_green_4",
+   "obj_yellow_6"
+  ],
+  "measurements": {
+   "candidate_x": 0.66,
+   "candidate_y": 0.0,
+   "candidate_rest_z": 0.649,
+   "carry_offset_x_m": -0.0016,
+   "carry_offset_y_m": -0.0084,
+   "descent_touchdown": 1.0,
+   "release_height_m": 0.0236,
+   "release_gap_above_seat_m": 0.0026,
+   "fingers_clear_after_open": 1.0,
+   "final_x": 0.66,
+   "final_y": -0.0081,
+   "final_z": 0.649,
+   "lin_speed": 0.0,
+   "ang_speed": 0.0002,
+   "inside_target": 1.0,
+   "gripper_free": 1.0,
+   "at_rest": 1.0,
+   "footprint_half_x": 0.0242,
+   "footprint_half_y": 0.0242,
+   "displacement_from_candidate_m": 0.0081
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_green_4",
+     "dxy": [
+      -
+
+--- lh_c3_capacity_and_shift.B.r0.skill_call
+{
+ "decision_id": "d_38b4dac3",
+ "context_id": "ctx_9ad685d9",
+ "call": {
+  "call_id": "c_5b5c2ef9",
+  "plan_id": "modeB_d_38b4dac3",
+  "step_id": "r1",
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_purple_2"
+  },
+  "timeout_s": 30.0,
+  "expected_state_version": 1,
+  "decision_id": "d_38b4dac3",
+  "based_on_state_version": 1,
+  "candidate_id": null
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r0.terminated_blocked
+{
+ "decision_id": "d_a19b8d21",
+ "note": "the model found no feasible next action; that is not a proof that the task is unsolvable"
+}
+
+--- lh_c3_capacity_and_shift.B.r0.perception
+{
+ "state_version": 1,
+ "view": "main",
+ "created_at": 1790744838.383825,
+ "updated_at": 1790744838.3838263,
+ "source": "sensor",
+ "provenance": {
+  "reader": {
+   "model": "agnes-2.5-flash",
+   "channel": "vlm",
+   "prompt_version": "s2-perceive-v1",
+   "model_return_id": "cb65c5a70036440096dae211dd0683df",
+   "absent": []
+  },
+  "geometry": {
+   "seen:red": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     649.5,
+     238.0
+    ],
+    "bbox": [
+     611,
+     176,
+     688,
+     300
+    ],
+    "half_height_m": 0.035,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 608,
+       "z_m": 0.6406,
+       "range_m": 0.8354
+      },
+      {
+       "side": "right",
+       "col": 691,
+       "z_m": 0.6287,
+       "range_m": 0.8519
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6287,
+     "chosen": "lowest",
+     "sample_spread_m": 0.0119,
+     "ambiguous": false
+    },
+    "ambiguous_support": false,
+    "support_sample_spread_m": 0.0119,
+    "support_z_m": 0.6287,
+    "centre_z_m": 0.6637,
+    "range_m": 0.9063,
+    "centre_view_range_m": 0.8652,
+    "box_near_m": 0.8161,
+    "box_far_m": 0.9958
+   },
+   "seen:yellow": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     681.5,
+     295.5
+    ],
+    "bbox": [
+     640,
+     219,
+     723,
+     372
+    ],
+    "half_height_m": 0.035,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 637,
+       "z_m": 0.6466,
+       "range_m": 0.7624
+      },
+      {
+       "side": "right",
+       "col": 726,
+       "z_m": 0.6536,
+       "range_m": 0.7534
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6466,
+     "chosen": "lowest",
+     "sample_spread_m": 0.007,
+     "ambiguous": false
+    },
+    "ambiguous_support": false,
+    "support_sample_spread_m": 0.007,
+    "support_z_m": 0.6466,
+    "centre_z_m": 0.6816,
+    "range_m": 0.8257,
+    "centre_view_range_m": 0.7814,
+    "box_near_m": 0.7525,
+    "box_far_m": 0.9402
+   },
+   "seen:purple": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     549.0,
+     326.0
+    ],
+    "bbox": [
+     506,
+     267,
+     592,
+     385
+    ],
+    "half_height_m": 0.021,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 503,
+       "z_m": 0.6287,
+       "range_m": 0.7745
+      },
+      {
+       "side": "right",
+       "col": 595,
+       "z_m": 0.6287,
+       "range_m": 0.7745
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6287,
+     "chosen": "lowest",
+     "sample_spread_m": 0.0,
+     "ambiguous": f
+
+--- lh_c3_capacity_and_shift.B.r0.model_call.first
+{
+ "ok": true,
+ "kind": "perceive",
+ "prompt_version": "s2-perceive-v1",
+ "provider": "agnes",
+ "model": "agnes-2.5-flash",
+ "frame_ref": "look_0001_main",
+ "image_sha256": "809a8ac453d59bef0b7bd32fc19b5ecaec623ce3c80f55b85c43c8a6cb8c0d11",
+ "modality": "rgbd",
+ "images": [
+  {
+   "index": 0,
+   "ref": "/home/czx/embodied-agent-batches/v04/e2/long_horizon_vlm/long_horizon_rule_vlm_memstore_skillmem_20260930_130350/episodes/lh_c3_capacity_and_shift.B.r0/perception/look_0001_main.png",
+   "bytes": 22921,
+   "sha256": "809a8ac453d59bef0b7bd32fc19b5ecaec623ce3c80f55b85c43c8a6cb8c0d11"
+  }
+ ],
+ "requested_model": "agnes-2.5-flash",
+ "returned_model": "agnes-2.5-flash",
+ "completion_id": "cb65c5a70036440096dae211dd0683df",
+ "created": 1790744837,
+ "finish_reason": "stop",
+ "usage": {
+  "completion_tokens": 403,
+  "prompt_tokens": 1417,
+  "total_tokens": 1820,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "image_tokens": 475
+  }
+ },
+ "temperature": 0.2,
+ "max_tokens": 1200,
+ "prompt_chars": 1727,
+ "raw_chars": 1031,
+ "latency_s": 3.928,
+ "http_requests_total": 40,
+ "transport_attempts": 1,
+ "transport_retries": 0,
+ "http_requests_this_call": 1,
+ "api_errors_this_call": 0,
+ "transport_retries_this_call": 0,
+ "prompt_tokens_this_call": 1417,
+ "completion_tokens_this_call": 403,
+ "format_repairs_this_call": 0,
+ "schema_repairs": 0,
+ "schema_errors": null,
+ "error": null,
+ "requests_made": null,
+ "content_field_present": true,
+ "reasoning_field_present": false,
+ "reasoning_chars": 0,
+ "raw_response": "{\"objects\":[{\"ref\":\"红色长方体\",\"color\":\"red\",\"shape\":\"cuboid\",\"bbox\":[611,176,688,300],\"confidence\":0.95,\"occluded\":false,\"on_or_in\":\"\"},{\"ref\":\"黄色长方体\",\"color\":\"yellow\",\"shape\":\"cuboid\",\"bbox\":[640,219,723,372],\"confidence\":0.95,\"occluded\":false,\"on_or_in\":\"\"},{\"ref\":\"紫色方块\",\"color\":\"purple\",\"shape\":\"cube\",\"bbox\":[506,267,592,385],\"confidence\":0.95,\"occluded\":false,\"on_or_in\":\"\"},{\"ref\":\"蓝色方块\",\"color\":\"blue\",\"shape\":\"cube\",\"bbox\":[536,348,639,474],\"confidence\":0.95,\"occluded\":false,\"on_or_in\":\"\"},{\"ref\":\"绿色圆柱\",\"color\":\"green\",\"shape\":\"cylinder\",\"bbox\":[330,332,414,487],\"confidence\":0.95,\"occluded\":false,\"on_or_in\":\"\"},{\"ref\":\"黄色方块\",\"color\":\"yellow\",\"shape\":\"cube\",\"bbox\":[279,309,354,439],\"confidence\":0.85,\"occluded\":false,\"on_or_in\":\"\"}],\"absent\":[],\"regions\":[{\"target_id\":\"tray_left\",\"occupied\":false,\"confidence\":0.95},{\"target_id\":\"tray_middle\",\"occupied\":false,\"confidence\":0.95},{\"target_id\":\"tray_right\",\
+
+
+===== vlm / lh_c3_capacity_and_shift.B.r1 summary keys: ['artifacts', 'case_id', 'decision_source', 'environment_events', 'episode_id', 'episodic', 'expected', 'goal_resolution', 'mode', 'perception', 'probe', 'repeat', 'result', 'score', 'set', 'skill_acquisition', 'subset', 'wall_time_s']
+
+--- lh_c3_capacity_and_shift.B.r1.summary.top
+{
+ "episode_id": "lh_c3_capacity_and_shift.B.r1",
+ "case_id": "lh_c3_capacity_and_shift",
+ "set": "long_horizon",
+ "subset": "long_horizon",
+ "mode": "B",
+ "repeat": 1,
+ "expected": "success",
+ "probe": {
+  "probe": "none",
+  "met": false,
+  "detail": "no probe: generic expectation check"
+ },
+ "score": {
+  "eval_id": "eval-lh_c3_capacity_and_shift",
+  "scored_observation_ref": "per_04405725",
+  "scored_state_version": 15,
+  "scored_entities_from": "simulator (TerminalSnapshot.capture)",
+  "scored_sim_time": 7.825,
+  "settle_seconds": 0.5,
+  "objects_total": 6,
+  "objects_completed": 0,
+  "goals_complete_success": false,
+  "protocol_ok": false,
+  "protocol_notes": [
+   "terminal_status=failed"
+  ],
+  "complete_success": false,
+  "details": {
+   "obj_yellow_1": {
+    "target": "tray_middle",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.28570961355270685,
+     "xy_err_y": 0.16165601115710565,
+     "footprint_half_x": 0.023416485780858094,
+     "footprint_half_y": 0.02341637252101123,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.021,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_purple_2": {
+    "target": "tray_middle",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.05029950792931159,
+     "xy_err_y": 0.04960326183104484,
+     "footprint_half_x": 0.02554059403016581,
+     "footprint_half_y": 0.02486486663285643,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.0227,
+     "height_err_m": 0.0803,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0012,
+     "ang_speed": 0.0001,
+     "in_gripper": 1.0
+    }
+   },
+   "obj_red_3": {
+    "target": "tray_right",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.2812943341984627,
+     "xy_err_y": 0.15316561645792254,
+     "footprint_half_x": 0.029078064088530708,
+     "footprint_half_y": 0.022091922948288236,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.035,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed": 0.0001,
+     "in_gripper": 0.0
+    }
+   },
+   "obj_green_4": {
+    "target": "tray_left",
+    "satisfied": false,
+    "evidence": {
+     "xy_err_x": 0.2189719631341791,
+     "xy_err_y": 0.15686052428168784,
+     "footprint_half_x": 0.023000269533021152,
+     "footprint_half_y": 0.02300459233780272,
+     "allow_x": 0.126,
+     "allow_y": 0.126,
+     "rest_extent_z": 0.042,
+     "height_err_m": 0.008,
+     "tray_contacts": 0.0,
+     "lin_speed": 0.0,
+     "ang_speed":
+
+--- lh_c3_capacity_and_shift.B.r1.summary.result
+{
+ "episode_id": "lh_c3_capacity_and_shift.B.r1",
+ "task_id": "lh_c3_capacity_and_shift",
+ "terminal_status": "failed",
+ "mode": "B",
+ "decision_rounds": 4,
+ "skill_calls": 3,
+ "http_requests": 18,
+ "score_complete_success": false,
+ "objects_total": 6,
+ "objects_completed": 1,
+ "failure_type": null,
+ "recovery_events": 1,
+ "retry_events": 0,
+ "replan_events": 1,
+ "rejected_decisions": 0,
+ "false_finish_attempts": 0,
+ "identical_invalid_attempts": 1,
+ "identical_repeats_total": 0,
+ "model_errors": 0,
+ "semantic_repairs": 0,
+ "provider_counters": {
+  "api_errors": 0,
+  "transport_retries": 0,
+  "format_repairs": 0
+ },
+ "api_cost_estimate": null,
+ "prompt_tokens": 0,
+ "completion_tokens": 0,
+ "sim_time_s": 7.82,
+ "wall_time_s": 156.04,
+ "slot_resolution_fallbacks": 1,
+ "human_intervention": false,
+ "config_ref": null,
+ "termination_reason": null,
+ "artifacts": {
+  "terminal_state_version": "15",
+  "terminal_observation_ref": "per_04405725",
+  "unknown_goals": "2",
+  "note": "blocked by model"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.observation
+{
+ "observation": {
+  "observation_ref": "per_d49b0b4b",
+  "state_version": 1,
+  "sim_time": 0.49999999999999944,
+  "wall_time": 1790745189.1913693,
+  "source": "sensor",
+  "held_object": null,
+  "n_entities": 5
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.decision_context
+{
+ "context_id": "ctx_55de118d",
+ "round_index": 1,
+ "state_version": 1,
+ "observation_ref": "per_d49b0b4b",
+ "goal_version": 1,
+ "progress": [
+  {
+   "entity_id": "{'shape': 'cube', 'color': 'yellow'}",
+   "target_id": "tray_middle",
+   "value": "unknown",
+   "evidence": {
+    "entity_bound": 0.0
+   },
+   "evidence_refs": [
+    "per_d49b0b4b"
+   ],
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "predicate_id": "placed:?{'shape': 'cube', 'color': 'yellow'}:tray_middle"
+  },
+  {
+   "entity_id": "obj_purple_2",
+   "target_id": "tray_middle",
+   "value": "true",
+   "evidence": {
+    "claim_confidence": 0.95,
+    "located": 1.0,
+    "relation_matches_target": 1.0,
+    "xy_err_x": 0.05049999999999999,
+    "xy_err_y": 0.0233,
+    "footprint_half_x": 0.036373066958946425,
+    "footprint_half_y": 0.036373066958946425,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": 0.0391,
+    "occupies_target": 1.0
+   },
+   "evidence_refs": [
+    "per_d49b0b4b"
+   ],
+   "unmeasured": [
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_purple_2:tray_middle"
+  },
+  {
+   "entity_id": "obj_red_3",
+   "target_id": "tray_right",
+   "value": "unknown",
+   "evidence": {
+    "claim_confidence": 0.93,
+    "located": 1.0,
+    "relation_matches_target": 1.0,
+    "xy_err_x": 0.03660000000000008,
+    "xy_err_y": 0.0975,
+    "footprint_half_x": 0.048114446894877635,
+    "footprint_half_y": 0.048114446894877635,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.0196,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_d49b0b4b"
+   ],
+   "unmeasured": [
+    "inside_unproven_at_invariant_bound",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_red_3:tray_right"
+  },
+  {
+   "entity_id": "obj_green_4",
+   "target_id": "tray_left",
+   "value": "false",
+   "evidence": {
+    "claim_confidence": 0.95,
+    "located": 1.0,
+    "relation_matches_target": 0.0,
+    "xy_err_x": 0.0019000000000000128,
+    "xy_err_y": 0.17020000000000002,
+    "footprint_half_x": 0.047885279575251516,
+    "footprint_half_y": 0.047885279575251516,
+    "allow_x": 0.126,
+    "allow_y": 0.126,
+    "wall_margin_m": -0.0921,
+    "occupies_target": 0.0
+   },
+   "evidence_refs": [
+    "per_d49b0b4b"
+   ],
+   "unmeasured": [
+    "relation_other_surface",
+    "rest_z_vs_assumed_orientation",
+    "hold_state",
+    "at_rest"
+   ],
+   "predicate_id": "placed:obj_green_4:tray_left"
+  },
+  {
+   "entity_id": "obj_blue_5",
+   "target_id": "tray_middle",
+   "value": "true",
+   "evidenc
+
+--- lh_c3_capacity_and_shift.B.r1.decision
+{
+ "decision_id": "d_d6fabd9b",
+ "context_id": "ctx_55de118d",
+ "based_on_state_version": 1,
+ "goal_ref": "g_adb77ab4",
+ "action": "execute",
+ "execute": {
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_purple_2"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_d49b0b4b"
+ ],
+ "rationale": "pick obj_purple_2",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.decision
+{
+ "decision_id": "d_bcf0ebe9",
+ "context_id": "ctx_f11c5223",
+ "based_on_state_version": 5,
+ "goal_ref": "g_adb77ab4",
+ "action": "execute",
+ "execute": {
+  "skill": "place",
+  "args": {
+   "object_id": "obj_purple_2",
+   "target_id": "tray_middle"
+  },
+  "candidate_id": null,
+  "subgoal": null
+ },
+ "missing_information": null,
+ "evidence_refs": [
+  "per_609fe1ad"
+ ],
+ "rationale": "place obj_purple_2 into tray_middle",
+ "expected_effect": "",
+ "_clobbered_reserved_keys": {
+  "schema_version": "3"
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_19964c75",
+  "decision_id": "d_d6fabd9b",
+  "call_id": "c_9f86e8d5",
+  "context_id": "ctx_55de118d",
+  "skill": "pick",
+  "entity_id": "obj_purple_2",
+  "target_id": null,
+  "candidate_id": null,
+  "candidate_resolution": null,
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "approach",
+   "open_gripper",
+   "descend",
+   "close_gripper",
+   "lift",
+   "grasp_check"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_d49b0b4b",
+  "post_observation_ref": "per_b0470d2c",
+  "new_measurement": true,
+  "pre_state_version": 1,
+  "post_state_version": 4,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "grasp:obj_purple_2",
+     "description": "the gripper reports holding this entity; the lift itself is not a quantity a frame of the table can measure",
+     "value": "true",
+     "evidence": {
+      "gripper_named_the_entity": 1.0,
+      "gripper_reports_empty": 0.0,
+      "gripper_report_is_ambiguous": 0.0,
+      "reported_by_this_view": 1.0,
+      "held_flag_is_true": 1.0
+     },
+     "evidence_refs": [
+      "per_b0470d2c"
+     ],
+     "unmeasured": [
+      "lift_gain_m",
+      "hold_state"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_b0470d2c",
+   "state_version": 4
+  },
+  "held_object_after": "obj_purple_2",
+  "progress_changes": [
+   {
+    "assignment": "obj_green_4->tray_left",
+    "from": "false",
+    "to": "unknown"
+   }
+  ],
+  "affected_entities": [
+   "obj_green_4",
+   "obj_red_3",
+   "obj_yellow_6"
+  ],
+  "measurements": {
+   "lift_gain_m": 0.0832,
+   "follow_err_m": 0.0008,
+   "in_contact": 1.0,
+   "support_z_m": 0.641
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_green_4",
+     "dxy": [
+      0.0576,
+      0.0151
+     ],
+     "dz": 0.025,
+     "dist_m": 0.0646
+    },
+    {
+     "entity_id": "obj_yellow_6",
+     "dxy": [
+      0.0463,
+      0.0483
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0669
+    },
+    {
+     "entity_id": "obj_purple_2",
+     "dxy": [
+      -0.0303,
+      0.0039
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0305
+    },
+    {
+     "entity_id": "obj_red_3",
+     "dxy": [
+      -0.0031,
+      -0.0255
+     ],
+     "dz": 0.0,
+     "dist_m": 0.0257
+    }
+   ],
+   "state_changed": [
+    {
+     "entity_id": "obj_green_4",
+     "dxy": [
+      0.0576,
+      0.0151
+     ],
+     "dz": 0.025,
+     "dist_m": 0.0646,
+     "hold_before_after": [
+      "unknown",
+      "unknown"
+     ],
+     "support_before_after": [
+      "table",
+      "unknown"
+   
+
+--- lh_c3_capacity_and_shift.B.r1.execution_feedback
+{
+ "feedback": {
+  "feedback_id": "fb_2d566bd6",
+  "decision_id": "d_bcf0ebe9",
+  "call_id": "c_80a73016",
+  "context_id": "ctx_f11c5223",
+  "skill": "place",
+  "entity_id": "obj_purple_2",
+  "target_id": "tray_middle",
+  "candidate_id": null,
+  "candidate_resolution": "runtime_fallback_rule",
+  "executed": true,
+  "stages_executed": [
+   "precondition",
+   "transfer",
+   "descend",
+   "release",
+   "retreat",
+   "settle"
+  ],
+  "status": "completed",
+  "failure_code": null,
+  "pre_observation_ref": "per_609fe1ad",
+  "post_observation_ref": "per_73946f5e",
+  "new_measurement": true,
+  "pre_state_version": 5,
+  "post_state_version": 9,
+  "verification": {
+   "reports": [
+    {
+     "predicate_id": "placed:obj_purple_2:tray_middle",
+     "description": "measured support is table, not tray_middle",
+     "value": "false",
+     "evidence": {
+      "claim_confidence": 0.96,
+      "located": 1.0,
+      "relation_matches_target": 0.0,
+      "xy_err_x": 0.17769999999999997,
+      "xy_err_y": 0.0109,
+      "footprint_half_x": 0.036373066958946425,
+      "footprint_half_y": 0.036373066958946425,
+      "allow_x": 0.126,
+      "allow_y": 0.126,
+      "wall_margin_m": -0.0881,
+      "occupies_target": 0.0
+     },
+     "evidence_refs": [
+      "per_73946f5e"
+     ],
+     "unmeasured": [
+      "relation_other_surface",
+      "rest_z_vs_assumed_orientation",
+      "hold_state",
+      "at_rest"
+     ],
+     "source": "sensor"
+    }
+   ],
+   "source": "sensor",
+   "tolerance_version": "v2",
+   "world_observation_ref": "per_73946f5e",
+   "state_version": 9
+  },
+  "held_object_after": null,
+  "progress_changes": [
+   {
+    "assignment": "obj_red_3->tray_right",
+    "from": "true",
+    "to": "false"
+   },
+   {
+    "assignment": "obj_green_4->tray_left",
+    "from": "false",
+    "to": "unknown"
+   }
+  ],
+  "affected_entities": [
+   "obj_blue_5",
+   "obj_green_4",
+   "obj_red_3",
+   "obj_yellow_6"
+  ],
+  "measurements": {
+   "candidate_x": 0.66,
+   "candidate_y": 0.02,
+   "candidate_rest_z": 0.649,
+   "carry_offset_x_m": -0.0017,
+   "carry_offset_y_m": -0.0126,
+   "descent_touchdown": 1.0,
+   "release_height_m": 0.0236,
+   "release_gap_above_seat_m": 0.0026,
+   "fingers_clear_after_open": 1.0,
+   "final_x": 0.66,
+   "final_y": 0.0075,
+   "final_z": 0.649,
+   "lin_speed": 0.0,
+   "ang_speed": 0.0002,
+   "inside_target": 1.0,
+   "gripper_free": 1.0,
+   "at_rest": 1.0,
+   "footprint_half_x": 0.0242,
+   "footprint_half_y": 0.0242,
+   "displacement_from_candidate_m": 0.0125
+  },
+  "state_diff": {
+   "moved": [
+    {
+     "entity_id": "obj_red_3",
+     "dxy": [
+      -0.1537,
+      -
+
+--- lh_c3_capacity_and_shift.B.r1.skill_call
+{
+ "decision_id": "d_d6fabd9b",
+ "context_id": "ctx_55de118d",
+ "call": {
+  "call_id": "c_9f86e8d5",
+  "plan_id": "modeB_d_d6fabd9b",
+  "step_id": "r1",
+  "skill": "pick",
+  "args": {
+   "object_id": "obj_purple_2"
+  },
+  "timeout_s": 30.0,
+  "expected_state_version": 1,
+  "decision_id": "d_d6fabd9b",
+  "based_on_state_version": 1,
+  "candidate_id": null
+ }
+}
+
+--- lh_c3_capacity_and_shift.B.r1.terminated_blocked
+{
+ "decision_id": "d_aed2acf2",
+ "note": "the model found no feasible next action; that is not a proof that the task is unsolvable"
+}
+
+--- lh_c3_capacity_and_shift.B.r1.perception
+{
+ "state_version": 1,
+ "view": "main",
+ "created_at": 1790745257.0778897,
+ "updated_at": 1790745257.0778904,
+ "source": "sensor",
+ "provenance": {
+  "reader": {
+   "model": "agnes-2.5-flash",
+   "channel": "vlm",
+   "prompt_version": "s2-perceive-v1",
+   "model_return_id": "64aca02da3f940c3987cbd1228980031",
+   "absent": []
+  },
+  "geometry": {
+   "seen:green": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     319.0,
+     411.0
+    ],
+    "bbox": [
+     278,
+     340,
+     360,
+     482
+    ],
+    "half_height_m": 0.042,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 275,
+       "z_m": 0.6286,
+       "range_m": 0.7018
+      },
+      {
+       "side": "right",
+       "col": 363,
+       "z_m": 0.6536,
+       "range_m": 0.6732
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6286,
+     "chosen": "lowest",
+     "sample_spread_m": 0.025,
+     "ambiguous": true
+    },
+    "ambiguous_support": true,
+    "support_sample_spread_m": 0.025,
+    "support_z_m": 0.6286,
+    "centre_z_m": 0.6706,
+    "range_m": 0.7108,
+    "centre_view_range_m": 0.7012,
+    "box_near_m": 0.6725,
+    "box_far_m": 0.8127
+   },
+   "seen:yellow": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     273.0,
+     391.5
+    ],
+    "bbox": [
+     242,
+     348,
+     304,
+     435
+    ],
+    "half_height_m": 0.035,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 239,
+       "z_m": 0.6286,
+       "range_m": 0.7353
+      },
+      {
+       "side": "right",
+       "col": 307,
+       "z_m": 0.6206,
+       "range_m": 0.7449
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6206,
+     "chosen": "lowest",
+     "sample_spread_m": 0.008,
+     "ambiguous": false
+    },
+    "ambiguous_support": false,
+    "support_sample_spread_m": 0.008,
+    "support_z_m": 0.6206,
+    "centre_z_m": 0.6556,
+    "range_m": 0.7476,
+    "centre_view_range_m": 0.7345,
+    "box_near_m": 0.7045,
+    "box_far_m": 0.816
+   },
+   "seen:purple": {
+    "method": "ray_through_box_centre_at_support_z",
+    "pixel": [
+     456.0,
+     314.5
+    ],
+    "bbox": [
+     417,
+     267,
+     495,
+     362
+    ],
+    "half_height_m": 0.021,
+    "support_surface": {
+     "samples": [
+      {
+       "side": "left",
+       "col": 414,
+       "z_m": 0.6287,
+       "range_m": 0.794
+      },
+      {
+       "side": "right",
+       "col": 498,
+       "z_m": 0.6287,
+       "range_m": 0.794
+      }
+     ],
+     "discarded": [],
+     "z_m": 0.6287,
+     "chosen": "lowest",
+     "sample_spread_m": 0.0,
+     "ambiguous": false
+
+--- lh_c3_capacity_and_shift.B.r1.model_call.first
+{
+ "ok": true,
+ "kind": "perceive",
+ "prompt_version": "s2-perceive-v1",
+ "provider": "agnes",
+ "model": "agnes-2.5-flash",
+ "frame_ref": "look_0001_main",
+ "image_sha256": "809a8ac453d59bef0b7bd32fc19b5ecaec623ce3c80f55b85c43c8a6cb8c0d11",
+ "modality": "rgbd",
+ "images": [
+  {
+   "index": 0,
+   "ref": "/home/czx/embodied-agent-batches/v04/e2/long_horizon_vlm/long_horizon_rule_vlm_memstore_skillmem_20260930_130350/episodes/lh_c3_capacity_and_shift.B.r1/perception/look_0001_main.png",
+   "bytes": 22921,
+   "sha256": "809a8ac453d59bef0b7bd32fc19b5ecaec623ce3c80f55b85c43c8a6cb8c0d11"
+  }
+ ],
+ "requested_model": "agnes-2.5-flash",
+ "returned_model": "agnes-2.5-flash",
+ "completion_id": "64aca02da3f940c3987cbd1228980031",
+ "created": 1790745256,
+ "finish_reason": "stop",
+ "usage": {
+  "completion_tokens": 671,
+  "prompt_tokens": 1417,
+  "total_tokens": 2088,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "image_tokens": 475
+  }
+ },
+ "temperature": 0.2,
+ "max_tokens": 1200,
+ "prompt_chars": 1727,
+ "raw_chars": 1548,
+ "latency_s": 67.878,
+ "http_requests_total": 116,
+ "transport_attempts": 2,
+ "transport_retries": 1,
+ "http_requests_this_call": 2,
+ "api_errors_this_call": 0,
+ "transport_retries_this_call": 1,
+ "prompt_tokens_this_call": 1417,
+ "completion_tokens_this_call": 671,
+ "format_repairs_this_call": 0,
+ "schema_repairs": 0,
+ "schema_errors": null,
+ "error": null,
+ "requests_made": null,
+ "content_field_present": true,
+ "reasoning_field_present": false,
+ "reasoning_chars": 0,
+ "raw_response": "{\n  \"objects\": [\n    {\n      \"ref\": \"绿色圆柱\",\n      \"color\": \"green\",\n      \"shape\": \"cylinder\",\n      \"bbox\": [278, 340, 360, 482],\n      \"confidence\": 0.95,\n      \"occluded\": false,\n      \"on_or_in\": \"\"\n    },\n    {\n      \"ref\": \"黄色长方体\",\n      \"color\": \"yellow\",\n      \"shape\": \"cuboid\",\n      \"bbox\": [242, 348, 304, 435],\n      \"confidence\": 0.88,\n      \"occluded\": false,\n      \"on_or_in\": \"\"\n    },\n    {\n      \"ref\": \"紫色方块\",\n      \"color\": \"purple\",\n      \"shape\": \"cube\",\n      \"bbox\": [417, 267, 495, 362],\n      \"confidence\": 0.95,\n      \"occluded\": false,\n      \"on_or_in\": \"\"\n    },\n    {\n      \"ref\": \"蓝色方块\",\n      \"color\": \"blue\",\n      \"shape\": \"cube\",\n      \"bbox\": [487, 333, 572, 432],\n      \"confidence\": 0.95,\n      \"occluded\": false,\n      \"on_or_in\": \"\"\n    },\n    {\n      \"ref\": \"红色长方体\",\n      \"color\": \"red\",\n      \"shape\": \"cuboid\",\n      \"bbox\": [584, 169, 666, 319],\n      \"confidence\": 0.93,\n     
