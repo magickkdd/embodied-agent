@@ -1,0 +1,49 @@
+{
+ "probed_at": "2026-10-11T00:47:48+0800",
+ "config": {
+  "path": "/home/czx/embodied-agent-robot-agent-embodied-agent-4/configs/models/agnes-vision-r4.yaml",
+  "config_sha256": "8b03b39306e9d06efc76ae7bb5672e93d714820ab6ac85c80fe4fce1bd558b26",
+  "provider": "agnes",
+  "model": "agnes-2.5-flash",
+  "base_url": "https://api.agnes-ai.cn/v1",
+  "api_key_env": "LLM_API_KEY",
+  "capabilities": [
+   "text",
+   "vision"
+  ],
+  "max_tokens": 1200,
+  "declared": {
+   "vision": true,
+   "pricing_configured": false
+  }
+ },
+ "key": {
+  "api_key_env": "LLM_API_KEY",
+  "loaded": true,
+  "value_length": 51,
+  "note": "length only; the value itself is never printed or stored"
+ },
+ "minimal": {
+  "ok": true,
+  "raw_chars": 12,
+  "finish_reason": "stop",
+  "reasoning_chars": 0,
+  "wall_s": 0.53,
+  "raw_preview": "{\"ok\": true}"
+ },
+ "window": {
+  "n": 10,
+  "ok": 9,
+  "refused": 1,
+  "refusals": [
+   {
+    "i": 9,
+    "ok": false,
+    "wall_s": 15.52,
+    "error_type": "LLMError",
+    "error": "request failed after 5 attempts: HTTPError: HTTP Error 429: Too Many Requests"
+   }
+  ],
+  "note": "a measurement for the bound and the stop rule, not a pass/fail"
+ }
+}
