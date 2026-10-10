@@ -1,37 +1,37 @@
 
-=== privileged  lh_c1_shared_pair_restore.B.r0  success/None  objects 4/4  dominant=a_frame_detection  rings={'a_frame_detection': 4, 'b_binding': 0, 'c_decision_availability': 0, 'd_prompt': 0}  c_episode=False
-   item0 {'shape': 'cube', 'color': 'green'} -> tray_right: bound 11/11, actionable 4/11, frame-saw-colour 0/11 (missed 11), actions 4 failed 0, modes=['bound'] -> a_frame_detection
-   item1 {'shape': 'cuboid', 'color': 'blue'} -> tray_right: bound 11/11, actionable 4/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item2 {'shape': 'cube', 'color': 'yellow'} -> tray_left: bound 11/11, actionable 8/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item3 {'shape': 'cylinder', 'color': 'purple'} -> tray_right: bound 11/11, actionable 10/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> a_frame_detection
+=== privileged  lh_c1_shared_pair_restore.B.r0  success/None  objects 4/4  dominant=-  rings={'a_frame_detection': 0, 'b_binding': 0, 'c_decision_availability': 0, 'd_prompt': 0}  c_episode=False
+   item0 {'shape': 'cube', 'color': 'green'} -> tray_right: bound 11/11, actionable 4/11, frame-saw-colour 0/11 (missed 11), actions 4 failed 0, modes=['bound'] -> -
+   item1 {'shape': 'cuboid', 'color': 'blue'} -> tray_right: bound 11/11, actionable 4/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> -
+   item2 {'shape': 'cube', 'color': 'yellow'} -> tray_left: bound 11/11, actionable 8/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> -
+   item3 {'shape': 'cylinder', 'color': 'purple'} -> tray_right: bound 11/11, actionable 10/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> -
    actions: [('execute', 'obj_green_1', None), ('execute', 'obj_green_1', None), ('execute', 'obj_blue_2', None), ('execute', 'obj_blue_2', None), ('execute', 'obj_green_1', None), ('execute', 'obj_green_1', None), ('execute', 'obj_yellow_3', None), ('execute', 'obj_yellow_3', None), ('execute', 'obj_purple_4', None), ('execute', 'obj_purple_4', None), ('finish', None, None)]
    feedback: {'count': 11, 'failure_codes': {'none': 11}, 'rejection_reasons': {}}
 
-=== privileged  lh_c1_shared_pair_restore.B.r1  success/None  objects 4/4  dominant=a_frame_detection  rings={'a_frame_detection': 4, 'b_binding': 0, 'c_decision_availability': 0, 'd_prompt': 0}  c_episode=False
-   item0 {'shape': 'cube', 'color': 'green'} -> tray_right: bound 11/11, actionable 4/11, frame-saw-colour 0/11 (missed 11), actions 4 failed 0, modes=['bound'] -> a_frame_detection
-   item1 {'shape': 'cuboid', 'color': 'blue'} -> tray_right: bound 11/11, actionable 4/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item2 {'shape': 'cube', 'color': 'yellow'} -> tray_left: bound 11/11, actionable 8/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item3 {'shape': 'cylinder', 'color': 'purple'} -> tray_right: bound 11/11, actionable 10/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> a_frame_detection
+=== privileged  lh_c1_shared_pair_restore.B.r1  success/None  objects 4/4  dominant=-  rings={'a_frame_detection': 0, 'b_binding': 0, 'c_decision_availability': 0, 'd_prompt': 0}  c_episode=False
+   item0 {'shape': 'cube', 'color': 'green'} -> tray_right: bound 11/11, actionable 4/11, frame-saw-colour 0/11 (missed 11), actions 4 failed 0, modes=['bound'] -> -
+   item1 {'shape': 'cuboid', 'color': 'blue'} -> tray_right: bound 11/11, actionable 4/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> -
+   item2 {'shape': 'cube', 'color': 'yellow'} -> tray_left: bound 11/11, actionable 8/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> -
+   item3 {'shape': 'cylinder', 'color': 'purple'} -> tray_right: bound 11/11, actionable 10/11, frame-saw-colour 0/11 (missed 11), actions 2 failed 0, modes=['bound'] -> -
    actions: [('execute', 'obj_green_1', None), ('execute', 'obj_green_1', None), ('execute', 'obj_blue_2', None), ('execute', 'obj_blue_2', None), ('execute', 'obj_green_1', None), ('execute', 'obj_green_1', None), ('execute', 'obj_yellow_3', None), ('execute', 'obj_yellow_3', None), ('execute', 'obj_purple_4', None), ('execute', 'obj_purple_4', None), ('finish', None, None)]
    feedback: {'count': 11, 'failure_codes': {'none': 11}, 'rejection_reasons': {}}
 
-=== privileged  lh_c3_capacity_and_shift.B.r0  success/None  objects 6/6  dominant=a_frame_detection  rings={'a_frame_detection': 6, 'b_binding': 0, 'c_decision_availability': 0, 'd_prompt': 0}  c_episode=False
-   item0 {'shape': 'cube', 'color': 'yellow'} -> tray_middle: bound 13/13, actionable 2/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item1 {'shape': 'cube', 'color': 'purple'} -> tray_middle: bound 13/13, actionable 4/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item2 {'shape': 'cuboid', 'color': 'red'} -> tray_right: bound 13/13, actionable 6/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item3 {'shape': 'cylinder', 'color': 'green'} -> tray_left: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item4 {'shape': 'cube', 'color': 'blue'} -> tray_middle: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item5 {'shape': 'cuboid', 'color': 'yellow'} -> tray_left: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
+=== privileged  lh_c3_capacity_and_shift.B.r0  success/None  objects 6/6  dominant=-  rings={'a_frame_detection': 0, 'b_binding': 0, 'c_decision_availability': 0, 'd_prompt': 0}  c_episode=False
+   item0 {'shape': 'cube', 'color': 'yellow'} -> tray_middle: bound 13/13, actionable 2/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
+   item1 {'shape': 'cube', 'color': 'purple'} -> tray_middle: bound 13/13, actionable 4/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
+   item2 {'shape': 'cuboid', 'color': 'red'} -> tray_right: bound 13/13, actionable 6/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
+   item3 {'shape': 'cylinder', 'color': 'green'} -> tray_left: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
+   item4 {'shape': 'cube', 'color': 'blue'} -> tray_middle: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
+   item5 {'shape': 'cuboid', 'color': 'yellow'} -> tray_left: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
    actions: [('execute', 'obj_yellow_1', None), ('execute', 'obj_yellow_1', None), ('execute', 'obj_purple_2', None), ('execute', 'obj_purple_2', None), ('execute', 'obj_red_3', None), ('execute', 'obj_red_3', None), ('execute', 'obj_green_4', None), ('execute', 'obj_green_4', None), ('execute', 'obj_blue_5', None), ('execute', 'obj_blue_5', None), ('execute', 'obj_yellow_6', None), ('execute', 'obj_yellow_6', None), ('finish', None, None)]
    feedback: {'count': 13, 'failure_codes': {'none': 13}, 'rejection_reasons': {}}
 
-=== privileged  lh_c3_capacity_and_shift.B.r1  success/None  objects 6/6  dominant=a_frame_detection  rings={'a_frame_detection': 6, 'b_binding': 0, 'c_decision_availability': 0, 'd_prompt': 0}  c_episode=False
-   item0 {'shape': 'cube', 'color': 'yellow'} -> tray_middle: bound 13/13, actionable 2/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item1 {'shape': 'cube', 'color': 'purple'} -> tray_middle: bound 13/13, actionable 4/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item2 {'shape': 'cuboid', 'color': 'red'} -> tray_right: bound 13/13, actionable 6/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item3 {'shape': 'cylinder', 'color': 'green'} -> tray_left: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item4 {'shape': 'cube', 'color': 'blue'} -> tray_middle: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
-   item5 {'shape': 'cuboid', 'color': 'yellow'} -> tray_left: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> a_frame_detection
+=== privileged  lh_c3_capacity_and_shift.B.r1  success/None  objects 6/6  dominant=-  rings={'a_frame_detection': 0, 'b_binding': 0, 'c_decision_availability': 0, 'd_prompt': 0}  c_episode=False
+   item0 {'shape': 'cube', 'color': 'yellow'} -> tray_middle: bound 13/13, actionable 2/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
+   item1 {'shape': 'cube', 'color': 'purple'} -> tray_middle: bound 13/13, actionable 4/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
+   item2 {'shape': 'cuboid', 'color': 'red'} -> tray_right: bound 13/13, actionable 6/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
+   item3 {'shape': 'cylinder', 'color': 'green'} -> tray_left: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
+   item4 {'shape': 'cube', 'color': 'blue'} -> tray_middle: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
+   item5 {'shape': 'cuboid', 'color': 'yellow'} -> tray_left: bound 13/13, actionable 8/13, frame-saw-colour 0/13 (missed 13), actions 2 failed 0, modes=['bound'] -> -
    actions: [('execute', 'obj_yellow_1', None), ('execute', 'obj_yellow_1', None), ('execute', 'obj_purple_2', None), ('execute', 'obj_purple_2', None), ('execute', 'obj_red_3', None), ('execute', 'obj_red_3', None), ('execute', 'obj_green_4', None), ('execute', 'obj_green_4', None), ('execute', 'obj_blue_5', None), ('execute', 'obj_blue_5', None), ('execute', 'obj_yellow_6', None), ('execute', 'obj_yellow_6', None), ('finish', None, None)]
    feedback: {'count': 13, 'failure_codes': {'none': 13}, 'rejection_reasons': {}}
 

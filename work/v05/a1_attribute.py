@@ -189,10 +189,17 @@ def analyse(channel: str, ep_id: str, ep_dir: str, replay: dict) -> dict:
                                  or not o.get("executed"))]
 
         # --- ring verdicts, at the level the criteria fix them ---------------------
-        # a: the colour was absent from *every* frame (an occasional miss is not a
-        # death cause; the criteria set the whole-episode threshold on purpose)
-        ring_a = bool(per_round) and frames_with_colour == 0
         unbound_rounds = [p for p in per_round if not p["bound"]]
+        # a: the colour was absent from *every* frame (an occasional miss is not a
+        # death cause; the criteria set the whole-episode threshold on purpose).
+        # Two guards, both corrections found by the v0.5 document gate:
+        #   * a channel with no camera at all has no frames to miss anything in -- the
+        #     criteria write `n/a` in that column for `privileged`, and "the frame did not
+        #     see it" is not a statement a channel without frames can make;
+        #   * an item that was bound in every round has no binding to attribute, so the
+        #     detection verdict is only reached from an unbound one.
+        frames_available = channel != "privileged"
+        ring_a = bool(unbound_rounds) and frames_available and frames_with_colour == 0
         ring_b = bool(unbound_rounds) and not ring_a
         ring_c_item = (ever_bound and not ever_actionable) or (bool(mine) and
                                                                len(mine_failed) == len(mine))

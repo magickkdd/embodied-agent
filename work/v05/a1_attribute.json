@@ -203,10 +203,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 1,
@@ -385,10 +383,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 2,
@@ -567,10 +563,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 3,
@@ -749,10 +743,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     }
    ],
    "actions": [
@@ -922,13 +914,13 @@
     "shape_outside_vocab": 0
    },
    "ring_item_counts": {
-    "a_frame_detection": 4,
+    "a_frame_detection": 0,
     "b_binding": 0,
     "c_decision_availability": 0,
     "d_prompt": 0
    },
    "ring_c_episode": false,
-   "dominant_ring": "a_frame_detection"
+   "dominant_ring": ""
   },
   {
    "channel": "privileged",
@@ -1132,10 +1124,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 1,
@@ -1314,10 +1304,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 2,
@@ -1496,10 +1484,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 3,
@@ -1678,10 +1664,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     }
    ],
    "actions": [
@@ -1851,13 +1835,13 @@
     "shape_outside_vocab": 0
    },
    "ring_item_counts": {
-    "a_frame_detection": 4,
+    "a_frame_detection": 0,
     "b_binding": 0,
     "c_decision_availability": 0,
     "d_prompt": 0
    },
    "ring_c_episode": false,
-   "dominant_ring": "a_frame_detection"
+   "dominant_ring": ""
   },
   {
    "channel": "privileged",
@@ -2089,10 +2073,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 1,
@@ -2299,10 +2281,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 2,
@@ -2509,10 +2489,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 3,
@@ -2719,10 +2697,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 4,
@@ -2929,10 +2905,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 5,
@@ -3139,10 +3113,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     }
    ],
    "actions": [
@@ -3339,13 +3311,13 @@
     "shape_outside_vocab": 0
    },
    "ring_item_counts": {
-    "a_frame_detection": 6,
+    "a_frame_detection": 0,
     "b_binding": 0,
     "c_decision_availability": 0,
     "d_prompt": 0
    },
    "ring_c_episode": false,
-   "dominant_ring": "a_frame_detection"
+   "dominant_ring": ""
   },
   {
    "channel": "privileged",
@@ -3577,10 +3549,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 1,
@@ -3787,10 +3757,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 2,
@@ -3997,10 +3965,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 3,
@@ -4207,10 +4173,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 4,
@@ -4417,10 +4381,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     },
     {
      "index": 5,
@@ -4627,10 +4589,8 @@
      "modes": [
       "bound"
      ],
-     "ring_contributions": [
-      "a_frame_detection"
-     ],
-     "dominant_ring": "a_frame_detection"
+     "ring_contributions": [],
+     "dominant_ring": ""
     }
    ],
    "actions": [
@@ -4827,13 +4787,13 @@
     "shape_outside_vocab": 0
    },
    "ring_item_counts": {
-    "a_frame_detection": 6,
+    "a_frame_detection": 0,
     "b_binding": 0,
     "c_decision_availability": 0,
     "d_prompt": 0
    },
    "ring_c_episode": false,
-   "dominant_ring": "a_frame_detection"
+   "dominant_ring": ""
   },
   {
    "channel": "stub",
