@@ -433,3 +433,93 @@ d 环 0/8（vlm 三格共 92 次请求：`ok=True` 92、`finish_reason=stop` 92�
 分辨力（各项的取值分布见上表）。这不是"没有发现"，是**在这份语料上不可归因**，
 要归因必须换设计（H1/H3 的干预批），而不是加集数——按 v0.4 的实测率 1/34，
 "两位数触发"需要 ~680 集、约 26,000 请求，本阶段任何可负担规模都到不了。
+
+---
+
+## P3 修复裁定与 E2'' 预登记（2026-10-10）
+
+### 用户裁定（记于 SPEC §13）
+
+| # | 裁定 |
+| --- | --- |
+| D1'' | 归因 + 非零，按 SPEC 执行 |
+| D2'' | #24（c6 三决策源全灭）**不进 v0.5**，按 §11 默认；重冻结级决定留给下一阶段 |
+| D3'' | **`FailureCode` 枚举不扩**（R1 实测 `termination_reason` 足够，未触发 §2.2 停工条款）；**修复只改目标侧绑定**，读侧与决策策略明确不修 |
+| D4'' | 照 §7：E2'' = 165 请求 / 12 集 / 3 格，匹配分母 4；不需要第二批 |
+
+### 缺陷的一行陈述（A1 的证据链落到这里）
+
+同一个问题——"这条声明指向哪件物体"——盘上有**两套规则**：
+
+- `GroundingMap._lookup`（`perception/grounding.py:185`）写明：*"a unique colour wins whatever
+  the shape says — a misread shape must not override the bridge"*；
+- `RuntimeVerifier.bind` → `bind_attributes`（`core/verify.py`）要求帧端**实测**的每个属性与声明
+  逐项相等、且恰好一个实体命中。
+
+更严的那套恰好用在了决定结果的地方，于是读侧一次形状误读就把物体从回路的世界里撤回。
+A1 的两条最干净证据链（vlm c3 的黄方块 7/7 轮被读成 cuboid；stub c1 的紫圆柱 3/6 轮读成
+cuboid）就是这条规则的后果，不是读侧的"能力不足"。
+
+### 改动形状（D3''：一个环、一条规则）
+
+| 位置 | 改动 |
+| --- | --- |
+| `core/verify.py` `RuntimeVerifier.__init__` | 新增可选 `gmap`（特权通道为 `None`，行为不变） |
+| `core/verify.py` `RuntimeVerifier.bind` | **先问桥**（`gmap.bind(color, shape)`），且答案必须**当轮可见**（`world.has_entity`）；旧的属性匹配降级为回落 |
+| `core/verify.py` `bind_attributes` | 一行未动（回落路径 = 特权通道的全部行为） |
+| `perception/verify_percept.py` `PerceptVerifier.__init__` | 透传 `gmap` |
+| `perception/arm.py` `PerceptRuntime._verifier` | 把 `self.gmap` 交给 verifier |
+| `core/planner.py` `RulePlanner` / `evaluation/sources.py` `RulePolicySource` / `evaluation/run.py` `make_source` | 同样把桥传下去——**否则修复到不了决策侧**：`pending_assignments` 自建 verifier，不传桥的话 `context.progress` 与"待办列表"会各说各话 |
+| `perception/grounding.py` | **一行未动**（digest 与 `key_of` 逐字节不变，契约测试钉住） |
+
+**没有动**（§4.16 的授权边界之外）：读侧阈值与提示词、`RulePlanner.decide` 的策略、
+`FailureCode`、事件类型、世界契约、接地图本身。
+
+### 契约测试先红后绿（`tests/contract/test_v05_goal_binding.py`，8 条）
+
+红的那一版：`5 failed, 2 passed`（`RuntimeVerifier.__init__() got an unexpected keyword argument
+'gmap'`；另 2 条是"不许多修"的护栏，改动前即绿）。绿：`8 passed`。
+
+四条护栏各自钉一件事：**不得复活帧没看见的物体**（那是 a 环）、**不得用错误形状劈开歧义颜色**
+（v0.4 R3 的拒绝要收窄不消失）、**特权通道逐字节不变**、**桥本身不变**。
+
+### 一处真实的反作用，当场记、修法当场定
+
+全量回归抓出 `tests/contract/test_v02_acquisition_arm.py::test_one_camera_episode_carries_the_perceiver_the_store_and_the_library`
+由绿转红。查明（把产品代码 stash 掉跑同一集，前后各一次）：
+
+| | 修复前 | 修复后 |
+| --- | --- | --- |
+| `dev_c1` @ stub 相机通道 | 绿圆柱**7/7 轮未绑定**（`{'shape': 'cylinder', 'color': 'green'}` + `entity_binding`）→ `failed/INVALID_DECISION` 2/3 → 触发 gap → 采集臂写下四条记录 | **success 3/3**，7 轮 0 请求 → 没有失败 → 没有 gap |
+| 该契约测试的红点 | — | `assert set(OWNED) & set(types), "the acquisition arm filed none of its records on a camera"` |
+
+**这条红不是缺陷，是修复起作用了**：零花费的一个相机集从"绑不上而失败"变成 3/3 成功。
+但它也暴露一件该修的事：**那条断言原本靠"循环恰好做不好这件任务"才成立**——
+测试的主体是"相机通道上的采集链"，前提却是涌现的失败。
+处置（不是放宽断言）：`_camera_arm` 新增一个 `execute` 接缝参数，测试用
+`_always_fails()` 在**执行器**上强制一次真实失败，让 gap→candidate→validation→refusal
+四段链照旧被完整测到；断言一条不减，另加一句"事实本身也是断言"（本集现在成功）。
+同族纪律：**判据不该依赖涌现的失败**。
+
+### 全量回归（提交前当场跑）
+
+- `1283 passed / 27 skipped`（v0.4 基线 1269/27 → P1 后 1275/27 → 现在 1283/27；
+  **+8，无一条减少**）；
+- 三门 `2f1c74f52e91` / `23abe58ff333…` / `7df449ed2f4d` rc=0；
+- `test_v02_contracts.py` 25 passed（fingerprint 逐项相等；本轮未碰 `core/v02.py`）。
+
+### E2'' 预登记（`configs/experiment/v05_e2_preregistration.json`）
+
+SPEC §7 的三样前提逐项对上：A1 瓶颈环判定已落盘 ✅、D3'' 裁定已落本日志 ✅、
+修复契约测试先红后绿 ✅。
+
+- **规模**：3 格 × 2 case × 2 repeats = 12 集，匹配分母 4/格；privileged/stub 两格零请求；
+- **上界**：165 请求（E2' 实测 132 × 1.25），免费层，`cost_estimate_usd: null`，
+  `pricing_configured: false`；
+- **身份声明**：接地图**未改**（c1 `772f28bf…`、c3 `e889af9a…` 与 E2' 同值，契约测试钉住），
+  改的是回路**怎么用**它 ⇒ 身份不变、行为变 ⇒ 与 E2' **并排报告、不合并**（§2.5 的延伸）；
+- **写死的预期**（跑前）：颜色唯一的项未绑定轮数应当**归零**；c3 两黄的歧义绑定与 38 个项-轮的
+  间歇漏检**不会**被这次修复带走，所以三格仍可能读出 0——那是合法答案，前提是"归因环已修"的
+  证据到位（机制检查写进验收条目：逐项 `entity_binding` 计数与 E2' 并排）；
+- **验收条目**另含：blocked 集必须带非空 `termination_reason` 且与事件流一致（P1 的账在正式批上
+  再结一次）、privileged 仍是 4/4 且动作序列与 E2' 同形（冒烟）、两账本合账对上界。

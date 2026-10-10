@@ -388,8 +388,12 @@ class PerceptRuntime(Runtime):
 
     def _verifier(self, world: WorldState):
         view = self.perceiver.view_of(world.observation_ref) or self._last_view
+        # `gmap` goes with it (v0.5 P3, D3''): on this channel a goal assignment is resolved
+        # through the bridge the snapshot was grounded with, so the declaration and the
+        # snapshot are read by one rule instead of two.
         return SensingVerifier(world, self.config, view=view,
-                               alt_views=[v for v in self.perceiver.views if v != view])
+                               alt_views=[v for v in self.perceiver.views if v != view],
+                               gmap=self.gmap)
 
     def _state_diff(self, pre_world: WorldState, post_world: WorldState) -> dict:
         a = self.perceiver.view_of(pre_world.observation_ref)

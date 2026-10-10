@@ -108,11 +108,16 @@ class RulePlanner:
     called, with the same verifier the runtime uses — there is no permanent
     "already placed" flag (SPEC 5.1)."""
 
-    def __init__(self, config: VerifyConfig | None = None):
+    def __init__(self, config: VerifyConfig | None = None, *, gmap=None):
         self.config = config or VerifyConfig()
+        #: the grounding bridge of the channel this planner reads (v0.5 P3, D3''). It is
+        #: here for the same reason it is on the verifier: an assignment is resolved by the
+        #: declaration's own rule, and a planner that resolved it by another would offer the
+        #: decider a different set of pending goals than the context it was handed reports.
+        self.gmap = gmap
 
     def pending_assignments(self, goal: GoalSpec, world: WorldState) -> list[tuple[str, str]]:
-        v = RuntimeVerifier(world, self.config)
+        v = RuntimeVerifier(world, self.config, gmap=self.gmap)
         pending = []
         for item in v.progress(goal):
             # `unknown` is pending as well: unmeasurable is not satisfied

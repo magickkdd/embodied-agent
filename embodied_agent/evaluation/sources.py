@@ -44,8 +44,9 @@ class RulePolicySource:
     prompt_tokens = 0
     completion_tokens = 0
 
-    def __init__(self, config: VerifyConfig | None = None, prefer: Optional[str] = None):
-        self.planner = RulePlanner(config)
+    def __init__(self, config: VerifyConfig | None = None, prefer: Optional[str] = None, *,
+                 gmap=None):
+        self.planner = RulePlanner(config, gmap=gmap)
         self.prefer = prefer  # deterministic order override for tests
         self.decisions = 0
 

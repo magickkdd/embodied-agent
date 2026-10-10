@@ -104,8 +104,8 @@ class PerceptVerifier(RuntimeVerifier):
     points back at the camera that just failed is worse than no refusal)."""
 
     def __init__(self, world: WorldState, config=None, *, view: Optional[str] = None,
-                 alt_views: Sequence[str] = ()):
-        super().__init__(world, config, source=Source.sensor)
+                 alt_views: Sequence[str] = (), gmap=None):
+        super().__init__(world, config, source=Source.sensor, gmap=gmap)
         self.view = view
         self.alt_views = [v for v in alt_views if v and v != view]
 

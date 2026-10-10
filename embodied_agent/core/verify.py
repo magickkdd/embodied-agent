@@ -321,10 +321,14 @@ class RuntimeVerifier:
     else."""
 
     def __init__(self, world: WorldState, config: VerifyConfig | None = None, *,
-                 source: Source = Source.privileged):
+                 source: Source = Source.privileged, gmap=None):
         self.world = world
         self.config = config or VerifyConfig()
         self.source = source
+        #: the grounding bridge, when this snapshot came through one (v0.5 P3, D3'').
+        #: `None` on the privileged channel, where the snapshot already carries the
+        #: declared attributes and there is nothing to bridge.
+        self.gmap = gmap
 
     def _unknown(self, predicate_id: str, why: str,
                  unmeasured: tuple[str, ...] = ()) -> PredicateReport:
@@ -423,7 +427,33 @@ class RuntimeVerifier:
 
     # -- goal progress --
     def bind(self, assignment) -> str | None:
-        return assignment.entity.entity_id or bind_attributes(assignment.entity.attributes, self.world)
+        """Which entity this assignment names, in the task's own vocabulary.
+
+        v0.5 P3 (D3'', ring b of A1). The assignment names a body by its **declared**
+        attributes, so the question is a question about the declaration, and the declaration
+        is exactly what `GroundingMap` holds. It used to be answered twice, by two rules: the
+        bridge ("a unique colour wins whatever the shape says -- a misread shape must not
+        override the bridge") and this file's attribute match (every declared attribute must
+        equal the **measured** one, and exactly one entity must match). The stricter rule was
+        applied where it decided the outcome, and a frame that measured one body as a cuboid
+        instead of a cylinder therefore withdrew it from the world the loop could act on --
+        E2'' v3's yellow cube, 7 of 7 rounds, with the other five items fine.
+
+        So the bridge is asked first, and its answer still has to be **visible now**: a
+        declared body the frame did not detect this round is not resurrected, because that
+        would be repairing the detection ring instead of the binding one (SPEC v0.5 §4.16).
+        The old match stays as the fallback, which is the whole of the privileged
+        channel's behaviour and the whole of any world the bridge says nothing about.
+        """
+        ref = assignment.entity
+        if ref.entity_id:
+            return ref.entity_id
+        if self.gmap is not None:
+            target = self.gmap.bind(str(ref.attributes.get("color") or ""),
+                                    str(ref.attributes.get("shape") or ""))
+            if target and self.world.has_entity(target):
+                return target
+        return bind_attributes(ref.attributes, self.world)
 
     def progress(self, goal: GoalSpec) -> list[GoalProgressItem]:
         items = []

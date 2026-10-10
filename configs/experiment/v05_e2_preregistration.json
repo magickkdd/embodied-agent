@@ -1,0 +1,78 @@
+{
+  "acceptance": [
+    "each of the three cells runs its full matched denominator: 2 cases x 2 repeats = 4 episodes, all producing an outcome (success/failed/needs_clarification), none infrastructure_error",
+    "every non-success row appears in the batch root's errors.jsonl with episode_id/case_id/mode/repeat/where/error/outcome (v0.4 R1) and, when the outcome is `blocked`, carries a non-empty termination_reason that equals the `terminated_blocked` record's reason (v0.5 R1)",
+    "each cell's manifest carries perception.channel equal to the requested channel, the pre-registered model identity, and grounding_map_sha256 identical to the value v0.4 E2' recorded for the same case (the fix changed what the loop *asks* of the bridge, not the bridge)",
+    "RQ13's answer names the per-cell success counts on the matched denominator 4 side by side with v0.4 E2' (privileged 4/4, stub 0/4, vlm 0/4) and never merges them; 0 is a legal answer provided the attributed ring is shown repaired",
+    "the attributed ring is shown repaired by the pre-registered mechanism check: on both camera cells, the count of goal-progress rows carrying `unmeasured: [entity_binding]` is compared per item with E2' (stub c1 6/6 unbound rounds for the purple cylinder; vlm c3 7/7 for the yellow cube); a colour-unique item must go to 0 unbound rounds, and the item's binding is reported from the bridge (`grounding_key`) rather than from a frame attribute match",
+    "the two-ledger spend is reported with http_requests (made) and http_requests_successful (returned) side by side (batch_spend), and the two ledgers sum to a number at or below the spend bound",
+    "privileged stays a control: 4/4 on the matched denominator, with the same action sequence as v0.4 (11/11/13/13 rounds on c1/c3 repeat 0), since nothing in this fix touches a channel without a bridge"
+  ],
+  "artefact_directory": "/home/czx/embodied-agent-batches/v05/e2",
+  "attribution_input": {
+    "ring": "b_binding",
+    "reading": "A1 (v0.5 phase log, P2 A1): the bottleneck ring in all eight dead E2' episodes is grounding/binding, 8/8; ring a (whole-episode detection) and ring d (prompt/parse, 92/92 clean requests) are both zero. The mechanism is one line: the goal side resolved an assignment by matching the frame's measured attributes, while the bridge it was grounded with had already ruled that a unique colour binds whatever the shape says",
+    "scope": "the fix is that one rule and nothing else. It does not touch the readers, the prompt, the detector thresholds or the decision policy (SPEC v0.5 §4.16, D3'')",
+    "what_it_cannot_fix": "the 38 item-rounds of intermittent frame misses and c3's two-yellow ambiguity stay as they are; the pre-registered expectation is that the cells may therefore still read 0/4, and that reading is delivered as it comes"
+  },
+  "bridge_identity_change": "the GroundingMap is untouched: colour-unique maps hash byte-identically to v0.4 (c1 772f28bf..., c3 e889af9a... are the values E2' recorded, and a contract test pins key_of() and the unique-colour rule). What changed is the loop's use of it on camera channels -- the goal side now asks the bridge before it matches attributes. Identity (digest) unchanged, behaviour changed: per SPEC v0.5 §2.5 these rows are reported side by side with E2' and never pooled with them",
+  "command_shape": [
+    "python -m embodied_agent.cli evaluate",
+    "--set long_horizon",
+    "--planner rule",
+    "--modes B",
+    "--repeats 2",
+    "--out-root /home/czx/embodied-agent-batches/v05/e2/<cell>",
+    "--perceive <privileged|stub|vlm>",
+    "--ablation <full|wo_vlm>",
+    "--experience-store <cell>/store.jsonl",
+    "--skill-memory <cell>/lib.jsonl",
+    "--model-config configs/models/agnes-vision-r4.yaml",
+    "--frozen"
+  ],
+  "credentials": "never recorded; a config names the env var, not the key (SPEC 7)",
+  "decided_by": {
+    "D1": "v0.5 main line ratified by the user on 2026-10-10: attribution first, then non-zero",
+    "D2": "residual 24 (c6's total failure across three decision sources) does not enter v0.5; it is a refreeze-level decision and stays sealed in the v0.4 report",
+    "D3": "the fix is the goal-side binding only (`core/verify.py::RuntimeVerifier.bind`, threaded through the rule policy so the context and the pending list cannot disagree); the readers and the decision policy were explicitly declined as out of authorisation",
+    "D4": "the bound stays the SPEC's: 165 requests, 12 episodes, three cells; no second batch, because the stub cell already is the control the attribution asked for"
+  },
+  "entry_point": "python -m embodied_agent.cli evaluate",
+  "experiment": "E2'' (v0.5) - full-on-VLM rerun on the repaired binding, RQ13 (SPEC v0.5 §7 E2'')",
+  "formal_scale": {
+    "cases": ["lh_c1_shared_pair_restore", "lh_c3_capacity_and_shift"],
+    "cells": 3,
+    "cells_detail": {
+      "privileged": "perceive privileged, arm full, zero-cost control and smoke for the fix",
+      "stub": "perceive stub, arm wo_vlm, zero-cost limited-semantic baseline -- A1 showed it dies in the same ring, so it is the repair's own control, not a formality",
+      "vlm": "perceive vlm, arm full, the channel under test"
+    },
+    "episodes": 12,
+    "matched_denominator_per_cell": 4,
+    "repeats": 2,
+    "v04_comparison": "same 3 cells x 2 cases x 2 repeats as E2' (privileged 4/4, stub 0/4, vlm 0/4, 132 requests); the only difference is the binding fix, which is why the rows are reported side by side and never pooled"
+  },
+  "preconditions": [
+    "v0.5 P1 committed (55ffc9f): R1, blocked episodes carry their reason on the summary face",
+    "A1's ring verdict is on disk (v0.5 phase log, P2 A1 readings) and the repair follows it (D3'')",
+    "the repair's contract tests went red before they went green: tests/contract/test_v05_goal_binding.py, 8 tests, and they are green at run time",
+    "full offline regression at or above the v0.4 baseline with no test removed: 1283 passed / 27 skipped (v0.4 baseline 1269/27)",
+    "schema_fingerprint() equals configs/experiment/v02_schema_freeze.json item by item (no refreeze); the three gates rc=0 immediately before the first request",
+    "probe criteria are written down before the first probe request (v0.5 phase log, P4)"
+  ],
+  "pricing_configured": false,
+  "cost_estimate_usd": null,
+  "schema_freeze": "core/v02.py untouched by v0.5; no new event type, no new FailureCode, no new ablation condition; the 15 event types and 7 ablation conditions of schema_version 4 still hold",
+  "seat": {
+    "config": "configs/models/agnes-vision-r4.yaml",
+    "model": "agnes-2.5-flash",
+    "health_probe": "v0.5 P4 probe: a text-seat and a vision-seat minimal request per v0.4 §6 checklist, criteria written before the request; a 429 window reading is logged with it"
+  },
+  "spend_bound": {
+    "requests": 165,
+    "basis": "E2' measured 132 requests over 12 episodes; x1.25 head-room = 165 (SPEC v0.5 §7)",
+    "stop_rule": "3 consecutive 429/quota errors -> stop the batch, save the checkpoint, log it; bound hit -> stop, no 'a little more'",
+    "stop_rule_source": "v0.3 SPEC §8 verbatim, plus v0.4 §8 (endpoint rotation is an event, not a configuration)",
+    "resume": "cell-level: a finished cell is never re-run; --resume continues a cell from its own checkpoint"
+  }
+}

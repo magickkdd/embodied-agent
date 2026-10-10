@@ -270,7 +270,11 @@ def make_source(mode: str, case: TaskCase, planner, rt: Runtime, goal: GoalSpec,
             "second name, which is a renamed run rather than a contrast. Pass "
             "`--experience-store` (an empty file is a legitimate cold start)")
     if planner is None:
-        rule = RulePlanner(case.verify)
+        # the channel's grounding bridge, when it has one (v0.5 P3, D3''): the rule policy
+        # resolves a goal assignment exactly the way the verifier that reported it does, so
+        # `pending` and the context's `progress` can never disagree about which bodies exist
+        gmap = getattr(rt, "gmap", None)
+        rule = RulePlanner(case.verify, gmap=gmap)
         if mode == "A":
             ctx = rt.initial_context(task_input(case), goal)
             return OneShotPlanSource(rule.plan(goal, ctx.world, plan_id=f"p_{ctx.context_id}"))
@@ -282,7 +286,7 @@ def make_source(mode: str, case: TaskCase, planner, rt: Runtime, goal: GoalSpec,
             from ..episodic.policy import MemoryPolicy
 
             return MemoryPolicy()
-        source = RulePolicySource(case.verify)
+        source = RulePolicySource(case.verify, gmap=gmap)
     else:
         if mode == "A":
             ctx = rt.initial_context(task_input(case), goal)

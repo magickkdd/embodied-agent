@@ -75,7 +75,8 @@ from embodied_agent.acquisition.arm import (
 )
 from embodied_agent.acquisition.memory import SkillMemory
 from embodied_agent.acquisition.sandbox import SandboxScene
-from embodied_agent.core.contracts import DecisionExecute, SkillName
+from embodied_agent.core.contracts import (DecisionExecute, FailureCode, SkillName, SkillResult,
+                                           SkillStatus)
 from embodied_agent.core.events import EpisodeStore
 from embodied_agent.core.fault_injection import EnvironmentController
 from embodied_agent.core.interpreter import interpret
@@ -244,13 +245,18 @@ def _arm(case_id: str, condition: str, library_path: str, root: str, *,
 
 
 def _camera_arm(case_id: str, condition: str, library_path: str, root: str, *,
-                kind: str, store_path: str) -> Episode:
+                kind: str, store_path: str, execute=None) -> Episode:
     """The same episode, assembled by hand on a camera, so the page is an object under test.
 
     `_arm` builds the privileged loop and this builds the joined one; the only differences are the
     two objects `perception/arm.py:build_perceiver` returns and the channel word. That is the point
     of the pair: a reader can diff the two helpers and see that joining the camera changed which
     runtime class exists and nothing about how the episode is driven.
+
+    `execute` replaces `SkillExecutor.execute` for this episode only. It exists because one
+    caller needs the acquisition chain to fire on a channel whose loop has stopped failing on its
+    own (v0.5 P3), and a seam is the honest way to ask for that: the point is what the camera
+    channel files *when a skill really fails*, not how often it happens to.
     """
     case = find_case(case_id)
     scene = build_scene(case)
@@ -262,6 +268,8 @@ def _camera_arm(case_id: str, condition: str, library_path: str, root: str, *,
         ep_dir = os.path.join(root, episode_id)
         os.makedirs(ep_dir, exist_ok=True)
         executor = SkillExecutor(scene, world_provider=lambda: None, config=case.verify)
+        if execute is not None:
+            executor.execute = execute
         perceiver, gmap = build_perceiver(case=case, scene=scene, run_dir=ep_dir,
                                           episode_id=episode_id, perceive="stub",
                                           catalog=cell_catalog(scene.trays.values()))
@@ -1013,6 +1021,21 @@ def test_a_runtime_with_no_library_says_nothing_and_an_in_memory_one_has_no_path
 
 
 # ================================================= the joined camera (P5-a) ====
+def _always_fails():
+    """An executor that reports every skill call as a physical contact failure.
+
+    Built as a factory so each caller gets its own closure: the count of failed calls is what
+    §5.6's detector groups by, and two episodes sharing one counter would read as each other's
+    recurrence. `ANOMALOUS_CONTACT` is a real `FailureCode` value, so the cell the detector
+    groups is the same shape one a real contact failure would produce.
+    """
+    def execute(call):
+        return SkillResult(call_id=call.call_id, status=SkillStatus.failed,
+                           failure_code=FailureCode.ANOMALOUS_CONTACT.value,
+                           t_start=0.0, t_end=0.01, stages_executed=["precondition"])
+    return execute
+
+
 def test_one_camera_episode_carries_the_perceiver_the_store_and_the_library(tmp_path,
                                                                             warm_library):
     """§13's closed loop, on a channel that renders frames: five modules, one episode, no spend.
@@ -1031,13 +1054,21 @@ def test_one_camera_episode_carries_the_perceiver_the_store_and_the_library(tmp_
     (`observation` rows, no `perception` row, because a stub read renders no `PerceptionObservation`),
     the records the two installed modules own (retrieval and write, gap and candidate), and the page
     a round was actually answered from (it carries the offer *beside* the camera-derived plan).
+
+    The skill failure the four acquisition records are built on is **forced at the executor seam**
+    (`_camera_arm(execute=...)`), not waited for. It used to be emergent: `dev_c1` on a camera could
+    not bind its green cylinder, so the episode failed and that failure armed the gap detector.
+    v0.5's binding fix (`core/verify.py::bind`, D3'') made the same episode solve `dev_c1` -- 3/3
+    objects, zero requests -- so the incidental failure is gone. A test that cannot pass unless the
+    loop is bad at the task is testing the loop, not the join; asking the executor to fail keeps
+    the subject what it was written to be, and makes the fact itself part of the assertion.
     """
     root = os.path.join(str(tmp_path), "cam")
     library = _copy(root, warm_library, "cam")
     store_path = os.path.join(root, "cam.experiences.jsonl")
     before = _store_bytes(library)
     cam = _camera_arm(OFFER_CASE, "wo_vlm", library, root, kind=OFFER_KIND,
-                      store_path=store_path)
+                      store_path=store_path, execute=_always_fails())
     ep_dir = os.path.join(root, cam.summary["episode_id"])
     # The log, read *after* the trigger ran: `acquire_from_episode` is the episode's last act, so a
     # snapshot taken before it cannot show the four records it filed.
