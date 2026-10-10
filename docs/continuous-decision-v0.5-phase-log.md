@@ -56,3 +56,76 @@ v0.5 的两条新纪律（SPEC §4 原则 16–17）：**归因先于修复**（
   `git diff --stat` 自查，任何非零行数都要解释）。
 
 **提交**：`Continuous-Decision-Embodied-Agent-SPEC-v0.5.md` + 本日志开篇。
+
+---
+
+## P1 R1（残留 #21：blocked 的原因上摘要面，零成本，2026-10-10）
+
+### 先量后改：红的那一版
+
+新契约测试 `tests/contract/test_v05_blocked_reason.py`（5 条）在**未改代码**上跑：
+
+```
+FAILED test_a_blocked_episode_states_why_on_the_result_object
+  assert ep.result.termination_reason, "a blocked episode with a stated reason must say so"
+  assert None = EpisodeResult(..., artifacts={..., 'note': 'blocked by model'})
+FAILED test_a_silent_block_still_states_a_reason
+  assert None == 'blocked by model'
+2 failed, 3 passed
+```
+
+复现的正是 v0.4 残留 #21 的形状：**`failure_type=None`、`termination_reason=None`，而
+`artifacts.note` 与事件流里已经写着 "blocked by model"**——原因在盘上，只是没有一张摘要
+面看得见它。另外 3 条（clarify / 成功集 / `failure_type` 不动）在改动前就是绿的，
+它们是"不回退"那一半的基线。
+
+### 改动形状（SPEC §5，以实测为准）
+
+盘上实测：`Decision` 契约里 blocked 自带的理由字段是 **`rationale`**（`missing_information`
+按契约只在 `action=="clarify"` 时必填），`core/runtime.py` 的 `termination_reason` 在物理
+后端**从来没有被写过**（只有 `benchmark/runtime_alfred.py` 与 `benchmark_mujoco/runtime.py`
+两个子类在自己的 `_finalize` 里写它，用的是 SPEC-BST 6.2 的封口词表）。因此：
+
+| 位置 | 改动 |
+| --- | --- |
+| `core/runtime.py` blocked 路 | 原因 = `decision.rationale.strip()`，空则回落常量 `BLOCKED_FALLBACK_REASON = "blocked by model"`（**命名模型的沉默，不替它编原因**） |
+| 同上 | `terminated_blocked` 事件载荷新增 `reason`；`note`（守卫句"blocked 不证明任务不可解"）原样保留 |
+| 同上 | `_finalize` 的 note 实参由硬编码 `"blocked by model"` 改为携带同一原因（→ `artifacts.note` 与 `episode_end`） |
+| 类属性 | **新增 `blocked_reason`**，不是写 `termination_reason` |
+| `failure_type` | 不动（仍 `None`）；**`FailureCode` 枚举未扩**，SPEC §2.2 的停工条款没有被触发 |
+
+### 改动撞上的一处真实反作用（先记下来，它是这次改动里最要紧的一条）
+
+第一版实现照字面"把原因写进 `termination_reason`"，红的不止新测试：全量跑出
+`test_bst_text_backend.py::test_control_outcomes_seal_the_episode_at_once[blocked-AGENT_BLOCKED]`
+——**ALFRED 文本后端的封口词表被覆盖了**。该后端在 `_finalize` 里
+`if self.termination_reason is None: self.termination_reason = self._termination_of(...)`，
+把 `failure is None` 封成 `AGENT_BLOCKED`；循环先把散文写进同一字段，封口就再也轮不到。
+
+处置：**换字段而不是改后端**。循环写 `blocked_reason`（散文），`_finalize` 报
+`termination_reason=self.termination_reason or self.blocked_reason`。于是两边各得其位：
+物理后端（E2'/E2'' 跑的那条）没有封口词表，摘要面上就是决策自己的话；封口后端保住
+`AGENT_BLOCKED`，散文仍在 `artifacts.note`、`terminated_blocked.reason` 与 `episode_end.note`
+里。两侧各有一条测试钉住（`test_v05_blocked_reason.py` 与
+`test_bst_text_backend.py::test_a_blocked_episode_keeps_the_seal_and_still_carries_its_reason`），
+互为反面证据。**若当时只跑新测试，这条反作用会带进 v0.5 的正式批。**
+
+### 验收逐条判定（SPEC §5）
+
+| 条 | 判定 | 证据 |
+| --- | --- | --- |
+| 1 blocked → `termination_reason` 非空且与事件流一致 | **达成** | `test_a_blocked_episode_states_why_on_the_result_object`（事件 `reason` == 结果 `termination_reason` == `artifacts.note` == `episode_end.note`）；沉默版 `test_a_silent_block_still_states_a_reason` |
+| 2 `failure_type` 保持 None（枚举不扩的行为面证据） | **达成** | `test_a_blocked_episode_keeps_failure_type_none`；`FailureCode` 一行未动 |
+| 3 非 blocked 各路不回退（clarify 照旧带 `AMBIGUOUS_TASK`，v0.4 R1 账本覆盖判据原样绿） | **达成** | `test_clarify_still_carries_its_failure_code`；`tests/contract/test_v04_infra_ledger.py` 6 条原样通过；封口后端 `AGENT_BLOCKED` 绿（上面那条反作用） |
+| 4 成功集不造假行 | **达成** | `test_a_success_states_no_reason_at_all`（`termination_reason is None`，`artifacts.note == ""`） |
+
+**历史不回填**（SPEC §5 末条、§2.4）：E2' 归档那四集 blocked 的 `None` 保持原样，
+答案由 v0.5 的新批给。
+
+### 冻结面与回归（提交前当场跑）
+
+- 三门：`2f1c74f52e91` / `23abe58ff333…` / `7df449ed2f4d`，rc=0 三条；
+- `tests/contract/test_v02_contracts.py` **25 passed**（fingerprint 逐项相等）——
+  `core/runtime.py` 不在 `core/v02.py` 的哈希面上，预期内，实测确认；
+- 全量回归 **1275 passed / 27 skipped**（v0.4 基线 1269/27：**+6 条，无一条减少**，
+  6 = v0.5 新增 5 + 封口后端新增 1）。

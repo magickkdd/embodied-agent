@@ -53,6 +53,9 @@ from .verify import RuntimeVerifier, build_world_state, diff_states
 
 MAX_MODEL_ERRORS = 3
 MAX_FALSE_FINISHES = 3
+#: what a blocked episode is terminated with when the decision itself stated no reason
+#: (v0.5 R1). It names the model's silence; it never stands in for a cause.
+BLOCKED_FALLBACK_REASON = "blocked by model"
 # how much of the episode a round is shown: the two histories the decision context
 # carries, bounded so a long-horizon task cannot grow its own prompt (SPEC 5.2
 # 有界历史). `model_payload` thins the feedback further to `feedback_depth`.
@@ -452,10 +455,29 @@ class Runtime:
                 return self._finalize(task, ledger, TerminalStatus.needs_clarification,
                                       FailureCode.AMBIGUOUS_TASK, decision.missing_information or "", mode)
             if decision.action == "blocked":
+                # v0.5 R1 (v0.4 residual 21): the reason the decision carries goes on the
+                # summary face. `failure_type` stays `None` — a model giving up is not one
+                # of the frozen `FailureCode` values, and adding one would put a new enum
+                # value into event and result payloads (SPEC-v0.5 §2.2 keeps the enum
+                # closed). What the fix removes is the split account: before, the event
+                # stream held the only copy of the reason and every reader of the result
+                # object, the csv row or the episode summary saw a failure with no stated
+                # cause (E2' has four such rows).
+                #
+                # It lands on `blocked_reason`, not on `termination_reason`: a backend
+                # that seals the episode in its own vocabulary (`AGENT_BLOCKED` and
+                # friends, SPEC-BST 6.2) writes that field in its `_finalize` and must
+                # keep it. On this physics runtime there is no seal, so the reason is
+                # what the result reports; on a sealed one the prose still reaches
+                # `artifacts.note`, the `terminated_blocked` record and the `note` of
+                # `episode_end`.
+                reason = (decision.rationale or "").strip() or BLOCKED_FALLBACK_REASON
                 self.store.log("terminated_blocked", decision_id=decision.decision_id,
+                               reason=reason,
                                note="the model found no feasible next action; that is not a proof "
                                     "that the task is unsolvable")
-                return self._finalize(task, ledger, TerminalStatus.failed, None, "blocked by model", mode)
+                self.blocked_reason = reason
+                return self._finalize(task, ledger, TerminalStatus.failed, None, reason, mode)
             if decision.action == "finish":
                 accepted, report, snapshot = self._finish_check(goal)
                 self._record_feedback(ExecutionFeedback(
@@ -550,7 +572,16 @@ class Runtime:
     # `Budgets` field: the field set is frozen for the v0.1 batch, so a second
     # backend asks the loop to check its own pre-flight instead of editing that
     # frozen record. The desktop loop returns None here, always.
+    #: what a backend seals the episode with — its own vocabulary, where it has one
+    #: (SPEC-BST 6.2: `AGENT_BLOCKED`, `AGENT_FINISH`, ...). Written by a subclass in
+    #: its `_finalize`, never by this loop.
     termination_reason: str | None = None
+    #: what the decision itself said when it blocked (v0.5 R1). Kept apart from
+    #: `termination_reason` on purpose: the physics backend has no sealed vocabulary and
+    #: reports the reason itself, while a backend that seals the episode keeps its code
+    #: and still carries this prose in `artifacts.note` and in the `terminated_blocked`
+    #: record. One field would force one of those two to give.
+    blocked_reason: str | None = None
 
     def _preflight_trip(self, ledger) -> tuple | None:
         """(status, failure_code, note) for a budget this backend bounds outside
@@ -800,7 +831,7 @@ class Runtime:
             failure_type=failure, sim_time_s=round(self.scene.sim_time, 2),
             wall_time_s=round(time.time() - ledger.t_start_wall, 2),
             slot_resolution_fallbacks=self.slot_resolution_fallbacks,
-            termination_reason=self.termination_reason,
+            termination_reason=self.termination_reason or self.blocked_reason,
             artifacts={"terminal_state_version": str(self.terminal_world.state_version),
                        "terminal_observation_ref": str(self.terminal_world.observation_ref),
                        "unknown_goals": str(unknown), "note": note})

@@ -437,6 +437,25 @@ def test_control_outcomes_seal_the_episode_at_once(tmp_path, action, reason):
     assert ep.backend.env_steps == 0
 
 
+def test_a_blocked_episode_keeps_the_seal_and_still_carries_its_reason(tmp_path):
+    """v0.5 R1 (v0.4 residual 21) met this backend and stopped at its edge.
+
+    The loop now records what a blocked decision said (`Runtime.blocked_reason`), which
+    on the physics backend is what the result reports. Here the episode is sealed in the
+    SPEC-BST 6.2 vocabulary first, and `AGENT_BLOCKED` is the name that vocabulary gives
+    the very same outcome — so the seal wins the field and the prose is not lost: it is
+    in the note the summaries carry and in the `terminated_blocked` record. This test is
+    the counter-evidence to the one below it in `test_v05_blocked_reason.py`: had R1
+    written `termination_reason` directly, it would have overwritten the seal.
+    """
+    ep = run(tmp_path, "control_blocked_reason", [("blocked", None)])
+    assert ep.result.termination_reason == "AGENT_BLOCKED"
+    assert ep.rt.blocked_reason == "scripted"
+    assert ep.result.artifacts["note"] == "scripted"
+    (blocked,) = ep.of("terminated_blocked")
+    assert blocked["reason"] == "scripted"
+
+
 # ------------------------------------------------------------- 13.7: the ledger --------
 
 
