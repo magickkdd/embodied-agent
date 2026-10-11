@@ -288,3 +288,29 @@ MISMATCH: task list drifted: frozen 2f1c74f52e91 != live d3d511e20d0f
 - 配额窗口内的成功率达到 **9/10** 才算席位健康，否则改窗口而不是改判据；
 - 端点轮换是**事件**不是配置：一次 429 之后先重试同一端点，再换端点，两次换端点仍 429 就停；
 - 任何密钥只经环境变量传入，**不写入任何文件**。
+
+### E2''' 首启事故：预登记的 48/48 没有真的到达批（零花费，零请求已花）
+
+首启 `work/v06/e2_batch.py` 的读数：
+
+| 格 | rc | 结果 |
+| --- | --- | --- |
+| `long_horizon_privileged`（不重定价） | 0 | **4/4 success，0 请求**——控制格与 E2'' 同形 |
+| `long_horizon_stub`（`--http-cap 48 --perception-cap 48`） | **4** | `infrastructure error: run_group() got an unexpected keyword argument 'perception_cap'` |
+| `long_horizon_vlm`（同） | **4** | 同上 |
+
+**根因是两处名字错，不是设计错**：CLI 把覆盖值按 `perception_cap=` 传给 `run_group`，
+而 `run_group` 的形参叫 `perception_cap_flag`（里面的 `perception_cap` 已被"本集实际被记的
+上限"占用）；修掉第一处之后第二处才露出来——重定价后的 case 用 `model_copy` 造，
+而 `TaskCase` 是 dataclass。**P1 的契约测试全绿却没抓到它**，因为它们测的是
+`apply_http_caps` 和 ledger，没有一个走过 CLI → `run_group` 这条接缝。
+
+处置（按 SPEC §11 的"批前缺陷先修、读数后采"）：
+
+1. 两处改名/改法各一行，并写进代码注释——名字冲突本身是下次会再犯的原因；
+2. **补一条端到端契约测试**：真的用 `cli evaluate ... --http-cap 48 --perception-cap 48`
+   跑一集 stub（离线、零请求），断言档案里 `budget_caps == {http 48, perception 48}`、
+   `budget_profile` 的 `max_http_requests` 全是 48，且**冻结任务表仍是 32**；
+3. 重跑契约层（897 passed）与三门，全绿后才重启批。
+
+这一次的代价记在这里：**0 请求、0 花费，vlm 格没开始**。首启先跑零成本格的老规矩救了这一手。

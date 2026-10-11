@@ -34,7 +34,7 @@ import json
 import os
 import time
 import traceback
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import datetime
 
 from ..adapters.deepseek import DeepSeekAdapter, DeepSeekPlanner, FixturePlanner, LLMError
@@ -931,7 +931,9 @@ def run_group(set_name: str, *, modes=MODES, planner_kind: str = "rule", repeats
             budgets, cap = apply_http_caps(c.budgets, http_cap=http_cap,
                                            perception_cap=perception_cap_flag)
             perception_cap = cap
-            repriced.append(c.model_copy(update={"budgets": budgets}))
+            # `TaskCase` is a dataclass, so the repriced case is a copy: the frozen task list
+            # keeps its own 32 and this batch's rows carry the number they actually ran under.
+            repriced.append(replace(c, budgets=budgets))
         cases = repriced
 
     planner = None

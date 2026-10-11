@@ -226,10 +226,17 @@ def _perception_kwargs(args) -> tuple[dict, list[str]]:
         return {}, [f"--view {args.view!r} is not a camera this arm has: "
                     f"{sorted(views or declared_views())}"]
     kw = {"perceive": args.perceive, "views": views, "default_view": args.view}
-    # v0.6 Q1: the request ceilings are batch configuration (SPEC §5 D2'''), so they ride
-    # with the arm kwargs the runner already receives and land in the manifest's
-    # `budget_profile` like every other effective budget.
-    for flag, name in (("http_cap", "http_cap"), ("perception_cap", "perception_cap")):
+    # v0.6 Q1: the request ceilings are batch configuration (SPEC §5 D2'''). They ride with the
+    # arm kwargs the runner already receives and land in the manifest's `budget_profile` and
+    # `budget_caps` like every other effective budget.
+    #
+    # `perception_cap` is spelled `perception_cap_flag` at the boundary on purpose: inside
+    # `run_group` the name already means "the cap this episode will be charged against", and a
+    # flag that reused it would either be shadowed by that variable or shadow it -- and the
+    # E2''' batch found the third option first: `run_group() got an unexpected keyword argument
+    # 'perception_cap'`, i.e. the override never reached the repricing at all.
+    for flag, name in (("http_cap", "http_cap"),
+                       ("perception_cap", "perception_cap_flag")):
         value = getattr(args, flag, None)
         if value is not None:
             if int(value) < 1:

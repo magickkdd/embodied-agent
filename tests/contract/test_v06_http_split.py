@@ -105,6 +105,45 @@ def test_the_run_manifest_records_both_ceilings():
         "the perception ceiling must travel with the total into the manifest"
 
 
+def test_the_ceilings_reach_the_batch_from_the_command_line(tmp_path):
+    """The end-to-end seam, written after the E2''' batch found it broken.
+
+    P1's tests pinned `apply_http_caps` and the ledger, and both passed; the flag still never
+    arrived. Two names were wrong in two places: the CLI passed `perception_cap=` where
+    `run_group` reads `perception_cap_flag=`, and the repriced case was built with
+    `model_copy` on a dataclass. So a batch asked for 48/48 and died with
+    `run_group() got an unexpected keyword argument 'perception_cap'` -- after the zero-cost
+    privileged cell had already succeeded, and before any request was spent.
+
+    This drives the real batch entry point offline (`perceive stub`, one repeat, frames off) and
+    asserts the archive carries the numbers it ran under, because a repricing that only exists
+    in a command line is a repricing nobody can reproduce."""
+    import json
+    import os
+
+    from embodied_agent.cli import main as cli_main
+
+    out = tmp_path / "out"
+    rc = cli_main(["evaluate", "--set", "long_horizon", "--planner", "rule", "--modes", "B",
+                   "--repeats", "1", "--cases", "lh_c1_shared_pair_restore",
+                   "--out-root", str(out), "--perceive", "stub", "--ablation", "wo_vlm",
+                   "--no-frames", "--frozen", "--http-cap", "48", "--perception-cap", "48"])
+    assert rc == 0, f"a batch carrying the pre-registered ceilings has to run (rc={rc})"
+
+    run_dirs = [os.path.join(out, d) for d in os.listdir(out)
+                if os.path.isdir(os.path.join(out, d, "episodes"))]
+    assert run_dirs, "the batch wrote no run directory"
+    with open(os.path.join(run_dirs[0], "manifest.json"), encoding="utf-8") as f:
+        manifest = json.load(f)
+    assert manifest["budget_caps"] == {"http_requests": 48, "perception_requests": 48}
+    assert {p["max_http_requests"] for p in manifest["budget_profile"].values()} == {48}
+
+    # and the frozen task list is still the frozen task list: the override is a copy, not an edit
+    from embodied_agent.evaluation.tasks import build_set
+
+    assert {c.budgets.max_http_requests for c in build_set("long_horizon")} == {32}
+
+
 def test_the_privileged_path_keeps_one_counter_and_the_old_rule():
     """Acceptance 4: with no camera, there is no perception book to fill, and the base
     runtime charges exactly what it always charged. A change here would silently re-price
