@@ -1,0 +1,164 @@
+{
+ "criteria": "docs/continuous-decision-v0.6-phase-log.md, P2 判据 B2",
+ "b2_1_archive_scan": {
+  "identical_attribute_pairs_in_frames": {
+   "v04|stub|ambiguous_pairs": 0,
+   "v04|vlm|ambiguous_pairs": 0,
+   "v05|stub|ambiguous_pairs": 0,
+   "v05|vlm|ambiguous_pairs": 0
+  },
+  "frames_by_colour": {
+   "v04|stub|green": 82,
+   "v04|stub|blue": 82,
+   "v04|stub|purple": 82,
+   "v04|stub|yellow": 82,
+   "v04|stub|red": 20,
+   "v04|vlm|green": 20,
+   "v04|vlm|blue": 20,
+   "v04|vlm|purple": 20,
+   "v04|vlm|yellow": 20,
+   "v04|vlm|red": 9,
+   "v05|stub|green": 82,
+   "v05|stub|blue": 82,
+   "v05|stub|purple": 82,
+   "v05|stub|yellow": 82,
+   "v05|stub|red": 20,
+   "v05|vlm|green": 17,
+   "v05|vlm|blue": 17,
+   "v05|vlm|purple": 17,
+   "v05|vlm|yellow": 17,
+   "v05|vlm|red": 12
+  }
+ },
+ "candidate_i_premise": {
+  "v04|stub|blue": {
+   "frames": 82,
+   "unique": 82
+  },
+  "v04|stub|green": {
+   "frames": 82,
+   "unique": 82
+  },
+  "v04|stub|purple": {
+   "frames": 82,
+   "unique": 82
+  },
+  "v04|stub|red": {
+   "frames": 20,
+   "unique": 20
+  },
+  "v04|stub|yellow": {
+   "frames": 82,
+   "unique": 82
+  },
+  "v04|vlm|blue": {
+   "frames": 20,
+   "unique": 20
+  },
+  "v04|vlm|green": {
+   "frames": 20,
+   "unique": 20
+  },
+  "v04|vlm|purple": {
+   "frames": 20,
+   "unique": 20
+  },
+  "v04|vlm|red": {
+   "frames": 9,
+   "unique": 9
+  },
+  "v04|vlm|yellow": {
+   "frames": 20,
+   "unique": 20
+  },
+  "v05|stub|blue": {
+   "frames": 82,
+   "unique": 82
+  },
+  "v05|stub|green": {
+   "frames": 82,
+   "unique": 82
+  },
+  "v05|stub|purple": {
+   "frames": 82,
+   "unique": 82
+  },
+  "v05|stub|red": {
+   "frames": 20,
+   "unique": 20
+  },
+  "v05|stub|yellow": {
+   "frames": 82,
+   "unique": 82
+  },
+  "v05|vlm|blue": {
+   "frames": 17,
+   "unique": 17
+  },
+  "v05|vlm|green": {
+   "frames": 17,
+   "unique": 17
+  },
+  "v05|vlm|purple": {
+   "frames": 17,
+   "unique": 17
+  },
+  "v05|vlm|red": {
+   "frames": 12,
+   "unique": 12
+  },
+  "v05|vlm|yellow": {
+   "frames": 17,
+   "unique": 17
+  }
+ },
+ "b2_2_paths": {
+  "two bodies with identical measured attributes": {
+   "entities": [
+    "obj_yellow_1",
+    "obj_yellow_6"
+   ],
+   "bind_attributes": null,
+   "verifier_bind": null,
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "value": "unknown"
+  },
+  "two bodies whose measured attributes collapsed onto the declared pair": {
+   "entities": [
+    "obj_yellow_1",
+    "obj_yellow_6"
+   ],
+   "bind_attributes": null,
+   "verifier_bind": null,
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "value": "unknown"
+  },
+  "a grounding refusal leaving two frame-named entities matching": {
+   "entities": [
+    "seen:yellow",
+    "seen:yellow_2"
+   ],
+   "bind_attributes": null,
+   "verifier_bind": null,
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "value": "unknown"
+  },
+  "one entity, wrong shape (NOT the ambiguity branch)": {
+   "entities": [
+    "obj_yellow_1"
+   ],
+   "bind_attributes": null,
+   "verifier_bind": null,
+   "unmeasured": [
+    "entity_binding"
+   ],
+   "value": "unknown"
+  }
+ }
+}

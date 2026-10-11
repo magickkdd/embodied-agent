@@ -90,6 +90,21 @@ def test_a_batch_level_override_reprices_the_cap_without_touching_the_case():
     assert same is budgets and default_cap == PERCEPTION_CAP
 
 
+def test_the_run_manifest_records_both_ceilings():
+    """A repriced cell has to be recognisable from its own archive. `budget_profile` carries
+    the total (a batch may move it); the perception sub-cap is a runtime argument rather than a
+    case budget, so it would otherwise exist only in the command line and the report -- which is
+    the failure mode this stage's archive-comparison rule exists to prevent."""
+    import inspect
+
+    from embodied_agent.evaluation import run as R
+
+    source = inspect.getsource(R.run_group)
+    assert "budget_caps=" in source
+    assert '"perception_requests": perception_cap' in source, \
+        "the perception ceiling must travel with the total into the manifest"
+
+
 def test_the_privileged_path_keeps_one_counter_and_the_old_rule():
     """Acceptance 4: with no camera, there is no perception book to fill, and the base
     runtime charges exactly what it always charged. A change here would silently re-price

@@ -1,0 +1,281 @@
+{
+ "grid": [
+  {
+   "min_pixels": 120,
+   "hue_tol_deg": 22.0
+  },
+  {
+   "min_pixels": 80,
+   "hue_tol_deg": 22.0
+  },
+  {
+   "min_pixels": 200,
+   "hue_tol_deg": 22.0
+  },
+  {
+   "min_pixels": 120,
+   "hue_tol_deg": 15.0
+  },
+  {
+   "min_pixels": 120,
+   "hue_tol_deg": 30.0
+  },
+  {
+   "min_pixels": 80,
+   "hue_tol_deg": 15.0
+  },
+  {
+   "min_pixels": 60,
+   "hue_tol_deg": 15.0
+  }
+ ],
+ "settings": {
+  "min_pixels=120,hue_tol_deg=22.0": {
+   "colour_seen": 1,
+   "colour_and_shape_seen": 1,
+   "episodes": {
+    "v04:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c1_shared_pair_restore.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 1,
+     "colour_and_shape_seen": 1
+    },
+    "v05:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    }
+   }
+  },
+  "min_pixels=80,hue_tol_deg=22.0": {
+   "colour_seen": 1,
+   "colour_and_shape_seen": 1,
+   "episodes": {
+    "v04:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c1_shared_pair_restore.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 1,
+     "colour_and_shape_seen": 1
+    },
+    "v05:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    }
+   }
+  },
+  "min_pixels=200,hue_tol_deg=22.0": {
+   "colour_seen": 1,
+   "colour_and_shape_seen": 1,
+   "episodes": {
+    "v04:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c1_shared_pair_restore.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 1,
+     "colour_and_shape_seen": 1
+    },
+    "v05:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    }
+   }
+  },
+  "min_pixels=120,hue_tol_deg=15.0": {
+   "colour_seen": 1,
+   "colour_and_shape_seen": 1,
+   "episodes": {
+    "v04:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c1_shared_pair_restore.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 1,
+     "colour_and_shape_seen": 1
+    },
+    "v05:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    }
+   }
+  },
+  "min_pixels=120,hue_tol_deg=30.0": {
+   "colour_seen": 1,
+   "colour_and_shape_seen": 1,
+   "episodes": {
+    "v04:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c1_shared_pair_restore.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 1,
+     "colour_and_shape_seen": 1
+    },
+    "v05:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    }
+   }
+  },
+  "min_pixels=80,hue_tol_deg=15.0": {
+   "colour_seen": 1,
+   "colour_and_shape_seen": 1,
+   "episodes": {
+    "v04:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c1_shared_pair_restore.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 1,
+     "colour_and_shape_seen": 1
+    },
+    "v05:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    }
+   }
+  },
+  "min_pixels=60,hue_tol_deg=15.0": {
+   "colour_seen": 1,
+   "colour_and_shape_seen": 1,
+   "episodes": {
+    "v04:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c1_shared_pair_restore.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v04:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c1_shared_pair_restore.B.r0": {
+     "colour_seen": 1,
+     "colour_and_shape_seen": 1
+    },
+    "v05:lh_c3_capacity_and_shift.B.r0": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    },
+    "v05:lh_c3_capacity_and_shift.B.r1": {
+     "colour_seen": 0,
+     "colour_and_shape_seen": 0
+    }
+   }
+  }
+ },
+ "needed_item_rounds": {
+  "v04:lh_c1_shared_pair_restore.B.r0": 6,
+  "v04:lh_c1_shared_pair_restore.B.r1": 5,
+  "v04:lh_c3_capacity_and_shift.B.r0": 15,
+  "v04:lh_c3_capacity_and_shift.B.r1": 12,
+  "v05:lh_c3_capacity_and_shift.B.r0": 12,
+  "v05:lh_c3_capacity_and_shift.B.r1": 11,
+  "v05:lh_c1_shared_pair_restore.B.r0": 3
+ }
+}

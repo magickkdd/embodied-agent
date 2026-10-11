@@ -1,0 +1,83 @@
+{
+  "acceptance": [
+    "each of the three cells runs its full matched denominator: 2 cases x 2 repeats = 4 episodes, all producing an outcome (success/failed/needs_clarification); an infrastructure_error is recorded with a named cause in errors.jsonl and counted as a miss against this item rather than dropped",
+    "privileged is the unchanged control: 4/4 on the matched denominator with the same budgets as E2'/E2'' (no repricing) and the same action sequence (11/11/13/13 rounds on c1/c3 repeat 0)",
+    "every failed episode names its residual cause, and the name is one of the three this stage ruled on: which of #25 (two-yellow ambiguity, ruled a structural limitation), #26 (intermittent detection, ruled a structural limitation) and #27 (the request ceiling, split and repriced by Q1) the episode actually died of. An episode whose cause cannot be named fails this item -- the naming is the harder criterion and the one SPEC §6 makes primary",
+    "the Q1 split is reported per episode: http_requests against perception_requests and decision_requests, with the unattributed remainder (the shared goal parse) shown rather than folded into either book",
+    "no episode dies on the HTTP ceiling unless the ledger shows the perception book as the book that filled it: the note text names the book, and a 'budget 48' note with an empty perception book is a defect of this batch, not a finding",
+    "RQ13's continuation is reported per cell on the matched denominator, side by side with E2'' (4/4, 0/4, 0/4) and E2' (4/4, 0/4, 0/4) and never merged with either",
+    "the per-episode rows carry both grounding_map_sha256 and the effective budgets, so a repriced cell is recognisable from its archive"
+  ],
+  "artefact_directory": "/home/czx/embodied-agent-batches/v06/e2",
+  "budget_repricing": {
+    "ruling": "D2''' candidate B -- the per-episode request ceiling is batch configuration; D5''' set it at 48 total / 48 perception for the camera cells",
+    "why_not_privileged": "privileged makes zero requests (Q1's split measured 280 of 280 camera requests as looks and none as decisions), so repricing it would change a control's identity for no measurement; it therefore runs on the frozen budgets, exactly as in E2'/E2''",
+    "why_both_at_48": "the preflight checks the total before the perception book, so a total of 32 would still stop every camera episode at 32 and the perception cap of 48 would never be reached -- the repricing has to move the outer bound or it is decoration. The decision allowance is 0 because the rule policy spends none, which is the measured composition rather than a guess",
+    "declared_identity_change": "the budgets of the stub and vlm cells differ from E2'/E2''; the readers, the bridge and the frozen task table are untouched. Rows are reported side by side with both earlier batches and never pooled (SPEC §2.4)"
+  },
+  "command_shape": [
+    "python -m embodied_agent.cli evaluate",
+    "--set long_horizon",
+    "--planner rule",
+    "--modes B",
+    "--repeats 2",
+    "--out-root /home/czx/embodied-agent-batches/v06/e2/<cell>",
+    "--perceive <privileged|stub|vlm>",
+    "--ablation <full|wo_vlm>",
+    "--http-cap 48 --perception-cap 48   (camera cells only; privileged omits both)",
+    "--experience-store <cell>/store.jsonl",
+    "--skill-memory <cell>/lib.jsonl",
+    "--model-config configs/models/agnes-vision-r4.yaml",
+    "--frozen"
+  ],
+  "credentials": "never recorded; a config names the env var, not the key (SPEC 7)",
+  "decided_by": {
+    "D1": "v0.6 main line: finish the non-zero (user, 2026-10-11)",
+    "D2": "#27 budget semantics: split + reprice + a perception sub-cap of 48 (user, 2026-10-11), measured by work/v06/q1_split.py",
+    "D3": "#26 is not repaired: both candidate ceilings measured at zero (B1). No reader code changes in this batch, so stub and vlm keep E2'' reader identity",
+    "D4": "#25 is candidate iii, accepted as a structural limitation (B2): c3's two yellow bodies are permanently unrunnable on a camera channel",
+    "D5": "E2''' runs before H1; caps 48/48 on the camera cells; privileged untouched (user, 2026-10-11)"
+  },
+  "entry_point": "python -m embodied_agent.cli evaluate",
+  "experiment": "E2''' (v0.6) -- RQ13 continued on the split, repriced budget (SPEC v0.6 §6)",
+  "expected_readings": {
+    "pre_registered": "E2'' put stub at 0/4 and vlm at 0/4 with three named causes in reach: #25 (c3's two yellows), #26 (intermittent detection) and #27 (the ceiling at 39/32). Only #27 is repaired here, so the pre-registered expectation is: the ceiling stops killing camera episodes (no BUDGET_EXHAUSTED from the perception book), c1 may move, and c3 stays at 0 with #25 as the named cause. 0 remains a legal answer",
+    "honest_counterpart": "if a camera episode now dies at 48/48, that is #26 with a number attached, and it belongs in the report as such rather than as a budget failure"
+  },
+  "formal_scale": {
+    "cases": ["lh_c1_shared_pair_restore", "lh_c3_capacity_and_shift"],
+    "cells": 3,
+    "cells_detail": {
+      "privileged": "perceive privileged, arm full, frozen budgets, zero-cost control and the smoke for this batch",
+      "stub": "perceive stub, arm wo_vlm, caps 48/48, zero-cost",
+      "vlm": "perceive vlm, arm full, caps 48/48, the channel that spends"
+    },
+    "episodes": 12,
+    "matched_denominator_per_cell": 4,
+    "repeats": 2,
+    "comparisons": "E2'' (privileged 4/4, stub 0/4, vlm 0/4 + 1 infrastructure_error, 148 requests) and E2' (4/4, 0/4, 0/4, 132 requests), both side by side"
+  },
+  "preconditions": [
+    "v0.6 P1 committed: the Q1 split, the caps, and the H2 contract test (3985b18)",
+    "D3'''/D4''' ruled and recorded: neither #26 nor #25 is repaired, so this batch differs from E2'' by the budget semantics alone",
+    "full offline regression at or above the v0.5 baseline with no test removed: 1292 passed / 27 skipped",
+    "schema_fingerprint() equals configs/experiment/v02_schema_freeze.json item by item; the three gates rc=0 immediately before the first request",
+    "probe criteria written down before the first probe request (phase log, P4)"
+  ],
+  "pricing_configured": false,
+  "cost_estimate_usd": null,
+  "schema_freeze": "core/v02.py untouched by v0.6; no new event type, no new FailureCode, no new ablation condition, and no field added to the frozen Budgets (the perception cap is a runtime argument precisely so this file does not move -- see work/v06 tests/contract/test_v06_http_split.py)",
+  "seat": {
+    "config": "configs/models/agnes-vision-r4.yaml",
+    "model": "agnes-2.5-flash",
+    "health_probe": "text-seat and rate-window probes per the v0.4 §6 checklist, criteria written before the request; the v0.5 reading (9/10 in the window, one 429 at the tenth) is the reference"
+  },
+  "spend_bound": {
+    "requests": 240,
+    "basis": "by composition after Q1: only the vlm cell spends, 4 episodes x the 48-request perception cap = 192 worst case, x1.25 head-room = 240. The SPEC's earlier 185 was priced against the pre-Q1 total of 32 and no longer holds (SPEC §7 principle 19: the bound follows the composition)",
+    "formula": "episodes_that_spend x perception_cap + episodes_that_spend x decision_allowance, x1.25",
+    "stop_rule": "3 consecutive 429/quota errors -> stop the batch, save the checkpoint, log it; bound hit -> stop, no 'a little more'",
+    "stop_rule_source": "v0.3 SPEC §8 verbatim, plus v0.4 §8 (endpoint rotation is an event, not a configuration)",
+    "resume": "cell-level: a finished cell is never re-run; --resume continues a cell from its own checkpoint"
+  }
+}

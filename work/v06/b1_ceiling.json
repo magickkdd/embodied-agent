@@ -1,0 +1,2606 @@
+{
+ "criteria": "docs/continuous-decision-v0.6-phase-log.md, P2 判据 B1",
+ "windows": [
+  1,
+  2
+ ],
+ "episodes": [
+  {
+   "archive": "v04",
+   "channel": "stub",
+   "episode_id": "lh_c1_shared_pair_restore.B.r0",
+   "case_id": "lh_c1_shared_pair_restore",
+   "missing_item_rounds": 3,
+   "rows": [
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "purple"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "purple"
+     },
+     "round": 5,
+     "state_version": 18,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "purple"
+     },
+     "round": 6,
+     "state_version": 22,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v04",
+   "channel": "stub",
+   "episode_id": "lh_c1_shared_pair_restore.B.r1",
+   "case_id": "lh_c1_shared_pair_restore",
+   "missing_item_rounds": 4,
+   "rows": [
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "purple"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "purple",
+         "cuboid"
+        ]
+       ],
+       "shapes": [
+        "cuboid"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "purple"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "purple"
+     },
+     "round": 5,
+     "state_version": 18,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "purple"
+     },
+     "round": 6,
+     "state_version": 22,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v04",
+   "channel": "stub",
+   "episode_id": "lh_c3_capacity_and_shift.B.r0",
+   "case_id": "lh_c3_capacity_and_shift",
+   "missing_item_rounds": 9,
+   "rows": [
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "yellow"
+     },
+     "round": 2,
+     "state_version": 5,
+     "window": {
+      "1": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      },
+      "2": {
+       "frames_with_colour": 2,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ],
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 5
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "yellow"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "green"
+     },
+     "round": 2,
+     "state_version": 5,
+     "window": {
+      "1": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "green",
+         "cuboid"
+        ]
+       ],
+       "shapes": [
+        "cuboid"
+       ]
+      },
+      "2": {
+       "frames_with_colour": 2,
+       "detections": [
+        [
+         "green",
+         "cuboid"
+        ],
+        [
+         "green",
+         "cuboid"
+        ]
+       ],
+       "shapes": [
+        "cuboid"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 5
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "green"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "green"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 2,
+     "state_version": 5,
+     "window": {
+      "1": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      },
+      "2": {
+       "frames_with_colour": 2,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ],
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 5
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v04",
+   "channel": "stub",
+   "episode_id": "lh_c3_capacity_and_shift.B.r1",
+   "case_id": "lh_c3_capacity_and_shift",
+   "missing_item_rounds": 9,
+   "rows": [
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "yellow"
+     },
+     "round": 2,
+     "state_version": 5,
+     "window": {
+      "1": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      },
+      "2": {
+       "frames_with_colour": 2,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ],
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 5
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "yellow"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "green"
+     },
+     "round": 2,
+     "state_version": 5,
+     "window": {
+      "1": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "green",
+         "cuboid"
+        ]
+       ],
+       "shapes": [
+        "cuboid"
+       ]
+      },
+      "2": {
+       "frames_with_colour": 2,
+       "detections": [
+        [
+         "green",
+         "cuboid"
+        ],
+        [
+         "green",
+         "cuboid"
+        ]
+       ],
+       "shapes": [
+        "cuboid"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 5
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "green"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 3,
+     "declared": {
+      "shape": "cylinder",
+      "color": "green"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 2,
+     "state_version": 5,
+     "window": {
+      "1": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      },
+      "2": {
+       "frames_with_colour": 2,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ],
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 5
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v04",
+   "channel": "vlm",
+   "episode_id": "lh_c1_shared_pair_restore.B.r0",
+   "case_id": "lh_c1_shared_pair_restore",
+   "missing_item_rounds": 3,
+   "rows": [
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "green"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      true,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "green"
+     },
+     "round": 5,
+     "state_version": 18,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 1,
+     "declared": {
+      "shape": "cuboid",
+      "color": "blue"
+     },
+     "round": 6,
+     "state_version": 23,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v04",
+   "channel": "vlm",
+   "episode_id": "lh_c1_shared_pair_restore.B.r1",
+   "case_id": "lh_c1_shared_pair_restore",
+   "missing_item_rounds": 1,
+   "rows": [
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "green"
+     },
+     "round": 5,
+     "state_version": 18,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v04",
+   "channel": "vlm",
+   "episode_id": "lh_c3_capacity_and_shift.B.r0",
+   "case_id": "lh_c3_capacity_and_shift",
+   "missing_item_rounds": 6,
+   "rows": [
+    {
+     "item": 1,
+     "declared": {
+      "shape": "cube",
+      "color": "purple"
+     },
+     "round": 7,
+     "state_version": 27,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 5,
+     "state_version": 19,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 6,
+     "state_version": 23,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 7,
+     "state_version": 27,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v04",
+   "channel": "vlm",
+   "episode_id": "lh_c3_capacity_and_shift.B.r1",
+   "case_id": "lh_c3_capacity_and_shift",
+   "missing_item_rounds": 3,
+   "rows": [
+    {
+     "item": 1,
+     "declared": {
+      "shape": "cube",
+      "color": "purple"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v05",
+   "channel": "stub",
+   "episode_id": "lh_c1_shared_pair_restore.B.r0",
+   "case_id": "lh_c1_shared_pair_restore",
+   "missing_item_rounds": 0,
+   "rows": []
+  },
+  {
+   "archive": "v05",
+   "channel": "stub",
+   "episode_id": "lh_c1_shared_pair_restore.B.r1",
+   "case_id": "lh_c1_shared_pair_restore",
+   "missing_item_rounds": 0,
+   "rows": []
+  },
+  {
+   "archive": "v05",
+   "channel": "stub",
+   "episode_id": "lh_c3_capacity_and_shift.B.r0",
+   "case_id": "lh_c3_capacity_and_shift",
+   "missing_item_rounds": 6,
+   "rows": [
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "yellow"
+     },
+     "round": 2,
+     "state_version": 5,
+     "window": {
+      "1": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      },
+      "2": {
+       "frames_with_colour": 2,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ],
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 5
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "yellow"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 2,
+     "state_version": 5,
+     "window": {
+      "1": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      },
+      "2": {
+       "frames_with_colour": 2,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ],
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 5
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v05",
+   "channel": "stub",
+   "episode_id": "lh_c3_capacity_and_shift.B.r1",
+   "case_id": "lh_c3_capacity_and_shift",
+   "missing_item_rounds": 6,
+   "rows": [
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "yellow"
+     },
+     "round": 2,
+     "state_version": 5,
+     "window": {
+      "1": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      },
+      "2": {
+       "frames_with_colour": 2,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ],
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 5
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "yellow"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 2,
+     "state_version": 5,
+     "window": {
+      "1": {
+       "frames_with_colour": 1,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      },
+      "2": {
+       "frames_with_colour": 2,
+       "detections": [
+        [
+         "yellow",
+         "cylinder"
+        ],
+        [
+         "yellow",
+         "cylinder"
+        ]
+       ],
+       "shapes": [
+        "cylinder"
+       ]
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 5
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 5,
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v05",
+   "channel": "vlm",
+   "episode_id": "lh_c1_shared_pair_restore.B.r0",
+   "case_id": "lh_c1_shared_pair_restore",
+   "missing_item_rounds": 3,
+   "rows": [
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "green"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 0,
+     "declared": {
+      "shape": "cube",
+      "color": "green"
+     },
+     "round": 6,
+     "state_version": 23,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 1,
+     "declared": {
+      "shape": "cuboid",
+      "color": "blue"
+     },
+     "round": 6,
+     "state_version": 23,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v05",
+   "channel": "vlm",
+   "episode_id": "lh_c1_shared_pair_restore.B.r1",
+   "case_id": "lh_c1_shared_pair_restore",
+   "missing_item_rounds": 0,
+   "rows": [],
+   "skipped": "no episode_summary.json (died before a result)"
+  },
+  {
+   "archive": "v05",
+   "channel": "vlm",
+   "episode_id": "lh_c3_capacity_and_shift.B.r0",
+   "case_id": "lh_c3_capacity_and_shift",
+   "missing_item_rounds": 6,
+   "rows": [
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 5,
+     "state_version": 19,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 6,
+     "state_version": 23,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 4,
+     "declared": {
+      "shape": "cube",
+      "color": "blue"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      true,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 4,
+     "declared": {
+      "shape": "cube",
+      "color": "blue"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      true,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  },
+  {
+   "archive": "v05",
+   "channel": "vlm",
+   "episode_id": "lh_c3_capacity_and_shift.B.r1",
+   "case_id": "lh_c3_capacity_and_shift",
+   "missing_item_rounds": 5,
+   "rows": [
+    {
+     "item": 1,
+     "declared": {
+      "shape": "cube",
+      "color": "purple"
+     },
+     "round": 5,
+     "state_version": 19,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 3,
+     "state_version": 10,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 4,
+     "state_version": 14,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 2,
+     "declared": {
+      "shape": "cuboid",
+      "color": "red"
+     },
+     "round": 5,
+     "state_version": 19,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      false,
+      false,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    },
+    {
+     "item": 4,
+     "declared": {
+      "shape": "cube",
+      "color": "blue"
+     },
+     "round": 5,
+     "state_version": 19,
+     "window": {
+      "1": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      },
+      "2": {
+       "frames_with_colour": 0,
+       "detections": [],
+       "shapes": []
+      }
+     },
+     "ambiguous_detections_in_window": {
+      "1": 0,
+      "2": 0
+     },
+     "bound_in_neighbouring_rounds": [
+      false,
+      true,
+      true,
+      true
+     ],
+     "shape_matches_declaration": {
+      "1": false,
+      "2": false
+     }
+    }
+   ]
+  }
+ ],
+ "readings": {
+  "missing_item_rounds_total": 64,
+  "by_cell": {
+   "v04|stub|lh_c1_shared_pair_restore": 7,
+   "v04|stub|lh_c3_capacity_and_shift": 18,
+   "v04|vlm|lh_c1_shared_pair_restore": 4,
+   "v04|vlm|lh_c3_capacity_and_shift": 9,
+   "v05|stub|lh_c1_shared_pair_restore": 0,
+   "v05|stub|lh_c3_capacity_and_shift": 12,
+   "v05|vlm|lh_c1_shared_pair_restore": 3,
+   "v05|vlm|lh_c3_capacity_and_shift": 11
+  },
+  "rescued": {
+   "1": {
+    "v04|stub|lh_c3_capacity_and_shift": 6,
+    "v05|stub|lh_c3_capacity_and_shift": 4
+   },
+   "2": {
+    "v04|stub|lh_c1_shared_pair_restore": 1,
+    "v04|stub|lh_c3_capacity_and_shift": 6,
+    "v05|stub|lh_c3_capacity_and_shift": 4
+   }
+  },
+  "rescued_with_matching_shape": {
+   "1": {},
+   "2": {}
+  },
+  "ambiguous_detections_in_window": {
+   "1": {},
+   "2": {
+    "v04|stub|lh_c3_capacity_and_shift": 6,
+    "v05|stub|lh_c3_capacity_and_shift": 4
+   }
+  }
+ }
+}

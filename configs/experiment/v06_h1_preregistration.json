@@ -1,0 +1,83 @@
+{
+  "acceptance": [
+    "each of the two cells runs its full denominator: 1 case x 12 episodes = 12, every episode producing an outcome; an infrastructure_error with a named cause is counted as a miss, not dropped",
+    "the batch reports one number, and the number is a joint conditional rate: among the episodes in which the dependency derivation actually observed a displacement (a blocker standing in a region another body needs) AND the episode lived long enough for that step to be reached, the fraction whose plan was fully grounded and executed; alongside it, the derivation's trigger rate and the survival rate, so the joint rate can be re-factored by whoever reads it",
+    "the 0/0 reading stays legal: if no episode in the batch reaches the derivation, the report says 'no denominator', and does not convert the absence into a rate -- this is exactly the v0.5 #2 lesson",
+    "rows are tagged by which channel could have supplied the trigger (rule-derived, privileged; camera not in this batch), and no row is attributed to the model having written an edge: the derivation in embodied_agent/planning/subgoals.py is deterministic (tests/contract/test_v06_plan_edges.py)",
+    "cells are reported side by side with v0.4 E1' (E1's attempts died at the endpoint: 8 consecutive 429s, twice) and are never pooled with it",
+    "the cost table per episode is reported so the 31.1 requests/episode composition can be checked rather than assumed"
+  ],
+  "artefact_directory": "/home/czx/embodied-agent-batches/v06/h1",
+  "budget_repricing": {
+    "ruling": "D2''' candidate B applies to every channel, but this batch has no camera: privileged spends on the decision book only, so the perception cap of 48 is inert and only the total needs repricing",
+    "value": "--http-cap 48 for both cells, the same total E2''' camera cells run under, so the two batches of this stage share one ceiling and any difference between them is a channel difference rather than a budget difference",
+    "not_a_frozen_change": "the cap is a CLI/runtime argument (evaluator B), not a field of the frozen Budgets; the frozen task table and case budgets are untouched"
+  },
+  "command_shape": [
+    "python -m embodied_agent.cli evaluate",
+    "--set long_horizon",
+    "--planner deepseek",
+    "--modes B",
+    "--episodes 12",
+    "--out-root /home/czx/embodied-agent-batches/v06/h1/<cell>",
+    "--perceive privileged",
+    "--ablation full",
+    "--http-cap 48",
+    "--experience-store <cell>/store.jsonl",
+    "--skill-memory <cell>/lib.jsonl",
+    "--model-config configs/models/deepseek-v3.2.yaml",
+    "--frozen"
+  ],
+  "corrected_reading": {
+    "what_v06_h1_is_not": "it is not a measurement of whether the model 'writes' dependency edges; the model produces steps and the deterministic derivation in planning/subgoals.py infers edges from the world",
+    "what_it_measures": "the rate at which the derivation's trigger is both present in the world (a displacement another body is blocked by) and reached by a living episode, and then whether the plan that edge produced is grounded and executed",
+    "why_this_matters_for_the_reading": "a 0-trigger batch says nothing about the model; it says the episode died before the step the derivation would have annotated. Both halves have to be reported or the conditional rate is unfalsifiable",
+    "spec_reference": "v0.6 SPEC §6 H1 and the P1 correction logged in docs/continuous-decision-v0.6-phase-log.md"
+  },
+  "credentials": "never recorded; a config names the env var, not the key (SPEC 7)",
+  "decided_by": {
+    "D1": "v0.6 main line: finish the non-zero (user, 2026-10-11)",
+    "D2": "#27 split and reprice; the decision book's measured composition is 5-40 requests per episode (E1' table 641/641 decision, 0/641 perception)",
+    "D5": "H1 runs second, after E2''' (user, 2026-10-11): 930 of the stage's ~1170 requests"
+  },
+  "entry_point": "python -m embodied_agent.cli evaluate",
+  "experiment": "H1 verification batch (v0.6) -- RQ17's joint conditional rate, on the corrected reading",
+  "expected_readings": {
+    "pre_registered": "E1' died twice at the endpoint (8 consecutive 429s) after ~1 attempt per cell, so there is no v0.4 reading of this batch to lean on. The pre-registered expectation is the uninformative one: report the trigger rate, the survival rate and their joint, whatever they are",
+    "honest_counterpart": "a high joint rate with a low survival rate is a scheduling artefact, not evidence of grounding; the report must not present the joint rate alone"
+  },
+  "formal_scale": {
+    "cases": ["lh_c2_blocked_push_stall", "lh_c3_capacity_and_shift"],
+    "cells": 2,
+    "cells_detail": {
+      "c2_deepseek_privileged": "case c2, planner deepseek, perceive privileged, arm full, 12 episodes",
+      "c3_deepseek_privileged": "case c3, planner deepseek, perceive privileged, arm full, 12 episodes"
+    },
+    "episodes": 24,
+    "matched_denominator_per_cell": 12,
+    "comparisons": "v0.4 E1' (both cells killed at the endpoint after 8 consecutive 429s; 641 requests, all decision-side)"
+  },
+  "preconditions": [
+    "E2''' complete and committed, so the shared ceiling of 48 has already been exercised on the decision channel at small scale",
+    "full offline regression at or above the v0.5 baseline with no test removed",
+    "schema_fingerprint() equals configs/experiment/v02_schema_freeze.json item by item; the three gates rc=0 immediately before the first request",
+    "probe criteria written down before the first probe request (phase log, P4)",
+    "the rate-limit headroom check that killed E1' is re-run and recorded, with the 8-consecutive-429 rule armed"
+  ],
+  "pricing_configured": false,
+  "cost_estimate_usd": null,
+  "schema_freeze": "core/v02.py untouched by v0.6; no new event type, no new FailureCode, no new ablation condition, and no field added to the frozen Budgets",
+  "seat": {
+    "config": "configs/models/deepseek-v3.2.yaml",
+    "model": "deepseek-v3.2",
+    "health_probe": "text-seat and rate-window probes per the v0.4 §6 checklist; E1' is the cautionary reference -- two cells died at 8 consecutive 429s, so this batch's stop rule is armed from its first request and no 'one more retry' is attempted past the third"
+  },
+  "spend_bound": {
+    "requests": 930,
+    "basis": "by composition: 24 episodes x the 31.1 requests/episode measured on the model seat in v0.5's E1' reading, x1.25 head-room",
+    "formula": "episodes x requests_per_episode x 1.25",
+    "stop_rule": "3 consecutive 429/quota errors -> stop the batch, save the checkpoint, log it; bound hit -> stop. The 8-consecutive-429 rule from E1' is folded into the same stop condition rather than kept as a separate, laxer one",
+    "stop_rule_source": "v0.3 SPEC §8 verbatim, plus v0.4 §8 (endpoint rotation is an event, not a configuration)",
+    "resume": "cell-level: a finished cell is never re-run; --resume continues a cell from its own checkpoint"
+  }
+}

@@ -1188,8 +1188,15 @@ def run_group(set_name: str, *, modes=MODES, planner_kind: str = "rule", repeats
                        "no library installed: §5.6's module is absent from this batch, which is "
                        "not the same fact as `wo_skill_acquisition`, where it is installed and "
                        "switched off"},
-                   budget_profile={c.task_id: c.budgets.model_dump(mode="json") for c in cases},
-                   scoring_version="IndependentEvaluator/EvalSpec.tolerance_version",
+budget_profile={c.task_id: c.budgets.model_dump(mode="json") for c in cases},
+                    # v0.6 Q1: `budget_profile` carries the total ceiling, which a batch may
+                    # reprice; the perception sub-cap is not a case budget at all (it is a runtime
+                    # argument, precisely so the frozen `Budgets` need no new field), so without
+                    # this line a repriced cell would be recognisable only from a report.
+                    budget_caps={"http_requests": max(c.budgets.max_http_requests
+                                                      for c in cases),
+                                 "perception_requests": perception_cap},
+                    scoring_version="IndependentEvaluator/EvalSpec.tolerance_version",
                    frozen=freeze,
                    pre_registration=pre,
                    offline=_batch_is_offline(planner_kind, perceive),
