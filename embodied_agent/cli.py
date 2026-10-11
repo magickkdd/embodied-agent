@@ -143,6 +143,18 @@ def _add_perception_flags(parser) -> None:
                              "the one the chosen channel can carry. Refused if the pair is "
                              "incoherent, because an arm whose records contradict its own switch "
                              "is not a measurement")
+    parser.add_argument("--http-cap", type=int, default=None, metavar="N",
+                        help="reprice the per-episode HTTP request ceiling for this batch "
+                             "(v0.6 Q1, SPEC §5 candidate B). The frozen case table keeps its "
+                             "32; the effective value is recorded in the run manifest's "
+                             "budget_profile, so a repriced batch is recognisable from its "
+                             "archive rather than from a report")
+    parser.add_argument("--perception-cap", type=int, default=None, metavar="N",
+                        help="the perception side of the same budget, counted separately from "
+                             "decisions. The archived camera cells spent 280 of 280 requests on "
+                             "looks (18-39 per episode, retries and schema repairs included), "
+                             "which is how a camera episode died at 39 against a declared 32; "
+                             "the default is 48 (measured peak plus head-room)")
     parser.add_argument("--policy", default=None, metavar="POLICY",
                         choices=["rule", "payload", "memory"],
                         help="which deterministic control answers mode B's rounds. `rule` is the "
@@ -214,6 +226,15 @@ def _perception_kwargs(args) -> tuple[dict, list[str]]:
         return {}, [f"--view {args.view!r} is not a camera this arm has: "
                     f"{sorted(views or declared_views())}"]
     kw = {"perceive": args.perceive, "views": views, "default_view": args.view}
+    # v0.6 Q1: the request ceilings are batch configuration (SPEC §5 D2'''), so they ride
+    # with the arm kwargs the runner already receives and land in the manifest's
+    # `budget_profile` like every other effective budget.
+    for flag, name in (("http_cap", "http_cap"), ("perception_cap", "perception_cap")):
+        value = getattr(args, flag, None)
+        if value is not None:
+            if int(value) < 1:
+                return {}, [f"--{flag.replace('_', '-')} must be at least 1, got {value}"]
+            kw[name] = int(value)
     policy = getattr(args, "policy", None)
     store_path = getattr(args, "experience_store", None) or None
     if store_path:

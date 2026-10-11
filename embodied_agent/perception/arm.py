@@ -327,9 +327,11 @@ class PerceptRuntime(Runtime):
 
     def __init__(self, scene, executor, run_dir: str, budgets: Budgets, episode_id: str, *,
                  perceiver: Perceiver, gmap: GroundingMap, ablation=None,
-                 config: VerifyConfig | None = None, environment=None, store=None):
+                 config: VerifyConfig | None = None, environment=None, store=None,
+                 perception_cap: Optional[int] = None):
         super().__init__(scene, executor, run_dir, budgets, episode_id, config=config,
-                         environment=environment, store=store)
+                         environment=environment, store=store,
+                         perception_cap=perception_cap)
         self.perceiver = perceiver
         self.gmap = gmap
         self.ablation = ablation
@@ -428,12 +430,26 @@ class PerceptRuntime(Runtime):
         return ok, errs
 
     # ---------- request accounting ----------
+    def _charge_round(self, ledger, source, before) -> None:
+        """This round's requests in two books (v0.6 Q1).
+
+        A camera round spends on looks and, on a model seat, on a decision; both go on the
+        same total, and the two named books say which was which. Before Q1 they were one
+        number, which is how a camera episode could die at 39 requests against a declared 32
+        without anything in the row saying a single word about perception.
+        """
+        decision = Runtime._requests_used(source, before)
+        looks = self._looks_unbilled
+        self._looks_unbilled = 0
+        ledger.charge_decision_requests(decision)
+        ledger.charge_perception_requests(looks)
+
     def _requests_used(self, source, before) -> int:
         """The round's HTTP total, looks included: a vision request spends the same budget
         as a decision request, and an arm that billed only the decision would report a VLM
-        episode as free (SPEC 6.2)."""
+        episode as free (SPEC 6.2). The split is `_charge_round`'s job; this stays the total
+        for every caller that asks for the total."""
         total = int(Runtime._requests_used(source, before)) + self._looks_unbilled
-        self._looks_unbilled = 0
         return total
 
     def _finalize(self, task, ledger, status, failure, note, mode):
@@ -449,7 +465,7 @@ class PerceptRuntime(Runtime):
         the ledger."""
         if self.terminal_world is None and getattr(self, "goal", None) is not None:
             self._finish_check(self.goal)
-        ledger.charge_requests(self._looks_unbilled)
+        ledger.charge_perception_requests(self._looks_unbilled)
         self._looks_unbilled = 0
         return super()._finalize(task, ledger, status, failure, note, mode)
 
@@ -474,6 +490,14 @@ class PerceptRuntime(Runtime):
                     f"http request budget {self.budgets.max_http_requests} spent before the "
                     f"next round ({len(self.perceiver.percepts)} looks billed to "
                     f"{ledger.http_requests} requests)")
+        if ledger.perception_requests >= ledger.perception_cap:
+            # the second cap, and the one this arm actually meets (v0.6 Q1): 280 of 280
+            # archived camera requests were looks. Its message names the book, because a
+            # reader who only sees "budget 48" cannot tell which of the two spends ran out.
+            return (TerminalStatus.failed, FailureCode.BUDGET_EXHAUSTED,
+                    f"perception request budget {ledger.perception_cap} spent "
+                    f"before the next round ({len(self.perceiver.percepts)} looks billed to "
+                    f"{ledger.perception_requests} perception requests)")
         return Runtime._preflight_trip(self, ledger)
 
     # ---------- the layer-1 channel ----------
@@ -574,18 +598,23 @@ def build_arm(*, case, scene, executor, store, run_dir: str, episode_id: str, pe
               catalog, gmap: GroundingMap, budgets: Budgets, environment=None,
               ablation=None, adapter=None, out_dir: Optional[str] = None,
               default_view: str = "main", views: Optional[Iterable[str]] = None,
-              task: Optional[TaskContext] = None, on_call=None) -> Runtime:
+              task: Optional[TaskContext] = None, on_call=None,
+              perception_cap: Optional[int] = None) -> Runtime:
     """The one place an arm is assembled, so a runner cannot build a half-switched loop.
 
     `perceive='privileged'` returns the base `Runtime`: P1-e adds nothing to that path, and
-    the v0.1 regression is exactly the claim that it stays untouched."""
+    the v0.1 regression is exactly the claim that it stays untouched.
+
+    `perception_cap` is the batch's perception ceiling (v0.6 Q1); it is passed on both
+    branches so a caller never has to know which one it is asking for.
+    """
     if perceive == "privileged":
         if ablation is not None and ablation.enabled("vlm"):
             raise ValueError("a privileged world is not the full system: channel 'privileged' "
                              "consults no vision model, so condition "
                              f"{ablation.condition!r} cannot be claimed for it")
         return Runtime(scene, executor, run_dir, budgets, episode_id, config=case.verify,
-                       environment=environment, store=store)
+                       environment=environment, store=store, perception_cap=perception_cap)
     perceiver, gmap = build_perceiver(case=case, scene=scene, run_dir=run_dir,
                                       episode_id=episode_id, perceive=perceive, adapter=adapter,
                                       out_dir=out_dir, default_view=default_view, views=views,
@@ -593,7 +622,7 @@ def build_arm(*, case, scene, executor, store, run_dir: str, episode_id: str, pe
     arm = arm_for_channel(perceive, ablation)
     rt = PerceptRuntime(scene, executor, run_dir, budgets, episode_id, perceiver=perceiver,
                         gmap=gmap, ablation=arm, config=case.verify, environment=environment,
-                        store=store)
+                        store=store, perception_cap=perception_cap)
     return rt
 
 

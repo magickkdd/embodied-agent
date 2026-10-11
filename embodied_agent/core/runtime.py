@@ -56,6 +56,13 @@ MAX_FALSE_FINISHES = 3
 #: what a blocked episode is terminated with when the decision itself stated no reason
 #: (v0.5 R1). It names the model's silence; it never stands in for a cause.
 BLOCKED_FALLBACK_REASON = "blocked by model"
+#: The perception side of the HTTP budget, counted apart from decisions (v0.6 Q1, D2''').
+#: One number was governing two spends: re-derived from the archives at zero cost
+#: (`work/v06/q1_split.py`), E2's three camera cells made **280 requests, every one a look**
+#: (18-39 per episode once retries and schema repairs are counted) while E1's model seat made
+#: 641, every one a decision. A camera episode died at 39/32 in E2'' on a cap that had
+#: nothing to do with deciding anything. 48 = measured peak + head-room.
+DEFAULT_PERCEPTION_REQUEST_CAP = 48
 # how much of the episode a round is shown: the two histories the decision context
 # carries, bounded so a long-horizon task cannot grow its own prompt (SPEC 5.2
 # 有界历史). `model_payload` thins the feedback further to `feedback_depth`.
@@ -79,10 +86,23 @@ class BudgetLedger:
     `can_*` answers "may I *start* one more?", so a budget of N permits exactly
     N uses and the (N+1)-th check returns False."""
 
-    def __init__(self, budgets: Budgets):
+    def __init__(self, budgets: Budgets, *, perception_cap: Optional[int] = None):
         self.b = budgets
         self.decision_rounds = 0
         self.http_requests = 0
+        #: v0.6 Q1 (D2'''): the same requests in two named books. `http_requests` stays the
+        #: total every existing reader already trusts; these two say which spend it was, which
+        #: is what turns "the camera episodes die at 39/32" into a statement about perception.
+        self.perception_requests = 0
+        self.decision_requests = 0
+        #: The perception ceiling, here and **not on `Budgets`**: the frozen task list hashes
+        #: every case's budget profile (`frozen_manifest` -> `cli freeze --check`), so a new
+        #: field on the frozen record moves `2f1c74f52e91` and re-freezes a table v0.6 was not
+        #: asked to re-freeze. The cap is a batch property, so it is a runtime property.
+        #: Measured peak over the archived camera cells is 39 (E2'', 18-39 across both cells);
+        #: 48 is that plus head-room.
+        self.perception_cap = (DEFAULT_PERCEPTION_REQUEST_CAP if perception_cap is None
+                               else int(perception_cap))
         self.skill_calls = 0
         self.sim_seconds_by_skill: dict[str, float] = {}
         self.rejected_decisions = 0
@@ -108,12 +128,53 @@ class BudgetLedger:
     def wall_remaining(self) -> float:
         return self.b.wall_clock_s - (time.time() - self.t_start_wall)
 
+    def http_remaining(self) -> dict:
+        """Both caps and both books, in one place.
+
+        `http_requests_unattributed` is the difference the split cannot explain (the shared
+        goal parse). It is reported rather than folded into either book: a charge path that
+        cannot be classified should be visible, not quietly re-labelled.
+        """
+        return {
+            "http_requests": self.http_requests,
+            "http_remaining": max(0, self.b.max_http_requests - self.http_requests),
+            "perception_requests": self.perception_requests,
+            "perception_remaining": max(0, self.perception_cap
+                                         - self.perception_requests),
+            "perception_used": self.perception_requests,
+            "decision_requests": self.decision_requests,
+            "decision_used": self.decision_requests,
+            "http_requests_unattributed": (self.http_requests
+                                           - self.perception_requests
+                                           - self.decision_requests),
+        }
+
     # --- charges ---
     def charge_decision(self):
         self.decision_rounds += 1
 
     def charge_requests(self, n: int):
+        """Charge an unbudgeted spend -- the shared goal parse, a prologue carry.
+
+        It moves the total and neither named book, which is the honest reading: the loop
+        cannot say what kind of request this was. The identity the split rests on is
+        therefore `perception + decision <= total`, not equality -- a third charge path
+        would be a third ledger, and `remaining_payload` reports the unattributed remainder
+        so a reader can see it rather than infer it.
+        """
         self.http_requests += max(0, int(n))
+
+    def charge_perception_requests(self, n: int):
+        """A camera look's requests: the perception book and the total."""
+        n = max(0, int(n))
+        self.perception_requests += n
+        self.http_requests += n
+
+    def charge_decision_requests(self, n: int):
+        """A decision request: the decision book and the total."""
+        n = max(0, int(n))
+        self.decision_requests += n
+        self.http_requests += n
 
     def charge_skill(self, skill: str, sim_seconds: float):
         self.skill_calls += 1
@@ -126,6 +187,9 @@ class BudgetLedger:
             "decision_rounds_total": self.b.max_decision_rounds,
             "http_requests_used": self.http_requests,
             "http_requests_total": self.b.max_http_requests,
+            "perception_requests_used": self.perception_requests,
+            "perception_requests_total": self.perception_cap,
+            "decision_requests_used": self.decision_requests,
             "skill_calls_used": self.skill_calls,
             "skill_calls_total": self.b.max_skill_calls,
             "per_skill_sim_timeout_s": self.b.per_skill_sim_timeout_s,
@@ -140,11 +204,15 @@ class BudgetLedger:
 class Runtime:
     def __init__(self, scene: PhysicsScene, executor: SkillExecutor, run_dir: str,
                  budgets: Budgets, episode_id: str, *, config: VerifyConfig | None = None,
-                 environment=None, store: EpisodeStore | None = None):
+                 environment=None, store: EpisodeStore | None = None,
+                 perception_cap: Optional[int] = None):
         self.scene = scene
         self.executor = executor
         self.episode_id = episode_id
         self.budgets = budgets
+        #: v0.6 Q1: the batch's perception ceiling. A runtime argument rather than a field
+        #: of the frozen `Budgets` -- see `DEFAULT_PERCEPTION_REQUEST_CAP` for why.
+        self.perception_cap = perception_cap
         self.config = config or VerifyConfig()
         self.environment = environment
         os.makedirs(run_dir, exist_ok=True)
@@ -309,6 +377,18 @@ class Runtime:
             return 1
         return max(0, int(getattr(source, "http_requests", before)) - int(before))
 
+    def _charge_round(self, ledger, source, before) -> None:
+        """Book one round's requests.
+
+        The default is the whole of v0.5's behaviour: whatever the round cost goes on the
+        total and nowhere else. A backend that knows the round spent requests on two
+        different things -- `PerceptRuntime` bills camera looks into the same counter, which
+        is what stopped a VLM episode reading as free (SPEC 6.2) -- overrides this to say
+        which is which (v0.6 Q1). Keeping it a method rather than an `if` inside the loop is
+        what lets the privileged path stay exactly what it was.
+        """
+        ledger.charge_requests(self._requests_used(source, before))
+
     # ---------- episode ----------
     def run_episode(self, task: TaskInput, goal: GoalSpec, source, *, mode: str = "B",
                     prologue: dict | None = None) -> EpisodeResult:
@@ -330,7 +410,7 @@ class Runtime:
         measured duration so no mode gets a cheaper start than the one that paid
         for the parse.
         """
-        ledger = BudgetLedger(self.budgets)
+        ledger = BudgetLedger(self.budgets, perception_cap=self.perception_cap)
         prologue = prologue or {}
         if prologue.get("wall_start"):
             ledger.t_start_wall = float(prologue["wall_start"])
@@ -399,7 +479,7 @@ class Runtime:
                 schema_reasons = list(e.reasons)
             except Exception as e:  # noqa: BLE001 - a model error is an outcome, not a crash
                 model_error = (FailureCode.MODEL_ERROR, f"{type(e).__name__}: {e}")
-            ledger.charge_requests(self._requests_used(source, req_before))
+            self._charge_round(ledger, source, req_before)
             self._accumulate_usage(source)
 
             if model_error is not None:
@@ -551,7 +631,9 @@ class Runtime:
         ledger it carries shows the untouched budget the plan was drawn under."""
         world = self.observe()
         progress = self._verifier(world).progress(goal)
-        ctx = self._build_context(task, goal, world, progress, BudgetLedger(self.budgets))
+        ctx = self._build_context(task, goal, world, progress,
+                                 BudgetLedger(self.budgets,
+                                              perception_cap=self.perception_cap))
         self.store.log("decision_context", context_id=ctx.context_id, round_index=ctx.round_index,
                        state_version=ctx.state_version, observation_ref=ctx.observation_ref,
                        goal_version=ctx.goal_version, purpose="one_shot_plan_request",

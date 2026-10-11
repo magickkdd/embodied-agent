@@ -61,7 +61,7 @@ from embodied_agent.core.contracts import (
 from embodied_agent.core.events import EpisodeStore
 from embodied_agent.core.fault_injection import EnvironmentController
 from embodied_agent.core.interpreter import interpret
-from embodied_agent.core.runtime import BudgetLedger, Runtime
+from embodied_agent.core.runtime import DEFAULT_PERCEPTION_REQUEST_CAP, BudgetLedger, Runtime
 from embodied_agent.core.skills import SkillExecutor
 from embodied_agent.core.v02 import ABLATION_CONDITIONS, EVENT_MODULE
 from embodied_agent.core.v02 import ablation as ablation_record
@@ -199,14 +199,22 @@ class _CostedReader:
 # ------------------------------------------------ 1. the seams move as a pair ----
 
 
-def test_the_arm_overrides_ten_seams_and_nothing_else(privileged, arm):
+def test_the_arm_overrides_eleven_seams_and_nothing_else(privileged, arm):
     """The whole of what a sensing arm adds to `Runtime`, as a set — the evidence for "no
-    strategy lives here" rather than the assertion of it."""
+    strategy lives here" rather than the assertion of it.
+
+    The eleventh seam is `_charge_round` (v0.6 Q1): the round's requests used to be one sum,
+    and they are now booked into the perception book and the decision book separately, because
+    280 of the 280 archived camera requests were looks and a camera episode died at 39/32
+    without a word about perception in the row. The set is still the point: a *twelfth* override
+    is an unreviewed decision, and this test is what would notice it.
+    """
     moved = {n for n in dir(PerceptRuntime)
              if getattr(PerceptRuntime, n, None) is not getattr(Runtime, n, None)
              and not n.startswith("__")}
     assert moved == {
         "_capture_world",     # where a snapshot comes from
+        "_charge_round",      # which book a round's requests go in (v0.6 Q1)
         "_verifier",          # who answers a postcondition about it
         "_state_diff",        # what may be concluded from two of them
         "_begin_episode",     # which arm the episode is about to run in
@@ -717,13 +725,23 @@ def test_the_privileged_arm_records_no_ablation_at_all(privileged, goal, case):
 
 def test_a_look_is_charged_against_the_http_ceiling(arm):
     """SPEC 6.2 bills model requests, and a vision request is one. An arm that counted only
-    decisions would report a VLM episode as free."""
+    decisions would report a VLM episode as free.
+
+    Since v0.6 Q1 the sum is asked for by `_requests_used` and the *books* are written by
+    `_charge_round`, so the reset of the pending-looks counter moved with the charge: a caller
+    that asked for the total without charging would otherwise swallow the looks twice over.
+    Both are asserted, because the split is the new behaviour and the sum is the old one."""
     arm.perceiver.reader = _CostedReader(per_call=2)
     assert arm._looks_unbilled == 0
     arm.observe()
     assert arm._looks_unbilled == 2
     assert arm._requests_used(types.SimpleNamespace(http_requests=5), 1) == 2 + 4
+    assert arm._looks_unbilled == 2, "asking for the total does not book it"
+    ledger = BudgetLedger(arm.budgets, perception_cap=arm.perception_cap)
+    arm._charge_round(ledger, types.SimpleNamespace(http_requests=5), 1)
     assert arm._looks_unbilled == 0
+    assert ledger.perception_requests == 2 and ledger.decision_requests == 4
+    assert ledger.http_requests == 6, "two books, one total"
     arm.perceiver.reader = StubReader()
     assert arm._requests_used(types.SimpleNamespace(http_requests=3), 3) == 0
 
@@ -752,7 +770,11 @@ def test_the_http_ceiling_ends_the_episode_that_spends_it(case, scene, gmap, tmp
     """§6.2's request cap is a budget, not a caption. On the privileged path the v0.1 loop only
     reports the pair (a rule policy spends 0, and the archived baseline's peak is 3 of 32); the
     arm that bills several looks per round is where the number becomes reachable, so that is
-    where the ceiling has to end the episode — before the round, like every other budget."""
+    where the ceiling has to end the episode — before the round, like every other budget.
+
+    Two ceilings now stand on this arm (v0.6 Q1, D2'''): the total and the perception sub-cap.
+    The fake ledgers carry both books, because a stand-in for a ledger that is missing a field
+    the real one has tests the stand-in, not the code."""
     budgets = Budgets(max_decision_rounds=12, max_skill_calls=20, max_http_requests=8)
     arm = make_arm(case, scene, gmap, str(tmp_path / "ceiling"), budgets=budgets)
     # the bound is the arm's: the base loop's own seam stays silent for the same ledger
@@ -760,13 +782,24 @@ def test_the_http_ceiling_ends_the_episode_that_spends_it(case, scene, gmap, tmp
                    config=case.verify)
     assert base._preflight_trip(types.SimpleNamespace(http_requests=999)) is None
 
-    trip = arm._preflight_trip(types.SimpleNamespace(http_requests=8))
+    def fake(http=0, perception=0, cap=None):
+        return types.SimpleNamespace(http_requests=http, perception_requests=perception,
+                                    perception_cap=cap if cap is not None
+                                    else DEFAULT_PERCEPTION_REQUEST_CAP)
+
+    trip = arm._preflight_trip(fake(http=8))
     assert trip is not None
     status, code, note = trip
     assert status is TerminalStatus.failed and code is FailureCode.BUDGET_EXHAUSTED
     assert "http request budget 8" in note and "looks billed" in note
     # under the ceiling the seam says nothing: it is a bound, not an early exit
-    assert arm._preflight_trip(types.SimpleNamespace(http_requests=4)) is None
+    assert arm._preflight_trip(fake(http=4)) is None
+
+    # and the perception book can end an episode on its own, naming itself in the note
+    trip = arm._preflight_trip(fake(http=3, perception=48))
+    assert trip is not None and "perception request budget 48" in trip[2]
+    assert arm._preflight_trip(fake(http=3, perception=47)) is None
+    assert arm._preflight_trip(fake(http=3, perception=10, cap=10)) is not None
 
     arm.perceiver.reader = _CostedReader(per_call=4)
     source = make_source("B", case, None, arm, goal)

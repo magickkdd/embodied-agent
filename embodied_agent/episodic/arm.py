@@ -354,7 +354,8 @@ def build_episodic_arm(*, case, scene, executor, store, run_dir: str, episode_id
                        perceive: str = "privileged", ablation=None, perceiver=None, gmap=None,
                        environment=None, task_planner=None,
                        memory_render_budget: int = RENDER_BUDGET_CHARS,
-                       memory_recall_budget: int = RECALL_BUDGET_CHARS) -> Runtime:
+                       memory_recall_budget: int = RECALL_BUDGET_CHARS,
+                       perception_cap: Optional[int] = None) -> Runtime:
     """Assemble the memory arm in one place, so a runner cannot build a half-connected loop.
 
     Unlike `planning/arm.py:build_planning_arm` this function takes `experience_store` and
@@ -374,7 +375,8 @@ def build_episodic_arm(*, case, scene, executor, store, run_dir: str, episode_id
             environment=environment, store=store, ablation=ablation, task_planner=task_planner,
             memory_render_budget=memory_render_budget,
             memory_recall_budget=memory_recall_budget, experience_store=experience_store,
-            memory_task_kind=task_kind, memory_limit=memory_limit)
+            memory_task_kind=task_kind, memory_limit=memory_limit,
+            perception_cap=perception_cap)
     if perceiver is None or gmap is None:
         raise ValueError(
             f"the camera episodic arm needs both `perceiver` and `gmap` (got "
@@ -387,7 +389,7 @@ def build_episodic_arm(*, case, scene, executor, store, run_dir: str, episode_id
         task_planner=task_planner, memory_render_budget=memory_render_budget,
         memory_recall_budget=memory_recall_budget,
         experience_store=experience_store, memory_task_kind=task_kind,
-        memory_limit=memory_limit)
+        memory_limit=memory_limit, perception_cap=perception_cap)
 
 
 __all__ = ["EPISODIC_ARMS", "EpisodicMixin", "ExperiencedPerceptRuntime",

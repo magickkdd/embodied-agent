@@ -43,7 +43,7 @@ from ..core.events import EpisodeStore, git_state, write_manifest
 from ..core.fault_injection import EnvironmentController
 from ..core.interpreter import interpret
 from ..core.planner import OneShotPlanSource, RulePlanner
-from ..core.runtime import Runtime
+from ..core.runtime import DEFAULT_PERCEPTION_REQUEST_CAP, Runtime
 from ..core.scene import PhysicsScene
 from ..core.skills import SkillExecutor
 from ..core.verify import build_world_state
@@ -329,7 +329,8 @@ def run_one_episode(case: TaskCase, repeat: int, mode: str, resolution: GoalReso
                     views: tuple[str, ...] | None = None,
                     default_view: str = "main", policy: str | None = None,
                experience_store=None, skill_memory=None, propose: str = "rule",
-                    propose_ask=None, validation_budget: int = 1) -> dict:
+                    propose_ask=None, validation_budget: int = 1,
+                    perception_cap: int | None = None) -> dict:
     """One episode, start to finish, with its artifacts.
 
     Nothing here decides *what to do*: the source chooses, the runtime executes
@@ -397,7 +398,8 @@ def run_one_episode(case: TaskCase, repeat: int, mode: str, resolution: GoalReso
                                       ablation=ablation, environment=controller,
                                       experience_store=experience_store, task_kind=set_name,
                                       skill_memory=skill_memory, ask=propose_ask,
-                                      proposer=propose, validation_budget=validation_budget)
+                                      proposer=propose, validation_budget=validation_budget,
+                                      perception_cap=perception_cap)
         elif perceive == "privileged" and experience_store is not None:
             # 9's *memory* arm: the plan, the ledger, the re-derivation and now the store, on the
             # zero-spend channel. `set_name` is the §5.4 任务上下文 kind term — the loop cannot
@@ -454,7 +456,8 @@ def run_one_episode(case: TaskCase, repeat: int, mode: str, resolution: GoalReso
                                           perceiver=perceiver, gmap=gmap,
                                           experience_store=experience_store, task_kind=set_name,
                                           skill_memory=skill_memory, ask=propose_ask,
-                                          proposer=propose, validation_budget=validation_budget)
+                                          proposer=propose, validation_budget=validation_budget,
+                                          perception_cap=perception_cap)
             else:
                 from ..episodic.arm import build_episodic_arm
 
@@ -465,7 +468,8 @@ def run_one_episode(case: TaskCase, repeat: int, mode: str, resolution: GoalReso
                                              perceiver=perceiver, gmap=gmap,
                                              environment=controller,
                                              experience_store=experience_store,
-                                             task_kind=set_name)
+                                             task_kind=set_name,
+                                             perception_cap=perception_cap)
         else:
             from ..perception.arm import build_arm
             from ..perception.grounding import GroundingMap
@@ -478,7 +482,8 @@ def run_one_episode(case: TaskCase, repeat: int, mode: str, resolution: GoalReso
                                 budgets=case.budgets, environment=controller,
                                 ablation=ablation, adapter=adapter, views=views,
                                 default_view=default_view,
-                                on_call=log_perception_call)
+                                on_call=log_perception_call,
+                                perception_cap=perception_cap)
         executor.world_provider = runtime.observe
 
         source = make_source(mode, case, planner, runtime, resolution.goal, log_call,
@@ -802,6 +807,33 @@ def _api_key_env_of(model_config: str | None) -> str:
     return str(cfg.get("api_key_env", "DEEPSEEK_API_KEY"))
 
 
+def apply_http_caps(budgets, *, http_cap: int | None = None,
+                    perception_cap: int | None = None):
+    """`(budgets_copy, perception_cap)` with the request ceilings repriced for one batch.
+
+    Candidate B of the ruling (v0.6 SPEC §5 Q1, D2'''): the per-episode wall is batch
+    configuration, not a property of the frozen case. The camera cells measured 34-39
+    perception requests against a wall of 32 (E2''), so a batch that keeps the old number
+    dies by construction; a batch that decides its wall must be able to say so in the
+    manifest rather than in a report.
+
+    Two shapes come back because the two ceilings live in two places: the total rides on
+    `Budgets` (a copy -- the frozen case keeps its 32 and the next batch reads it again), the
+    perception ceiling is a runtime argument, because adding a field to the frozen record
+    moves `cli freeze --check`'s hash and v0.6 was not asked to re-freeze the task table.
+    """
+    update = {}
+    if http_cap is not None:
+        if int(http_cap) < 1:
+            raise InfraError(f"--http-cap must be at least 1, got {http_cap}")
+        update["max_http_requests"] = int(http_cap)
+    if perception_cap is not None and int(perception_cap) < 1:
+        raise InfraError(f"--perception-cap must be at least 1, got {perception_cap}")
+    repriced = budgets.model_copy(update=update) if update else budgets
+    return repriced, (int(perception_cap) if perception_cap is not None
+                      else DEFAULT_PERCEPTION_REQUEST_CAP)
+
+
 def run_group(set_name: str, *, modes=MODES, planner_kind: str = "rule", repeats: int = 1,
               out_root: str = "runs", case_ids: list[str] | None = None,
               limit: int | None = None, frames: bool = True,
@@ -810,7 +842,9 @@ def run_group(set_name: str, *, modes=MODES, planner_kind: str = "rule", repeats
               ablation=None, views: tuple[str, ...] | None = None,
               default_view: str = "main", policy: str | None = None,
                experience_store=None, skill_memory=None, propose: str = "rule",
-               propose_ask=None, validation_budget: int = 1, adapter=None) -> dict:
+               propose_ask=None, validation_budget: int = 1, adapter=None,
+               http_cap: int | None = None,
+               perception_cap_flag: int | None = None) -> dict:
     """Run `cases x modes x repeats` with the modes interleaved.
 
     Interleaving is a measurement decision: a provider that changes behaviour
@@ -886,6 +920,19 @@ def run_group(set_name: str, *, modes=MODES, planner_kind: str = "rule", repeats
         cases = cases[:limit]
     if not cases:
         raise ValueError(f"no cases selected from set {set_name!r}")
+    # v0.6 Q1: the request ceilings are batch configuration (SPEC §5 D2''' candidate B).
+    # The total rides on copies of the case budgets (recorded in the manifest's
+    # `budget_profile`); the perception ceiling travels beside them as a runtime argument,
+    # because a field on the frozen `Budgets` would move `cli freeze --check`'s hash.
+    perception_cap = DEFAULT_PERCEPTION_REQUEST_CAP
+    if http_cap is not None or perception_cap_flag is not None:
+        repriced = []
+        for c in cases:
+            budgets, cap = apply_http_caps(c.budgets, http_cap=http_cap,
+                                           perception_cap=perception_cap_flag)
+            perception_cap = cap
+            repriced.append(c.model_copy(update={"budgets": budgets}))
+        cases = repriced
 
     planner = None
     if planner_kind == "fixture":
@@ -1196,7 +1243,8 @@ def run_group(set_name: str, *, modes=MODES, planner_kind: str = "rule", repeats
                                               experience_store=experience_store,
                                               skill_memory=skill_memory, propose=propose,
                                               propose_ask=propose_ask,
-                                              validation_budget=validation_budget)
+                                              validation_budget=validation_budget,
+                                              perception_cap=perception_cap)
                     rows.append(_row_of(summary))
                 except Exception as e:  # noqa: BLE001 - a crash is a sample, not an absence
                     rows.append(_infra_row(case, repeat, mode, "episode",

@@ -885,7 +885,8 @@ def build_skill_arm(*, case, scene, executor, store, run_dir: str, episode_id: s
                     task_kind: str = "", memory_limit: int = DEFAULT_LIMIT,
                     perceiver=None, gmap=None, environment=None, task_planner=None,
                     memory_render_budget: int = RENDER_BUDGET_CHARS,
-                    memory_recall_budget: int = RECALL_BUDGET_CHARS) -> Runtime:
+                    memory_recall_budget: int = RECALL_BUDGET_CHARS,
+                    perception_cap: Optional[int] = None) -> Runtime:
     """Assemble the acquisition arm in one place, so a runner cannot build a half-connected loop.
 
     Two things are built here that a caller would otherwise have to guess at, which is the whole
@@ -922,7 +923,7 @@ def build_skill_arm(*, case, scene, executor, store, run_dir: str, episode_id: s
             memory_render_budget=memory_render_budget,
             memory_recall_budget=memory_recall_budget,
             experience_store=experience_store, memory_task_kind=task_kind,
-            memory_limit=memory_limit, **acquisition_kwargs)
+            memory_limit=memory_limit, perception_cap=perception_cap, **acquisition_kwargs)
     if perceiver is None or gmap is None:
         raise ValueError(
             f"the camera skill arm needs both `perceiver` and `gmap` (got "
@@ -936,7 +937,8 @@ def build_skill_arm(*, case, scene, executor, store, run_dir: str, episode_id: s
         ablation=ablation, config=case.verify, environment=environment, store=store,
         task_planner=task_planner, memory_render_budget=memory_render_budget,
         memory_recall_budget=memory_recall_budget, experience_store=experience_store,
-        memory_task_kind=task_kind, memory_limit=memory_limit, **acquisition_kwargs)
+        memory_task_kind=task_kind, memory_limit=memory_limit,
+        perception_cap=perception_cap, **acquisition_kwargs)
 
 
 __all__ = ["ARM_OFF_REASON", "AcquiredPerceptRuntime", "AcquiredPlannedRuntime",
