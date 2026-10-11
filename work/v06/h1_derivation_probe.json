@@ -1,0 +1,389 @@
+{
+ "cases": {
+  "lh_c1_shared_pair_restore": {
+   "rows": 4,
+   "dependencies": 0,
+   "dependency_kinds": [],
+   "notes": [],
+   "have_placement_instrument": true,
+   "rows_detail": [
+    {
+     "subgoal_id": "sub_fb3272ad",
+     "entity_id": "obj_blue_2",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_b78179dd",
+     "entity_id": "obj_green_1",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_3e0dd276",
+     "entity_id": "obj_purple_4",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_ce1d36d4",
+     "entity_id": "obj_yellow_3",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    }
+   ],
+   "edge_conditions": {
+    "verdict_true_rows": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0
+   }
+  },
+  "lh_c2_displaced_completion": {
+   "rows": 5,
+   "dependencies": 0,
+   "dependency_kinds": [],
+   "notes": [],
+   "have_placement_instrument": true,
+   "rows_detail": [
+    {
+     "subgoal_id": "sub_c94e8701",
+     "entity_id": "obj_blue_1",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_e068b8cb",
+     "entity_id": "obj_green_5",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_5ca5fe8f",
+     "entity_id": "obj_purple_3",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_632d3d64",
+     "entity_id": "obj_red_4",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_d1854e1e",
+     "entity_id": "obj_yellow_2",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    }
+   ],
+   "edge_conditions": {
+    "verdict_true_rows": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0
+   }
+  },
+  "lh_c3_capacity_and_shift": {
+   "rows": 6,
+   "dependencies": 0,
+   "dependency_kinds": [],
+   "notes": [],
+   "have_placement_instrument": true,
+   "rows_detail": [
+    {
+     "subgoal_id": "sub_137ebf92",
+     "entity_id": "obj_blue_5",
+     "target_id": "tray_middle",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "the generator offered no slot in this region for this object (it does not fit inside the margin)",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_51c18d6c",
+     "entity_id": "obj_green_4",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_45905f16",
+     "entity_id": "obj_purple_2",
+     "target_id": "tray_middle",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "the generator offered no slot in this region for this object (it does not fit inside the margin)",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_05d359ae",
+     "entity_id": "obj_red_3",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_e34c93e4",
+     "entity_id": "obj_yellow_1",
+     "target_id": "tray_middle",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "the generator offered no slot in this region for this object (it does not fit inside the margin)",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_03594c7b",
+     "entity_id": "obj_yellow_6",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    }
+   ],
+   "edge_conditions": {
+    "verdict_true_rows": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0
+   }
+  },
+  "lh_c4_failed_grasp_recovery": {
+   "rows": 4,
+   "dependencies": 0,
+   "dependency_kinds": [],
+   "notes": [],
+   "have_placement_instrument": true,
+   "rows_detail": [
+    {
+     "subgoal_id": "sub_c68ece14",
+     "entity_id": "obj_blue_4",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_7fd49b3b",
+     "entity_id": "obj_green_3",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_282e7431",
+     "entity_id": "obj_purple_1",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_88634649",
+     "entity_id": "obj_red_2",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    }
+   ],
+   "edge_conditions": {
+    "verdict_true_rows": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0
+   }
+  },
+  "lh_c5_release_deviation": {
+   "rows": 5,
+   "dependencies": 0,
+   "dependency_kinds": [],
+   "notes": [],
+   "have_placement_instrument": true,
+   "rows_detail": [
+    {
+     "subgoal_id": "sub_b6daf8ec",
+     "entity_id": "obj_blue_3",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_9ff88c59",
+     "entity_id": "obj_green_2",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_13ed70e5",
+     "entity_id": "obj_purple_5",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_ff75681c",
+     "entity_id": "obj_red_1",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_93b40f16",
+     "entity_id": "obj_yellow_4",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    }
+   ],
+   "edge_conditions": {
+    "verdict_true_rows": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0
+   }
+  },
+  "lh_c6_two_disruptions": {
+   "rows": 6,
+   "dependencies": 0,
+   "dependency_kinds": [],
+   "notes": [],
+   "have_placement_instrument": true,
+   "rows_detail": [
+    {
+     "subgoal_id": "sub_27a8aa15",
+     "entity_id": "obj_blue_2",
+     "target_id": "tray_middle",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "the generator offered no slot in this region for this object (it does not fit inside the margin)",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_e3c96841",
+     "entity_id": "obj_green_1",
+     "target_id": "tray_middle",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "the generator offered no slot in this region for this object (it does not fit inside the margin)",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_7fe01f6d",
+     "entity_id": "obj_green_6",
+     "target_id": "tray_middle",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "the generator offered no slot in this region for this object (it does not fit inside the margin)",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_30b1ac6b",
+     "entity_id": "obj_purple_4",
+     "target_id": "tray_left",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_e8736961",
+     "entity_id": "obj_red_5",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    },
+    {
+     "subgoal_id": "sub_40a1ff48",
+     "entity_id": "obj_yellow_3",
+     "target_id": "tray_right",
+     "placement_verdict": "PredicateVerdict.false",
+     "feasible": true,
+     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "region_occupants_other": [],
+     "satisfied": "unknown"
+    }
+   ],
+   "edge_conditions": {
+    "verdict_true_rows": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0
+   }
+  }
+ },
+ "note": "edges come from `subgoals.derive`, the deterministic derivation (P1's correction); the model seat supplies the world, not the graph"
+}

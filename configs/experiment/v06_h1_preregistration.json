@@ -18,14 +18,15 @@
     "--set long_horizon",
     "--planner deepseek",
     "--modes B",
-    "--episodes 12",
+    "--repeats 12",
+    "--cases <lh_c2_displaced_completion|lh_c3_capacity_and_shift>",
     "--out-root /home/czx/embodied-agent-batches/v06/h1/<cell>",
     "--perceive privileged",
     "--ablation full",
     "--http-cap 48",
     "--experience-store <cell>/store.jsonl",
     "--skill-memory <cell>/lib.jsonl",
-    "--model-config configs/models/deepseek-v3.2.yaml",
+    "--model-config configs/models/bst_text_agnes.yaml",
     "--frozen"
   ],
   "corrected_reading": {
@@ -47,7 +48,7 @@
     "honest_counterpart": "a high joint rate with a low survival rate is a scheduling artefact, not evidence of grounding; the report must not present the joint rate alone"
   },
   "formal_scale": {
-    "cases": ["lh_c2_blocked_push_stall", "lh_c3_capacity_and_shift"],
+    "cases": ["lh_c2_displaced_completion", "lh_c3_capacity_and_shift"],
     "cells": 2,
     "cells_detail": {
       "c2_deepseek_privileged": "case c2, planner deepseek, perceive privileged, arm full, 12 episodes",
@@ -68,9 +69,15 @@
   "cost_estimate_usd": null,
   "schema_freeze": "core/v02.py untouched by v0.6; no new event type, no new FailureCode, no new ablation condition, and no field added to the frozen Budgets",
   "seat": {
-    "config": "configs/models/deepseek-v3.2.yaml",
-    "model": "deepseek-v3.2",
-    "health_probe": "text-seat and rate-window probes per the v0.4 §6 checklist; E1' is the cautionary reference -- two cells died at 8 consecutive 429s, so this batch's stop rule is armed from its first request and no 'one more retry' is attempted past the third"
+    "config": "configs/models/bst_text_agnes.yaml",
+    "model": "agnes-2.5-flash",
+    "health_probe": "the v0.4 §6 text-seat checklist, criteria written before the request; E1' is the cautionary reference -- two cells died at 8 consecutive 429s, so this batch's stop rule is armed from its first request and no 'one more retry' is attempted past the third",
+    "correction_before_any_request": {
+      "was": "configs/models/deepseek-v3.2.yaml / deepseek-v3.2 / --episodes 12 / case 'lh_c2_blocked_push_stall'",
+      "now": "configs/models/bst_text_agnes.yaml / agnes-2.5-flash / --repeats 12 with --cases <one case> / case 'lh_c2_displaced_completion'",
+      "why": "the first version named a seat that does not exist in configs/models/, a CLI flag that does not exist (--episodes; the batch spells '12 episodes per case' as --repeats 12 plus --cases <one case>), and a case id that is not in the frozen long-horizon table. The frozen table is the authority and it says the second long-horizon case is lh_c2_displaced_completion; the two names above that are the errors, not the design. The seat is corrected for a second, heavier reason: the 930-request bound is priced on E1''s measured composition (31.1 requests per episode, 5-40), and E1' ran on this seat (agnes-2.5-flash, one sensenova failover run) -- a bound priced on one seat's composition cannot govern a batch that runs on another seat",
+      "when": "2026-10-11, before the first H1 request; no H1 reading exists, so nothing is amended after the fact"
+    }
   },
   "spend_bound": {
     "requests": 930,
