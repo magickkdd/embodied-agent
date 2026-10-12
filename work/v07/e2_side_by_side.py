@@ -11,9 +11,14 @@ import glob
 import json
 import os
 
+#: The four generations, **side by side and never merged** (pre-registration 格四). The label
+#: carries the table version, because the first three rows ran v1 declarations and only this one
+#: ran v2 -- a table that compared batches without saying which table each row ran under would be
+#: read as "the same experiment, a fourth time".
 ARCHIVES = {
-    "v05/E2''": "/home/czx/embodied-agent-batches/v06/e2",
-    "v06/E2'''": "/home/czx/embodied-agent-batches/v07/e2",
+    "v05/E2'' (v1 table)": "/home/czx/embodied-agent-batches/v05/e2",
+    "v06/E2''' (v1 table)": "/home/czx/embodied-agent-batches/v06/e2",
+    "v07/E2'''' (v2 table)": "/home/czx/embodied-agent-batches/v07/e2",
 }
 
 
