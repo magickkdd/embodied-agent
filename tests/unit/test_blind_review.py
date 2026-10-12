@@ -18,11 +18,11 @@ import shutil
 
 import pytest
 
-from embodied_agent.evaluation.blind_review import (RECORDS_NAME, RUBRIC_PATH, SHEET_NAME,
+from agent_lab.evaluation.blind_review import (RECORDS_NAME, RUBRIC_PATH, SHEET_NAME,
                                                     aggregate, build_sheet, fork_items, item_key,
                                                     load_rubric, read_verdicts, rubric_sha256,
                                                     scan, validate_verdicts, write_template)
-from embodied_agent.evaluation.report import render_markdown
+from agent_lab.evaluation.report import render_markdown
 
 KIND1 = "place_of_already_satisfied"
 KIND2 = "fork_answer_outside_both_label_sets"

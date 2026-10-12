@@ -79,7 +79,7 @@ def test_a_batch_level_override_reprices_the_cap_without_touching_the_case():
     """Candidate (B) of the ruling: the per-episode wall moves per batch, by configuration.
     The case object comes back untouched -- a runner that repriced the frozen case in place
     would leave the next batch starting from a different budget than the one it printed."""
-    from embodied_agent.evaluation.run import apply_http_caps
+    from agent_lab.evaluation.run import apply_http_caps
 
     budgets = Budgets()
     repriced, perception_cap = apply_http_caps(budgets, http_cap=64, perception_cap=48)
@@ -97,7 +97,7 @@ def test_the_run_manifest_records_both_ceilings():
     the failure mode this stage's archive-comparison rule exists to prevent."""
     import inspect
 
-    from embodied_agent.evaluation import run as R
+    from agent_lab.evaluation import run as R
 
     source = inspect.getsource(R.run_group)
     assert "budget_caps=" in source
@@ -139,7 +139,7 @@ def test_the_ceilings_reach_the_batch_from_the_command_line(tmp_path):
     assert {p["max_http_requests"] for p in manifest["budget_profile"].values()} == {48}
 
     # and the frozen task list is still the frozen task list: the override is a copy, not an edit
-    from embodied_agent.evaluation.tasks import build_set
+    from agent_lab.evaluation.tasks import build_set
 
     assert {c.budgets.max_http_requests for c in build_set("long_horizon")} == {32}
 

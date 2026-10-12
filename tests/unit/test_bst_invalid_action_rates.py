@@ -17,7 +17,7 @@ was billed and never recorded" from "a round was recorded twice".
 import json
 import os
 
-from embodied_agent.benchmark.aggregate import recompute_episode
+from agent_lab.benchmark.aggregate import recompute_episode
 
 REFUSAL = ("skill 'alfred_go' does not map to one environment command: "
            "args['target_id']='garbagecan' is not an instance reference of the form "

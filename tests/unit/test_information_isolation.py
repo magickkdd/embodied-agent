@@ -127,7 +127,7 @@ def test_the_controller_arms_the_actuator_and_edits_nothing_else(scene_for):
     to keep saying what was asked, and only the measured height may differ."""
     from embodied_agent.core.skills import SkillExecutor
     from embodied_agent.core.verify import build_world_state
-    from embodied_agent.evaluation.tasks import find_case
+    from agent_lab.evaluation.tasks import find_case
 
     case = find_case("dev_c4")
     scene = scene_for("dev_c4")
@@ -179,7 +179,7 @@ def test_the_controller_arms_the_actuator_and_edits_nothing_else(scene_for):
 
 def test_the_case_itself_declares_what_a_policy_may_be_given():
     """`public_payload` is the whole hand-out, so its shape is the boundary."""
-    from embodied_agent.evaluation.tasks import find_case
+    from agent_lab.evaluation.tasks import find_case
 
     for cid in ("dev_c2", "dev_c3", "dev_c4", "pr_skill_budget", "sc_c1"):
         case = find_case(cid)
@@ -212,7 +212,7 @@ def test_no_runtime_module_needs_the_hidden_answer():
     import embodied_agent.core.runtime as runtime
     import embodied_agent.core.skills as skills
     import embodied_agent.core.verify as verify
-    import embodied_agent.evaluation.sources as sources
+    import agent_lab.evaluation.sources as sources
 
     def used_names(module) -> set[str]:
         tree = ast.parse(inspect.getsource(module))

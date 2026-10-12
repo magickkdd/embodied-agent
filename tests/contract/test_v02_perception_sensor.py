@@ -22,7 +22,7 @@ import pytest
 
 from embodied_agent.core.contracts import footprint_half_xy_from_quat
 from embodied_agent.core.scene import TABLE_TOP_Z, PhysicsScene
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.tasks import find_case
 from embodied_agent.perception import frames as frames_mod
 from embodied_agent.perception import geometry as geom_mod
 from embodied_agent.perception.camera import (CameraSpec, column_major, depth_to_meters,
@@ -140,7 +140,7 @@ def test_a_projected_point_lands_where_the_rendered_image_shows_it(scene, main_f
     from `main`, the tightest hue threshold still leaves every box inside its predicted
     outline by 1-9 px per edge, and the horizontal centres agree to ~1 px.
     """
-    from embodied_agent.evaluation.tasks import PALETTE
+    from agent_lab.evaluation.tasks import PALETTE
     from embodied_agent.perception.segment import colour_mask
 
     frame, rgb, depth = main_frame

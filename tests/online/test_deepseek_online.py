@@ -31,8 +31,8 @@ import pytest
 
 from embodied_agent.adapters.deepseek import DeepSeekAdapter, DeepSeekPlanner
 from embodied_agent.core.runtime import HISTORY_CAP
-from embodied_agent.evaluation import run as evaluation_run
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation import run as evaluation_run
+from agent_lab.evaluation.tasks import find_case
 
 CASE = "smoke_clean"
 FAKE_KEY = "sk-" + "0123456789abcdef" * 3

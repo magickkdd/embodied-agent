@@ -560,7 +560,7 @@ def build_perceiver(*, case, scene, run_dir: str, episode_id: str, perceive: str
     elif not channel_is_declared(perceive):
         raise ValueError(f"unknown perception channel {perceive!r}; "
                          f"declared: privileged | stub | vlm")
-    from ..evaluation.calibration import task_context_of
+    from agent_lab.evaluation.calibration import task_context_of
 
     gmap = gmap if gmap is not None else GroundingMap.from_objects(case.objects)
     if catalog is None:

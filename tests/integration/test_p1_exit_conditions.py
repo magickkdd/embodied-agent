@@ -28,7 +28,7 @@ is what 用 fixture 响应走真实 Runtime means.
 from __future__ import annotations
 
 from embodied_agent.core.contracts import Decision, DecisionExecute
-from embodied_agent.evaluation.sources import RulePolicySource, ScriptedSource
+from agent_lab.evaluation.sources import RulePolicySource, ScriptedSource
 
 CASE = "smoke_clean"
 
@@ -44,7 +44,7 @@ NOISE = [
 
 
 def ep_verify(case_id: str):
-    from embodied_agent.evaluation.tasks import find_case
+    from agent_lab.evaluation.tasks import find_case
 
     return find_case(case_id).verify
 

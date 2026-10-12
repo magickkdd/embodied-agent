@@ -13,9 +13,9 @@ import os
 
 import pytest
 
-from embodied_agent.evaluation import tasks as T
-from embodied_agent.evaluation.protocol import PROBES
-from embodied_agent.evaluation.tasks import FROZEN_PATH, build_set, frozen_manifest
+from agent_lab.evaluation import tasks as T
+from agent_lab.evaluation.protocol import PROBES
+from agent_lab.evaluation.tasks import FROZEN_PATH, build_set, frozen_manifest
 
 SETS = ("smoke", "dev", "formal", "protocol")
 SIZES = {"smoke": 4, "dev": 8, "formal": 24, "protocol": 11}

@@ -41,20 +41,20 @@ from embodied_agent.adapters.deepseek import LLMError  # noqa: E402, F401
 
 pytest.importorskip("metaworld", reason="the MuJoCo channel needs /home/czx/mwvenv")
 
-from embodied_agent.benchmark_mujoco.cli import build_parser, main  # noqa: E402
-from embodied_agent.benchmark_mujoco.env import (  # noqa: E402
+from agent_lab.benchmark_mujoco.cli import build_parser, main  # noqa: E402
+from agent_lab.benchmark_mujoco.env import (  # noqa: E402
     BackendError,
     MuJoCoBackend,
     TASKS,
 )
-from embodied_agent.benchmark_mujoco.gui import GuiSink  # noqa: E402
-from embodied_agent.benchmark_mujoco.planned_runtime import (  # noqa: E402
+from agent_lab.benchmark_mujoco.gui import GuiSink  # noqa: E402
+from agent_lab.benchmark_mujoco.planned_runtime import (  # noqa: E402
     mw_arm_coherence,
 )
-from embodied_agent.benchmark_mujoco.runtime import MujocoRuntime  # noqa: E402
-from embodied_agent.benchmark_mujoco.runner import run_one_episode  # noqa: E402
-from embodied_agent.benchmark_mujoco.skills import CATALOGUE, render  # noqa: E402
-from embodied_agent.benchmark_mujoco.state import (  # noqa: E402
+from agent_lab.benchmark_mujoco.runtime import MujocoRuntime  # noqa: E402
+from agent_lab.benchmark_mujoco.runner import run_one_episode  # noqa: E402
+from agent_lab.benchmark_mujoco.skills import CATALOGUE, render  # noqa: E402
+from agent_lab.benchmark_mujoco.state import (  # noqa: E402
     TOLERANCE_VERSION,
     MujocoVerifier,
     carried,
@@ -429,7 +429,7 @@ def test_the_cli_names_an_arm_the_registry_can_check(monkeypatch, tmp_path):
     looked fine. The probe patches the episode out, so what is under test is the CLI's own
     construction and gate, not the simulator.
     """
-    import embodied_agent.benchmark_mujoco.runner as runner_mod
+    import agent_lab.benchmark_mujoco.runner as runner_mod
     seen: list[dict] = []
     monkeypatch.setattr(runner_mod, "run_one_episode",
                         lambda **kw: seen.append(kw) or {
@@ -463,7 +463,7 @@ def _stub_episodes(monkeypatch) -> list[dict]:
     which a real episode cannot show: by the time `run_one_episode` raises, the simulator is
     up, the store is open and the layouts after this one have already been paid for.
     """
-    import embodied_agent.benchmark_mujoco.runner as runner_mod
+    import agent_lab.benchmark_mujoco.runner as runner_mod
     seen: list[dict] = []
     monkeypatch.setattr(runner_mod, "run_one_episode", lambda **kw: seen.append(kw) or {
         "episode_id": "probe", "official_success": False, "env_steps": 0,
@@ -481,7 +481,7 @@ def test_the_perceive_flag_offers_exactly_the_channels_the_perception_package_na
     a copy of its list. The copy exists so `--help` does not import the renderer; what the
     copy makes necessary is this assertion.
     """
-    from embodied_agent.benchmark_mujoco.runner import PERCEIVE_CHANNELS
+    from agent_lab.benchmark_mujoco.runner import PERCEIVE_CHANNELS
     from embodied_agent.perception.grounding import PERCEIVE_CHANNELS as AUTHORITY
 
     assert set(PERCEIVE_CHANNELS) == set(AUTHORITY)
@@ -503,7 +503,7 @@ def test_a_config_has_to_say_its_endpoint_can_see(tmp_path):
     """
     import yaml
 
-    from embodied_agent.benchmark_mujoco.runner import vision_capability
+    from agent_lab.benchmark_mujoco.runner import vision_capability
 
     root = os.path.join(os.path.dirname(
         __import__("embodied_agent").__file__), "..", "configs", "models")
@@ -640,7 +640,7 @@ def test_a_model_in_the_seat_owns_every_round_without_a_network(tmp_path):
     is §10's, and it is the one that has to hold on the model path in particular — a
     context that leaked `success` would let a model look like it manipulated well.
     """
-    from embodied_agent.benchmark_mujoco.prompts import BANNED_IN_PAYLOAD, MW_DECISION_SYSTEM
+    from agent_lab.benchmark_mujoco.prompts import BANNED_IN_PAYLOAD, MW_DECISION_SYSTEM
 
     endpoint = _ScriptedEndpoint([
         _decide("pick", {"object_id": "peg 1"}, "the peg lies at the far side of the table",
@@ -801,7 +801,7 @@ def test_a_retried_attempt_is_billed_and_named_by_the_round_that_paid_for_it(tmp
         FINISH], retry_on=1)
     for counter in SOURCE_COUNTERS:
         assert hasattr(endpoint, counter)
-    from embodied_agent.benchmark_mujoco.model_policy import MujocoModelPolicy
+    from agent_lab.benchmark_mujoco.model_policy import MujocoModelPolicy
     probe = MujocoModelPolicy(endpoint)
     assert all(hasattr(probe, c) for c in SOURCE_COUNTERS), \
         "a counter the loop cannot read is a counter that reads zero forever"
@@ -1258,7 +1258,7 @@ def test_an_answer_longer_than_the_preview_is_digested_wholly_and_cut_here(tmp_p
     """
     long_answer = dict(REJECTED_ANSWER,
                        rationale=REJECTED_ANSWER["rationale"] + " " + "unmeasured " * 600)
-    from embodied_agent.benchmark_mujoco.model_policy import REJECTED_RAW_PREVIEW_CHARS
+    from agent_lab.benchmark_mujoco.model_policy import REJECTED_RAW_PREVIEW_CHARS
     endpoint = _ScriptedEndpoint([
         long_answer,
         _decide("pick", {"object_id": "peg 1"}, "the peg lies on the bench", "peg 1 held"),
@@ -1294,8 +1294,8 @@ def test_filing_the_answer_changes_nothing_the_model_is_shown_back(tmp_path):
     repair, complete or re-quote a model's output (§10), and handing a model its own rejected
     draft would be a payload change wearing an audit costume.
     """
-    from embodied_agent.benchmark_mujoco.prompts import prompts_sha256
-    from embodied_agent.benchmark_mujoco.skills import catalogue_sha256
+    from agent_lab.benchmark_mujoco.prompts import prompts_sha256
+    from agent_lab.benchmark_mujoco.skills import catalogue_sha256
 
     endpoint = _ScriptedEndpoint([
         REJECTED_ANSWER,
@@ -1417,7 +1417,7 @@ def test_a_survey_box_that_overhangs_the_frame_is_used_and_the_overhang_is_filed
     whichever gate fired — and it is checked on *both* frames this test surveys, because the
     buffer was measured to go between the first and the second.
     """
-    from embodied_agent.benchmark_mujoco.perceive import (
+    from agent_lab.benchmark_mujoco.perceive import (
         SURVEY_FRAME_SURFACE_FLOOR, MuJoCoRig, SURVEY_VIEW, survey)
 
     backend = MuJoCoBackend(ENV, task_index=0, seed=0, max_env_actions=500,
@@ -1618,7 +1618,7 @@ def test_a_completed_motion_files_the_aim_it_was_given_where_the_feedback_record
     through the agent's eyes. `stub` carries the same primitives with no HTTP and no
     camera answer to be at the mercy of.
     """
-    from embodied_agent.benchmark_mujoco.perceive import SURVEY_FRAME_SURFACE_FLOOR
+    from agent_lab.benchmark_mujoco.perceive import SURVEY_FRAME_SURFACE_FLOOR
 
     endpoint = _ScriptedEndpoint([
         _decide("pick", {"object_id": "peg 1"}, "the peg lies at the far side of the table",
@@ -1759,9 +1759,9 @@ def test_the_page_the_model_is_asked_from_carries_those_names_and_no_privileged_
     """
     from types import SimpleNamespace
 
-    from embodied_agent.benchmark_mujoco.model_policy import MujocoModelPolicy
-    from embodied_agent.benchmark_mujoco.prompts import MujocoDecisionContext
-    from embodied_agent.benchmark_mujoco.runtime import MujocoRuntime as _MR
+    from agent_lab.benchmark_mujoco.model_policy import MujocoModelPolicy
+    from agent_lab.benchmark_mujoco.prompts import MujocoDecisionContext
+    from agent_lab.benchmark_mujoco.runtime import MujocoRuntime as _MR
 
     class _PageEndpoint(_ScriptedEndpoint):
         def chat_json(self, system, user, *, kind, prompt_version, max_tokens=None):
@@ -1826,7 +1826,7 @@ def test_the_memory_arm_widens_exactly_its_own_gate_and_no_other():
     reads their own `installed_modules`, and the experienced class still refuses the two
     modules this loop has no instrument for: no camera on the privileged side, no skill
     library anywhere on this channel."""
-    from embodied_agent.benchmark_mujoco.planned_runtime import (
+    from agent_lab.benchmark_mujoco.planned_runtime import (
         MW_ARM_MODULES, MW_EXPERIENCED_ARM_MODULES, MujocoExperiencedRuntime)
 
     assert MujocoExperiencedRuntime.installed_modules == MW_ARM_MODULES + ("episodic_memory",)
@@ -1841,7 +1841,7 @@ def test_the_memory_arm_widens_exactly_its_own_gate_and_no_other():
         "the privileged experienced loop has no camera to switch off"
 
     # the camera experienced class widens by the same one module, on top of the camera's own
-    from embodied_agent.benchmark_mujoco.perceive import MujocoExperiencedPerceptRuntime
+    from agent_lab.benchmark_mujoco.perceive import MujocoExperiencedPerceptRuntime
     assert MujocoExperiencedPerceptRuntime.installed_modules[-1] == "episodic_memory"
     assert not (mw_arm_coherence(make_ablation("wo_episodic_memory"),
                                  installed=MujocoExperiencedPerceptRuntime.installed_modules))

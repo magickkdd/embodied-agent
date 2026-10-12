@@ -45,8 +45,8 @@ import shutil
 import pytest
 
 from embodied_agent.core.verify import RuntimeVerifier
-from embodied_agent.evaluation.sources import RulePolicySource, ScriptedSource
-from embodied_agent.evaluation.state_utilization import (
+from agent_lab.evaluation.sources import RulePolicySource, ScriptedSource
+from agent_lab.evaluation.state_utilization import (
     DIFFERENCE_KINDS,
     LABELS,
     _score_error,
@@ -56,7 +56,7 @@ from embodied_agent.evaluation.state_utilization import (
     score_fork,
     walk_case,
 )
-from embodied_agent.evaluation.tasks import STATE_PAIR_SPECS, find_case
+from agent_lab.evaluation.tasks import STATE_PAIR_SPECS, find_case
 
 # The two arms the deterministic control policy is expected to miss. Named rather
 # than counted because a rate that moved on its own would not say which
@@ -292,7 +292,7 @@ def test_the_report_surfaces_the_rate_or_says_it_was_not_measured(scored, tmp_pa
     misleading number: the reader cannot see that 24 contexts, 6 marked synthetic
     arms and 3 untested slot-choice pairs are inside it.
     """
-    from embodied_agent.evaluation import report as R
+    from agent_lab.evaluation import report as R
 
     absent = R.state_utilization(str(tmp_path / "no_run_yet"))
     assert absent["ran"] is False and "state-util" in absent["note"]
@@ -316,7 +316,7 @@ def test_the_report_surfaces_the_rate_or_says_it_was_not_measured(scored, tmp_pa
 def test_the_cli_entry_point_measures_the_pairs_it_was_asked_about(tmp_path):
     """`state-util` is how the diagnostic is actually run, so it is tested as run."""
     from embodied_agent import cli
-    from embodied_agent.evaluation import report as R
+    from agent_lab.evaluation import report as R
 
     out = str(tmp_path / "diag")
     assert cli.main(["state-util", "--only", "sp01", "--out", out]) == cli.EXIT_OK

@@ -36,8 +36,8 @@ import pytest
 from embodied_agent.core.interpreter import interpret
 from embodied_agent.core.placement_planner import PlacementPlanner
 from embodied_agent.core.verify import build_world_state
-from embodied_agent.evaluation.run import build_scene, task_input
-from embodied_agent.evaluation.tasks import build_set
+from agent_lab.evaluation.run import build_scene, task_input
+from agent_lab.evaluation.tasks import build_set
 from embodied_agent.planning.subgoals import derive
 
 LONG_HORIZON = "long_horizon"

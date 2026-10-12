@@ -40,8 +40,8 @@ from embodied_agent.core.placement_planner import PlacementPlanner
 from embodied_agent.core.runtime import build_world_state
 from embodied_agent.core.scene import PhysicsScene
 from embodied_agent.core.verify import RuntimeVerifier
-from embodied_agent.evaluation import long_horizon_tasks as lh
-from embodied_agent.evaluation.tasks import (ALL_SETS, FROZEN_PATH, SET_NAMES, TaskCase, build_case,
+from agent_lab.evaluation import long_horizon_tasks as lh
+from agent_lab.evaluation.tasks import (ALL_SETS, FROZEN_PATH, SET_NAMES, TaskCase, build_case,
                                             build_set, check_frozen, find_case, frozen_manifest)
 
 lh_root = Path(__file__).resolve().parents[2]

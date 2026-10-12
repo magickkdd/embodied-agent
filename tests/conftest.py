@@ -24,11 +24,11 @@ from embodied_agent.core.interpreter import interpret
 from embodied_agent.core.runtime import Runtime
 from embodied_agent.core.skills import SkillExecutor
 from embodied_agent.core.verify import build_world_state
-from embodied_agent.evaluation.evaluator import IndependentEvaluator
-from embodied_agent.evaluation.protocol import run_probe
-from embodied_agent.evaluation.run import build_scene, make_source, task_input
-from embodied_agent.evaluation.sources import ScriptedSource
-from embodied_agent.evaluation.tasks import TaskCase, find_case
+from agent_lab.evaluation.evaluator import IndependentEvaluator
+from agent_lab.evaluation.protocol import run_probe
+from agent_lab.evaluation.run import build_scene, make_source, task_input
+from agent_lab.evaluation.sources import ScriptedSource
+from agent_lab.evaluation.tasks import TaskCase, find_case
 
 __all__ = ["TaskCase", "find_case"]
 

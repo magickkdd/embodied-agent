@@ -28,14 +28,14 @@ import pytest
 
 from embodied_agent.adapters.deepseek import DeepSeekAdapter
 from embodied_agent.core.contracts import Budgets
-from embodied_agent.evaluation import preregistration as P
-from embodied_agent.evaluation import report as R
-from embodied_agent.evaluation.blind_review import load_rubric, rubric_sha256
-from embodied_agent.evaluation.preregistration import (PREREG_PATH, check_invariants,
+from agent_lab.evaluation import preregistration as P
+from agent_lab.evaluation import report as R
+from agent_lab.evaluation.blind_review import load_rubric, rubric_sha256
+from agent_lab.evaluation.preregistration import (PREREG_PATH, check_invariants,
                                                        check_prereg, dump_prereg,
                                                        load_prereg, matrix_mismatch,
                                                        preregistration, rules_sha256)
-from embodied_agent.evaluation.tasks import build_set, frozen_manifest
+from agent_lab.evaluation.tasks import build_set, frozen_manifest
 
 
 @pytest.fixture(scope="module")

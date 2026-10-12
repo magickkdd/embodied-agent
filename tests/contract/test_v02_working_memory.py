@@ -44,7 +44,7 @@ from embodied_agent.core.v02 import (
     ablation,
 )
 from embodied_agent.core.verify import RuntimeVerifier
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.tasks import find_case
 from embodied_agent.planning.subgoals import (
     clear_predicate,
     placement_predicate,

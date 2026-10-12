@@ -28,11 +28,11 @@ import pytest
 
 from embodied_agent.core.interpreter import interpret
 from embodied_agent.core.runtime import build_world_state
-from embodied_agent.evaluation.long_horizon_tasks import (
+from agent_lab.evaluation.long_horizon_tasks import (
     LH_FROZEN_PATH, LH_V2_DECLARATIONS, LH_V2_KNOWN_HARD, LH_V2_UNCHANGED, build_long_horizon_set,
     check_lh_frozen, lh_manifest, v2_utterance)
-from embodied_agent.evaluation.run import build_scene, task_input
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.run import build_scene, task_input
+from agent_lab.evaluation.tasks import find_case
 
 V1_PATH = os.path.join(os.path.dirname(LH_FROZEN_PATH), "frozen_long_horizon_v1.json")
 C1 = "lh_c1_shared_pair_restore"
@@ -116,7 +116,7 @@ def test_the_group_form_binds_every_member_to_one_target():
     """
     from embodied_agent.core.contracts import TaskInput as _TaskInput
     from embodied_agent.core.runtime import build_world_state as _build
-    from embodied_agent.evaluation.run import build_scene as _scene_of
+    from agent_lab.evaluation.run import build_scene as _scene_of
 
     case = find_case(C3, ("long_horizon",))
     scene = _scene_of(case)
@@ -134,7 +134,7 @@ def test_the_group_form_binds_every_member_to_one_target():
 def test_a_count_the_scene_cannot_answer_asks_rather_than_guesses():
     from embodied_agent.core.contracts import TaskInput as _TaskInput
     from embodied_agent.core.runtime import build_world_state as _build
-    from embodied_agent.evaluation.run import build_scene as _scene_of
+    from agent_lab.evaluation.run import build_scene as _scene_of
 
     case = find_case(C3, ("long_horizon",))
     scene = _scene_of(case)

@@ -37,8 +37,8 @@ from embodied_agent.core.contracts import (
 from embodied_agent.core.runtime import MAX_MODEL_ERRORS
 from embodied_agent.core.skills import SkillExecutor
 from embodied_agent.core.verify import RuntimeVerifier
-from embodied_agent.evaluation.sources import LLMDecisionSource
-from embodied_agent.evaluation.tasks import ALL_SETS, PROTOCOL_HARNESS, build_set, find_case
+from agent_lab.evaluation.sources import LLMDecisionSource
+from agent_lab.evaluation.tasks import ALL_SETS, PROTOCOL_HARNESS, build_set, find_case
 
 # a credential-shaped constant on purpose: the redaction guard is what makes it
 # safe to hold, and the tests below check it never reaches an artifact

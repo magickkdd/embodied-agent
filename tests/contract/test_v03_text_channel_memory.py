@@ -36,7 +36,7 @@ from embodied_agent.core.v02 import ABLATION_CONDITIONS, ablation as ablation_re
 
 def test_the_bare_text_loop_still_refuses_the_memory_arm():
     """The half that must not move, and the reason v0.2 §8 B20 says not measured."""
-    from embodied_agent.benchmark.planned_runtime import (
+    from agent_lab.benchmark.planned_runtime import (
         TEXT_ARM_MODULES,
         text_arm_coherence,
     )
@@ -51,7 +51,7 @@ def test_the_bare_text_loop_still_refuses_the_memory_arm():
 
 
 def test_the_experienced_loop_declares_the_wider_set_and_is_a_real_loop():
-    from embodied_agent.benchmark.planned_runtime import (
+    from agent_lab.benchmark.planned_runtime import (
         AlfredExperiencedRuntime,
         AlfredPlannedRuntime,
         TEXT_EXPERIENCED_ARM_MODULES,
@@ -77,7 +77,7 @@ def test_the_experienced_loop_declares_the_wider_set_and_is_a_real_loop():
 def test_the_gate_still_refuses_what_neither_loop_installs():
     """`wo_vlm` and `wo_skill_acquisition` are refused on both text loops, and the refusal
     says which loop it is talking about."""
-    from embodied_agent.benchmark.planned_runtime import (
+    from agent_lab.benchmark.planned_runtime import (
         TEXT_ARM_MODULES,
         TEXT_EXPERIENCED_ARM_MODULES,
         text_arm_coherence,
@@ -99,7 +99,7 @@ def test_the_gate_still_refuses_what_neither_loop_installs():
 
 
 def test_the_note_discloses_the_store_rather_than_claiming_the_full_system():
-    from embodied_agent.benchmark.planned_runtime import AlfredExperiencedRuntime
+    from agent_lab.benchmark.planned_runtime import AlfredExperiencedRuntime
 
     note = AlfredExperiencedRuntime._ablation_note
     src = note.__doc__ or ""
@@ -127,7 +127,7 @@ def test_the_runner_refuses_a_memory_arm_with_no_store(tmp_path):
     """The refusal is before the backend is built, so the refusal is what the caller sees —
     but reaching it means importing `benchmark.backend`, which needs the text interpreter.
     The skip is on the interpreter, not on the assertion."""
-    from embodied_agent.benchmark.runner import run_slot
+    from agent_lab.benchmark.runner import run_slot
 
     slot = {"slot_index": 0, "task_id": "t", "task_type": "pick_and_place_simple", "repeat": 0,
             "run_seed": 0, "gamefile": str(tmp_path / "game.tw-pddl"),
@@ -141,7 +141,7 @@ def test_the_runner_refuses_a_memory_arm_with_no_store(tmp_path):
 def test_the_cli_names_every_reason_at_once(tmp_path, monkeypatch):
     import argparse
 
-    from embodied_agent.benchmark import cli
+    from agent_lab.benchmark import cli
 
     def _args(**kw):
         base = dict(ablation=None, experience_store=None, memory_task_kind="")
@@ -188,7 +188,7 @@ def test_single_slot_zero_is_a_slot_and_not_the_whole_segment():
     import inspect
     import textwrap
 
-    from embodied_agent.benchmark import cli
+    from agent_lab.benchmark import cli
 
     tree = ast.parse(textwrap.dedent(inspect.getsource(cli.cmd_run)))
     guards = []
@@ -207,7 +207,7 @@ def test_single_slot_zero_is_a_slot_and_not_the_whole_segment():
 
 def test_every_registered_condition_gets_an_answer_from_this_gate():
     """No condition may be silently un-refused: each one either passes or says why."""
-    from embodied_agent.benchmark.planned_runtime import TEXT_EXPERIENCED_ARM_MODULES
+    from agent_lab.benchmark.planned_runtime import TEXT_EXPERIENCED_ARM_MODULES
 
     for condition in sorted(ABLATION_CONDITIONS):
         off = list(ABLATION_CONDITIONS[condition])

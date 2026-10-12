@@ -16,7 +16,7 @@ from __future__ import annotations
 
 import pytest
 
-from embodied_agent.evaluation.sources import _strip_feedback
+from agent_lab.evaluation.sources import _strip_feedback
 
 CASE = "dev_c2"
 

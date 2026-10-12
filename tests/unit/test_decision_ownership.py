@@ -23,9 +23,9 @@ from embodied_agent.core.contracts import (
 )
 from embodied_agent.core.interpreter import interpret
 from embodied_agent.core.planner import OneShotPlanSource, RulePlanner
-from embodied_agent.evaluation.run import task_input
-from embodied_agent.evaluation.sources import ScriptedSource
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.run import task_input
+from agent_lab.evaluation.sources import ScriptedSource
+from agent_lab.evaluation.tasks import find_case
 
 
 def _script(case, repeats: int = 0) -> list:

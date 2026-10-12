@@ -45,12 +45,12 @@ import re
 import pytest
 
 from embodied_agent.core.v02 import SCHEMA_VERSION, V02_EVENT_TYPES
-from embodied_agent.evaluation import episodic_metrics as em
-from embodied_agent.evaluation import long_horizon as lh
-from embodied_agent.evaluation import report
-from embodied_agent.evaluation import run
-from embodied_agent.evaluation import skill_metrics as sk
-from embodied_agent.evaluation.report import wilson_interval
+from agent_lab.evaluation import episodic_metrics as em
+from agent_lab.evaluation import long_horizon as lh
+from agent_lab.evaluation import report
+from agent_lab.evaluation import run
+from agent_lab.evaluation import skill_metrics as sk
+from agent_lab.evaluation.report import wilson_interval
 
 ID_RE = re.compile(r"^[SC]\d\.[a-z][a-z_0-9]*$")
 DEFINITION_KEYS = ("question", "unit", "numerator", "denominator", "truth", "forbidden")
@@ -986,8 +986,8 @@ def test_the_offer_denominator_counts_a_record_the_runtime_actually_files():
     §11's offer row divides by it, so the name has to be checked against the code that writes it: a
     runtime that stopped filing it would otherwise leave the denominator shrinking in silence.
     """
-    runtime = os.path.join(os.path.dirname(os.path.abspath(sk.__file__)), os.pardir, "core",
-                           "runtime.py")
+    runtime = os.path.join(os.path.dirname(os.path.abspath(sk.__file__)), os.pardir,
+                           os.pardir, "embodied_agent", "core", "runtime.py")
     with open(runtime, encoding="utf-8") as f:
         source = f.read()
     assert source.count(f'self.store.log("{sk.ROUND_EVENT}"') == 2, \

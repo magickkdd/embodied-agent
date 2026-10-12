@@ -51,14 +51,14 @@ import pytest  # noqa: E402
 #: matrix with MuJoCo's own `mju_quat2Mat`, so the whole file needs `/home/czx/mwvenv`.
 pytest.importorskip("mujoco", reason="`_quat_mat` is MuJoCo's quaternion conversion")
 
-from embodied_agent.benchmark_mujoco.perceive import (  # noqa: E402
+from agent_lab.benchmark_mujoco.perceive import (  # noqa: E402
     APERTURE_FLAT_GRADIENT_M_PER_PX, APERTURE_MIN_MODE_PX, APERTURE_PLANE_TOL_M,
     AXIS_END_Z_BOUNDS, AXIS_MIN_SPAN_M, FAR_M, HELD_SOURCE, HOLD_REST_MARGIN_M, NEAR_M,
     OBJECT_ID, PEG_RGB, PEG_ROD_LENGTH_M, TABLE_TOP_Z_M, MuJoCoRig, MujocoPerceiver,
     _camera_rays, _frame_metres, _request_errors, aperture_frame, build_catalog, fit_aperture,
     flat_surface_region, grounding_table, hold_rest_surfaces, measured_axis,
     region_from_wall_centre, surface_gradient, wall_declaration, wall_rotation, wall_silhouette)
-from embodied_agent.benchmark_mujoco.executor import MujocoSkillExecutor, _dist  # noqa: E402
+from agent_lab.benchmark_mujoco.executor import MujocoSkillExecutor, _dist  # noqa: E402
 from embodied_agent.perception.camera import CameraSpec  # noqa: E402
 from embodied_agent.perception.frames import view_spec  # noqa: E402
 
@@ -538,7 +538,7 @@ def test_the_survey_names_no_provider_in_the_perception_path():
 def mw_backend():
     if not HAS_MW:
         pytest.skip("metaworld")
-    from embodied_agent.benchmark_mujoco.env import MuJoCoBackend
+    from agent_lab.benchmark_mujoco.env import MuJoCoBackend
 
     b = MuJoCoBackend("peg-insert-side-v3", task_index=0, seed=0)
     b.start()
@@ -1239,7 +1239,7 @@ def test_a_motion_that_refused_to_move_is_not_filed_as_one_that_ran(stage, skill
     have not occurred in an archived batch and are not driven here: the predicate is a set
     membership, so the constant itself is asserted rather than a case faked to reach it.
     """
-    from embodied_agent.benchmark_mujoco.executor import DECLINATION_STAGES
+    from agent_lab.benchmark_mujoco.executor import DECLINATION_STAGES
     from embodied_agent.core.contracts import SkillCall, SkillStatus
 
     assert DECLINATION_STAGES == frozenset({"target_lookup", "extent_measurement",
@@ -1293,7 +1293,7 @@ def test_the_perceived_aim_and_the_caliper_pick_the_same_end_of_a_carried_rod():
     Own backend instance rather than the module fixture: this moves the arm, and three tests above
     render the resting rod.
     """
-    from embodied_agent.benchmark_mujoco.env import MuJoCoBackend
+    from agent_lab.benchmark_mujoco.env import MuJoCoBackend
     from embodied_agent.core.contracts import SkillCall
 
     b = MuJoCoBackend("peg-insert-side-v3", task_index=0, seed=0)
@@ -1398,7 +1398,7 @@ def _camera_snapshot(*, with_body: bool = True, with_region: bool = True,
 
 
 def _place_verifier(world) -> "MujocoPerceptVerifier":
-    from embodied_agent.benchmark_mujoco.perceive import MujocoPerceptVerifier
+    from agent_lab.benchmark_mujoco.perceive import MujocoPerceptVerifier
     return MujocoPerceptVerifier(world, None, view="corner2", alt_views=["gripperPOV"])
 
 
@@ -1442,7 +1442,7 @@ def test_the_reason_reaches_the_page_the_model_reads_next_to_the_null_pose():
     disagree teaches the model to go looking for a naming bug. The verdict stays `unknown` either
     way; what the fix changes is which act the next round can take.
     """
-    from embodied_agent.benchmark_mujoco.prompts import MujocoDecisionContext
+    from agent_lab.benchmark_mujoco.prompts import MujocoDecisionContext
     from embodied_agent.core.contracts import (
         EntityRef, GoalAssignment, GoalProgressItem, GoalSpec, PredicateVerdict, TaskInput)
 

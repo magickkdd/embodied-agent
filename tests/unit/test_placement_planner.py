@@ -20,7 +20,7 @@ from embodied_agent.core.placement_planner import (
     candidate_id_for,
 )
 from embodied_agent.core.verify import build_world_state
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.tasks import find_case
 
 
 @pytest.fixture(scope="module")

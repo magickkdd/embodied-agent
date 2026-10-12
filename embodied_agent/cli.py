@@ -365,7 +365,7 @@ def _perception_kwargs(args) -> tuple[dict, list[str]]:
     # one thing under two names: a gate on a module nobody installed (the runner's own rule, shared
     # here so an operator learns it before 40 frames are rendered), and a channel that cannot carry
     # the arm's claim (`arm_coherence` above).
-    from .evaluation.run import installed_module_refusals
+    from agent_lab.evaluation.run import installed_module_refusals
 
     refusals += installed_module_refusals(condition, experience_store=store_path,
                                   skill_memory=library_path)
@@ -375,8 +375,8 @@ def _perception_kwargs(args) -> tuple[dict, list[str]]:
     return kw, []
 
 def cmd_run(args) -> int:
-    from .evaluation.run import goal_logger, resolve_goal, run_one_episode
-    from .evaluation.tasks import SET_NAMES, build_set
+    from agent_lab.evaluation.run import goal_logger, resolve_goal, run_one_episode
+    from agent_lab.evaluation.tasks import SET_NAMES, build_set
 
     suite, _, case_id = args.task.partition(":")
     if suite not in SET_NAMES:
@@ -427,8 +427,8 @@ def cmd_run(args) -> int:
 
 
 def cmd_evaluate(args) -> int:
-    from .evaluation.run import InfraError, run_group
-    from .evaluation.tasks import SET_NAMES
+    from agent_lab.evaluation.run import InfraError, run_group
+    from agent_lab.evaluation.tasks import SET_NAMES
 
     if args.set not in SET_NAMES:
         print(f"config error: unknown set {args.set!r}; choose from {SET_NAMES}",
@@ -465,7 +465,7 @@ def cmd_evaluate(args) -> int:
 
 
 def cmd_report(args) -> int:
-    from .evaluation.report import render_markdown, write_report
+    from agent_lab.evaluation.report import render_markdown, write_report
 
     if not os.path.isdir(args.run_dir):
         print(f"config error: no run directory at {args.run_dir}", file=sys.stderr)
@@ -481,7 +481,7 @@ def cmd_report(args) -> int:
 
 
 def cmd_replay(args) -> int:
-    from .evaluation.run import InfraError, plan_rerun, recorded_replay
+    from agent_lab.evaluation.run import InfraError, plan_rerun, recorded_replay
 
     try:
         if args.recorded:
@@ -498,7 +498,7 @@ def cmd_replay(args) -> int:
 
 
 def cmd_freeze(args) -> int:
-    from .evaluation.tasks import check_frozen, dump_frozen, frozen_manifest
+    from agent_lab.evaluation.tasks import check_frozen, dump_frozen, frozen_manifest
 
     if args.check:
         ok, msg = check_frozen(args.check)
@@ -538,7 +538,7 @@ def cmd_prereg(args) -> int:
 
     Exit codes: 0 = the file and the code agree, 3 = they do not, or the file is not
     a usable pre-registration."""
-    from .evaluation.preregistration import (PREREG_PATH, check_invariants, check_prereg,
+    from agent_lab.evaluation.preregistration import (PREREG_PATH, check_invariants, check_prereg,
                                              dump_prereg, load_prereg, preregistration)
 
     if args.check:
@@ -588,8 +588,8 @@ def cmd_state_util(args) -> int:
     are only *read*. A low rate is a result, so it exits 0; an unreachable pair is
     a broken measurement, so it does not.
     """
-    from .evaluation.sources import LLMDecisionSource, RulePolicySource
-    from .evaluation.state_utilization import build_forks, run_state_utilization
+    from agent_lab.evaluation.sources import LLMDecisionSource, RulePolicySource
+    from agent_lab.evaluation.state_utilization import build_forks, run_state_utilization
 
     try:
         planner = _planner_for(args.planner, args.model_config)
@@ -649,7 +649,7 @@ def cmd_vlm_contrast(args) -> int:
     broken measurement, so it does not. `--definitions` prints the 口径 and computes nothing,
     which is the order the module is written in: `--definitions` before any number.
     """
-    from .evaluation.vlm_contrast import (DEFINITION_VERSION, METRIC_DEFINITIONS,
+    from agent_lab.evaluation.vlm_contrast import (DEFINITION_VERSION, METRIC_DEFINITIONS,
                                           ContrastConfig, episode_contrast, measure_set,
                                           render_markdown, write)
 
@@ -699,7 +699,7 @@ def _contested_pointers(run_dir: str) -> list[dict]:
         with open(path, encoding="utf-8") as f:
             behaviour = json.load(f).get("behaviour") or {}
     else:
-        from .evaluation.report import behaviour_metrics, load_rows
+        from agent_lab.evaluation.report import behaviour_metrics, load_rows
 
         behaviour = behaviour_metrics(load_rows(run_dir))
     return [p for arm, v in behaviour.items()
@@ -721,7 +721,7 @@ def cmd_blind_review(args) -> int:
     the verdict file is not usable as input, 4 = the sheet cannot be built from this
     run directory at all.
     """
-    from .evaluation.blind_review import (SHEET_NAME, review_state, write_template)
+    from agent_lab.evaluation.blind_review import (SHEET_NAME, review_state, write_template)
 
     if not os.path.isdir(args.run_dir):
         print(f"config error: no run directory at {args.run_dir}", file=sys.stderr)
@@ -785,9 +785,9 @@ def cmd_em_pairs(args) -> int:
     append-only and the reader's claim to test is *one* writer's residue, so a second pass would
     measure a two-row store against a one-row expectation. `--force` says that is intended.
     """
-    from .evaluation.episodic_runs import (measure_episodic_pairs, print_pairs,
+    from agent_lab.evaluation.episodic_runs import (measure_episodic_pairs, print_pairs,
                                            run_episodic_pairs)
-    from .evaluation.episodic_tasks import (EM_FROZEN_PATH, EM_PAIRS, check_em_frozen,
+    from agent_lab.evaluation.episodic_tasks import (EM_FROZEN_PATH, EM_PAIRS, check_em_frozen,
                                             dump_em_frozen, episodic_manifest, pair_claims)
 
     actions = [args.claims, args.run is not None, args.measure is not None, args.dump,
@@ -831,10 +831,10 @@ def cmd_em_pairs(args) -> int:
     if args.memory_definitions:
         # the 口径 before the numbers: the scorer's own entry point, so the CLI cannot show a
         # definition table that drifted from the one the arithmetic used
-        from .evaluation import episodic_metrics
+        from agent_lab.evaluation import episodic_metrics
         return EXIT_OK if episodic_metrics.main(["--definitions"]) == 0 else EXIT_CONFIG_ERROR
     if args.memory_metrics:
-        from .evaluation import episodic_metrics
+        from agent_lab.evaluation import episodic_metrics
         return (EXIT_OK if episodic_metrics.main(["--measure", args.memory_metrics]) == 0
                 else EXIT_CONFIG_ERROR)
 
@@ -893,7 +893,7 @@ def cmd_skill_metrics(args) -> int:
     own event logs — a refusal to publish. `em-pairs --memory-metrics` collapses all three to a config
     error, which is the shape that lets a broken measurement leave a build with the same code as a typo.
     """
-    from .evaluation import skill_metrics
+    from agent_lab.evaluation import skill_metrics
 
     argv: list[str] = []
     if args.definitions:
@@ -938,8 +938,8 @@ def main(argv=None):
     # imported here rather than at module scope: the parser needs the canonical
     # frozen path and the set names as defaults, and neither is a second source for
     # a fact the task list already owns (`SET_NAMES` *is* what `build_set` resolves)
-    from .evaluation.preregistration import PREREG_PATH
-    from .evaluation.tasks import FROZEN_PATH, SET_NAMES
+    from agent_lab.evaluation.preregistration import PREREG_PATH
+    from agent_lab.evaluation.tasks import FROZEN_PATH, SET_NAMES
 
     ap = argparse.ArgumentParser("embodied_agent CLI (continuous-decision experiment)")
     sub = ap.add_subparsers(dest="command", required=True)
@@ -1036,8 +1036,8 @@ def main(argv=None):
                     help="score a subset of the 12 frozen pairs (a partial run says so)")
     su.set_defaults(fn=cmd_state_util)
 
-    from .evaluation.vlm_contrast import BATTERIES
-    from .evaluation.tasks import SET_NAMES as V02_SET_NAMES
+    from agent_lab.evaluation.vlm_contrast import BATTERIES
+    from agent_lab.evaluation.tasks import SET_NAMES as V02_SET_NAMES
 
     vx = sub.add_parser("vlm-contrast", help="SPEC-v0.2 §11/§13 P1-f: the privileged-vs-VLM "
                                              "metrics, their 口径 first (renders frames, "
@@ -1082,7 +1082,7 @@ def main(argv=None):
                          "(default: <run-dir>/blind_review/records.jsonl)")
     bz.set_defaults(fn=cmd_blind_review)
 
-    from .evaluation.episodic_tasks import EM_ARMS, EM_FROZEN_PATH
+    from agent_lab.evaluation.episodic_tasks import EM_ARMS, EM_FROZEN_PATH
 
     em = sub.add_parser("em-pairs", help="SPEC-v0.2 §5.4/§11 Memory/§13 P3-d: the episodic "
                                          "pair set — its arithmetic, its freeze, its two-arm run")

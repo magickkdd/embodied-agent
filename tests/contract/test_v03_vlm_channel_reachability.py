@@ -126,7 +126,7 @@ def test_run_group_hands_the_episode_the_adapter_it_built(tmp_path, monkeypatch)
     `resolve_goal` is left alone: with `planner_kind="rule"` it is the offline interpreter,
     so the batch reaches the episode call with nothing dialled. The fake stands in for the
     episode itself and stops there."""
-    from embodied_agent.evaluation import run as runmod
+    from agent_lab.evaluation import run as runmod
 
     vision = _write(tmp_path, "sees.yaml", ["text", "vision"])
     seen = {}
@@ -150,7 +150,7 @@ def test_run_group_hands_the_episode_the_adapter_it_built(tmp_path, monkeypatch)
 def test_a_vision_config_with_no_key_behind_it_is_refused_by_name(tmp_path, monkeypatch):
     """Two failures, two sentences. The gate reads the YAML; the key is a separate fact, and
     a caller who fixed neither must be able to tell which one is still wrong."""
-    from embodied_agent.evaluation.run import InfraError, run_group
+    from agent_lab.evaluation.run import InfraError, run_group
 
     monkeypatch.delenv("TEST_KEY", raising=False)
     vision = _write(tmp_path, "sees.yaml", ["text", "vision"])
@@ -198,7 +198,7 @@ def test_a_config_path_builds_a_planner_and_an_adapter_the_same_way():
 
 def test_a_vision_arm_on_a_text_only_config_is_refused_by_the_runner_too(tmp_path):
     """`run_group` carries the second of the two gates, and it must carry the same answer."""
-    from embodied_agent.evaluation.run import InfraError, run_group
+    from agent_lab.evaluation.run import InfraError, run_group
 
     text_only = _write(tmp_path, "blind.yaml", ["text"])
     with pytest.raises(InfraError) as e:
@@ -215,7 +215,7 @@ def test_offline_asks_the_batch_not_the_decision_seat():
 
     The Cost group's columns sit next to this flag, so a flag that under-reports spend is
     not a cosmetic field — it qualifies the reading it sits beside."""
-    from embodied_agent.evaluation.run import _batch_is_offline
+    from agent_lab.evaluation.run import _batch_is_offline
 
     assert _batch_is_offline("rule", "vlm") is False
     assert _batch_is_offline("deepseek", "vlm") is False
@@ -362,7 +362,7 @@ def test_the_runner_hands_the_ledger_to_the_perceiver(tmp_path, monkeypatch):
     callback is created inside `run_one_episode` and never appears in its own signature.
     What was silently absent before was the `on_call=` argument at that call, and `None` is
     a legal value there that files nothing."""
-    from embodied_agent.evaluation import run as runmod
+    from agent_lab.evaluation import run as runmod
     from embodied_agent.perception import arm as armmod
 
     vision = _write(tmp_path, "sees.yaml", ["text", "vision"])
@@ -405,7 +405,7 @@ def test_a_privileged_batch_hands_the_perceiver_nothing(tmp_path, monkeypatch):
     pools on."""
     from embodied_agent.acquisition.memory import SkillMemory
     from embodied_agent.episodic.store import ExperienceStore
-    from embodied_agent.evaluation import run as runmod
+    from agent_lab.evaluation import run as runmod
     from embodied_agent.perception import arm as armmod
 
     def _boom(**kwargs):

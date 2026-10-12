@@ -98,8 +98,8 @@ from embodied_agent.episodic.arm import (
     ExperiencedPlannedRuntime,
 )
 from embodied_agent.episodic.store import ExperienceStore
-from embodied_agent.evaluation.calibration import cell_catalog
-from embodied_agent.evaluation.run import (
+from agent_lab.evaluation.calibration import cell_catalog
+from agent_lab.evaluation.run import (
     InfraError,
     _row_of,
     build_scene,
@@ -108,7 +108,7 @@ from embodied_agent.evaluation.run import (
     run_one_episode,
     task_input,
 )
-from embodied_agent.evaluation.tasks import SET_NAMES, build_set, find_case
+from agent_lab.evaluation.tasks import SET_NAMES, build_set, find_case
 from embodied_agent.perception.arm import PerceptRuntime, arm_for_channel, build_perceiver
 from embodied_agent.perception.grounding import GroundingMap
 from embodied_agent.planning.arm import PLANNING_ARMS, PlanningMixin

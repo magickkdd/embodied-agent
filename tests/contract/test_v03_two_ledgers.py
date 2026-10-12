@@ -27,7 +27,7 @@ from __future__ import annotations
 
 import pytest
 
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.tasks import find_case
 
 
 # --------------------------------------------------------------------- fixtures ----
@@ -43,7 +43,7 @@ def case():
 
 @pytest.fixture()
 def scene(case):
-    from embodied_agent.evaluation.run import build_scene
+    from agent_lab.evaluation.run import build_scene
 
     s = build_scene(case)
     yield s

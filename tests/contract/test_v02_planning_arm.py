@@ -46,8 +46,8 @@ from embodied_agent.core.v02 import (
     V02_EVENT_TYPES,
     ablation,
 )
-from embodied_agent.evaluation.run import build_scene, task_input
-from embodied_agent.evaluation.tasks import SET_NAMES, find_case
+from agent_lab.evaluation.run import build_scene, task_input
+from agent_lab.evaluation.tasks import SET_NAMES, find_case
 from embodied_agent.planning import policy as policy_module
 from embodied_agent.planning.arm import (
     PLANNING_ARMS,

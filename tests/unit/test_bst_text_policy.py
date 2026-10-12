@@ -36,11 +36,11 @@ import re
 
 import pytest
 
-from embodied_agent.benchmark import policy as policy_module
-from embodied_agent.benchmark.obligations import derive_text
-from embodied_agent.benchmark.planned_runtime import V02TextDecisionContext, TextV02Verifier
-from embodied_agent.benchmark.policy import PlaceMemory, TextPlanPolicy, _World
-from embodied_agent.benchmark.state import goal_from_instruction, text_world_state
+from agent_lab.benchmark import policy as policy_module
+from agent_lab.benchmark.obligations import derive_text
+from agent_lab.benchmark.planned_runtime import V02TextDecisionContext, TextV02Verifier
+from agent_lab.benchmark.policy import PlaceMemory, TextPlanPolicy, _World
+from agent_lab.benchmark.state import goal_from_instruction, text_world_state
 from embodied_agent.core.contracts import AttemptRecord, ExecutionFeedback, TaskInput, VerifyConfig
 from embodied_agent.core.runtime import HISTORY_CAP
 from embodied_agent.planning.task_planner import TaskPlanner

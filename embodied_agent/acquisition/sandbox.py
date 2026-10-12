@@ -101,14 +101,14 @@ SCAN_TO = "# end-scanned-code"
 TAIL_MUST_NOT_NAME = ("SkillExecutor", "PhysicsScene", "build_world_state", "_AuditedScene(",
                       "scene.open(")
 
-FORBIDDEN_ORIGINS = {"resetBasePositionAndOrientation": "evaluation/long_horizon_tasks.py",
-                     "changeDynamics": "core/scene.py",
-                     "import pybullet": "core/scene.py",
-                     "eval_spec": "evaluation/tasks.py",
-                     "episode_summary": "evaluation/run.py",
-                     "events.jsonl": "core/events.py",
-                     "EpisodeStore": "core/events.py",
-                     "run_episode(": "core/runtime.py"}
+FORBIDDEN_ORIGINS = {"resetBasePositionAndOrientation": "agent_lab/evaluation/long_horizon_tasks.py",
+                     "changeDynamics": "embodied_agent/core/scene.py",
+                     "import pybullet": "embodied_agent/core/scene.py",
+                     "eval_spec": "agent_lab/evaluation/tasks.py",
+                     "episode_summary": "agent_lab/evaluation/run.py",
+                     "events.jsonl": "embodied_agent/core/events.py",
+                     "EpisodeStore": "embodied_agent/core/events.py",
+                     "run_episode(": "embodied_agent/core/runtime.py"}
 
 SCAN_FROM = "# scanned-code"
 
@@ -174,7 +174,7 @@ class SandboxScene:
         reads it once at construction and a caller must not be able to edit a case's objects through
         a sandbox run.
         """
-        from ..evaluation.tasks import SET_NAMES, find_case
+        from agent_lab.evaluation.tasks import SET_NAMES, find_case
         # `find_case`'s own default is the *pre-registered* sets, which are v0.1's four. A sandbox
         # that could only reproduce those could not reproduce the tasks this phase is run on — P2's
         # `long_horizon` and P3's `em` sets came after the freeze and have their own manifests — so
@@ -755,7 +755,7 @@ def source_gates() -> dict[str, Any]:
     root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     for token, path in FORBIDDEN_ORIGINS.items():
         try:
-            with open(os.path.join(root, "embodied_agent", path), encoding="utf-8") as fh:
+            with open(os.path.join(root, path), encoding="utf-8") as fh:
                 lives[token] = ("present in " if token in fh.read() else "ABSENT from ") + path
         except OSError as e:
             lives[token] = f"unreadable: {e}"

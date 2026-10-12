@@ -31,7 +31,7 @@ import re
 import pytest
 
 from embodied_agent.core.v02 import ABLATION_CONDITIONS, SCHEMA_VERSION, V02_EVENT_TYPES
-from embodied_agent.evaluation import long_horizon as lh
+from agent_lab.evaluation import long_horizon as lh
 
 ID_RE = re.compile(r"^L\d\.[a-z]+_[a-z_0-9]+$")
 DEFINITION_KEYS = ("question", "unit", "numerator", "denominator", "truth", "forbidden")

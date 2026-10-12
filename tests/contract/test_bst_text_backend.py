@@ -18,10 +18,10 @@ import json
 
 import pytest
 
-from embodied_agent.benchmark.parser import parse
-from embodied_agent.benchmark.runtime_alfred import AlfredRuntime, bst_budgets
-from embodied_agent.benchmark.source import decision_from_payload
-from embodied_agent.benchmark.state import goal_from_instruction
+from agent_lab.benchmark.parser import parse
+from agent_lab.benchmark.runtime_alfred import AlfredRuntime, bst_budgets
+from agent_lab.benchmark.source import decision_from_payload
+from agent_lab.benchmark.state import goal_from_instruction
 from embodied_agent.core.contracts import (
     DecisionSchemaError,
     FailureCode,
@@ -29,7 +29,7 @@ from embodied_agent.core.contracts import (
     TerminalStatus,
 )
 from embodied_agent.core.runtime import HISTORY_CAP
-from embodied_agent.evaluation.sources import ScriptedSource
+from agent_lab.evaluation.sources import ScriptedSource
 
 MARKER = "PRIV-MARKER-7c11"
 

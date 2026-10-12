@@ -66,9 +66,9 @@ from embodied_agent.core.skills import SkillExecutor
 from embodied_agent.core.v02 import ABLATION_CONDITIONS, EVENT_MODULE
 from embodied_agent.core.v02 import ablation as ablation_record
 from embodied_agent.core.verify import RuntimeVerifier, build_world_state
-from embodied_agent.evaluation.calibration import cell_catalog
-from embodied_agent.evaluation.evaluator import IndependentEvaluator
-from embodied_agent.evaluation.run import (
+from agent_lab.evaluation.calibration import cell_catalog
+from agent_lab.evaluation.evaluator import IndependentEvaluator
+from agent_lab.evaluation.run import (
     InfraError,
     build_scene,
     make_source,
@@ -76,7 +76,7 @@ from embodied_agent.evaluation.run import (
     run_one_episode,
     task_input,
 )
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.tasks import find_case
 from embodied_agent.perception.arm import (
     GRASP_UNMEASURED,
     Perceiver,

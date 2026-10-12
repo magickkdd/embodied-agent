@@ -26,8 +26,8 @@ import pytest
 from embodied_agent.core.contracts import Source
 from embodied_agent.core.scene import PhysicsScene
 from embodied_agent.core.verify import build_world_state
-from embodied_agent.evaluation import vlm_contrast as vc
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation import vlm_contrast as vc
+from agent_lab.evaluation.tasks import find_case
 
 ID_RE = re.compile(r"^[VXC]\d?\d?\.[a-z_0-9]+$")
 DEFINITION_KEYS = ("question", "unit", "numerator", "denominator", "truth", "forbidden")
@@ -288,8 +288,8 @@ def test_the_seating_height_comparison_produces_no_number_anywhere(cases):
     renamed one, this file's guard list would go stale and the check would pass on nothing — so
     the names are re-checked against the source that produces them before their absence is
     allowed to mean anything."""
-    verify_src = open(os.path.join(os.path.dirname(os.path.dirname(vc.__file__)),
-                                   "core", "verify.py")).read()
+    verify_src = open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+        vc.__file__))), "embodied_agent", "core", "verify.py")).read()
     for key in vc.SEATING_HEIGHT_EVIDENCE_KEYS:
         assert f'"{key}"' in verify_src, f"{key} is no longer a privileged evidence key"
     for case in cases:

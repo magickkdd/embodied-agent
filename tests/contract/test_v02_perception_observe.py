@@ -33,8 +33,8 @@ from pydantic import ValidationError
 from embodied_agent.core.contracts import Source
 from embodied_agent.core.scene import TABLE_TOP_Z, PhysicsScene
 from embodied_agent.core.v02 import PerceptionObservation, SpatialRelation
-from embodied_agent.evaluation.calibration import cell_catalog
-from embodied_agent.evaluation.tasks import DIMS, find_case
+from agent_lab.evaluation.calibration import cell_catalog
+from agent_lab.evaluation.tasks import DIMS, find_case
 from embodied_agent.perception.catalog import PerceptionCatalog, geometry_for
 from embodied_agent.perception.frames import (camera_for, capture, load_depth, load_rgb,
                                               save_frame)
@@ -983,7 +983,7 @@ def test_the_tray_declaration_is_the_same_in_every_case(catalog):
     (`3687b7f28386ff7f…`) for all 47, 4.5 s wall clock."""
     from dataclasses import fields
 
-    import embodied_agent.evaluation.tasks as tasks
+    import agent_lab.evaluation.tasks as tasks
 
     digests = set()
     for case in tasks._all_cases():
@@ -1080,7 +1080,7 @@ ANSWER_META = {"provider": "fake-vision-provider", "requested_model": "fake-vlm-
 
 def _rows(ep_dir):
     """The rows of one episode's `model_calls.jsonl`, read back the way a later reader finds them."""
-    from embodied_agent.benchmark_mujoco.calls_log import CALLS_LOG_NAME
+    from agent_lab.benchmark_mujoco.calls_log import CALLS_LOG_NAME
     return [json.loads(line) for line in
             (ep_dir / CALLS_LOG_NAME).read_text(encoding="utf-8").splitlines() if line.strip()]
 
@@ -1095,7 +1095,7 @@ def test_a_refused_look_files_the_same_columns_as_an_answered_one(frame, catalog
     `usage` at all. Both rows are read back out of a real `model_calls.jsonl`, because the
     artifact is what a batch is billed from and `file_call` rewrites two keys on the way in."""
     from embodied_agent.adapters.deepseek import LLMError
-    from embodied_agent.benchmark_mujoco.calls_log import CALLS_LOG_NAME, file_call
+    from agent_lab.benchmark_mujoco.calls_log import CALLS_LOG_NAME, file_call
 
     def file_one(ep_name):
         ep = tmp_path / ep_name
@@ -1325,7 +1325,7 @@ def test_a_content_absent_look_files_the_same_columns_and_names_its_billing(
     任务 `#155` keys are answer-side, so a transport death still files them as null and a
     truncated 200 files False/True/8571 — the difference a column reader can act on."""
     from embodied_agent.adapters.deepseek import DeepSeekAdapter, LLMError
-    from embodied_agent.benchmark_mujoco.calls_log import file_call
+    from agent_lab.benchmark_mujoco.calls_log import file_call
 
     adapter = DeepSeekAdapter(api_key="not-a-key-offline", provider="sensenova",
                               model="sensenova-6.8-flash-lite", base_url="http://127.0.0.1:9",

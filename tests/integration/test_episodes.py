@@ -25,8 +25,8 @@ import pytest
 from embodied_agent.core.contracts import EvalSpec, TaskInput, TerminalStatus
 from embodied_agent.core.interpreter import interpret
 from embodied_agent.core.verify import RuntimeVerifier
-from embodied_agent.evaluation.evaluator import IndependentEvaluator
-from embodied_agent.evaluation.tasks import build_set, find_case
+from agent_lab.evaluation.evaluator import IndependentEvaluator
+from agent_lab.evaluation.tasks import build_set, find_case
 
 SMOKE = [c.task_id for c in build_set("smoke")]
 ACTIVE = [c for c in SMOKE if c != "smoke_clarify"]

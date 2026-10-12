@@ -23,10 +23,10 @@ import re
 
 import pytest
 
-from embodied_agent.benchmark.obligations import (
+from agent_lab.benchmark.obligations import (
     RULES, derive_text, evidence_for, normalized_goal, obligations_of, obligations_sha256,
     problems_of)
-from embodied_agent.benchmark.state import goal_from_instruction, text_world_state
+from agent_lab.benchmark.state import goal_from_instruction, text_world_state
 from embodied_agent.core.contracts import PredicateVerdict, TaskInput
 
 # ------------------------------------------------- the six sentences, as the batch said them ----

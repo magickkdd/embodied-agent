@@ -9,7 +9,7 @@ import os
 
 import pytest
 
-annotate = pytest.importorskip("embodied_agent.benchmark.annotate",
+annotate = pytest.importorskip("agent_lab.benchmark.annotate",
                               reason="the annotation tool ships with the benchmark package")
 
 

@@ -31,10 +31,10 @@ import os
 import re
 
 import pytest
-from embodied_agent.evaluation import episodic_metrics as em
-from embodied_agent.evaluation.episodic_tasks import (EM_CONTROL_ARM, EM_PAIRS, EM_TREATMENT_ARM,
+from agent_lab.evaluation import episodic_metrics as em
+from agent_lab.evaluation.episodic_tasks import (EM_CONTROL_ARM, EM_PAIRS, EM_TREATMENT_ARM,
                                                       pair_claims)
-from embodied_agent.evaluation.report import wilson_interval
+from agent_lab.evaluation.report import wilson_interval
 
 ID_RE = re.compile(r"^M\d\.[a-z][a-z_0-9]*$")
 DEFINITION_KEYS = ("question", "unit", "numerator", "denominator", "truth", "forbidden")

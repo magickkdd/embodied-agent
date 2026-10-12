@@ -204,7 +204,7 @@
      "needle": "row.get(\"reviewer_kind\") != \"human\""
     },
     "claim": "a verdict row is accepted only from a human reviewer, so a model cannot grade the policy it is part of (SPEC 11.4)",
-    "file": "embodied_agent/evaluation/blind_review.py",
+    "file": "agent_lab/evaluation/blind_review.py",
     "id": "I5"
    },
    {
@@ -587,6 +587,6 @@
    "what_is_hashed": "task_id, subset, seed, n_objects, utterance, objects, targets, budgets, verify, events, expected, probe, hidden EvalSpec, the protocol harness, the state-pair specs and the physics constants"
   }
  },
- "rules_sha256": "23abe58ff33372ffa6f62a608221dfc1af2006f85ae50f7651a0f28451aae7b3",
+ "rules_sha256": "72271eadb43d7fb03c04a5c32c1bf88d22135c60e82c667d06da659b2ef5346a",
  "schema_version": "1"
 }

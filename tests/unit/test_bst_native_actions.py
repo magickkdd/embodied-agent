@@ -14,7 +14,7 @@ import json
 
 import pytest
 
-from embodied_agent.benchmark.native_actions import (
+from agent_lab.benchmark.native_actions import (
     ARG_DOC,
     CATALOGUE,
     DESKTOP_ONLY,

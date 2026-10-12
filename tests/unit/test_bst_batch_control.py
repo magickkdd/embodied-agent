@@ -16,10 +16,10 @@ import pytest
 # backend would test the stub.
 pytest.importorskip("textworld", reason="the batch runner imports the text backend")
 
-from embodied_agent.benchmark.aggregate import _series_check
-from embodied_agent.benchmark.cli import _slots_for_segment
-from embodied_agent.benchmark.runner import _isolate_prior_attempt, completed_slot_index
-from embodied_agent.benchmark.runner import identity_drift
+from agent_lab.benchmark.aggregate import _series_check
+from agent_lab.benchmark.cli import _slots_for_segment
+from agent_lab.benchmark.runner import _isolate_prior_attempt, completed_slot_index
+from agent_lab.benchmark.runner import identity_drift
 
 
 def _episode(slot_index: int, cumulative, sealed_total) -> dict:
@@ -139,7 +139,7 @@ def _ledger(tmp_path, row):
 
 
 def test_a_carried_slot_that_matches_the_plan_is_skipped_without_being_run(tmp_path, monkeypatch):
-    from embodied_agent.benchmark import runner as R
+    from agent_lab.benchmark import runner as R
     _ledger(tmp_path, dict(_planned(0, "a"), resumable_complete=True))
     ran = []
     monkeypatch.setattr(R, "run_slot",
@@ -155,7 +155,7 @@ def test_a_slot_index_whose_ledger_row_names_another_task_halts_before_any_run(t
                                                                                monkeypatch):
     """The alternative is silent: slot 0 is never executed, slot 0's borrowed verdict is
     counted for a task that was never seen, and the numbers still add up."""
-    from embodied_agent.benchmark import runner as R
+    from agent_lab.benchmark import runner as R
     _ledger(tmp_path, dict(_planned(0, "someone-else"), resumable_complete=True))
     ran = []
     monkeypatch.setattr(R, "run_slot", lambda slot, **kw: ran.append(slot) or {})
@@ -175,7 +175,7 @@ def test_a_slot_index_whose_ledger_row_names_another_task_halts_before_any_run(t
 def test_an_incomplete_row_at_an_index_does_not_commit_the_batch_to_a_task(tmp_path, monkeypatch):
     """A slot that was started and died is not evidence about what that number *means*;
     only a finished episode is, and the guard must not read identity into a half-row."""
-    from embodied_agent.benchmark import runner as R
+    from agent_lab.benchmark import runner as R
     _ledger(tmp_path, dict(_planned(0, "someone-else"), resumable_complete=False))
     ran = []
     monkeypatch.setattr(R, "run_slot",

@@ -25,9 +25,9 @@ import os
 import pytest
 
 from embodied_agent.core.events import SCHEMA_VERSION
-from embodied_agent.evaluation import report as R
-from embodied_agent.evaluation import run as RUN
-from embodied_agent.evaluation.tasks import FROZEN_PATH, build_set, frozen_manifest
+from agent_lab.evaluation import report as R
+from agent_lab.evaluation import run as RUN
+from agent_lab.evaluation.tasks import FROZEN_PATH, build_set, frozen_manifest
 
 CASE = "smoke_clean"
 MODES = ("A", "B", "C")
@@ -400,7 +400,7 @@ def test_the_manifest_records_the_pre_registration_and_says_whether_it_was_enfor
     """Like the task list, the rules are recorded on every run and only *enforced*
     when the operator asked for the refusal. `matches: False` on a run is therefore a
     finding about the code, not a missing field."""
-    from embodied_agent.evaluation.preregistration import PREREG_PATH, preregistration
+    from agent_lab.evaluation.preregistration import PREREG_PATH, preregistration
 
     pre = manifest["pre_registration"]
     assert pre["prereg_path"] == PREREG_PATH
@@ -413,7 +413,7 @@ def test_an_offline_batch_is_not_graded_against_the_frozen_gates(root):
     """SPEC 12.2's thresholds were written for the 216-run online matrix. A 3-run
     offline harness must not be able to pass them, fail them, or leave the reader to
     work out which one happened."""
-    from embodied_agent.evaluation.preregistration import preregistration
+    from agent_lab.evaluation.preregistration import preregistration
 
     report = R.build_report(root)
     pg = report["preregistered_gates"]
@@ -438,7 +438,7 @@ def test_an_offline_batch_is_not_graded_against_the_frozen_gates(root):
 def test_prereg_refuses_before_a_run_directory_exists(tmp_path):
     """The refusal is cheaper than the artifacts: an empty directory full of nothing
     is still a directory someone could point at."""
-    from embodied_agent.evaluation.preregistration import PREREG_PATH
+    from agent_lab.evaluation.preregistration import PREREG_PATH
 
     out = str(tmp_path / "out")
     os.makedirs(out, exist_ok=True)

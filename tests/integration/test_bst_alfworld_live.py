@@ -26,15 +26,15 @@ from pathlib import Path
 
 import pytest
 
-from embodied_agent.benchmark.parser import parse
-from embodied_agent.benchmark.prompts import BANNED_IN_PAYLOAD
-from embodied_agent.benchmark.runtime_alfred import AlfredRuntime, bst_budgets
-from embodied_agent.benchmark.state import goal_from_instruction, parse_status_of
+from agent_lab.benchmark.parser import parse
+from agent_lab.benchmark.prompts import BANNED_IN_PAYLOAD
+from agent_lab.benchmark.runtime_alfred import AlfredRuntime, bst_budgets
+from agent_lab.benchmark.state import goal_from_instruction, parse_status_of
 from embodied_agent.core.contracts import TaskInput
-from embodied_agent.evaluation.sources import ScriptedSource
+from agent_lab.evaluation.sources import ScriptedSource
 
 try:
-    from embodied_agent.benchmark.backend import AlfredTextBackend
+    from agent_lab.benchmark.backend import AlfredTextBackend
     _IMPORT_ERROR = None
 except Exception as e:  # noqa: BLE001 - the reason is the skip message
     AlfredTextBackend = None

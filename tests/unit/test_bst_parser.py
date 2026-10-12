@@ -11,13 +11,13 @@ from __future__ import annotations
 
 import pytest
 
-from embodied_agent.benchmark.parser import (
+from agent_lab.benchmark.parser import (
     ANCHOR_RULES,
     ANAPHORA_RULES,
     RULES,
     parse,
 )
-from embodied_agent.benchmark.state import parse_status_of, text_world_state
+from agent_lab.benchmark.state import parse_status_of, text_world_state
 
 RESET = ("-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking "
          "quickly around you, you see a cabinet 6, a shelf 2, and a mug 2.\n\nYour task is "

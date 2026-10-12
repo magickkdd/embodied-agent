@@ -25,7 +25,7 @@ from embodied_agent.core.contracts import (
 from embodied_agent.core.scene import PhysicsScene
 from embodied_agent.core.skills import SkillExecutor
 from embodied_agent.core.verify import RuntimeVerifier, build_world_state
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.tasks import find_case
 
 
 class Rig:

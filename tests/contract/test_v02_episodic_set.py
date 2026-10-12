@@ -35,9 +35,9 @@ import pytest
 from embodied_agent.core.v02 import ABLATION_CONDITIONS, EpisodicExperience, ExperienceStep
 from embodied_agent.episodic.retrieval import (MIN_RELEVANCE, RELEVANCE_WEIGHTS,
                                                query_from, retrieve)
-from embodied_agent.evaluation import episodic_tasks as em
-from embodied_agent.evaluation.episodic_runs import EM_ROLES
-from embodied_agent.evaluation.tasks import (ALL_SETS, FROZEN_PATH, SET_NAMES, build_case,
+from agent_lab.evaluation import episodic_tasks as em
+from agent_lab.evaluation.episodic_runs import EM_ROLES
+from agent_lab.evaluation.tasks import (ALL_SETS, FROZEN_PATH, SET_NAMES, build_case,
                                              build_set, check_frozen, frozen_manifest)
 
 em_root = Path(__file__).resolve().parents[2]

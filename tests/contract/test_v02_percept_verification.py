@@ -51,8 +51,8 @@ from embodied_agent.core.runtime import Runtime
 from embodied_agent.core.scene import PhysicsScene
 from embodied_agent.core.skills import SkillExecutor
 from embodied_agent.core.verify import RuntimeVerifier, build_world_state
-from embodied_agent.evaluation.calibration import cell_catalog, task_context_of
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.calibration import cell_catalog, task_context_of
+from agent_lab.evaluation.tasks import find_case
 from embodied_agent.perception.frames import camera_for, capture
 from embodied_agent.perception.observe import (
     PerceptionAssembler,

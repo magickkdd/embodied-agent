@@ -18,7 +18,7 @@ import os
 
 import pytest
 
-from embodied_agent.evaluation.report import (
+from agent_lab.evaluation.report import (
     INFRA_OUTCOMES,
     aggregate_by_case,
     behaviour_metrics,
@@ -33,7 +33,7 @@ from embodied_agent.evaluation.report import (
     state_utilization,
     wilson_interval,
 )
-from embodied_agent.evaluation.run import CSV_FIELDS as CSV_COLUMNS
+from agent_lab.evaluation.run import CSV_FIELDS as CSV_COLUMNS
 
 
 def _row(case_id="c1", mode="B", repeat=0, *, outcome="success", subset="clean",

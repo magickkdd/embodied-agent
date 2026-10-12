@@ -41,8 +41,8 @@ from embodied_agent.core.interpreter import interpret
 from embodied_agent.core.scene import PhysicsScene
 from embodied_agent.core.verify import (build_world_state, entity_footprint_half_xy,
                                         entity_position)
-from embodied_agent.evaluation.calibration import cell_catalog
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.calibration import cell_catalog
+from agent_lab.evaluation.tasks import find_case
 from embodied_agent.perception.frames import camera_for, capture
 from embodied_agent.perception.observe import (PerceptionAssembler, ReadAbsent,
                                                ReadObject, StubReader, TaskContext,

@@ -29,8 +29,8 @@ import os
 
 import pytest
 
-from embodied_agent.evaluation import episodic_runs
-from embodied_agent.evaluation.episodic_runs import (EM_ARMS, measure_episodic_pairs,
+from agent_lab.evaluation import episodic_runs
+from agent_lab.evaluation.episodic_runs import (EM_ARMS, measure_episodic_pairs,
                                                      run_episodic_pairs)
 
 
@@ -173,13 +173,13 @@ def test_measure_on_an_older_rule_ledger_still_reads(tmp_path, monkeypatch):
 # seat, and `episodic_memory_MEM_1.json` — the artifact §11 actually publishes for the Memory
 # group, the one a reader would quote — did not. Two tables, identical headers, no provenance.
 def _mem1(root, monkeypatch):
-    from embodied_agent.evaluation import episodic_metrics
+    from agent_lab.evaluation import episodic_metrics
     monkeypatch.setattr(episodic_metrics, "EM_PAIRS", [])
     return episodic_metrics.measure(root)
 
 
 def test_mem1_names_the_seat(tmp_path, monkeypatch):
-    from embodied_agent.evaluation import episodic_metrics
+    from agent_lab.evaluation import episodic_metrics
     root = _fake_ledger(os.path.join(str(tmp_path), "model"), "deepseek", None, "cfg.yaml")
     out = _mem1(root, monkeypatch)
     assert out["planner"] == "deepseek"
@@ -221,7 +221,7 @@ def test_mem1_refuses_a_directory_that_was_never_run(tmp_path, monkeypatch):
     # cannot score a directory with no ledger. That refusal is the right shape — a MEM-1 table
     # over a directory nobody ran would look exactly like a table over a small run, and the
     # difference is invisible in the output. Pinned so the graceful path is not added later.
-    from embodied_agent.evaluation import episodic_metrics
+    from agent_lab.evaluation import episodic_metrics
     root = os.path.join(str(tmp_path), "bare")
     os.makedirs(root, exist_ok=True)
     monkeypatch.setattr(episodic_metrics, "EM_PAIRS", [])
@@ -248,7 +248,7 @@ def _stub_episodes(monkeypatch):
         open(os.path.join(root, "events.jsonl"), "w", encoding="utf-8").close()
         return {"root": root, "run_id": f"r{len(calls)}", "rows": 0}
 
-    from embodied_agent.evaluation import episodic_tasks
+    from agent_lab.evaluation import episodic_tasks
     monkeypatch.setattr(episodic_runs, "run_group", fake_run_group)
     monkeypatch.setattr(episodic_runs, "EM_PAIRS", [PAIR])
     monkeypatch.setattr(episodic_runs, "print_pairs", lambda root: None)
@@ -404,7 +404,7 @@ def test_the_cli_takes_the_bound_and_reports_the_verdict(tmp_path, capsys, monke
     monkeypatch.setattr(episodic_runs, "run_group", _budgeted_ledger(str(tmp_path), 3))
     monkeypatch.setattr(episodic_runs, "EM_PAIRS", [PAIR_A, PAIR_B])
     monkeypatch.setattr(episodic_runs, "print_pairs", lambda root: None)
-    from embodied_agent.evaluation import episodic_tasks
+    from agent_lab.evaluation import episodic_tasks
     monkeypatch.setattr(episodic_tasks, "EM_PAIRS", [PAIR_A, PAIR_B])
     rc = cli.main(["em-pairs", "--run", os.path.join(str(tmp_path), "out"),
                    "--arms", "full", "--stop-at-requests", "8"])
@@ -420,7 +420,7 @@ def test_a_batch_inside_its_bound_says_so(tmp_path, capsys, monkeypatch):
     monkeypatch.setattr(episodic_runs, "run_group", _budgeted_ledger(str(tmp_path), 1))
     monkeypatch.setattr(episodic_runs, "EM_PAIRS", [PAIR_A])
     monkeypatch.setattr(episodic_runs, "print_pairs", lambda root: None)
-    from embodied_agent.evaluation import episodic_tasks
+    from agent_lab.evaluation import episodic_tasks
     monkeypatch.setattr(episodic_tasks, "EM_PAIRS", [PAIR_A])
     rc = cli.main(["em-pairs", "--run", os.path.join(str(tmp_path), "out"),
                    "--arms", "full", "--stop-at-requests", "9999"])
@@ -525,7 +525,7 @@ def test_the_absence_names_the_role_and_its_error(tmp_path, monkeypatch):
 
 
 def test_mem1_keeps_the_pairs_that_ran_and_names_the_ones_that_did_not(tmp_path, monkeypatch):
-    from embodied_agent.evaluation import episodic_metrics
+    from agent_lab.evaluation import episodic_metrics
     # The real pair set, and a ledger holding only `em_p1` — whose control reader produced no
     # episode. The other three have no manifest row, so they are absent without ever being
     # scored; `em_p1` has a row but half-ran, and that is the case this test is about.
@@ -551,7 +551,7 @@ def test_mem1_keeps_the_pairs_that_ran_and_names_the_ones_that_did_not(tmp_path,
 # trace entries, 14 `memory_followed` true); 0/14 model-seat summaries do. A zero here is a
 # fabricated negative — the most dangerous shape a metric can take, because 0 reads as evidence.
 def test_the_policy_trace_rows_are_five_not_two(tmp_path):
-    from embodied_agent.evaluation import episodic_metrics as em
+    from agent_lab.evaluation import episodic_metrics as em
     assert set(em._POLICY_TRACE_ROWS) == {
         "M2.followed_round_share", "M2.followed_where_control_chose_the_same",
         "M3.declines_per_refuted_round", "M4.refuted_and_still_governing",
@@ -563,7 +563,7 @@ def test_every_policy_trace_row_really_reads_the_trace():
     # the set is maintained by hand, so it is checked against the definitions: a row added to the
     # tuple that reads something else would suppress a measurement for no reason, and a row that
     # reads the trace but is missing from the tuple publishes a fabricated zero
-    from embodied_agent.evaluation import episodic_metrics as em
+    from agent_lab.evaluation import episodic_metrics as em
     reading_trace = {m for m, d in em.METRIC_DEFINITIONS.items()
                      if "policy.trace" in (d.get("truth") or "")
                      or "policy trace" in (d.get("truth") or "")}
@@ -574,7 +574,7 @@ def test_every_policy_trace_row_really_reads_the_trace():
 
 def test_the_rule_seat_keeps_its_policy_trace_rows(tmp_path, monkeypatch):
     # the suppression is seat-conditional: on the rule seat the policy runs and the rows are real
-    from embodied_agent.evaluation import episodic_metrics as em
+    from agent_lab.evaluation import episodic_metrics as em
     root = _fake_ledger(os.path.join(str(tmp_path), "rule"), "rule", "memory")
     monkeypatch.setattr(em, "EM_PAIRS", [])
     out = em.measure(root)
@@ -596,7 +596,7 @@ def _suppression_fixture():
     the row's cells and the pooled cells were the same objects, the suppression ran twice over one
     cell and `suppressed_as` came out as `None / None` instead of what it was counting.
     """
-    from embodied_agent.evaluation import episodic_metrics as em
+    from agent_lab.evaluation import episodic_metrics as em
     row_metrics = {m: _cell() for m in em._POLICY_TRACE_ROWS}
     row_metrics["M2.trajectory_changed_and_completed"] = _cell(0, 2)
     pooled = {m: _cell() for m in em._POLICY_TRACE_ROWS}
@@ -605,7 +605,7 @@ def _suppression_fixture():
 
 
 def test_a_model_seat_suppresses_every_policy_trace_row():
-    from embodied_agent.evaluation import episodic_metrics as em
+    from agent_lab.evaluation import episodic_metrics as em
     scored, pooled = _suppression_fixture()
     em._suppress_policy_trace_rows(scored, pooled, "deepseek")
     for metric in em._POLICY_TRACE_ROWS:
@@ -621,7 +621,7 @@ def test_a_model_seat_suppresses_every_policy_trace_row():
 
 
 def test_the_seat_agnostic_rows_survive_the_suppression():
-    from embodied_agent.evaluation import episodic_metrics as em
+    from agent_lab.evaluation import episodic_metrics as em
     scored, pooled = _suppression_fixture()
     em._suppress_policy_trace_rows(scored, pooled, "deepseek")
     assert pooled["M2.trajectory_changed_and_completed"]["measured"] is True
@@ -629,7 +629,7 @@ def test_the_seat_agnostic_rows_survive_the_suppression():
 
 
 def test_the_rule_seat_suppresses_nothing():
-    from embodied_agent.evaluation import episodic_metrics as em
+    from agent_lab.evaluation import episodic_metrics as em
     scored, pooled = _suppression_fixture()
     em._suppress_policy_trace_rows(scored, pooled, "rule")
     for metric in em._POLICY_TRACE_ROWS:
@@ -640,7 +640,7 @@ def test_the_rule_seat_suppresses_nothing():
 def test_an_unrecorded_seat_is_not_assumed_to_be_a_model_seat():
     # `None` means the ledger predates the seat fields. Suppressing on `None` would silently
     # blank an older rule-seat batch's rows; measuring on a model seat would publish zeros.
-    from embodied_agent.evaluation import episodic_metrics as em
+    from agent_lab.evaluation import episodic_metrics as em
     scored, pooled = _suppression_fixture()
     em._suppress_policy_trace_rows(scored, pooled, None)
     for metric in em._POLICY_TRACE_ROWS:
@@ -650,7 +650,7 @@ def test_an_unrecorded_seat_is_not_assumed_to_be_a_model_seat():
 def test_a_model_seat_row_names_the_absence_instead_of_scoring_zero():
     # the reason must survive to the published table, so a reader knows the row is seat-limited
     # rather than pair-limited
-    from embodied_agent.evaluation import episodic_metrics as em
+    from agent_lab.evaluation import episodic_metrics as em
     note = em._POLICY_TRACE_ABSENT
     assert "fabricated negative" in note
     assert "M2.trajectory_changed_and_completed" in note
@@ -665,7 +665,7 @@ def test_a_model_seat_row_names_the_absence_instead_of_scoring_zero():
 # names the error, with no episode. Those are honestly "did not run"; refusing would have meant no
 # Memory-group table at all. So the distinction is three-way, and all three arms are tested.
 def test_a_silent_missing_episode_is_still_a_refusal(tmp_path):
-    from embodied_agent.evaluation import episodic_metrics
+    from agent_lab.evaluation import episodic_metrics
     rows = [("em_p1", "full", {"writer": True, "reader": True}),
             ("em_p1", "wo_episodic_memory", {"writer": True, "reader": "silent"})]
     root = _ledger_with(str(tmp_path), rows)
@@ -674,7 +674,7 @@ def test_a_silent_missing_episode_is_still_a_refusal(tmp_path):
 
 
 def test_a_recorded_failure_is_absent_not_a_refusal(tmp_path, monkeypatch):
-    from embodied_agent.evaluation import episodic_metrics
+    from agent_lab.evaluation import episodic_metrics
     rows = [("em_p1", "full", {"writer": True, "reader": True}),
             ("em_p1", "wo_episodic_memory", {"writer": True, "reader": False})]
     root = _ledger_with(str(tmp_path), rows)
@@ -687,7 +687,7 @@ def test_a_recorded_failure_is_absent_not_a_refusal(tmp_path, monkeypatch):
 def test_a_root_that_does_not_exist_is_deferred_to_the_reader(tmp_path):
     """Deferring is not trusting: `read_pair` refuses with the path named, so a production caller
     still fails loudly. A caller that replaced the reader is trusted to supply the episode."""
-    from embodied_agent.evaluation import episodic_runs as er
+    from agent_lab.evaluation import episodic_runs as er
     state, _detail = er._role_state({"root": os.path.join(str(tmp_path), "never-created")})
     assert state == er.DEFER
     row = {"batches": {"writer": {"root": os.path.join(str(tmp_path), "never")},
@@ -696,7 +696,7 @@ def test_a_root_that_does_not_exist_is_deferred_to_the_reader(tmp_path):
 
 
 def test_the_three_role_states_are_told_apart(tmp_path):
-    from embodied_agent.evaluation import episodic_runs as er
+    from agent_lab.evaluation import episodic_runs as er
     rows = [("em_p1", "full", {"writer": True, "reader": "silent"}),
             ("em_p1", "wo_episodic_memory", {"writer": True, "reader": False})]
     root = _ledger_with(str(tmp_path), rows)

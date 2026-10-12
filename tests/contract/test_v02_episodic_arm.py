@@ -60,8 +60,8 @@ from embodied_agent.episodic.arm import (
 from embodied_agent.episodic.experience import experience_from_episode
 from embodied_agent.episodic.policy import MemoryPolicy
 from embodied_agent.episodic.store import ExperienceStore
-from embodied_agent.evaluation.run import build_scene, resolve_goal, run_one_episode, task_input
-from embodied_agent.evaluation.tasks import find_case
+from agent_lab.evaluation.run import build_scene, resolve_goal, run_one_episode, task_input
+from agent_lab.evaluation.tasks import find_case
 from embodied_agent.planning.arm import PLANNING_ARMS, PlanningMixin
 from embodied_agent.planning.policy import PlanPolicy
 

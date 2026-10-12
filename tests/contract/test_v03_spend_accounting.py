@@ -33,7 +33,7 @@ import os
 
 import pytest
 
-from embodied_agent.evaluation.run import batch_spend
+from agent_lab.evaluation.run import batch_spend
 
 ARCHIVE = "/home/czx/embodied-agent-batches/v03/e1"
 needs_archive = pytest.mark.skipif(not os.path.isdir(ARCHIVE),

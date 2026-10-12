@@ -30,7 +30,7 @@ import os
 
 import pytest
 
-from embodied_agent.evaluation.run import GoalResolution, run_group
+from agent_lab.evaluation.run import GoalResolution, run_group
 
 
 def _ledger(out_root: str) -> list[dict]:
@@ -61,7 +61,7 @@ def test_a_goal_resolution_crash_leaves_a_named_cause(tmp_path, monkeypatch):
     and the ledger did not."""
     def boom(*a, **kw):
         raise ValueError("simulated: bridge refused at declaration time")
-    monkeypatch.setattr("embodied_agent.evaluation.run.resolve_goal", boom)
+    monkeypatch.setattr("agent_lab.evaluation.run.resolve_goal", boom)
     out_root = str(tmp_path / "runs")
     stats = run_group("dev", modes=("B",), repeats=1, out_root=out_root, limit=1,
                       case_ids=["dev_c5"], frames=False)
@@ -81,7 +81,7 @@ def test_a_goal_resolution_crash_leaves_a_named_cause(tmp_path, monkeypatch):
 def test_a_refused_goal_parse_leaves_a_named_cause(tmp_path, monkeypatch):
     """Path 2 of 3: `resolve_goal` returning a failed resolution. E1's sixteen
     `goal_resolution_error` rows all live on this path, in no ledger."""
-    monkeypatch.setattr("embodied_agent.evaluation.run.resolve_goal",
+    monkeypatch.setattr("agent_lab.evaluation.run.resolve_goal",
                         lambda *a, **kw: _failed_resolution("dev_c5"))
     out_root = str(tmp_path / "runs")
     run_group("dev", modes=("B",), repeats=1, out_root=out_root, limit=1,
@@ -99,7 +99,7 @@ def test_an_in_episode_crash_still_leaves_a_named_cause(tmp_path, monkeypatch):
     Pinned so the unification cannot quietly drop the one path the archive vouches for."""
     def boom(*a, **kw):
         raise RuntimeError("simulated: episode died mid-round")
-    monkeypatch.setattr("embodied_agent.evaluation.run.run_one_episode", boom)
+    monkeypatch.setattr("agent_lab.evaluation.run.run_one_episode", boom)
     out_root = str(tmp_path / "runs")
     run_group("dev", modes=("B",), repeats=1, out_root=out_root, limit=1,
               case_ids=["dev_c5"], frames=False)
@@ -128,7 +128,7 @@ def test_the_manifest_names_the_perception_channel(tmp_path, monkeypatch, percei
     test is the manifest, which is written before the loop opens."""
     def boom(*a, **kw):
         raise RuntimeError("simulated: the manifest is already on disk by now")
-    monkeypatch.setattr("embodied_agent.evaluation.run.run_one_episode", boom)
+    monkeypatch.setattr("agent_lab.evaluation.run.run_one_episode", boom)
     out_root = str(tmp_path / "runs")
     run_group("dev", modes=("B",), repeats=1, out_root=out_root, limit=1,
               case_ids=["dev_c5"], frames=False, perceive=perceive)
