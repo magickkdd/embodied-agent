@@ -1,0 +1,2456 @@
+{
+ "criteria": "docs/continuous-decision-v0.7-phase-log.md P1 判据 M1-1..M1-4",
+ "wording": "已证实 (confirmed): finite frames give a lower bound; v2 may only declare inside it, and no reading here may say the sensor 其实能 anything",
+ "corpus": {
+  "archives": [
+   "v04",
+   "v05",
+   "v06"
+  ],
+  "channels": [
+   "stub",
+   "vlm"
+  ],
+  "episodes": [
+   [
+    [
+     "stub",
+     "v04"
+    ],
+    4
+   ],
+   [
+    [
+     "stub",
+     "v05"
+    ],
+    4
+   ],
+   [
+    [
+     "stub",
+     "v06"
+    ],
+    4
+   ],
+   [
+    [
+     "vlm",
+     "v04"
+    ],
+    4
+   ],
+   [
+    [
+     "vlm",
+     "v05"
+    ],
+    4
+   ],
+   [
+    [
+     "vlm",
+     "v06"
+    ],
+    4
+   ]
+  ],
+  "frames": [
+   [
+    [
+     "stub",
+     "v04"
+    ],
+    4
+   ],
+   [
+    [
+     "stub",
+     "v05"
+    ],
+    4
+   ],
+   [
+    [
+     "stub",
+     "v06"
+    ],
+    4
+   ],
+   [
+    [
+     "vlm",
+     "v04"
+    ],
+    4
+   ],
+   [
+    [
+     "vlm",
+     "v05"
+    ],
+    4
+   ],
+   [
+    [
+     "vlm",
+     "v06"
+    ],
+    4
+   ]
+  ]
+ },
+ "cases": {
+  "lh_c1_shared_pair_restore": {
+   "targets": [
+    "obj_green_1",
+    "obj_blue_2",
+    "obj_yellow_3",
+    "obj_purple_4"
+   ],
+   "confirmed_discrimination": {
+    "stub": {
+     "looks": 156,
+     "looks_by_archive": {
+      "v04": 52,
+      "v05": 52,
+      "v06": 52
+     },
+     "confirmed_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "confirmed_shapes": [
+      "cube",
+      "cuboid"
+     ],
+     "colour_frames": {
+      "purple": 156,
+      "blue": 156,
+      "yellow": 156,
+      "green": 156
+     },
+     "shape_frames": {
+      "cuboid": 312,
+      "cube": 312
+     },
+     "objects_per_frame": {
+      "min": 4,
+      "median": 4,
+      "max": 4
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 6,
+      "min": 4,
+      "median": 4,
+      "max": 4
+     }
+    },
+    "vlm": {
+     "looks": 148,
+     "looks_by_archive": {
+      "v04": 49,
+      "v05": 47,
+      "v06": 52
+     },
+     "confirmed_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "confirmed_shapes": [
+      "cube",
+      "cuboid",
+      "cylinder"
+     ],
+     "colour_frames": {
+      "green": 92,
+      "purple": 148,
+      "blue": 115,
+      "yellow": 148
+     },
+     "shape_frames": {
+      "cube": 240,
+      "cylinder": 148,
+      "cuboid": 115
+     },
+     "objects_per_frame": {
+      "min": 2,
+      "median": 4,
+      "max": 4
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 6,
+      "min": 4,
+      "median": 4,
+      "max": 4
+     }
+    }
+   },
+   "utterance": "把绿色的方块放到右边托盘，把蓝色的长方体放到右边托盘，把黄色的方块放到左边托盘，把紫色的圆柱放到右边托盘。"
+  },
+  "lh_c2_displaced_completion": {
+   "targets": [
+    "obj_blue_1",
+    "obj_yellow_2",
+    "obj_purple_3",
+    "obj_red_4",
+    "obj_green_5"
+   ],
+   "confirmed_discrimination": {
+    "stub": {
+     "looks": 0,
+     "looks_by_archive": {},
+     "confirmed_colours": [],
+     "confirmed_shapes": [],
+     "colour_frames": {},
+     "shape_frames": {},
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    },
+    "vlm": {
+     "looks": 0,
+     "looks_by_archive": {},
+     "confirmed_colours": [],
+     "confirmed_shapes": [],
+     "colour_frames": {},
+     "shape_frames": {},
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    }
+   },
+   "utterance": "把蓝色的方块放到左边托盘，把黄色的长方体放到左边托盘，把紫色的方块放到右边托盘，把红色的圆柱放到右边托盘，把绿色的方块放到左边托盘。"
+  },
+  "lh_c3_capacity_and_shift": {
+   "targets": [
+    "obj_yellow_1",
+    "obj_purple_2",
+    "obj_red_3",
+    "obj_green_4",
+    "obj_blue_5",
+    "obj_yellow_6"
+   ],
+   "confirmed_discrimination": {
+    "stub": {
+     "looks": 90,
+     "looks_by_archive": {
+      "v04": 30,
+      "v05": 30,
+      "v06": 30
+     },
+     "confirmed_colours": [
+      "blue",
+      "green",
+      "purple",
+      "red",
+      "yellow"
+     ],
+     "confirmed_shapes": [
+      "cube",
+      "cuboid",
+      "cylinder"
+     ],
+     "colour_frames": {
+      "yellow": 90,
+      "green": 90,
+      "blue": 90,
+      "red": 60,
+      "purple": 90
+     },
+     "shape_frames": {
+      "cylinder": 60,
+      "cuboid": 150,
+      "cube": 210
+     },
+     "objects_per_frame": {
+      "min": 4,
+      "median": 5,
+      "max": 5
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 6,
+      "min": 5,
+      "median": 5,
+      "max": 5
+     }
+    },
+    "vlm": {
+     "looks": 183,
+     "looks_by_archive": {
+      "v04": 43,
+      "v05": 55,
+      "v06": 85
+     },
+     "confirmed_colours": [
+      "blue",
+      "green",
+      "purple",
+      "red",
+      "yellow"
+     ],
+     "confirmed_shapes": [
+      "cube",
+      "cuboid",
+      "cylinder",
+      "unknown"
+     ],
+     "colour_frames": {
+      "red": 71,
+      "yellow": 183,
+      "purple": 144,
+      "blue": 167,
+      "green": 151
+     },
+     "shape_frames": {
+      "cuboid": 246,
+      "cube": 318,
+      "cylinder": 151,
+      "unknown": 1
+     },
+     "objects_per_frame": {
+      "min": 2,
+      "median": 4,
+      "max": 5
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 6,
+      "min": 5,
+      "median": 5,
+      "max": 5
+     }
+    }
+   },
+   "utterance": "把黄色的方块放到中间托盘，把紫色的方块放到中间托盘，把红色的长方体放到右边托盘，把绿色的圆柱放到左边托盘，把蓝色的方块放到中间托盘，把黄色的长方体放到左边托盘。"
+  },
+  "lh_c4_failed_grasp_recovery": {
+   "targets": [
+    "obj_purple_1",
+    "obj_red_2",
+    "obj_green_3",
+    "obj_blue_4"
+   ],
+   "confirmed_discrimination": {
+    "stub": {
+     "looks": 0,
+     "looks_by_archive": {},
+     "confirmed_colours": [],
+     "confirmed_shapes": [],
+     "colour_frames": {},
+     "shape_frames": {},
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    },
+    "vlm": {
+     "looks": 0,
+     "looks_by_archive": {},
+     "confirmed_colours": [],
+     "confirmed_shapes": [],
+     "colour_frames": {},
+     "shape_frames": {},
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    }
+   },
+   "utterance": "把紫色的方块放到右边托盘，把红色的长方体放到右边托盘，把绿色的圆柱放到右边托盘，把蓝色的方块放到左边托盘。"
+  },
+  "lh_c5_release_deviation": {
+   "targets": [
+    "obj_red_1",
+    "obj_green_2",
+    "obj_blue_3",
+    "obj_yellow_4",
+    "obj_purple_5"
+   ],
+   "confirmed_discrimination": {
+    "stub": {
+     "looks": 0,
+     "looks_by_archive": {},
+     "confirmed_colours": [],
+     "confirmed_shapes": [],
+     "colour_frames": {},
+     "shape_frames": {},
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    },
+    "vlm": {
+     "looks": 0,
+     "looks_by_archive": {},
+     "confirmed_colours": [],
+     "confirmed_shapes": [],
+     "colour_frames": {},
+     "shape_frames": {},
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    }
+   },
+   "utterance": "把红色的方块放到左边托盘，把绿色的圆柱放到左边托盘，把蓝色的方块放到右边托盘，把黄色的长方体放到右边托盘，把紫色的方块放到左边托盘。"
+  },
+  "lh_c6_two_disruptions": {
+   "targets": [
+    "obj_green_1",
+    "obj_blue_2",
+    "obj_yellow_3",
+    "obj_purple_4",
+    "obj_red_5",
+    "obj_green_6"
+   ],
+   "confirmed_discrimination": {
+    "stub": {
+     "looks": 0,
+     "looks_by_archive": {},
+     "confirmed_colours": [],
+     "confirmed_shapes": [],
+     "colour_frames": {},
+     "shape_frames": {},
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    },
+    "vlm": {
+     "looks": 0,
+     "looks_by_archive": {},
+     "confirmed_colours": [],
+     "confirmed_shapes": [],
+     "colour_frames": {},
+     "shape_frames": {},
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     }
+    }
+   },
+   "utterance": "把绿色的方块放到中间托盘，把蓝色的方块放到中间托盘，把黄色的长方体放到右边托盘，把紫色的方块放到左边托盘，把红色的圆柱放到右边托盘，把绿色的长方体放到中间托盘。"
+  }
+ },
+ "declarations": [
+  {
+   "case_id": "lh_c1_shared_pair_restore",
+   "target_id": "obj_green_1",
+   "declared": {
+    "color": "green",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 156,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 156 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 156 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "conditionally_groundable",
+      "frames_seen": 156,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 156 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 0 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6,
+      "condition": "every frame that reported it also reported at least one namesake with the same value, so the sensor never separated it"
+     },
+     "pair": {
+      "pair_frames": 156,
+      "pair_frames_without_namesake": 156,
+      "verdict": "groundable",
+      "evidence": "the pair (green, cube) appeared in 156 frames, 156 of them without a namesake"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 92,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 92 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 92 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 148,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 148 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 56 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 90,
+      "pair_frames_without_namesake": 90,
+      "verdict": "groundable",
+      "evidence": "the pair (green, cube) appeared in 90 frames, 90 of them without a namesake"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 4,
+    "distinct_signatures_left": 4,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c1_shared_pair_restore",
+   "target_id": "obj_blue_2",
+   "declared": {
+    "color": "blue",
+    "shape": "cuboid"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 156,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 156 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 156 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "conditionally_groundable",
+      "frames_seen": 156,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 156 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 0 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6,
+      "condition": "every frame that reported it also reported at least one namesake with the same value, so the sensor never separated it"
+     },
+     "pair": {
+      "pair_frames": 156,
+      "pair_frames_without_namesake": 156,
+      "verdict": "groundable",
+      "evidence": "the pair (blue, cuboid) appeared in 156 frames, 156 of them without a namesake"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 115,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 115 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 115 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 114,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 114 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 113 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 113,
+      "pair_frames_without_namesake": 113,
+      "verdict": "groundable",
+      "evidence": "the pair (blue, cuboid) appeared in 113 frames, 113 of them without a namesake"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 4,
+    "distinct_signatures_left": 4,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c1_shared_pair_restore",
+   "target_id": "obj_yellow_3",
+   "declared": {
+    "color": "yellow",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 156,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 156 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 156 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "conditionally_groundable",
+      "frames_seen": 156,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 156 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 0 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6,
+      "condition": "every frame that reported it also reported at least one namesake with the same value, so the sensor never separated it"
+     },
+     "pair": {
+      "pair_frames": 156,
+      "pair_frames_without_namesake": 156,
+      "verdict": "groundable",
+      "evidence": "the pair (yellow, cube) appeared in 156 frames, 156 of them without a namesake"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 148,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 148 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 148 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 148,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 148 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 56 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 148,
+      "pair_frames_without_namesake": 148,
+      "verdict": "groundable",
+      "evidence": "the pair (yellow, cube) appeared in 148 frames, 148 of them without a namesake"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 4,
+    "distinct_signatures_left": 4,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c1_shared_pair_restore",
+   "target_id": "obj_purple_4",
+   "declared": {
+    "color": "purple",
+    "shape": "cylinder"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 156,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 156 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 156 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "beyond_grain",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "no frame in the confirmed corpus reported this value"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "beyond_grain",
+      "evidence": "the pair (purple, cylinder) appeared in 0 frames, 0 of them without a namesake"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 148,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 148 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 148 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 148,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 148 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 148 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 148,
+      "pair_frames_without_namesake": 148,
+      "verdict": "groundable",
+      "evidence": "the pair (purple, cylinder) appeared in 148 frames, 148 of them without a namesake"
+     }
+    }
+   },
+   "beyond_grain_attributes": [
+    "shape"
+   ],
+   "warning": {
+    "beyond_grain_attributes": [
+     "shape"
+    ],
+    "targets_after_dropping_them": 4,
+    "distinct_signatures_left": 4,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c2_displaced_completion",
+   "target_id": "obj_blue_1",
+   "declared": {
+    "color": "blue",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 5,
+    "distinct_signatures_left": 5,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c2_displaced_completion",
+   "target_id": "obj_yellow_2",
+   "declared": {
+    "color": "yellow",
+    "shape": "cuboid"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 5,
+    "distinct_signatures_left": 5,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c2_displaced_completion",
+   "target_id": "obj_purple_3",
+   "declared": {
+    "color": "purple",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 5,
+    "distinct_signatures_left": 5,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c2_displaced_completion",
+   "target_id": "obj_red_4",
+   "declared": {
+    "color": "red",
+    "shape": "cylinder"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 5,
+    "distinct_signatures_left": 5,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c2_displaced_completion",
+   "target_id": "obj_green_5",
+   "declared": {
+    "color": "green",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 5,
+    "distinct_signatures_left": 5,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c3_capacity_and_shift",
+   "target_id": "obj_yellow_1",
+   "declared": {
+    "color": "yellow",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 90,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 90 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 90 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "conditionally_groundable",
+      "frames_seen": 90,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 90 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 0 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6,
+      "condition": "every frame that reported it also reported at least one namesake with the same value, so the sensor never separated it"
+     },
+     "pair": {
+      "pair_frames": 30,
+      "pair_frames_without_namesake": 30,
+      "verdict": "groundable",
+      "evidence": "the pair (yellow, cube) appeared in 30 frames, 30 of them without a namesake"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 183,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 183 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 183 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 178,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 178 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 43 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 7,
+      "pair_frames_without_namesake": 7,
+      "verdict": "groundable",
+      "evidence": "the pair (yellow, cube) appeared in 7 frames, 7 of them without a namesake"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c3_capacity_and_shift",
+   "target_id": "obj_purple_2",
+   "declared": {
+    "color": "purple",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 90,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 90 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 90 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "conditionally_groundable",
+      "frames_seen": 90,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 90 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 0 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6,
+      "condition": "every frame that reported it also reported at least one namesake with the same value, so the sensor never separated it"
+     },
+     "pair": {
+      "pair_frames": 90,
+      "pair_frames_without_namesake": 90,
+      "verdict": "groundable",
+      "evidence": "the pair (purple, cube) appeared in 90 frames, 90 of them without a namesake"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 144,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 144 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 144 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 178,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 178 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 43 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 144,
+      "pair_frames_without_namesake": 144,
+      "verdict": "groundable",
+      "evidence": "the pair (purple, cube) appeared in 144 frames, 144 of them without a namesake"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c3_capacity_and_shift",
+   "target_id": "obj_red_3",
+   "declared": {
+    "color": "red",
+    "shape": "cuboid"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 60,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 60 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 60 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 90,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 90 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 30 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 60,
+      "pair_frames_without_namesake": 60,
+      "verdict": "groundable",
+      "evidence": "the pair (red, cuboid) appeared in 60 frames, 60 of them without a namesake"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 71,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 71 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 71 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 182,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 182 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 118 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 71,
+      "pair_frames_without_namesake": 71,
+      "verdict": "groundable",
+      "evidence": "the pair (red, cuboid) appeared in 71 frames, 71 of them without a namesake"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c3_capacity_and_shift",
+   "target_id": "obj_green_4",
+   "declared": {
+    "color": "green",
+    "shape": "cylinder"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 90,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 90 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 90 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 60,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 60 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 60 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "beyond_grain",
+      "evidence": "the pair (green, cylinder) appeared in 0 frames, 0 of them without a namesake"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 151,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 151 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 151 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 151,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 151 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 151 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 151,
+      "pair_frames_without_namesake": 151,
+      "verdict": "groundable",
+      "evidence": "the pair (green, cylinder) appeared in 151 frames, 151 of them without a namesake"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c3_capacity_and_shift",
+   "target_id": "obj_blue_5",
+   "declared": {
+    "color": "blue",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 90,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 90 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 90 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "conditionally_groundable",
+      "frames_seen": 90,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 90 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 0 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6,
+      "condition": "every frame that reported it also reported at least one namesake with the same value, so the sensor never separated it"
+     },
+     "pair": {
+      "pair_frames": 90,
+      "pair_frames_without_namesake": 90,
+      "verdict": "groundable",
+      "evidence": "the pair (blue, cube) appeared in 90 frames, 90 of them without a namesake"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 167,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 167 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 167 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 178,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 178 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 43 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 167,
+      "pair_frames_without_namesake": 167,
+      "verdict": "groundable",
+      "evidence": "the pair (blue, cube) appeared in 167 frames, 167 of them without a namesake"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c3_capacity_and_shift",
+   "target_id": "obj_yellow_6",
+   "declared": {
+    "color": "yellow",
+    "shape": "cuboid"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 90,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 90 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 90 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 90,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 90 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 30 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "beyond_grain",
+      "evidence": "the pair (yellow, cuboid) appeared in 0 frames, 0 of them without a namesake"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "groundable",
+      "frames_seen": 183,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 183 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 183 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "shape": {
+      "verdict": "groundable",
+      "frames_seen": 182,
+      "generations": [
+       "v04",
+       "v05",
+       "v06"
+      ],
+      "evidence": "reported in 182 frames across generations ['v04', 'v05', 'v06']; earliest ordinal 0; 118 of those frames carried no namesake; first-look hits 6 of 6 episodes",
+      "first_look_hits": 6
+     },
+     "pair": {
+      "pair_frames": 175,
+      "pair_frames_without_namesake": 175,
+      "verdict": "groundable",
+      "evidence": "the pair (yellow, cuboid) appeared in 175 frames, 175 of them without a namesake"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c4_failed_grasp_recovery",
+   "target_id": "obj_purple_1",
+   "declared": {
+    "color": "purple",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 4,
+    "distinct_signatures_left": 4,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c4_failed_grasp_recovery",
+   "target_id": "obj_red_2",
+   "declared": {
+    "color": "red",
+    "shape": "cuboid"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 4,
+    "distinct_signatures_left": 4,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c4_failed_grasp_recovery",
+   "target_id": "obj_green_3",
+   "declared": {
+    "color": "green",
+    "shape": "cylinder"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 4,
+    "distinct_signatures_left": 4,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c4_failed_grasp_recovery",
+   "target_id": "obj_blue_4",
+   "declared": {
+    "color": "blue",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 4,
+    "distinct_signatures_left": 4,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c5_release_deviation",
+   "target_id": "obj_red_1",
+   "declared": {
+    "color": "red",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 5,
+    "distinct_signatures_left": 5,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c5_release_deviation",
+   "target_id": "obj_green_2",
+   "declared": {
+    "color": "green",
+    "shape": "cylinder"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 5,
+    "distinct_signatures_left": 5,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c5_release_deviation",
+   "target_id": "obj_blue_3",
+   "declared": {
+    "color": "blue",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 5,
+    "distinct_signatures_left": 5,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c5_release_deviation",
+   "target_id": "obj_yellow_4",
+   "declared": {
+    "color": "yellow",
+    "shape": "cuboid"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 5,
+    "distinct_signatures_left": 5,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c5_release_deviation",
+   "target_id": "obj_purple_5",
+   "declared": {
+    "color": "purple",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 5,
+    "distinct_signatures_left": 5,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c6_two_disruptions",
+   "target_id": "obj_green_1",
+   "declared": {
+    "color": "green",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c6_two_disruptions",
+   "target_id": "obj_blue_2",
+   "declared": {
+    "color": "blue",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c6_two_disruptions",
+   "target_id": "obj_yellow_3",
+   "declared": {
+    "color": "yellow",
+    "shape": "cuboid"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c6_two_disruptions",
+   "target_id": "obj_purple_4",
+   "declared": {
+    "color": "purple",
+    "shape": "cube"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c6_two_disruptions",
+   "target_id": "obj_red_5",
+   "declared": {
+    "color": "red",
+    "shape": "cylinder"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  },
+  {
+   "case_id": "lh_c6_two_disruptions",
+   "target_id": "obj_green_6",
+   "declared": {
+    "color": "green",
+    "shape": "cuboid"
+   },
+   "per_channel": {
+    "stub": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    },
+    "vlm": {
+     "color": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "shape": {
+      "verdict": "no_confirmed_evidence",
+      "frames_seen": 0,
+      "generations": [],
+      "evidence": "this case has no archived camera frame on this channel at all"
+     },
+     "pair": {
+      "pair_frames": 0,
+      "pair_frames_without_namesake": 0,
+      "verdict": "no_confirmed_evidence",
+      "evidence": "this case has no archived camera frame on this channel at all"
+     }
+    }
+   },
+   "beyond_grain_attributes": [],
+   "warning": {
+    "beyond_grain_attributes": [],
+    "targets_after_dropping_them": 6,
+    "distinct_signatures_left": 6,
+    "degenerate": false,
+    "note": null
+   }
+  }
+ ]
+}
