@@ -1,0 +1,123 @@
+{
+  "acceptance": [
+    "each of the three cells runs its full matched denominator: 2 cases x 2 repeats = 4 episodes, every episode producing an outcome; an infrastructure_error with a named cause is counted as a miss, not dropped",
+    "**RQ20's acceptance reading**: in the two v2 cells, the residual-cause list must **no longer contain** a cause of the form \"the declaration points at bodies the sensor cannot separate\" (`frame_did_not_see_the_colour` against a declared colour the frame never carried, or a pair-level beyond-grain binding). Whether that class disappears is the result, not a precondition: its disappearance is what v2 bought, and its persistence is what v2 did not",
+    "c1's four bindings are the same four bodies v1 asked for: the colour-only mention is a narrower question, not a smaller task. The batch records `grounding_map_sha256` and the v2 utterance hash so a c1 row can be traced to the declaration it ran under",
+    "every failed episode names its cause, and the name comes out of the archive rather than out of the analyst's memory -- `termination_reason` / `failure_type` / the episode's own perception records, in that order of preference",
+    "the `stub` cell's known risk is written down before the run: v0.6 measured `REPEATED_INVALID` on both c1 stub episodes (the rule policy repeating one invalid action four times, zero unbound rows), which is a cause outside the v0.6 residuals. If it recurs unchanged, that is reported as evidence for principle 20 (align the declaration to the sensor, never the reverse), not as a new defect to fix in this batch",
+    "the four-generation table is reported side by side and never merged: E2' (132 requests), E2'' (148), E2''' (180), E2'''' (this batch), on privileged / stub / vlm separately",
+    "the per-episode rows carry the Q1 split (perception and decision books plus the unattributed remainder), because the camera channel's spend is still expected to be entirely perception-side",
+    "archived camera cells record `budget_caps` {http 48, perception 48} and the privileged cell records the frozen {http 32, perception 48}: a repriced cell is recognisable from its archive"
+  ],
+  "artefact_directory": "/home/czx/embodied-agent-batches/v07/e2",
+  "bound_cell_one_case_pair_and_scale": {
+    "cases": ["lh_c1_shared_pair_restore", "lh_c3_capacity_and_shift"],
+    "case_pair_rationale": ("c1 and c3 are the only two cases with camera evidence (M1: the other four "
+                            "have 0 archived frames), they are the pair all three earlier E2 "
+                            "generations ran, and between them they carry both v2 declaration "
+                            "forms: c1 the colour-only mention, c3 the two same-coloured bodies "
+                            "v2 marks known-hard. Keeping the pair keeps the four-generation table "
+                            "like-for-like; swapping c3 for an unevidenced case would break it"),
+    "repeats": 2,
+    "episodes": 12,
+    "matched_denominator_per_cell": 4,
+    "decided": "D5'''', user, 2026-10-12"
+  },
+  "budget_repricing": {
+    "ruling": "D2''' (v0.6) candidate B still governs: the ceilings are batch configuration. D5'''' keeps them at the values v0.6 measured as necessary",
+    "camera_cells": {"http": 48, "perception": 48},
+    "privileged": "frozen budgets, exactly as E2'/E2''/E2''' -- the control keeps its identity",
+    "why_still_48": "v0.6 measured the camera channel's per-episode demand at 49-56 final requests, so 48 still binds on c3. Raising it here would make the budget an untested variable of the table experiment; the v2 demand profile now carries the number (c3: 56) for a future batch to price against"
+  },
+  "command_shape": [
+    "python -m embodied_agent.cli evaluate",
+    "--set long_horizon",
+    "--planner rule",
+    "--modes B",
+    "--repeats 2",
+    "--cases lh_c1_shared_pair_restore,lh_c3_capacity_and_shift",
+    "--out-root /home/czx/embodied-agent-batches/v07/e2/<cell>",
+    "--perceive <privileged|stub|vlm>",
+    "--ablation <full|wo_vlm>",
+    "--http-cap 48 --perception-cap 48   (camera cells only)",
+    "--experience-store <cell>/store.jsonl",
+    "--skill-memory <cell>/lib.jsonl",
+    "--model-config configs/models/agnes-vision-r4.yaml",
+    "--frozen --no-frames"
+  ],
+  "credentials": "never recorded; a config names the env var, not the key (SPEC 7)",
+  "decided_by": {
+    "D1''''": "v0.7 = task table v2 (user, 2026-10-12)",
+    "D2''''": "v2 re-adjudicates only c1 + c3; c2/c4/c5/c6 carried over unchanged and marked unverified (user, 2026-10-12)",
+    "D3''''": "principles P-A/P-B/P-C/P-D as drafted (user, 2026-10-12)",
+    "D4''''": "c1 colour-only mention; c3's two yellows stay v1 and are marked known-hard after the group form proved inexpressible against this case's truth; c6 kept and marked known-hard (user, 2026-10-12)",
+    "D5''''": "case pair c1 + c3, repeats 2, bound 235 requests derived from the v2 demand profile (user, 2026-10-12)"
+  },
+  "entry_point": "python -m embodied_agent.cli evaluate",
+  "experiment": "E2'''' (v0.7) -- RQ20: the first reading on a table whose declarations are groundable",
+  "expected_readings": {
+    "pre_registered": ("0 remains legal in every camera cell. What v2 can change is the *cause list*: "
+                       "v0.6's camera cells failed on three named residuals (ambiguous two-yellow "
+                       "binding, intermittent detection, the request ceiling) and c1's stub cell on "
+                       "a fourth (the rule policy's own repeat loop). v2 removed exactly one "
+                       "declaration question -- c1's purple shape -- so the pre-registered "
+                       "expectation is narrow: c1's beyond-grain shape no longer appears in any "
+                       "cause list, c3 still cannot separate its two yellows and is expected to "
+                       "say so, and the c3 ceiling stop at 48 is expected to persist because v2 did "
+                       "not touch the demand"),
+    "honest_counterpart": ("if c1's camera cells are still 0/4 with every unbound row now `#26` "
+                           "(the declared colour absent from the frame), then v2 bought a "
+                           "readable cause list and no success, and that is the finding. It is not "
+                           "a reason to touch the reader: principle 20 forbids aligning the sensor "
+                           "to the declaration")
+  },
+  "four_generation_table": {
+    "shape": "privileged / stub / vlm, 2 cases x 2 repeats each, side by side, never pooled",
+    "generations": {
+      "E2' (v0.4)": {"privileged": "4/4", "stub": "0/4", "vlm": "0/4", "requests": 132},
+      "E2'' (v0.5)": {"privileged": "4/4", "stub": "0/4", "vlm": "0/4 (+1 infra)", "requests": 148},
+      "E2''' (v0.6)": {"privileged": "4/4", "stub": "0/4", "vlm": "0/4", "requests": 180,
+                        "note": "the three v0.6 cells ran on the **v1** table with the split budget"}
+    },
+    "caveat": ("generations 1-3 ran v1 declarations and this one runs v2, so the table compares "
+               "*tables* as much as it compares batches; that is the point of the stage, and it is "
+               "why the row is labelled with the table version rather than only with the batch name")
+  },
+  "preconditions": [
+    "v0.7 P1/P2 committed: M1 on disk, v2 landed, the freeze switch in a single commit, 1302 passed / 27 skipped",
+    "principle 21(a) measured on v2 before this batch: privileged rule seat 4/4 (work/v07/reachability_v2.json)",
+    "principle 21(b): all six v2 cases keep their disturbance structure; c3's capacity/shift unchanged",
+    "principle 21(c): M1-4 reports no case degenerating to one step when the beyond-grain attribute is dropped",
+    "schema_fingerprint() item-by-item equal to configs/experiment/v02_schema_freeze.json; the three gates rc=0 immediately before the first request",
+    "probe criteria written down before the first probe request (phase log, P4)"
+  ],
+  "pricing_configured": false,
+  "cost_estimate_usd": null,
+  "schema_freeze": ("core/v02.py untouched by v0.7; 15 event types and the 7-entry ablation registry "
+                    "untouched; no field added to the frozen Budgets; the **task table** hash moved "
+                    "from ae012f12ce0c to b9fce17fbbf6 in the single v0.7 P2 commit, and "
+                    "schema_fingerprint() stays item-by-item equal"),
+  "seat": {
+    "config": "configs/models/agnes-vision-r4.yaml",
+    "model": "agnes-2.5-flash",
+    "health_probe": ("one minimal request per seat before the batch, criteria written first: 3 "
+                     "consecutive 429/quota errors stop the batch; a window of 10 must reach 9/10 or "
+                     "the window changes, not the criterion; endpoint rotation is an event, not a "
+                     "configuration; the v0.5 reading (9/10, one 429 at the tenth) is the reference")
+  },
+  "spend_bound": {
+    "requests": 235,
+    "basis": ("derived from the v2 demand profile (P-D), not from a historical guess: only the vlm "
+              "cell spends, and the measured **final** requests per episode are c1 36 and c3 56 "
+              "(the final number includes the round the preflight admits, which is how v0.6's 54/56 "
+              "arose). Four spending episodes therefore cost 2x36 + 2x56 = 184, plus 4 shared "
+              "goal parses = 188, x1.25 = 235"),
+    "formula": "sum over spending episodes of (per-case max final requests) + goal parses, x1.25",
+    "why_below_the_spec_estimate": ("SPEC §6 estimated 400-900; the composition gives 235 because "
+                                    "only four episodes spend. The estimate assumed a larger cell, "
+                                    "and the profile is the authority (principle 19)"),
+    "stop_rule": "3 consecutive 429/quota errors -> stop the batch, save the checkpoint, log it; bound hit -> stop, no 'a little more'",
+    "stop_rule_source": "v0.3 SPEC §8 verbatim, plus v0.4 §8",
+    "resume": "cell-level: a finished cell is never re-run; --resume continues a cell from its own checkpoint"
+  }
+}
