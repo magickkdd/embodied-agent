@@ -53,6 +53,56 @@ def _match_entity(text: str, world: WorldState) -> tuple[EntityRef | None, str |
         return None, f"attribute {attrs} matches {len(matches)} entities"
     return None, f"no entity matches {attrs}"
 
+
+#: A **group** reference: a count plus an attribute class, e.g. "两个黄色物体" / "两件蓝色方块".
+#:
+#: Why this exists (v0.7 D4'''', principle P-B of the v2 task table): a declaration that names one
+#: of two same-coloured bodies can only be honoured if the sensor can tell them apart, and v0.7's
+#: M1 measured that it never does -- 0 of 760 archived camera frames carried two objects with the
+#: same (colour, shape). The honest declaration is therefore the *group*: "put the two yellow
+#: objects in the middle tray", which asks for both bodies without asking the reader to separate
+#: them.
+#:
+#: It is a **separate form**, not a widened `_match_entity`: a bare "黄色物体" that matches two
+#: entities stays an ambiguity (that refusal is what found c6's collision in the first place), and
+#: only the explicit count makes a group declaration legal. Anything else about the parse is
+#: untouched, so every existing utterance in every frozen set parses exactly as before.
+GROUP_COUNT_WORDS = {"两个": 2, "两件": 2, "两个的": 2, "两": 2, "two": 2}
+
+
+def _match_group(text: str, world: WorldState) -> tuple[list[EntityRef], str | None]:
+    """A counted attribute reference -> one `EntityRef` per matching body, or an error.
+
+    The count is checked against what the world actually shows: "两个黄色物体" with three yellow
+    bodies in view is not a group of two, it is a declaration the scene cannot answer, and saying
+    so is the whole point of the form. Each returned ref carries the **attribute** class rather
+    than an id, so the verifier's own `bind_attributes` resolves it -- the same path a single
+    mention takes, and a group that cannot bind per member fails the same way it always did.
+    """
+    text = text.strip()
+    count = None
+    for word, n in sorted(GROUP_COUNT_WORDS.items(), key=lambda kv: -len(kv[0])):
+        if word in text:
+            count = n
+            break
+    if count is None:
+        return [], "not a counted reference"
+    attrs: dict[str, str] = {}
+    for w, v in sorted({**SHAPE_WORDS, **COLOR_WORDS}.items(), key=lambda kv: -len(kv[0])):
+        if w in text:
+            attrs["shape" if w in SHAPE_WORDS else "color"] = v
+    if not attrs:
+        return [], "a counted reference still needs an attribute class"
+    matches = [e for e in world.entities if all(e.attributes.get(k) == v for k, v in attrs.items())]
+    if len(matches) != count:
+        return [], (f"the declaration names {count} {attrs} bodies and the scene shows "
+                    f"{len(matches)}")
+    # One ref **per body, carrying that body's id**: every member goes to the same target, so the
+    # choice of ids is symmetric and carries no information about the hidden truth, while an
+    # id-carrying ref survives the duplicate-binding filter below (two identical attribute refs
+    # would be deduplicated into one, silently shrinking the group to a single member).
+    return [EntityRef(entity_id=e.entity_id) for e in matches], None
+
 # order matters: longer phrases first
 _CLAUSE_SPLIT = re.compile(r"[,，;；。、]|然后|再|并且|全部|都")
 
@@ -80,6 +130,19 @@ def interpret(task: TaskInput, world: WorldState) -> GoalSpec:
     pending: list[str] = []  # entity mentions waiting for a verb clause
 
     def bind(ent_text: str, tgt: str):
+        # v0.7 P-B: a counted reference ("两个黄色物体") is a group declaration, not an
+        # ambiguity. It binds once per body, all to the same target, and every other mention
+        # keeps the old single-binding path -- including a bare colour that matches two bodies,
+        # which is still a refusal.
+        group, group_err = _match_group(ent_text, world)
+        if group:
+            assignments.extend(GoalAssignment(entity=ref, target_id=tgt) for ref in group)
+            return
+        if group_err and group_err != "not a counted reference":
+            # a counted reference whose count the scene cannot answer is a problem, not a
+            # silently dropped clause: the episode must clarify rather than guess
+            problems.append(f"'{ent_text}': {group_err}")
+            return
         ref, err = _match_entity(ent_text, world)
         if err:
             problems.append(f"'{ent_text}': {err}")

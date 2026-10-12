@@ -1,0 +1,20 @@
+{
+ "command": "embodied_agent.cli evaluate --set long_horizon --planner rule --modes B --repeats 2 --cases lh_c1_shared_pair_restore,lh_c3_capacity_and_shift --out-root /home/czx/embodied-agent-batches/v07/reachability --perceive privileged --ablation full --frozen --no-frames",
+ "cases": [
+  "lh_c1_shared_pair_restore",
+  "lh_c3_capacity_and_shift"
+ ],
+ "cells": {
+  "long_horizon_rule_full_20261012_132922": {
+   "outcomes": {
+    "success": [
+     "lh_c1_shared_pair_restore.B.r0",
+     "lh_c1_shared_pair_restore.B.r1",
+     "lh_c3_capacity_and_shift.B.r0",
+     "lh_c3_capacity_and_shift.B.r1"
+    ]
+   },
+   "successes": 4
+  }
+ }
+}

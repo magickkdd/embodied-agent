@@ -82,10 +82,17 @@ import os
 from ..core.runtime import build_world_state
 from ..core.scene import PhysicsScene
 from ..core.skills import SkillExecutor
-from .tasks import (FROZEN_PATH, MAX_OBJECTS_PER_REGION, TRAYS, TaskCase, _cfg, build_case)
+from .tasks import (COLOR_ZH, FROZEN_PATH, MAX_OBJECTS_PER_REGION, SHAPE_ZH, TARGET_ZH, TRAYS,
+                     TaskCase, _cfg, build_case)
 
 LH_SET_NAME = "long_horizon"
-LH_FROZEN_PATH = os.path.join(os.path.dirname(FROZEN_PATH), "frozen_long_horizon_v1.json")
+# v0.7 P2 (SPEC §2.2): the long-horizon table's expected hash moves to v2 **in this one commit**.
+# The event schema's `schema_fingerprint()` is untouched by that switch -- what changes is the task
+# table, which is what this stage was opened to re-adjudicate. `frozen_long_horizon_v1.json` stays
+# on disk, sealed, and `build_long_horizon_set("v1")` still rebuilds it, so the four generations of
+# E2 rows stay side-by-side comparable rather than merged.
+LH_V1_FROZEN_PATH = os.path.join(os.path.dirname(FROZEN_PATH), "frozen_long_horizon_v1.json")
+LH_FROZEN_PATH = os.path.join(os.path.dirname(FROZEN_PATH), "frozen_long_horizon_v2.json")
 
 # One budget for every case and every arm. `max_decision_rounds=24` (the v0.1 default) censored 5 of
 # the 8 dev pairs before the work was done, and a long-horizon set that cannot be finished inside its
@@ -130,6 +137,116 @@ SHAPE_2_MEASURED = {
 # slide against the tray wall is deterministic (see `tasks._displaceable_in`), so a case that asks
 # for `displace_*` without a cube in the shared region is refused at build time, not silently
 # realized as an episode where nothing happens.
+#
+# ---- v2 declarations (v0.7 D4'''') -----------------------------------------------------
+# The v2 table changes **what a case asks for**, not the world it asks it in. Two declaration
+# forms are added and neither one touches a body, a tray, a disturbance or a budget:
+#
+# * `colour_only` -- the mention keeps the colour and drops the shape word ("把紫色的物体放到…").
+#   Applied to c1's purple cylinder because M1 measured 0 of 156 stub frames reporting its shape
+#   (the stub's c1 shape vocabulary is {cube, cuboid}), while its colour is reported in every
+#   frame. The body stays a purple cylinder; the table simply stops asking a question the sensor
+#   has never answered.
+# * `groups` -- a counted mention ("把两个黄色物体放入…") that binds once per body to one target.
+#   Applied to c3's two yellows because M1 measured 0 of 760 camera frames carrying two objects
+#   with the same (colour, shape): the two yellows are *one* detection, always. Naming either of
+#   them separately asks the reader to separate what it has never separated.
+#
+# Every other case is carried into v2 **unchanged** (D2'''': only c1 and c3 have camera evidence;
+# c2/c4/c5/c6 keep v1's declarations verbatim and are marked unverified).
+# v2 declaration layer. A group entry is only *legal* when its members share a target: a group
+# says "these bodies all go here", so a group whose members go to two different trays cannot
+# express the hidden truth and would silently rewrite it. `v2_utterance` therefore renders a
+# group from the members' own targets and raises rather than emitting a mention that would mean
+# something else.
+_LH_UNVERIFIED_NOTE = {
+    "re_adjudicated": False,
+    "colour_only": [],
+    "groups": [],
+    "known_hard": None,
+    "rationale": "no camera evidence: M1 found 0 archived frames for this case, so no declaration "
+                 "of it can be judged against the sensor (D2''''), carried into v2 unchanged",
+}
+
+LH_V2_DECLARATIONS: dict[str, dict] = {
+    "lh_c1_shared_pair_restore": {
+        "re_adjudicated": True,
+        "colour_only": ["obj_purple_4"],
+        "groups": [],
+        "known_hard": None,
+        "rationale": ("M1: purple/cylinder is beyond grain on the stub channel (0/156 frames, "
+                      "c1's stub shape vocabulary is {cube, cuboid}) and groundable on vlm "
+                      "(148 frames). The colour is reported in every frame and is unique in this "
+                      "case's four colours, so the shape word is the part that cannot be honoured."),
+    },
+    "lh_c3_capacity_and_shift": {
+        "re_adjudicated": False,
+        "colour_only": [],
+        "groups": [],
+        "known_hard": ("#25: the two yellow bodies go to *different* trays (middle 3/3, left 2), so "
+                       "no group declaration can express this case's hidden truth without changing "
+                       "it, and M1 measured 0/760 camera frames carrying two same-named objects -- "
+                       "the sensor has never separated them. Declarations kept as v1; the pair is "
+                       "named known-hard rather than re-authored into something the truth cannot say"),
+    },
+    "lh_c2_displaced_completion": _LH_UNVERIFIED_NOTE,
+    "lh_c4_failed_grasp_recovery": _LH_UNVERIFIED_NOTE,
+    "lh_c5_release_deviation": _LH_UNVERIFIED_NOTE,
+    "lh_c6_two_disruptions": {
+        "re_adjudicated": False,
+        "colour_only": [],
+        "groups": [],
+        "known_hard": ("#24: two disturbances on a 6-object horizon, known-hard in v0.4/v0.5/"
+                       "v0.6; unchanged in v2 (principle 21(b) -- the disturbance structure is "
+                       "what the case is for, so deleting it would make the case a different one)"),
+        "rationale": "no camera evidence: M1 found 0 archived frames for this case",
+    },
+}
+LH_V2_UNCHANGED = ["lh_c2_displaced_completion", "lh_c3_capacity_and_shift",
+                   "lh_c4_failed_grasp_recovery", "lh_c5_release_deviation",
+                   "lh_c6_two_disruptions"]
+#: c6 is the #24 residual: three versions, never flipped. Carried into v2 unchanged and named
+#: known-hard rather than quietly re-authored into something easier (principle 21(b)).
+LH_V2_KNOWN_HARD = {name: entry["known_hard"] for name, entry in LH_V2_DECLARATIONS.items()
+                    if entry.get("known_hard")}
+
+
+def v2_utterance(objs: list[dict], assignment: dict[str, str], overrides: dict) -> str:
+    """The v2 mention forms, composed into one utterance.
+
+    `explicit` stays the default, so a case with no override renders byte-identically to v1 -- the
+    only two differences the table introduces are the ones D4'''' named.
+    """
+    colour_only = set(overrides.get("colour_only") or ())
+    grouped: dict[str, list[str]] = {}
+    for group in overrides.get("groups") or ():
+        for member in group["members"]:
+            grouped[member] = group["members"]
+    emitted_groups: set[tuple] = set()
+    parts = []
+    for obj in objs:
+        entity_id = obj["entity_id"]
+        colour = COLOR_ZH[obj["attributes"]["color"]]
+        target = TARGET_ZH[assignment[entity_id]]
+        if entity_id in grouped:
+            members = tuple(sorted(grouped[entity_id]))
+            targets = {assignment[m] for m in members}
+            if len(targets) != 1:
+                raise ValueError(
+                    f"{cfg_name_hint(objs)}: a group declaration cannot express members going to "
+                    f"{sorted(targets)}; grouping them would rewrite the hidden truth")
+            if members in emitted_groups:
+                continue
+            emitted_groups.add(members)
+            parts.append(f"把两个{COLOR_ZH[group_colour(members, objs, overrides)]}物体放入{target}")
+            continue
+        if entity_id in colour_only:
+            parts.append(f"把{colour}的物体放到{target}")
+            continue
+        parts.append(f"把{colour}的{SHAPE_ZH[obj['attributes']['shape']]}放到{target}")
+    return "，".join(parts) + "。"
+
+
 LH_CONFIGS = [
     _cfg("lh_c1_shared_pair_restore", "long_horizon", 4, 301, shared=True,
          budget=LH_BUDGET, mechanism="displace_second", shapes=["cube", "cuboid", "cube", "cylinder"],
@@ -172,16 +289,53 @@ LH_CONFIGS = [
 ]
 
 
-def build_long_horizon_set() -> list[TaskCase]:
-    """The frozen lh cases. `lh_c6`'s second event is composed here and nowhere else."""
+def build_long_horizon_set(version: str = "v2") -> list[TaskCase]:
+    """The frozen lh cases. `lh_c6`'s second event is composed here and nowhere else.
+
+    `version="v2"` (the live table since v0.7 P2) applies the declaration overrides D4''''
+    ruled; `version="v1"` rebuilds the sealed table from the same configs, which is what makes
+    "v1 is unchanged" a checkable claim rather than an assurance -- the four cases with no
+    override must render byte-identically, and a test says so.
+    """
+    if version not in ("v1", "v2"):
+        raise ValueError(f"unknown long-horizon table version {version!r}")
     out = []
     for cfg in LH_CONFIGS:
         case = build_case(cfg)
+        if version == "v2":
+            overrides = LH_V2_DECLARATIONS.get(cfg["name"])
+            if overrides:
+                # the hidden truth the utterance already matched, read back off the built case
+                assignment = {a["entity_id"]: a["target_id"]
+                              for a in case.eval_spec.model_dump()["assignments"]}
+                objs = [o for o in case.objects if o["entity_id"] in case.targets]
+                case = dataclasses.replace(
+                    case, utterance=v2_utterance(objs, assignment, overrides))
         if cfg["name"] == "lh_c6_two_disruptions":
             out.append(dataclasses.replace(case, events=case.events + [_lh_grasp_event(case)]))
         else:
             out.append(case)
     return out
+
+
+def group_colour(members: tuple, objs: list[dict], overrides: dict) -> str:
+    """The colour word a group mention uses: the members' own colour, not an authored one.
+
+    Taking it from the bodies rather than from a hand-written field is what makes the group
+    declaration checkable: a group whose members did not actually share a colour would render a
+    mention that names something the scene does not contain, and the count check in the
+    interpreter would refuse it at run time instead of at build time.
+    """
+    by_id = {o["entity_id"]: o for o in objs}
+    colours = {by_id[m]["attributes"]["color"] for m in members}
+    if len(colours) != 1:
+        raise ValueError(f"group {members} spans colours {sorted(colours)}; a group mention names "
+                         f"one colour class")
+    return colours.pop()
+
+
+def cfg_name_hint(objs: list[dict]) -> str:
+    return objs[0].get("entity_id", "?") if objs else "?"
 
 
 def _lh_grasp_event(case: TaskCase):
@@ -333,17 +487,35 @@ def lh_manifest() -> dict:
     Deliberately a *different* file with a *different* hash: the long-horizon set is authored after
     the frozen results exist, and folding it into the same manifest would move a hash that published
     numbers already depend on (SPEC 12.1).
+
+    v0.7 adds two per-case blocks to this payload, both of which are **profiles measured before
+    the run** (P-C and P-D of the v2 principles): the t0 trigger premise that decides whether a
+    case has a dependency-graph denominator at all, and the per-episode perception demand that the
+    E2'''' bound is built from. They belong in the table because a bound that is not in the table
+    is a bound nobody can re-derive -- which is exactly how #27 kept surprising us.
     """
     cases = build_long_horizon_set()
     payload = {
-        "schema_version": "1",
-        "spec": "v0.2 §8",
+        "schema_version": "2",
+        "spec": "v0.2 §8 + v0.7 任务表 v2",
+        # v2 is *isomorphic* to v1 (SPEC §2.2), so the keys v1 carried stay: `set` above all,
+        # because an existing contract test reads it and a table that drops a key its own gate
+        # checks is a table that broke a promise about its shape, not about its content.
         "set": LH_SET_NAME,
+        "table_version": "v2",
+        "sealed_v1_sha256": _v1_sha256(),
         "budget_rationale": ("declared before any run: 20 nominal skill calls for the longest case "
                              "(12 placements + 2 restore + 4 retry), 30 rounds / 40 calls with "
                              "slack, identical for every arm"),
         "budgets": LH_BUDGET,
         "spec8_shape_2_reachability": SHAPE_2_MEASURED,
+        "v2_declarations": {name: dict(overrides,
+                                        known_hard=LH_V2_KNOWN_HARD.get(name),
+                                        unchanged_in_v2=name in LH_V2_UNCHANGED)
+                            for name, overrides in LH_V2_DECLARATIONS.items()},
+        "v2_unchanged_cases": list(LH_V2_UNCHANGED),
+        "v2_known_hard": dict(LH_V2_KNOWN_HARD),
+        "profiles": load_profiles(),
         "cases": [
             {"task_id": c.task_id, "subset": c.subset, "seed": c.seed, "n_objects": c.n_objects,
              "utterance": c.utterance, "objects": c.objects, "targets": c.targets,
@@ -359,11 +531,43 @@ def lh_manifest() -> dict:
     return payload
 
 
+def _v1_sha256() -> str:
+    """The sealed v1 table's own recorded hash, carried in v2 so the two are never confused.
+
+    Read from the file, not recomputed: v1 is sealed, and a v2 build that recomputed it would
+    silently become a v1 rebuild that could differ.
+    """
+    path = LH_V1_FROZEN_PATH
+    if not os.path.exists(path):
+        return ""
+    with open(path, encoding="utf-8") as f:
+        return str(json.load(f).get("sha256") or "")
+
+
 def dump_lh_frozen(path: str = LH_FROZEN_PATH) -> str:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(lh_manifest(), f, ensure_ascii=False, indent=1, sort_keys=True)
     return path
+
+
+def load_profiles(path: str | None = None) -> dict:
+    """The two per-case profiles (P-C trigger premise, P-D perception demand) from `work/v07/`.
+
+    They are *measured artefacts*, not authored values, so they enter the frozen payload by being
+    read off disk rather than typed in here. A missing file yields `{}` and the manifest says so,
+    which is how a reader can tell "no profile" from "a profile that says nothing".
+    """
+    import glob as _glob
+
+    here = os.path.dirname(os.path.abspath(__file__))
+    candidates = ([path] if path else
+                  _glob.glob(os.path.join(here, "..", "..", "work", "v07", "*_profiles.json")))
+    for candidate in candidates:
+        if candidate and os.path.exists(candidate):
+            with open(candidate, encoding="utf-8") as f:
+                return json.load(f)
+    return {}
 
 
 def check_lh_frozen(path: str = LH_FROZEN_PATH) -> tuple[bool, str]:

@@ -8,7 +8,7 @@
    "have_placement_instrument": true,
    "rows_detail": [
     {
-     "subgoal_id": "sub_fb3272ad",
+     "subgoal_id": "sub_027dd766",
      "entity_id": "obj_blue_2",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -18,7 +18,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_b78179dd",
+     "subgoal_id": "sub_d0f31f2b",
      "entity_id": "obj_green_1",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -28,7 +28,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_3e0dd276",
+     "subgoal_id": "sub_5c7edf57",
      "entity_id": "obj_purple_4",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -38,7 +38,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_ce1d36d4",
+     "subgoal_id": "sub_d85f4247",
      "entity_id": "obj_yellow_3",
      "target_id": "tray_left",
      "placement_verdict": "PredicateVerdict.false",
@@ -62,7 +62,7 @@
    "have_placement_instrument": true,
    "rows_detail": [
     {
-     "subgoal_id": "sub_c94e8701",
+     "subgoal_id": "sub_59712258",
      "entity_id": "obj_blue_1",
      "target_id": "tray_left",
      "placement_verdict": "PredicateVerdict.false",
@@ -72,7 +72,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_e068b8cb",
+     "subgoal_id": "sub_58988f87",
      "entity_id": "obj_green_5",
      "target_id": "tray_left",
      "placement_verdict": "PredicateVerdict.false",
@@ -82,7 +82,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_5ca5fe8f",
+     "subgoal_id": "sub_043b35a2",
      "entity_id": "obj_purple_3",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -92,7 +92,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_632d3d64",
+     "subgoal_id": "sub_45109c28",
      "entity_id": "obj_red_4",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -102,7 +102,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_d1854e1e",
+     "subgoal_id": "sub_38c0da7e",
      "entity_id": "obj_yellow_2",
      "target_id": "tray_left",
      "placement_verdict": "PredicateVerdict.false",
@@ -126,7 +126,7 @@
    "have_placement_instrument": true,
    "rows_detail": [
     {
-     "subgoal_id": "sub_137ebf92",
+     "subgoal_id": "sub_52cb6dc7",
      "entity_id": "obj_blue_5",
      "target_id": "tray_middle",
      "placement_verdict": "PredicateVerdict.false",
@@ -136,7 +136,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_51c18d6c",
+     "subgoal_id": "sub_d25426e2",
      "entity_id": "obj_green_4",
      "target_id": "tray_left",
      "placement_verdict": "PredicateVerdict.false",
@@ -146,7 +146,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_45905f16",
+     "subgoal_id": "sub_7dde82ca",
      "entity_id": "obj_purple_2",
      "target_id": "tray_middle",
      "placement_verdict": "PredicateVerdict.false",
@@ -156,7 +156,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_05d359ae",
+     "subgoal_id": "sub_cf338d1b",
      "entity_id": "obj_red_3",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -166,7 +166,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_e34c93e4",
+     "subgoal_id": "sub_d6053cce",
      "entity_id": "obj_yellow_1",
      "target_id": "tray_middle",
      "placement_verdict": "PredicateVerdict.false",
@@ -176,12 +176,12 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_03594c7b",
+     "subgoal_id": "sub_4485abbd",
      "entity_id": "obj_yellow_6",
-     "target_id": "tray_left",
+     "target_id": "tray_middle",
      "placement_verdict": "PredicateVerdict.false",
      "feasible": true,
-     "feasibility_reason": "end-effector path not provably reachable at this slot",
+     "feasibility_reason": "the generator offered no slot in this region for this object (it does not fit inside the margin)",
      "region_occupants_other": [],
      "satisfied": "unknown"
     }
@@ -200,7 +200,7 @@
    "have_placement_instrument": true,
    "rows_detail": [
     {
-     "subgoal_id": "sub_c68ece14",
+     "subgoal_id": "sub_939bde71",
      "entity_id": "obj_blue_4",
      "target_id": "tray_left",
      "placement_verdict": "PredicateVerdict.false",
@@ -210,7 +210,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_7fd49b3b",
+     "subgoal_id": "sub_3261af7c",
      "entity_id": "obj_green_3",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -220,7 +220,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_282e7431",
+     "subgoal_id": "sub_5a12599d",
      "entity_id": "obj_purple_1",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -230,7 +230,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_88634649",
+     "subgoal_id": "sub_642bb64e",
      "entity_id": "obj_red_2",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -254,7 +254,7 @@
    "have_placement_instrument": true,
    "rows_detail": [
     {
-     "subgoal_id": "sub_b6daf8ec",
+     "subgoal_id": "sub_bd27cf6d",
      "entity_id": "obj_blue_3",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -264,7 +264,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_9ff88c59",
+     "subgoal_id": "sub_19c99b17",
      "entity_id": "obj_green_2",
      "target_id": "tray_left",
      "placement_verdict": "PredicateVerdict.false",
@@ -274,7 +274,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_13ed70e5",
+     "subgoal_id": "sub_711e5a5d",
      "entity_id": "obj_purple_5",
      "target_id": "tray_left",
      "placement_verdict": "PredicateVerdict.false",
@@ -284,7 +284,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_ff75681c",
+     "subgoal_id": "sub_2bf4667f",
      "entity_id": "obj_red_1",
      "target_id": "tray_left",
      "placement_verdict": "PredicateVerdict.false",
@@ -294,7 +294,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_93b40f16",
+     "subgoal_id": "sub_88f0282f",
      "entity_id": "obj_yellow_4",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -318,7 +318,7 @@
    "have_placement_instrument": true,
    "rows_detail": [
     {
-     "subgoal_id": "sub_27a8aa15",
+     "subgoal_id": "sub_c441a4cb",
      "entity_id": "obj_blue_2",
      "target_id": "tray_middle",
      "placement_verdict": "PredicateVerdict.false",
@@ -328,7 +328,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_e3c96841",
+     "subgoal_id": "sub_977c434f",
      "entity_id": "obj_green_1",
      "target_id": "tray_middle",
      "placement_verdict": "PredicateVerdict.false",
@@ -338,7 +338,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_7fe01f6d",
+     "subgoal_id": "sub_8f9b7259",
      "entity_id": "obj_green_6",
      "target_id": "tray_middle",
      "placement_verdict": "PredicateVerdict.false",
@@ -348,7 +348,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_30b1ac6b",
+     "subgoal_id": "sub_81d90910",
      "entity_id": "obj_purple_4",
      "target_id": "tray_left",
      "placement_verdict": "PredicateVerdict.false",
@@ -358,7 +358,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_e8736961",
+     "subgoal_id": "sub_c2452afd",
      "entity_id": "obj_red_5",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",
@@ -368,7 +368,7 @@
      "satisfied": "unknown"
     },
     {
-     "subgoal_id": "sub_40a1ff48",
+     "subgoal_id": "sub_373f907a",
      "entity_id": "obj_yellow_3",
      "target_id": "tray_right",
      "placement_verdict": "PredicateVerdict.false",

@@ -114,7 +114,7 @@ def main() -> int:
             finally:
                 scene.close()
 
-    path = os.path.join(REPO, "work", "v06", "h1_derivation_probe.json")
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "h1_derivation_probe.json")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
 

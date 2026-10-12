@@ -1,0 +1,285 @@
+{
+ "source": {
+  "trigger": "work/v07/h1_derivation_probe.json (v0.6 H1 probe, copy)",
+  "demand": "work/v07/m1_mismatch.json confirmed look counts + v0.6 E2''' episode_summary final request counts",
+  "cost": "zero"
+ },
+ "cases": {
+  "lh_c1_shared_pair_restore": {
+   "trigger_premise": {
+    "subgoal_rows": 4,
+    "dependencies": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0,
+    "has_denominator_at_t0": false,
+    "note": "the blocker edge needs an infeasible placement in an occupied region; both counts are the t0 readings, and an episode can still create the condition later -- which is what a trigger batch would measure, and v0.6 measured that it never did"
+   },
+   "demand": {
+    "stub": {
+     "confirmed_looks_total": 156,
+     "first_look_objects": {
+      "looks": 6,
+      "min": 4,
+      "median": 4,
+      "max": 4
+     },
+     "objects_per_frame": {
+      "min": 4,
+      "median": 4,
+      "max": 4
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "vlm": {
+     "confirmed_looks_total": 148,
+     "first_look_objects": {
+      "looks": 6,
+      "min": 4,
+      "median": 4,
+      "max": 4
+     },
+     "objects_per_frame": {
+      "min": 2,
+      "median": 4,
+      "max": 4
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "v06_final_requests_per_episode": [
+     36,
+     34
+    ],
+    "v06_max_final_request": 36,
+    "note": "the bound is built from these numbers, not from a historical guess: E2'''' reads max(final requests per episode) x episodes x 1.25, and the final number is the one that includes the round the preflight admits"
+   }
+  },
+  "lh_c2_displaced_completion": {
+   "trigger_premise": {
+    "subgoal_rows": 5,
+    "dependencies": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0,
+    "has_denominator_at_t0": false,
+    "note": "the blocker edge needs an infeasible placement in an occupied region; both counts are the t0 readings, and an episode can still create the condition later -- which is what a trigger batch would measure, and v0.6 measured that it never did"
+   },
+   "demand": {
+    "stub": {
+     "confirmed_looks_total": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "vlm": {
+     "confirmed_looks_total": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "v06_final_requests_per_episode": [],
+    "v06_max_final_request": null,
+    "note": "the bound is built from these numbers, not from a historical guess: E2'''' reads max(final requests per episode) x episodes x 1.25, and the final number is the one that includes the round the preflight admits"
+   }
+  },
+  "lh_c3_capacity_and_shift": {
+   "trigger_premise": {
+    "subgoal_rows": 6,
+    "dependencies": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0,
+    "has_denominator_at_t0": false,
+    "note": "the blocker edge needs an infeasible placement in an occupied region; both counts are the t0 readings, and an episode can still create the condition later -- which is what a trigger batch would measure, and v0.6 measured that it never did"
+   },
+   "demand": {
+    "stub": {
+     "confirmed_looks_total": 90,
+     "first_look_objects": {
+      "looks": 6,
+      "min": 5,
+      "median": 5,
+      "max": 5
+     },
+     "objects_per_frame": {
+      "min": 4,
+      "median": 5,
+      "max": 5
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "vlm": {
+     "confirmed_looks_total": 183,
+     "first_look_objects": {
+      "looks": 6,
+      "min": 5,
+      "median": 5,
+      "max": 5
+     },
+     "objects_per_frame": {
+      "min": 2,
+      "median": 4,
+      "max": 5
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "v06_final_requests_per_episode": [
+     54,
+     56
+    ],
+    "v06_max_final_request": 56,
+    "note": "the bound is built from these numbers, not from a historical guess: E2'''' reads max(final requests per episode) x episodes x 1.25, and the final number is the one that includes the round the preflight admits"
+   }
+  },
+  "lh_c4_failed_grasp_recovery": {
+   "trigger_premise": {
+    "subgoal_rows": 4,
+    "dependencies": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0,
+    "has_denominator_at_t0": false,
+    "note": "the blocker edge needs an infeasible placement in an occupied region; both counts are the t0 readings, and an episode can still create the condition later -- which is what a trigger batch would measure, and v0.6 measured that it never did"
+   },
+   "demand": {
+    "stub": {
+     "confirmed_looks_total": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "vlm": {
+     "confirmed_looks_total": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "v06_final_requests_per_episode": [],
+    "v06_max_final_request": null,
+    "note": "the bound is built from these numbers, not from a historical guess: E2'''' reads max(final requests per episode) x episodes x 1.25, and the final number is the one that includes the round the preflight admits"
+   }
+  },
+  "lh_c5_release_deviation": {
+   "trigger_premise": {
+    "subgoal_rows": 5,
+    "dependencies": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0,
+    "has_denominator_at_t0": false,
+    "note": "the blocker edge needs an infeasible placement in an occupied region; both counts are the t0 readings, and an episode can still create the condition later -- which is what a trigger batch would measure, and v0.6 measured that it never did"
+   },
+   "demand": {
+    "stub": {
+     "confirmed_looks_total": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "vlm": {
+     "confirmed_looks_total": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "v06_final_requests_per_episode": [],
+    "v06_max_final_request": null,
+    "note": "the bound is built from these numbers, not from a historical guess: E2'''' reads max(final requests per episode) x episodes x 1.25, and the final number is the one that includes the round the preflight admits"
+   }
+  },
+  "lh_c6_two_disruptions": {
+   "trigger_premise": {
+    "subgoal_rows": 6,
+    "dependencies": 0,
+    "infeasible_rows": 0,
+    "rows_with_another_occupant": 0,
+    "has_denominator_at_t0": false,
+    "note": "the blocker edge needs an infeasible placement in an occupied region; both counts are the t0 readings, and an episode can still create the condition later -- which is what a trigger batch would measure, and v0.6 measured that it never did"
+   },
+   "demand": {
+    "stub": {
+     "confirmed_looks_total": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "vlm": {
+     "confirmed_looks_total": 0,
+     "first_look_objects": {
+      "looks": 0,
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "objects_per_frame": {
+      "min": null,
+      "median": null,
+      "max": null
+     },
+     "same_name_cooccurrence_frames": 0
+    },
+    "v06_final_requests_per_episode": [],
+    "v06_max_final_request": null,
+    "note": "the bound is built from these numbers, not from a historical guess: E2'''' reads max(final requests per episode) x episodes x 1.25, and the final number is the one that includes the round the preflight admits"
+   }
+  }
+ }
+}
