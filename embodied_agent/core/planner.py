@@ -10,6 +10,8 @@ invalidate an action that is still legal (SPEC 6.1). It uses no scoring truth.
 """
 from __future__ import annotations
 
+import ast
+
 from .contracts import (
     Decision,
     DecisionContext,
@@ -101,6 +103,30 @@ class PlanValidator:
         return len(errs) == 0, errs
 
 
+def _declared_attributes(entity_id: str) -> dict | None:
+    """The attribute pair an *unbound* progress row carries, or `None` if it names an entity.
+
+    A row whose binding could not be measured writes the declaration's own attributes into its
+    `entity_id` as a literal dict string (`"{'shape': 'cube', 'color': 'green'}"`) -- that is what
+    the five archived held-orphan episodes show, and what `entity_binding` in a row's unmeasured
+    list means. Reading those attributes back is how an unbound obligation can still be matched
+    against the object in the hand.
+
+    Parsing a string is a compromise, and it is made here rather than by adding a field to the
+    progress record: the record classes are inside the frozen schema
+    (`core/v02.schema_fingerprint()` must stay item-by-item equal), while this module is not.
+    A row that does not parse as a dict is simply an id, which is the overwhelmingly common case.
+    """
+    text = str(entity_id or "").strip()
+    if not text.startswith("{"):
+        return None
+    try:
+        parsed = ast.literal_eval(text)
+    except (ValueError, SyntaxError):
+        return None
+    return parsed if isinstance(parsed, dict) and parsed else None
+
+
 class RulePlanner:
     """Generates one pick/place sequence per unsatisfied assignment.
 
@@ -116,14 +142,54 @@ class RulePlanner:
         #: decider a different set of pending goals than the context it was handed reports.
         self.gmap = gmap
 
-    def pending_assignments(self, goal: GoalSpec, world: WorldState) -> list[tuple[str, str]]:
+    def pending_assignments(self, goal: GoalSpec, world: WorldState, *,
+                            include_unbound: bool = False) -> list[tuple[str, str]]:
+        """The assignments this snapshot has not measured satisfied, as `(entity, region)` pairs.
+
+        `include_unbound` is v0.8 D2''''': an assignment whose *binding* could not be measured is
+        still an obligation, and dropping it turned a binding drift into a dead end -- the five
+        archived held-orphan episodes ended as `blocked` because the held object's row had fallen
+        back to its declared attributes and `world.has_entity("<attribute dict>")` is false, so
+        the row left this list and the held check had nothing to match.
+
+        The default stays `False` for the **plan** path: a `PlanStep` names an entity, so an
+        attribute-keyed row must not become a `pick(object_id="{...}")` step. Only the decision
+        seam opts in, which is where the dead end lived.
+        """
         v = RuntimeVerifier(world, self.config, gmap=self.gmap)
         pending = []
         for item in v.progress(goal):
             # `unknown` is pending as well: unmeasurable is not satisfied
-            if item.value != PredicateVerdict.true and world.has_entity(item.entity_id):
+            if item.value == PredicateVerdict.true:
+                continue
+            if world.has_entity(item.entity_id):
+                pending.append((item.entity_id, item.target_id))
+                continue
+            if include_unbound and _declared_attributes(item.entity_id):
                 pending.append((item.entity_id, item.target_id))
         return pending
+
+    def _target_for_held(self, held: str, goal: GoalSpec, world: WorldState) -> str | None:
+        """Which region a pending goal names for the object in the hand.
+
+        Ids first, then attributes. The attribute fallback is the same declaration semantics the
+        reader and the verifier use (a row declares `{'color': 'green', 'shape': 'cube'}` and the
+        held body carries those attributes), so a drift in the *binding* cannot hide an
+        obligation that is plainly still pending -- which is exactly the shape v0.8 RQ21 measured
+        in five episodes.
+        """
+        pending = self.pending_assignments(goal, world, include_unbound=True)
+        target = next((t for e, t in pending if e == held), None)
+        if target is not None:
+            return target
+        entity = next((e for e in world.entities if e.entity_id == held), None)
+        if entity is None:
+            return None
+        for row_entity, row_target in pending:
+            declared = _declared_attributes(row_entity)
+            if declared and all(entity.attributes.get(k) == v for k, v in declared.items()):
+                return row_target
+        return None
 
     def plan(self, goal: GoalSpec, world: WorldState, plan_id: str | None = None) -> Plan:
         """Steps name the target region, not a slot.
@@ -160,7 +226,10 @@ class RulePlanner:
             pending.sort(key=lambda t: (t[0] != prefer, t[0]))
         held = ctx.world.held_object
         if isinstance(held, str) and held and held != "unknown":
-            target = next((t for e, t in pending if e == held), None)
+            # v0.8 D2''''': ids first, then the declared attributes of an unbound row -- five
+            # archived episodes ended as `blocked` because the held object's row had drifted to
+            # its attributes and nothing matched it by id.
+            target = self._target_for_held(held, ctx.goal, ctx.world)
             if target is None:
                 return _control(ctx, "blocked", f"holding {held} but no pending goal names it")
             return _execute(ctx, "place", {"object_id": held, "target_id": target},

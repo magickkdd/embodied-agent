@@ -1,0 +1,1297 @@
+{
+ "criteria": "docs/continuous-decision-v0.8-phase-log.md P1 判据（先于读数写下）",
+ "code_path": {
+  "blocked_reason": "embodied_agent/core/planner.py:165 (rule policy `decide`)",
+  "pending_rule": "embodied_agent/core/planner.py:119-126 (`pending_assignments`)",
+  "why": "`pending` keeps a row only when `world.has_entity(item.entity_id)`; an attribute-keyed row's entity_id is the literal attribute dict, which no entity has, so the row leaves the pending set; the held check then compares the held id against ids and finds none"
+ },
+ "episodes": [
+  {
+   "label": "v06/E2''' c1 r0",
+   "episode_id": "lh_c1_shared_pair_restore.B.r0",
+   "run_dir": "/home/czx/embodied-agent-batches/v06/e2/long_horizon_vlm/long_horizon_rule_vlm_memstore_skillmem_20261011_121523/episodes/lh_c1_shared_pair_restore.B.r0",
+   "termination_reason": "holding obj_green_1 but no pending goal names it",
+   "held_object": "obj_green_1",
+   "http_requests": 36,
+   "objects": "0/4",
+   "rounds": 7,
+   "timeline": [
+    {
+     "round": 1,
+     "observation_ref": "per_ecc0fb81",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "false",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 2,
+     "observation_ref": "per_0c830e0f",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "false",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 3,
+     "observation_ref": "per_1c23c467",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "unknown",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 4,
+     "observation_ref": "per_e293a625",
+     "id_keyed": [
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'green'}"
+     ],
+     "frame_colours": [
+      "blue",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "green"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'green'}": "unknown",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 5,
+     "observation_ref": "per_b4235fd5",
+     "id_keyed": [
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'green'}"
+     ],
+     "frame_colours": [
+      "blue",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "green"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'green'}": "unknown",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 6,
+     "observation_ref": "per_a0b32ccd",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cuboid', 'color': 'blue'}"
+     ],
+     "frame_colours": [
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "blue"
+     ],
+     "values": {
+      "obj_green_1": "true",
+      "{'shape': 'cuboid', 'color': 'blue'}": "unknown",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 7,
+     "observation_ref": "per_af851d7a",
+     "id_keyed": [
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'green'}",
+      "{'shape': 'cuboid', 'color': 'blue'}"
+     ],
+     "frame_colours": [
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "blue",
+      "green"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'green'}": "unknown",
+      "{'shape': 'cuboid', 'color': 'blue'}": "unknown",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    }
+   ],
+   "skill_feedback": [
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_55be64be",
+     "seq": 18
+    },
+    {
+     "skill": "place",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_3c248ae2",
+     "seq": 34
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "failed",
+     "context_id": "ctx_9f52caa8",
+     "seq": 49
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_blue_2",
+     "status": "completed",
+     "context_id": "ctx_a976c2ba",
+     "seq": 64
+    },
+    {
+     "skill": "place",
+     "entity_id": "obj_blue_2",
+     "status": "uncertain",
+     "context_id": "ctx_ed030951",
+     "seq": 81
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_ac963537",
+     "seq": 97
+    }
+   ],
+   "last_pick_index_of_held_object": 5,
+   "candidates": {
+    "a_bookkeeping_defect": {
+     "named_by_id_at_the_last_pick": true,
+     "named_by_id_after_the_pick": [
+      true,
+      false
+     ],
+     "drift_rounds": [
+      4,
+      5,
+      6,
+      7
+     ],
+     "drift_rounds_whose_frame_carried_the_declared_colour": [],
+     "every_drift_round_has_a_frame_missing_the_declared_colour": true,
+     "note": "the row lost its entity id, so `pending_assignments` drops it (`world.has_entity(attribute_string)` is false) and the held check cannot match it -- but the drift is *caused* by a frame that did not carry the declared colour, so the 'no external cause' clause does not hold"
+    },
+    "b_semantic_orphan": {
+     "named_by_id_in_any_round": true,
+     "note": "false: the object was named by id in earlier rounds"
+    },
+    "c_ordering": {
+     "contradictory_records_in_one_round": false,
+     "note": "no round carries two records that disagree about the same goal's status; the hold state and the pending set are updated in different rounds, so there is nothing to order"
+    }
+   }
+  },
+  {
+   "label": "v06/E2''' c1 r1",
+   "episode_id": "lh_c1_shared_pair_restore.B.r1",
+   "run_dir": "/home/czx/embodied-agent-batches/v06/e2/long_horizon_vlm/long_horizon_rule_vlm_memstore_skillmem_20261011_121523/episodes/lh_c1_shared_pair_restore.B.r1",
+   "termination_reason": "holding obj_green_1 but no pending goal names it",
+   "held_object": "obj_green_1",
+   "http_requests": 34,
+   "objects": "0/4",
+   "rounds": 6,
+   "timeline": [
+    {
+     "round": 1,
+     "observation_ref": "per_060d9426",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "false",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "unknown",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 2,
+     "observation_ref": "per_7f74dcf0",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "false",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 3,
+     "observation_ref": "per_11e00a27",
+     "id_keyed": [
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'green'}"
+     ],
+     "frame_colours": [
+      "blue",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "green"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'green'}": "unknown",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 4,
+     "observation_ref": "per_d02ec81a",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "true",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 5,
+     "observation_ref": "per_f7b7804c",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "unknown",
+      "obj_blue_2": "unknown",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 6,
+     "observation_ref": "per_c514f9dd",
+     "id_keyed": [
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'green'}",
+      "{'shape': 'cuboid', 'color': 'blue'}"
+     ],
+     "frame_colours": [
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "blue",
+      "green"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'green'}": "unknown",
+      "{'shape': 'cuboid', 'color': 'blue'}": "unknown",
+      "obj_yellow_3": "unknown",
+      "obj_purple_4": "false"
+     }
+    }
+   ],
+   "skill_feedback": [
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_19cf7e01",
+     "seq": 18
+    },
+    {
+     "skill": "place",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_477b4001",
+     "seq": 35
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_blue_2",
+     "status": "completed",
+     "context_id": "ctx_51a54e5a",
+     "seq": 51
+    },
+    {
+     "skill": "place",
+     "entity_id": "obj_blue_2",
+     "status": "uncertain",
+     "context_id": "ctx_ace25f61",
+     "seq": 70
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_75b4c0b2",
+     "seq": 87
+    }
+   ],
+   "last_pick_index_of_held_object": 4,
+   "candidates": {
+    "a_bookkeeping_defect": {
+     "named_by_id_at_the_last_pick": true,
+     "named_by_id_after_the_pick": [
+      true,
+      false
+     ],
+     "drift_rounds": [
+      3,
+      6
+     ],
+     "drift_rounds_whose_frame_carried_the_declared_colour": [],
+     "every_drift_round_has_a_frame_missing_the_declared_colour": true,
+     "note": "the row lost its entity id, so `pending_assignments` drops it (`world.has_entity(attribute_string)` is false) and the held check cannot match it -- but the drift is *caused* by a frame that did not carry the declared colour, so the 'no external cause' clause does not hold"
+    },
+    "b_semantic_orphan": {
+     "named_by_id_in_any_round": true,
+     "note": "false: the object was named by id in earlier rounds"
+    },
+    "c_ordering": {
+     "contradictory_records_in_one_round": false,
+     "note": "no round carries two records that disagree about the same goal's status; the hold state and the pending set are updated in different rounds, so there is nothing to order"
+    }
+   }
+  },
+  {
+   "label": "v07/E2'''' c1 r0",
+   "episode_id": "lh_c1_shared_pair_restore.B.r0",
+   "run_dir": "/home/czx/embodied-agent-batches/v07/e2/long_horizon_vlm/long_horizon_rule_vlm_memstore_skillmem_20261012_150207/episodes/lh_c1_shared_pair_restore.B.r0",
+   "termination_reason": "holding obj_green_1 but no pending goal names it",
+   "held_object": "obj_green_1",
+   "http_requests": 42,
+   "objects": "0/4",
+   "rounds": 9,
+   "timeline": [
+    {
+     "round": 1,
+     "observation_ref": "per_2b9d163a",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "false",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 2,
+     "observation_ref": "per_cebb33bf",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "false",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "unknown",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 3,
+     "observation_ref": "per_edba8e32",
+     "id_keyed": [
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'green'}"
+     ],
+     "frame_colours": [
+      "blue",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "green"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'green'}": "unknown",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 4,
+     "observation_ref": "per_d2a18a8f",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "true",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 5,
+     "observation_ref": "per_d5742ac2",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cuboid', 'color': 'blue'}"
+     ],
+     "frame_colours": [
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "blue"
+     ],
+     "values": {
+      "obj_green_1": "true",
+      "{'shape': 'cuboid', 'color': 'blue'}": "unknown",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 6,
+     "observation_ref": "per_bcb90b29",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cuboid', 'color': 'blue'}"
+     ],
+     "frame_colours": [
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "blue"
+     ],
+     "values": {
+      "obj_green_1": "true",
+      "{'shape': 'cuboid', 'color': 'blue'}": "unknown",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 7,
+     "observation_ref": "per_b4ae827d",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "unknown",
+      "obj_blue_2": "true",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 8,
+     "observation_ref": "per_88802e3f",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cuboid', 'color': 'blue'}"
+     ],
+     "frame_colours": [
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "blue"
+     ],
+     "values": {
+      "obj_green_1": "false",
+      "{'shape': 'cuboid', 'color': 'blue'}": "unknown",
+      "obj_yellow_3": "unknown",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 9,
+     "observation_ref": "per_8a2cf504",
+     "id_keyed": [
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'green'}",
+      "{'shape': 'cuboid', 'color': 'blue'}"
+     ],
+     "frame_colours": [
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "blue",
+      "green"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'green'}": "unknown",
+      "{'shape': 'cuboid', 'color': 'blue'}": "unknown",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    }
+   ],
+   "skill_feedback": [
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_601a7bfa",
+     "seq": 18
+    },
+    {
+     "skill": "place",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_d669ec1e",
+     "seq": 34
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_blue_2",
+     "status": "completed",
+     "context_id": "ctx_98e3e8cc",
+     "seq": 49
+    },
+    {
+     "skill": "place",
+     "entity_id": "obj_blue_2",
+     "status": "uncertain",
+     "context_id": "ctx_8626beb4",
+     "seq": 67
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_b5764ddb",
+     "seq": 83
+    },
+    {
+     "skill": "place",
+     "entity_id": "obj_green_1",
+     "status": "uncertain",
+     "context_id": "ctx_ae52b569",
+     "seq": 100
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "rejected",
+     "context_id": "ctx_9ced7647",
+     "seq": 116
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_35432b24",
+     "seq": 131
+    }
+   ],
+   "last_pick_index_of_held_object": 7,
+   "candidates": {
+    "a_bookkeeping_defect": {
+     "named_by_id_at_the_last_pick": true,
+     "named_by_id_after_the_pick": [
+      true,
+      false
+     ],
+     "drift_rounds": [
+      3,
+      5,
+      6,
+      8,
+      9
+     ],
+     "drift_rounds_whose_frame_carried_the_declared_colour": [],
+     "every_drift_round_has_a_frame_missing_the_declared_colour": true,
+     "note": "the row lost its entity id, so `pending_assignments` drops it (`world.has_entity(attribute_string)` is false) and the held check cannot match it -- but the drift is *caused* by a frame that did not carry the declared colour, so the 'no external cause' clause does not hold"
+    },
+    "b_semantic_orphan": {
+     "named_by_id_in_any_round": true,
+     "note": "false: the object was named by id in earlier rounds"
+    },
+    "c_ordering": {
+     "contradictory_records_in_one_round": false,
+     "note": "no round carries two records that disagree about the same goal's status; the hold state and the pending set are updated in different rounds, so there is nothing to order"
+    }
+   }
+  },
+  {
+   "label": "v07/E2'''' c1 r1",
+   "episode_id": "lh_c1_shared_pair_restore.B.r1",
+   "run_dir": "/home/czx/embodied-agent-batches/v07/e2/long_horizon_vlm/long_horizon_rule_vlm_memstore_skillmem_20261012_150207/episodes/lh_c1_shared_pair_restore.B.r1",
+   "termination_reason": "holding obj_green_1 but no pending goal names it",
+   "held_object": "obj_green_1",
+   "http_requests": 32,
+   "objects": "0/4",
+   "rounds": 7,
+   "timeline": [
+    {
+     "round": 1,
+     "observation_ref": "per_c1ce4ab0",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "false",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 2,
+     "observation_ref": "per_da864729",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "false",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 3,
+     "observation_ref": "per_0f0127ce",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "obj_green_1": "unknown",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "unknown",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 4,
+     "observation_ref": "per_a86a819f",
+     "id_keyed": [
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'green'}"
+     ],
+     "frame_colours": [
+      "blue",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "green"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'green'}": "unknown",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 5,
+     "observation_ref": "per_f5af35c2",
+     "id_keyed": [
+      "obj_blue_2",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'green'}"
+     ],
+     "frame_colours": [
+      "blue",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "green"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'green'}": "unknown",
+      "obj_blue_2": "false",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 6,
+     "observation_ref": "per_b272bbd1",
+     "id_keyed": [
+      "obj_green_1",
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cuboid', 'color': 'blue'}"
+     ],
+     "frame_colours": [
+      "green",
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "blue"
+     ],
+     "values": {
+      "obj_green_1": "true",
+      "{'shape': 'cuboid', 'color': 'blue'}": "unknown",
+      "obj_yellow_3": "unknown",
+      "obj_purple_4": "false"
+     }
+    },
+    {
+     "round": 7,
+     "observation_ref": "per_f27177ee",
+     "id_keyed": [
+      "obj_yellow_3",
+      "obj_purple_4"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'green'}",
+      "{'shape': 'cuboid', 'color': 'blue'}"
+     ],
+     "frame_colours": [
+      "purple",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "blue",
+      "green"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'green'}": "unknown",
+      "{'shape': 'cuboid', 'color': 'blue'}": "unknown",
+      "obj_yellow_3": "false",
+      "obj_purple_4": "false"
+     }
+    }
+   ],
+   "skill_feedback": [
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_e6030228",
+     "seq": 18
+    },
+    {
+     "skill": "place",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_48df5e50",
+     "seq": 35
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "failed",
+     "context_id": "ctx_d29f97c1",
+     "seq": 51
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_blue_2",
+     "status": "completed",
+     "context_id": "ctx_6c12edfd",
+     "seq": 67
+    },
+    {
+     "skill": "place",
+     "entity_id": "obj_blue_2",
+     "status": "uncertain",
+     "context_id": "ctx_0ec8b9f3",
+     "seq": 85
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_green_1",
+     "status": "completed",
+     "context_id": "ctx_bb8a8cc5",
+     "seq": 102
+    }
+   ],
+   "last_pick_index_of_held_object": 5,
+   "candidates": {
+    "a_bookkeeping_defect": {
+     "named_by_id_at_the_last_pick": true,
+     "named_by_id_after_the_pick": [
+      true,
+      false
+     ],
+     "drift_rounds": [
+      4,
+      5,
+      6,
+      7
+     ],
+     "drift_rounds_whose_frame_carried_the_declared_colour": [],
+     "every_drift_round_has_a_frame_missing_the_declared_colour": true,
+     "note": "the row lost its entity id, so `pending_assignments` drops it (`world.has_entity(attribute_string)` is false) and the held check cannot match it -- but the drift is *caused* by a frame that did not carry the declared colour, so the 'no external cause' clause does not hold"
+    },
+    "b_semantic_orphan": {
+     "named_by_id_in_any_round": true,
+     "note": "false: the object was named by id in earlier rounds"
+    },
+    "c_ordering": {
+     "contradictory_records_in_one_round": false,
+     "note": "no round carries two records that disagree about the same goal's status; the hold state and the pending set are updated in different rounds, so there is nothing to order"
+    }
+   }
+  },
+  {
+   "label": "v07/E2'''' c3 r1",
+   "episode_id": "lh_c3_capacity_and_shift.B.r1",
+   "run_dir": "/home/czx/embodied-agent-batches/v07/e2/long_horizon_vlm/long_horizon_rule_vlm_memstore_skillmem_20261012_150207/episodes/lh_c3_capacity_and_shift.B.r1",
+   "termination_reason": "holding obj_purple_2 but no pending goal names it",
+   "held_object": "obj_purple_2",
+   "http_requests": 15,
+   "objects": "1/6",
+   "rounds": 4,
+   "timeline": [
+    {
+     "round": 1,
+     "observation_ref": "per_ff18efaa",
+     "id_keyed": [
+      "obj_purple_2",
+      "obj_red_3",
+      "obj_green_4",
+      "obj_blue_5",
+      "obj_yellow_6"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'yellow'}"
+     ],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "red",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "{'shape': 'cube', 'color': 'yellow'}": "unknown",
+      "obj_purple_2": "true",
+      "obj_red_3": "unknown",
+      "obj_green_4": "false",
+      "obj_blue_5": "true",
+      "obj_yellow_6": "false"
+     }
+    },
+    {
+     "round": 2,
+     "observation_ref": "per_36c361cd",
+     "id_keyed": [
+      "obj_purple_2",
+      "obj_red_3",
+      "obj_green_4",
+      "obj_blue_5",
+      "obj_yellow_6"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'yellow'}"
+     ],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "red",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "{'shape': 'cube', 'color': 'yellow'}": "unknown",
+      "obj_purple_2": "false",
+      "obj_red_3": "true",
+      "obj_green_4": "false",
+      "obj_blue_5": "unknown",
+      "obj_yellow_6": "false"
+     }
+    },
+    {
+     "round": 3,
+     "observation_ref": "per_bb8a4eee",
+     "id_keyed": [
+      "obj_purple_2",
+      "obj_red_3",
+      "obj_green_4",
+      "obj_blue_5",
+      "obj_yellow_6"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'yellow'}"
+     ],
+     "frame_colours": [
+      "blue",
+      "green",
+      "purple",
+      "red",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [],
+     "values": {
+      "{'shape': 'cube', 'color': 'yellow'}": "unknown",
+      "obj_purple_2": "false",
+      "obj_red_3": "true",
+      "obj_green_4": "false",
+      "obj_blue_5": "true",
+      "obj_yellow_6": "false"
+     }
+    },
+    {
+     "round": 4,
+     "observation_ref": "per_78597f86",
+     "id_keyed": [
+      "obj_green_4",
+      "obj_blue_5",
+      "obj_yellow_6"
+     ],
+     "attribute_keyed": [
+      "{'shape': 'cube', 'color': 'yellow'}",
+      "{'shape': 'cube', 'color': 'purple'}",
+      "{'shape': 'cuboid', 'color': 'red'}"
+     ],
+     "frame_colours": [
+      "blue",
+      "green",
+      "yellow"
+     ],
+     "attribute_rows_whose_colour_the_frame_lacks": [
+      "purple",
+      "red"
+     ],
+     "values": {
+      "{'shape': 'cube', 'color': 'yellow'}": "unknown",
+      "{'shape': 'cube', 'color': 'purple'}": "unknown",
+      "{'shape': 'cuboid', 'color': 'red'}": "unknown",
+      "obj_green_4": "false",
+      "obj_blue_5": "true",
+      "obj_yellow_6": "false"
+     }
+    }
+   ],
+   "skill_feedback": [
+    {
+     "skill": "pick",
+     "entity_id": "obj_purple_2",
+     "status": "completed",
+     "context_id": "ctx_b171d4e9",
+     "seq": 18
+    },
+    {
+     "skill": "place",
+     "entity_id": "obj_purple_2",
+     "status": "uncertain",
+     "context_id": "ctx_a51c1706",
+     "seq": 35
+    },
+    {
+     "skill": "pick",
+     "entity_id": "obj_purple_2",
+     "status": "completed",
+     "context_id": "ctx_4f599758",
+     "seq": 51
+    }
+   ],
+   "last_pick_index_of_held_object": 2,
+   "candidates": {
+    "a_bookkeeping_defect": {
+     "named_by_id_at_the_last_pick": true,
+     "named_by_id_after_the_pick": [
+      true,
+      false
+     ],
+     "drift_rounds": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "drift_rounds_whose_frame_carried_the_declared_colour": [
+      {
+       "round": 1,
+       "attribute_keyed": [
+        "{'shape': 'cube', 'color': 'yellow'}"
+       ],
+       "frame_colours": [
+        "blue",
+        "green",
+        "purple",
+        "red",
+        "yellow"
+       ]
+      },
+      {
+       "round": 2,
+       "attribute_keyed": [
+        "{'shape': 'cube', 'color': 'yellow'}"
+       ],
+       "frame_colours": [
+        "blue",
+        "green",
+        "purple",
+        "red",
+        "yellow"
+       ]
+      },
+      {
+       "round": 3,
+       "attribute_keyed": [
+        "{'shape': 'cube', 'color': 'yellow'}"
+       ],
+       "frame_colours": [
+        "blue",
+        "green",
+        "purple",
+        "red",
+        "yellow"
+       ]
+      }
+     ],
+     "every_drift_round_has_a_frame_missing_the_declared_colour": false,
+     "note": "the row lost its entity id, so `pending_assignments` drops it (`world.has_entity(attribute_string)` is false) and the held check cannot match it -- but the drift is *caused* by a frame that did not carry the declared colour, so the 'no external cause' clause does not hold"
+    },
+    "b_semantic_orphan": {
+     "named_by_id_in_any_round": true,
+     "note": "false: the object was named by id in earlier rounds"
+    },
+    "c_ordering": {
+     "contradictory_records_in_one_round": false,
+     "note": "no round carries two records that disagree about the same goal's status; the hold state and the pending set are updated in different rounds, so there is nothing to order"
+    }
+   }
+  }
+ ]
+}
