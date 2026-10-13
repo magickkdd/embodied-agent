@@ -1,0 +1,123 @@
+{
+  "acceptance": [
+    "each of the nine cells runs its full matched denominator: 1 case x 2 repeats = 2 episodes per case-cell, every episode producing an outcome; an infrastructure_error with a named cause is counted as a miss, not dropped",
+    "**the episode-level and the row-level readings are written separately** (v0.7's lesson, promoted to a criterion): for every failed episode, the terminal reason (`termination_reason` / `failure_type`) and the unbound-row shape are two different facts and neither is read as the other",
+    "**RQ22's generalisation verdict**, computed rather than eyeballed: for every stub and vlm cell, `nonzero` is `successes >= 1`. Any nonzero cell => the claim 'the camera channel does not work' is refuted and that case becomes the sample where non-zero is implemented; all-zero => the claim is generalised from 2 cases to 5 cases as a measured statement",
+    "**RQ23's comparison point**: the count of episodes ending in `holding X but no pending goal names it` is reported per cell, next to the five archived historical episodes that carry the same reason. The repair does not backfill them (SPEC §2.3), so the comparison is the new batch against those five",
+    "c2/c4/c5's demand profiles (per-episode requests, the perception/decision split, the unbound-row count) are recorded per case, closing the P-D blanks the v0.7 table carries as `no_confirmed_evidence`; they land in this pre-registration and the phase log first, and only enter the frozen table payload in a single post-batch commit if that is what the profile channel requires (SPEC §2.2)",
+    "the ceiling stays a named reading rather than a silent truncation: if a camera episode ends `BUDGET_EXHAUSTED`, the note must name the perception book as the book that filled it",
+    "the archived camera cells record `budget_caps` {http 48, perception 48} and the privileged cells the frozen {http 32, perception 48}, so the repricing state is recognisable from the archive",
+    "rows are reported side by side with E2'/E2''/E2'''/E2'''' and **never merged**; the four earlier generations ran c1/c3 on the v1/v2 tables, so the five-generation table states which table each row ran under"
+  ],
+  "artefact_directory": "/home/czx/embodied-agent-batches/v08/newblood",
+  "bound_cell_case_set_and_scale": {
+    "cases": ["lh_c2_displaced_completion", "lh_c4_failed_grasp_recovery", "lh_c5_release_deviation"],
+    "cells": 9,
+    "cells_detail": "3 cases x {privileged, stub, vlm}, one case per cell so each cell's matched denominator is its own",
+    "episodes": 18,
+    "episodes_per_cell": 2,
+    "repeats": 2,
+    "c6_excluded": "known-hard (#24), D-level undecided; SPEC §6",
+    "decided": "D3''''''' user, 2026-10-13"
+  },
+  "budget_repricing": {
+    "camera_cells": {"http": 48, "perception": 48},
+    "privileged": "frozen budgets",
+    "why_not_higher": ("D4''''''': this batch changes exactly one thing relative to E2'''' -- the "
+                       "bookkeeping fix -- and a ceiling raised at the same time would make two "
+                       "variables move together. c3's measured 49-56 requests mean a 48 ceiling "
+                       "will stop some episodes, and that stop is itself the demand reading"),
+    "two_ledger_accounting": "perception/decision split carried as in v0.6 Q1"
+  },
+  "command_shape": [
+    "python -m embodied_agent.cli evaluate",
+    "--set long_horizon",
+    "--planner rule",
+    "--modes B",
+    "--repeats 2",
+    "--cases <lh_c2_displaced_completion|lh_c4_failed_grasp_recovery|lh_c5_release_deviation>",
+    "--out-root /home/czx/embodied-agent-batches/v08/newblood/<case>_<channel>",
+    "--perceive <privileged|stub|vlm>",
+    "--ablation <full|wo_vlm>",
+    "--http-cap 48 --perception-cap 48   (camera cells only)",
+    "--experience-store <cell>/store.jsonl",
+    "--skill-memory <cell>/lib.jsonl",
+    "--model-config configs/models/agnes-vision-r4.yaml",
+    "--frozen --no-frames"
+  ],
+  "credentials": "never recorded; a config names the env var, not the key (SPEC 7)",
+  "decided_by": {
+    "D1'''''": "v0.8 = orphan attribution + camera fresh blood (user, 2026-10-13)",
+    "D2'''''": "the orphan attribution came back (a) bookkeeping defect; repair it (user, 2026-10-13), contract red-then-green, five historical episodes not backfilled",
+    "D3'''''": "new-blood batch: c2/c4/c5 x 3 channels x 2 repeats = 9 cells / 18 episodes (user, 2026-10-13)",
+    "D4'''''": "bound 427 derived from the c1/c3 precedent; camera ceilings stay 48/48 (user, 2026-10-13)"
+  },
+  "entry_point": "python -m embodied_agent.cli evaluate",
+  "experiment": "camera fresh blood (v0.8) -- RQ22 generalisation test on c2/c4/c5, RQ23 orphan comparison point",
+  "expected_readings": {
+    "pre_registered": ("0 remains legal in every camera cell, and an all-zero result is a "
+                       "*valuable* delivery: 'the camera channel does not work' would then rest "
+                       "on five measured cases instead of two. The bookkeeping fix's own effect "
+                       "is narrow and pre-written: the held-orphan class should stop appearing "
+                       "(the episodes continue instead of blocking), which is RQ23's reading and "
+                       "is **not** the same as the cells becoming non-zero -- the drift's external "
+                       "causes (#26 intermittency, #25 two-yellow ambiguity) are untouched by this "
+                       "stage's fix"),
+    "honest_counterpart": ("if the held object is now placed by an attribute-matched row and the "
+                           "episode continues but later dies of the ceiling, that is two findings, "
+                           "not one: the dead end is gone and the demand is real. Recording it as "
+                           "'fixed' would be the flattering reading and is refused")
+  },
+  "five_generation_table": {
+    "shape": "privileged / stub / vlm per generation, side by side, never pooled",
+    "generations": {
+      "E2' (v0.4, v1 table)": {"privileged": "4/4", "stub": "0/4", "vlm": "0/4", "requests": 132},
+      "E2'' (v0.5, v1 table)": {"privileged": "4/4", "stub": "0/4", "vlm": "0/4 (+1 infra)",
+                                 "requests": 148},
+      "E2''' (v0.6, v1 table)": {"privileged": "4/4", "stub": "0/4", "vlm": "0/4", "requests": 180},
+      "E2'''' (v0.7, v2 table)": {"privileged": "4/4", "stub": "0/4", "vlm": "0/4", "requests": 147}
+    },
+    "caveat": ("this batch runs **different cases** (c2/c4/c5) on the same table and with the "
+               "bookkeeping fix, so its rows are not a fifth measurement of the same question -- "
+               "they are the first measurement of a new one. The table states that per row rather "
+               "than inviting a trend line across incomparable rows")
+  },
+  "preconditions": [
+    "v0.8 P1/P2 committed: RQ21 attribution on disk, the repair landed with its contract green",
+    "full offline regression at or above the post-partition baseline with no test removed: 1311 passed / 27 skipped",
+    "schema_fingerprint() item-by-item equal; the three gates rc=0 immediately before the first request; the long-horizon table hash b9fce17fbbf6 unchanged",
+    "probe criteria written down before the first probe request (phase log, P4)"
+  ],
+  "pricing_configured": false,
+  "cost_estimate_usd": null,
+  "schema_freeze": ("core/v02.py untouched by v0.8; 15 event types and the 7-entry ablation "
+                    "registry untouched; the task table hash b9fce17fbbf6 unchanged (the profile "
+                    "channel may add fields in a single post-batch commit, logged as a switch "
+                    "point)"),
+  "seat": {
+    "config": "configs/models/agnes-vision-r4.yaml",
+    "model": "agnes-2.5-flash",
+    "health_probe": ("one minimal request before the batch, criteria written first: 3 consecutive "
+                     "429/quota errors stop the batch; a window of 10 must reach 9/10 or the window "
+                     "changes, not the criterion; endpoint rotation is an event, not a "
+                     "configuration")
+  },
+  "spend_bound": {
+    "requests": 427,
+    "basis": ("composed from the only precedent there is, because c2/c4/c5 have no camera profile "
+              "(M1: 0 archived frames). The camera channel's measured per-episode final requests "
+              "are c1 36-42 and c3 54-56; the conservative per-episode figure is the c3 peak, 56. "
+              "Only the vlm cell spends: 6 episodes x 56 = 336, plus 6 shared goal parses (one per "
+              "(case, repeat)) = 342, x1.25 = 427"),
+    "formula": "spending_episodes x per_episode_peak + goal_parses, x1.25",
+    "why_the_profile_is_a_precedent_not_a_measurement": ("c2 is 5 objects, c4 4, c5 5, all below "
+                                                          "c3's 6, so their demand is probably "
+                                                          "lower -- but 'probably lower' is not a "
+                                                          "number, and pricing the bound below the "
+                                                          "known peak would be the kind of "
+                                                          "optimism that stops a batch early"),
+    "stop_rule": "3 consecutive 429/quota errors -> stop the batch, save the checkpoint, log it; bound hit -> stop, no 'a little more'",
+    "stop_rule_source": "v0.3 SPEC §8 verbatim, plus v0.4 §8",
+    "resume": "cell-level: a finished cell is never re-run; --resume continues a cell from its own checkpoint"
+  }
+}
