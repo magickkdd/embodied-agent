@@ -1,0 +1,219 @@
+{
+ "basis": "v0.8 new-blood batch, rule planner, camera channels, 2 repeats",
+ "cases": {
+  "c2": {
+   "privileged": {
+    "episodes": 2,
+    "requests_per_episode": [
+     0,
+     0
+    ],
+    "max_final_request": 0,
+    "perception_at_last_round": [
+     0,
+     0
+    ],
+    "decision_at_last_round": [
+     0,
+     0
+    ],
+    "unbound_rows": [
+     0,
+     0
+    ],
+    "outcomes": {
+     "success": 2
+    }
+   },
+   "stub": {
+    "episodes": 2,
+    "requests_per_episode": [
+     0,
+     0
+    ],
+    "max_final_request": 0,
+    "perception_at_last_round": [
+     0,
+     0
+    ],
+    "decision_at_last_round": [
+     0,
+     0
+    ],
+    "unbound_rows": [
+     0,
+     0
+    ],
+    "outcomes": {
+     "failed": 2
+    }
+   },
+   "vlm": {
+    "episodes": 2,
+    "requests_per_episode": [
+     54,
+     60
+    ],
+    "max_final_request": 60,
+    "perception_at_last_round": [
+     47,
+     44
+    ],
+    "decision_at_last_round": [
+     0,
+     0
+    ],
+    "unbound_rows": [
+     14,
+     9
+    ],
+    "outcomes": {
+     "failed": 2
+    }
+   }
+  },
+  "c4": {
+   "privileged": {
+    "episodes": 2,
+    "requests_per_episode": [
+     0,
+     0
+    ],
+    "max_final_request": 0,
+    "perception_at_last_round": [
+     0,
+     0
+    ],
+    "decision_at_last_round": [
+     0,
+     0
+    ],
+    "unbound_rows": [
+     0,
+     0
+    ],
+    "outcomes": {
+     "success": 2
+    }
+   },
+   "stub": {
+    "episodes": 2,
+    "requests_per_episode": [
+     0,
+     0
+    ],
+    "max_final_request": 0,
+    "perception_at_last_round": [
+     0,
+     0
+    ],
+    "decision_at_last_round": [
+     0,
+     0
+    ],
+    "unbound_rows": [
+     0,
+     0
+    ],
+    "outcomes": {
+     "failed": 2
+    }
+   },
+   "vlm": {
+    "episodes": 2,
+    "requests_per_episode": [
+     60
+    ],
+    "max_final_request": 60,
+    "perception_at_last_round": [
+     47,
+     6
+    ],
+    "decision_at_last_round": [
+     0,
+     0
+    ],
+    "unbound_rows": [
+     6,
+     0
+    ],
+    "outcomes": {
+     "failed": 1,
+     "None": 1
+    }
+   }
+  },
+  "c5": {
+   "privileged": {
+    "episodes": 2,
+    "requests_per_episode": [
+     0,
+     0
+    ],
+    "max_final_request": 0,
+    "perception_at_last_round": [
+     0,
+     0
+    ],
+    "decision_at_last_round": [
+     0,
+     0
+    ],
+    "unbound_rows": [
+     0,
+     0
+    ],
+    "outcomes": {
+     "success": 2
+    }
+   },
+   "stub": {
+    "episodes": 2,
+    "requests_per_episode": [
+     0,
+     0
+    ],
+    "max_final_request": 0,
+    "perception_at_last_round": [
+     0,
+     0
+    ],
+    "decision_at_last_round": [
+     0,
+     0
+    ],
+    "unbound_rows": [
+     0,
+     0
+    ],
+    "outcomes": {
+     "failed": 2
+    }
+   },
+   "vlm": {
+    "episodes": 2,
+    "requests_per_episode": [
+     18,
+     39
+    ],
+    "max_final_request": 39,
+    "perception_at_last_round": [
+     10,
+     32
+    ],
+    "decision_at_last_round": [
+     0,
+     0
+    ],
+    "unbound_rows": [
+     1,
+     1
+    ],
+    "outcomes": {
+     "failed": 2
+    }
+   }
+  }
+ },
+ "ledger_rows": []
+}

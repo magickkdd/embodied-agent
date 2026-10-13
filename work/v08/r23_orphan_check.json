@@ -1,0 +1,104 @@
+{
+ "criteria": "docs/continuous-decision-v0.8-phase-log.md P1 判据 + D2''''' 修复设计",
+ "repair_scope_question": "the fallback matches the declaration against the held body's snapshot attributes; this is what the snapshot says about a body that is in the gripper",
+ "episodes": [
+  {
+   "cell": "c2_vlm",
+   "episode_id": "lh_c2_displaced_completion.B.r0",
+   "held": "obj_blue_1",
+   "rounds": 10,
+   "http_requests": 54,
+   "objects": "0/5",
+   "pick_seq": 144,
+   "named_by_id_at_the_pick": true,
+   "named_by_id_at_the_end": false,
+   "unbound_rows_at_the_end": [
+    {
+     "declared": {
+      "shape": "cube",
+      "color": "blue"
+     },
+     "target_id": "tray_left"
+    },
+    {
+     "declared": {
+      "shape": "cuboid",
+      "color": "yellow"
+     },
+     "target_id": "tray_left"
+    },
+    {
+     "declared": {
+      "shape": "cylinder",
+      "color": "red"
+     },
+     "target_id": "tray_right"
+    }
+   ],
+   "reader_reported_for_the_held_colour": {
+    "entity_id": "seen:blue",
+    "color": "blue",
+    "shape": "cube",
+    "claimed_on_or_in": "tray_left"
+   },
+   "last_visibility_block": "[{\"entity_id\": \"seen:green\", \"visible\": true, \"occluded_by\": null, \"view\": \"main\", \"confidence\": 0.97, \"evidence_ref\": \"look_0042_main\"}, {\"entity_id\": \"seen:red\", \"visible\": true, \"occluded_by\": null",
+   "last_round": 10
+  },
+  {
+   "cell": "c5_vlm",
+   "episode_id": "lh_c5_release_deviation.B.r0",
+   "held": "obj_red_1",
+   "rounds": 4,
+   "http_requests": 18,
+   "objects": "1/5",
+   "pick_seq": 50,
+   "named_by_id_at_the_pick": true,
+   "named_by_id_at_the_end": false,
+   "unbound_rows_at_the_end": [
+    {
+     "declared": {
+      "shape": "cube",
+      "color": "red"
+     },
+     "target_id": "tray_left"
+    }
+   ],
+   "reader_reported_for_the_held_colour": {
+    "entity_id": "seen:red",
+    "color": "red",
+    "shape": "cube",
+    "claimed_on_or_in": ""
+   },
+   "last_visibility_block": "[{\"entity_id\": \"seen:red\", \"visible\": true, \"occluded_by\": null, \"view\": \"main\", \"confidence\": 0.95, \"evidence_ref\": \"look_0015_main\"}, {\"entity_id\": \"seen:green\", \"visible\": true, \"occluded_by\": null",
+   "last_round": 4
+  },
+  {
+   "cell": "c5_vlm",
+   "episode_id": "lh_c5_release_deviation.B.r1",
+   "held": "obj_red_1",
+   "rounds": 7,
+   "http_requests": 39,
+   "objects": "1/5",
+   "pick_seq": 68,
+   "named_by_id_at_the_pick": true,
+   "named_by_id_at_the_end": false,
+   "unbound_rows_at_the_end": [
+    {
+     "declared": {
+      "shape": "cube",
+      "color": "red"
+     },
+     "target_id": "tray_left"
+    }
+   ],
+   "reader_reported_for_the_held_colour": {
+    "entity_id": "seen:red",
+    "color": "red",
+    "shape": "cube",
+    "claimed_on_or_in": ""
+   },
+   "last_visibility_block": "[{\"entity_id\": \"seen:green\", \"visible\": true, \"occluded_by\": null, \"view\": \"main\", \"confidence\": 0.95, \"evidence_ref\": \"look_0027_main\"}, {\"entity_id\": \"seen:purple\", \"visible\": true, \"occluded_by\": n",
+   "last_round": 7
+  }
+ ]
+}

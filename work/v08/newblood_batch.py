@@ -36,6 +36,7 @@ SEAT = "configs/models/agnes-vision-r4.yaml"
 BOUND = 427  # configs/experiment/v08_newblood_preregistration.json spend_bound.requests
 CAPS = 48  # D4''''': unchanged from E2'''' -- one variable moves per batch
 REPEATS = 2
+QUOTA_STOP = 3  # consecutive-equivalent 429/quota errors, the pre-registered stop rule
 
 #: (case, channel, arm, cap) -- the zero-cost channels first inside each case
 CELLS = [
@@ -122,6 +123,23 @@ def _episode_evidence(ep_dir: str) -> dict:
     return row
 
 
+def _quota_deaths(run_dir: str) -> int:
+    """429 / quota rows in the run's own error ledger.
+
+    The pre-registered stop rule is "3 consecutive 429/quota errors", and the v0.8 first run did
+    **not** enforce it: `c4_vlm` recorded an adapter-level `request failed after 5 attempts: HTTP
+    Error 429` and the batch went on to run c5. The readings that followed are still readings, but
+    the rule was not honoured, so the counter lives here now and the incident is written into the
+    phase log rather than quietly repaired.
+    """
+    path = os.path.join(run_dir, "errors.jsonl")
+    if not os.path.exists(path):
+        return 0
+    rows = [json.loads(line) for line in open(path, encoding="utf-8") if line.strip()]
+    return sum(1 for r in rows if "429" in str(r.get("error") or "")
+               or "quota" in str(r.get("error") or "").lower())
+
+
 def read_cell(out_root: str) -> dict:
     run_dirs = [p for p in sorted(glob.glob(os.path.join(out_root, "*")))
                 if os.path.isdir(os.path.join(p, "episodes"))]
@@ -154,6 +172,7 @@ def read_cell(out_root: str) -> dict:
     return {"run_dir": rd, "episodes": len(per_ep), "outcomes": outcomes,
             "successes": successes, "nonzero": successes >= 1,
             "per_episode": per_ep, "manifest": manifest,
+            "quota_deaths": _quota_deaths(rd),
             "held_orphan_episodes": orphans, "budget_stop_episodes": budget_stops,
             "http_requests": sum(r.get("http_requests") or 0 for r in per_ep),
             "unbound_rows": sum(r.get("unbound_progress_rows", 0) for r in per_ep)}
@@ -208,9 +227,16 @@ def main() -> int:
               f"http={reading.get('http_requests')} unbound={reading.get('unbound_rows')} "
               f"orphans={reading.get('held_orphan_episodes')} "
               f"budget_stops={reading.get('budget_stop_episodes')} "
+              f"quota_deaths={reading.get('quota_deaths')} "
               f"cumulative={total_req}/{args.bound}", flush=True)
         with open(os.path.join(args.out_root, "newblood_report.json"), "w", encoding="utf-8") as f:
             json.dump(report, f, ensure_ascii=False, indent=1)
+        if reading.get("quota_deaths", 0) >= QUOTA_STOP:
+            print(f"[newblood] {key} recorded {reading['quota_deaths']} quota errors; the "
+                  f"pre-registered stop rule ({QUOTA_STOP}) stops the batch here", flush=True)
+            report["stopped"] = {"cell": key, "why": "quota errors",
+                                 "count": reading["quota_deaths"]}
+            break
         if total_req > args.bound:
             print(f"[newblood] bound {args.bound} hit at {total_req} requests; stopping before the "
                   f"next cell (pre-registered stop rule)", flush=True)
